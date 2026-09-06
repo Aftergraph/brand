@@ -1,3 +1,5 @@
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Aftergraph/brand/badge)](https://scorecard.dev/viewer/?uri=github.com/Aftergraph/brand)
+
 # @aftergraph/brand
 
 > **Official Brand OS & Design System for Aftergraph / ABDE Intelligence.**  
