@@ -14,6 +14,12 @@
 - **Grammar**: `graphs → boundaries → authority → execution → evidence → verified outcomes`
 - **Accessibility**: Strict WCAG 2.2 AA / AAA compliance across all theme layers.
 
+## Public communications
+
+Use [`PUBLIC-LAUNCH-KIT.md`](./PUBLIC-LAUNCH-KIT.md) for canonical public positioning, channel-specific launch copy, research-claim boundaries, discovery vocabulary, calls to action and approved social assets.
+
+Public communications should lead with **verifiable intelligent systems** and must not silently upgrade research maturity, conformance evidence or provisional brand status.
+
 ---
 
 ## Palette
