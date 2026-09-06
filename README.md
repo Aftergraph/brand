@@ -18,6 +18,8 @@
 
 Use [`PUBLIC-LAUNCH-KIT.md`](./PUBLIC-LAUNCH-KIT.md) for canonical public positioning, channel-specific launch copy, research-claim boundaries, discovery vocabulary, calls to action and approved social assets.
 
+Use [`PUBLIC-DISTRIBUTION-PLAN.md`](./PUBLIC-DISTRIBUTION-PLAN.md) for launch order, channel sequencing, audience routing, weekly cadence, conversion metrics and publication gates.
+
 Public communications should lead with **verifiable intelligent systems** and must not silently upgrade research maturity, conformance evidence or provisional brand status.
 
 ---
