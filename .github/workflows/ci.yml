@@ -28,13 +28,18 @@ jobs:
         run: |
           node -e "
             const fs = require('fs');
-            const files = ['assets/logo.svg', 'assets/wordmark.svg', 'assets/icon.svg', 'assets/banner.svg'];
+            // ponytail: asset list comes from manifest.json (canonical layout),
+            // never a hardcoded parallel list that rots.
+            const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
+            const collect = (o) => Object.values(o || {}).flatMap(v => typeof v === 'string' ? [v] : collect(v));
+            const files = [...new Set(collect(manifest.assets))];
+            if (!files.length) throw new Error('No assets declared in manifest.json');
             files.forEach(f => {
               if (!fs.existsSync(f)) throw new Error('Missing: ' + f);
               const content = fs.readFileSync(f, 'utf8');
               if (!content.includes('<svg') || !content.includes('</svg>')) throw new Error('Invalid SVG: ' + f);
             });
-            console.log('SVG assets verified.');
+            console.log('SVG assets verified: ' + files.length + ' files.');
           "
 
       - name: Verify Token Export Integrity
