@@ -82,3 +82,24 @@ The mark **may NOT**:
 
 - Repositories in the Aftergraph organization (`trust-gateway`, `works-execution`, `aie`, `work-intelligence-v2`, `after-graph-governance`, `intelligence-systems-research`) consume brand tokens through `@aftergraph/brand` or the centralized token feed.
 - **Separation of Concerns**: A shared visual identity does **not** convey shared execution claims. Runtime authority, durable execution, conformance guarantees, and scientific research claims remain strictly bounded within their respective repositories.
+
+---
+
+## 8. Product Naming (masterbrand)
+
+- **Masterbrand:** Aftergraph — *Infrastructure for verified intelligent systems.*
+- **Tier 1 products** carry the suffix form: Studio by Aftergraph,
+  Sentinel by Aftergraph, Work Intelligence by Aftergraph,
+  Continuum by Aftergraph.
+- **Infrastructure** uses the plain form: Aftergraph Runtime,
+  Trust Gateway, WORKS, Aftergraph Governance, Aftergraph Skills,
+  Aftergraph Models.
+- **Package namespace:** `@aftergraph/*` for all canonical packages.
+- **Forbidden as active identifiers:** `AVC`, `avc-*`, `@avc/*`,
+  `Autonomous Venture Company`, `venture-os-consumer`.
+  Historical records may retain old names for provenance only.
+- **No new AVC-branded surfaces:** no new product, package, UI string,
+  or document may introduce AVC naming; existing occurrences migrate
+  per the consolidation waves, design-hue decisions excepted
+  (AVC earth-tone palette vs institution palette is an owner decision,
+  not an automatic migration).
