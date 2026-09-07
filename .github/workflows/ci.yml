@@ -47,7 +47,14 @@ jobs:
           node -e "
             const fs = require('fs');
             const tokens = JSON.parse(fs.readFileSync('tokens.json', 'utf8'));
-            if (!tokens.color?.base?.['institution-black']) throw new Error('Missing institution-black');
-            if (!tokens.color?.accent?.['control-cyan']) throw new Error('Missing control-cyan');
+            // ponytail: canonical shape is flat snake_case (tokens.json v1.0.0),
+            // not the old nested kebab layout.
+            const colors = tokens.colors || {};
+            for (const k of ['institution_black', 'control_cyan']) {
+              if (!colors[k]) throw new Error('Missing ' + k);
+            }
+            for (const [k, v] of Object.entries(colors)) {
+              if (typeof v !== 'string' || !/^#[0-9A-Fa-f]{6}$/.test(v)) throw new Error('Invalid color ' + k + ': ' + v);
+            }
             console.log('Brand tokens valid.');
           "
