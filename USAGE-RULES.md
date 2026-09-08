@@ -9,7 +9,7 @@
 ## 1. Core Brand Statement & Philosophy
 
 - **Name**: Aftergraph (Alternative / Institutional Descriptor: ABDE Intelligence)
-- **Tagline**: *"Infrastructure for governed autonomous intelligence"*
+- **Tagline**: *"Infrastructure for verified intelligent systems"*
 - **Grammar**: `graphs → boundaries → authority → execution → evidence → verified outcomes`
 - **Aesthetic**: Calm Intelligence, institutional confidence, cryptographic precision, zero decorative fluff, WCAG 2.2 AA accessibility.
 
@@ -80,7 +80,7 @@ The mark **may NOT**:
 
 ## 7. Multi-Repo Governance & Dogfooding
 
-- Repositories in the Aftergraph organization (`trust-gateway`, `works-execution`, `aie`, `work-intelligence-v2`, `after-graph-governance`, `intelligence-systems-research`) consume brand tokens through `@aftergraph/brand` or the centralized token feed.
+- Canonical repositories in the Aftergraph organization consume brand tokens through `@aftergraph/brand` or the centralized token feed. Repository inventory, aliases and visibility are governed by `Aftergraph/after-graph-governance`; this document deliberately does not hardcode the topology count.
 - **Separation of Concerns**: A shared visual identity does **not** convey shared execution claims. Runtime authority, durable execution, conformance guarantees, and scientific research claims remain strictly bounded within their respective repositories.
 
 ---
@@ -89,8 +89,10 @@ The mark **may NOT**:
 
 - **Masterbrand:** Aftergraph — *Infrastructure for verified intelligent systems.*
 - **Tier 1 products** carry the suffix form: Studio by Aftergraph,
-  Sentinel by Aftergraph, Work Intelligence by Aftergraph,
+  Sentinel by Aftergraph, Wie by Aftergraph,
   Continuum by Aftergraph.
+- **Wie by Aftergraph** maps to canonical source repositories `wi-backend`
+  and `wi-frontend`; public product naming does not replace repository identity.
 - **Infrastructure** uses the plain form: Aftergraph Runtime,
   Trust Gateway, WORKS, Aftergraph Governance, Aftergraph Skills,
   Aftergraph Models.
