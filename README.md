@@ -3,7 +3,7 @@
 # @aftergraph/brand
 
 > **Official Brand OS & Design System for Aftergraph / ABDE Intelligence.**  
-> *"Infrastructure for governed autonomous intelligence"*
+> *"Infrastructure for verified intelligent systems"*
 
 ---
 
