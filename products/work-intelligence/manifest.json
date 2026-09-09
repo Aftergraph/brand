@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "brand_version": "1.1.0",
+  "id": "work-intelligence",
+  "display_name": "Work Intelligence",
+  "parent": "Aftergraph",
+  "class": "product",
+  "status": "active",
+  "identity": "identity/lockup.svg",
+  "claim_boundary": "Product visuals may describe durable work and evidence surfaces; production claims require live deployment evidence."
+}

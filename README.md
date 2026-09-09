@@ -2,12 +2,14 @@
 
 # @aftergraph/brand
 
-> **Official Brand OS & Design System for Aftergraph / ABDE Intelligence.**  
-> *"Infrastructure for governed autonomous intelligence"*
+> **Canonical Brand OS and Design System for Aftergraph.**
+> *"Infrastructure for verifiable intelligent systems"*
 
 ---
 
 ## Overview
+
+The full production inventory is defined in [`BRAND-ASSET-MATRIX.md`](./BRAND-ASSET-MATRIX.md). Voice and positioning live in [`BRAND-VOICE.md`](./BRAND-VOICE.md); motion direction and generation-safe prompts live in [`motion/MOTION-SYSTEM.md`](./motion/MOTION-SYSTEM.md) and [`ASSET-GENERATION-PROMPTS.md`](./ASSET-GENERATION-PROMPTS.md).
 
 `@aftergraph/brand` is the central source of truth for Aftergraph visual identity, design tokens, cryptographic iconography, and institutional UI contracts.
 
@@ -81,7 +83,7 @@ export function InstitutionalNav() {
 
 ### 4. Direct SVG Masters
 
-SVG assets are organized in `packages/brand/svg/`:
+SVG assets are organized in `svg/`, `identity/`, `semantics/`, and the surface-specific directories:
 - `aftergraph-monogram.svg`: Canonical graph monogram
 - `aftergraph-wordmark.svg`: Canonical wordmark
 - `aftergraph-app-icon.svg`: High-fidelity squircle app icon

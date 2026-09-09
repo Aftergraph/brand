@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "brand_version": "1.1.0",
+  "id": "sentinel",
+  "display_name": "Sentinel",
+  "parent": "Aftergraph",
+  "class": "product-needs-review",
+  "status": "blocked-naming-review",
+  "identity": null,
+  "blockers": ["https://github.com/Aftergraph/brand/issues/19", "https://github.com/Aftergraph/sentinel/issues/7"],
+  "claim_boundary": "No final endorsed identity or Marketplace listing may ship before the naming collision decision."
+}

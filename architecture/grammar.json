@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "nodes": ["principal", "agent", "service", "model", "tool", "verifier", "evidence", "human", "state-store"],
+  "boundaries": ["trust", "organization", "mission", "budget"],
+  "edges": ["authority", "delegation", "execution", "data", "evidence", "control", "revoked", "stale"],
+  "gates": ["policy", "human", "verification"],
+  "diagram_families": ["system-context", "architecture", "components", "execution-flow", "sequence", "trust-boundaries", "data-flow", "deployment", "agents", "state-machine", "evidence-chain", "repo-dependencies", "mission-lifecycle", "authority-delegation", "revocation-flow", "verification-flow"]
+}
