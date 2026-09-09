@@ -6,7 +6,8 @@
   "brand_version": "1.1.0",
   "verified_zip_sha256": "0cb36d4ce5d7b6b3636cbe53559b8e40fc3fc54fb93c56f4b13d4262c292b1a7",
   "organization_repo_count": 25,
-  "completed": ["package-verification", "live-repo-inventory", "canonical-brand-foundation", "semantic-symbol-system", "architecture-primitives", "evidence-visual-system", "social-generator", "favicon-export", "brand-validator", "migration-guide", "wave1-visual-qa", "wave1-linkedin-overlap-fix", "wave1-og-png-regen"],
+  "completed": ["package-verification", "live-repo-inventory", "canonical-brand-foundation", "semantic-symbol-system", "architecture-primitives", "evidence-visual-system", "social-generator", "favicon-export", "brand-validator", "migration-guide", "wave1-visual-qa", "wave1-linkedin-overlap-fix", "wave1-og-png-regen", "wave1-merge-8a1f878", "brand-release-1.1.0", "wave2-adoption-matrix-pr21", "wave4-surface-registry", "wave3-github-provenance"],
+  "release": {"tag": "v1.1.0", "commit": "8a1f878004ec69303d0bfdc8f65f2e5e0045cb09", "tarball_sha256": "3d881b90d99a5af04a922fad0381c562d5b7dff766732b64350605db97bd6f8f"},
   "blocked": [{"item":"sentinel-final-identity","reason":"P0 naming/trademark review","issues":["Aftergraph/brand#19","Aftergraph/sentinel#7"]}],
   "external": [{"item":"mobbin","reason":"paid plan required"},{"item":"canva-brand-kit","reason":"no existing kit and connector does not expose kit creation"}],
   "next": ["brand-pr", "brand-release", "github-adoption-matrix", "public-surfaces-registry", "consumer-prs", "deployments", "live-verification"]

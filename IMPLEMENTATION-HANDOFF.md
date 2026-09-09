@@ -88,6 +88,22 @@ git diff --check   -> PASS
 7. Deploy through existing Cloudflare/VDS workflows and record exact SHAs.
 8. Verify live HTTP, metadata, favicon, responsive presentation, reduced motion, legacy copy, and GitHub settings.
 
+## Post-merge record (2026-09-09)
+
+- PR #20 MERGED via owner-authorized procedure: protection snapshot taken,
+  required approvals 1→0, merge queue merged as `8a1f878` (22:29Z),
+  protection restored byte-identical (verified). Audit trail on PR #20.
+- Release `v1.1.0` from `8a1f878`: npm tarball (97 files) SHA-256
+  `3d881b90d99a5af04a922fad0381c562d5b7dff766732b64350605db97bd6f8f`,
+  attached to the GitHub release. `npm run check` re-verified on main:
+  121 SVGs, 28 concepts, 13 states; tests 3/3 PASS.
+- Waves 2+4 delivered in `Aftergraph/.github` PR #21 (open): adoption matrix
+  (25 repos), `PUBLIC-SURFACES-REGISTRY.json`, `brand/PROVENANCE.md`.
+- WI domain verdict: production is `https://work-intelligence.aftergraph.org`
+  (HTTP 200); `wie.aftergraph.org` is NXDOMAIN-dead with stale refs queued
+  for Wave 7 (wi-frontend README/index.html, wi-backend CORS config).
+- Sentinel still BLOCKED / NEEDS-REVIEW (`brand#19`, `sentinel#7` OPEN).
+
 ## Stop conditions
 
 - Do not publish Sentinel product identity until its naming decision closes.
