@@ -22,6 +22,15 @@ jobs:
         with:
           node-version: 20
 
+      - name: Regenerate canonical families
+        run: npm run generate
+
+      - name: Reject generated drift
+        run: git diff --exit-code
+
+      - name: Run Brand OS semantic validator and tests
+        run: npm run validate && npm test
+
       - name: Validate JSON schemas
         run: |
           node -e "JSON.parse(require('fs').readFileSync('tokens.json', 'utf8'))"
