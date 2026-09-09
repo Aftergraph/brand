@@ -33,6 +33,24 @@ npm test           -> PASS; 3/3
 git diff --check   -> PASS
 ```
 
+## Wave 1 hardening (visual QA, headless Chromium + Inter/JetBrains Mono)
+
+- Rendered monogram/wordmark/lockup at 16/32/64/256 px: PASS, no defects.
+- Export binaries: all PNG dimensions match filenames; OG 1200x630; ICO valid.
+- FIXED `social/linkedin-cover.svg`: headline overlapped the hexagon even in
+  Inter metrics (text ended x=766.8 vs mark edge x=739.5). Reduced headline to
+  32 px and shifted the mark +60 px; re-measured clearance ~111 px.
+- FIXED `exports/social/og-aftergraph.png`: committed raster was baked with
+  fallback fonts so line 2 collided with the mark. Regenerated with sharp
+  after installing Inter/JetBrains Mono; re-screenshotted clean.
+- `social/youtube-banner.svg` text-over-mark is an intentional backing-panel
+  design, not a defect. `svg/aftergraph-social-banner.svg` headline only
+  crosses faint decorative orbit geometry; left as designed.
+- Added font prerequisite comment to `scripts/export-assets.mjs`: raster text
+  requires brand fonts present via fontconfig or fallback metrics reflow text.
+- Evidence: /tmp/brand-visual/review.png, review2.png, review3.png,
+  og-after.png, linkedin-after.png (local QA only, not committed).
+
 ## Authoritative observations for continuation
 
 - Organization inventory: 25 repositories.

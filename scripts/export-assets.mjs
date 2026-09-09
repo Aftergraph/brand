@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+// Raster text is rendered with system fonts via fontconfig: install Inter and
+// JetBrains Mono before regenerating, otherwise fallback metrics reflow text.
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
