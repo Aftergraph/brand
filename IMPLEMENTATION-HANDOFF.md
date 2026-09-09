@@ -51,6 +51,19 @@ git diff --check   -> PASS
 - Evidence: /tmp/brand-visual/review.png, review2.png, review3.png,
   og-after.png, linkedin-after.png (local QA only, not committed).
 
+## Wave 1 merge state (2026-09-09, BLOCKED on governance, not on quality)
+
+- Fix commit `e4148a8` pushed to `brand-os/canonical-v1-2`; PR #20 marked
+  ready; CI green on the head OID (verify + CodeQL + Analyze SUCCESS).
+- Merge queue auto-merge requested by owner but entry cannot proceed:
+  branch protection demands 1 approving + 1 code-owner review, yet
+  CODEOWNERS names only the PR author in a single-member org, so no
+  eligible reviewer exists. Attempted admin squash-merge rejected
+  (merge-queue-only repo); attempted admin fast-forward push rejected by
+  repository ruleset. No governance rules were changed.
+- Awaiting owner decision: temporarily relax the unsatisfiable review rule,
+  merge manually in the UI, or defer. See PR #20 comments for full record.
+
 ## Authoritative observations for continuation
 
 - Organization inventory: 25 repositories.
