@@ -1,116 +1,113 @@
 {
-  "mission": "aftergraph-brand-os-org-rollout",
-  "status": "complete-with-external-blockers",
-  "canonical_repo": "Aftergraph/brand",
-  "branch": "brand-os/canonical-v1-2",
-  "brand_version": "1.1.0",
-  "verified_zip_sha256": "0cb36d4ce5d7b6b3636cbe53559b8e40fc3fc54fb93c56f4b13d4262c292b1a7",
-  "organization_repo_count": 27,
-  "completed": [
-    "package-verification",
-    "live-repo-inventory",
-    "canonical-brand-foundation",
-    "semantic-symbol-system",
-    "architecture-primitives",
-    "evidence-visual-system",
-    "social-generator",
-    "favicon-export",
-    "brand-validator",
-    "migration-guide",
-    "wave1-visual-qa",
-    "wave1-linkedin-overlap-fix",
-    "wave1-og-png-regen",
-    "wave1-merge-8a1f878",
-    "brand-release-1.1.0",
-    "wave2-adoption-matrix-pr21",
-    "wave4-surface-registry",
-    "wave3-github-provenance",
-    "wave5-all-repos-adopted",
-    "wave6-live-captures",
-    "wave7-site-integration-merged",
-    "wave8-org-profile",
-    "wave9-external-retry",
-    "wave10-live-baseline",
-    "wave11-independent-audit",
-    "wave11-sentinel-banner-7affb92",
-    "wave11-wi-frontend-contract-159ad87",
-    "wave11-matrix-27repos-aecf4eb",
-    "wave12-wi-frontend-vds-deploy-live",
-    "wave12-skill-abi-adopted-658b311",
-    "wave12-skillport-initialized-5732701",
-    "wave12-matrix-2da1f76",
-    "wave12-backend-halted-cors-policy"
-  ],
-  "release": {
-    "tag": "v1.1.0",
-    "commit": "8a1f878004ec69303d0bfdc8f65f2e5e0045cb09",
-    "tarball_sha256": "3d881b90d99a5af04a922fad0381c562d5b7dff766732b64350605db97bd6f8f"
-  },
-  "blocked": [
-    {
-      "item": "sentinel-final-identity",
-      "reason": "P0 naming/trademark review",
-      "issues": [
-        "Aftergraph/brand#19",
-        "Aftergraph/sentinel#7"
-      ]
-    },
-    {
-      "item": "wi-backend-vds-redeploy",
-      "reason": "deploy script preflight demands single-origin CORS but live backend serves 3 origins (work-intelligence.aftergraph.org + work-intelligence.rendetalje.dk + docs.aftergraph.org Try-it); owner must bless allowlist or accept breakage before deploy proceeds"
-    }
-  ],
-  "external": [
-    {
-      "item": "mobbin",
-      "reason": "paid plan required"
-    },
-    {
-      "item": "canva-brand-kit",
-      "reason": "no existing kit and connector does not expose kit creation"
-    },
-    {
-      "item": "production-deploys",
-      "reason": "no Cloudflare token anywhere on PC (env, wrangler stores, docs, histories, .env, credential files all negative) so site/docs dispatch stays blocked; WI frontend VDS deploy DONE and live 2026-09-10 (159ad87, og tags verified); WI backend halted on CORS policy (see blocked); WI hostnames behind Cloudflare proxy, exact binding needs dashboard/token"
-    },
-    {
-      "item": "sentinel-final-identity",
-      "reason": "naming/trademark review open"
-    },
-    {
-      "item": "social-previews-marketplace",
-      "reason": "UI-only settings, no API"
-    },
-    {
-      "item": "wi-frontend-branch-protection",
-      "reason": "private repo on free tier: protection API returns 403; merges rely on PR review discipline until owner upgrades tier or changes visibility"
-    },
-    {
-      "item": "skill-abi-skillport-uninitialized",
-      "reason": "both created 2026-09-09 empty (no branches/commits); adopt on owner initialization, matrix EXEMPT rows recorded"
-    }
-  ],
-  "next": [
-    "owner: provide Cloudflare API token + account ID (not found on PC), then re-run site/docs dispatch",
-    "owner: decide WI backend CORS allowlist (keep 3 origins and relax deploy script, or narrow to 1 and accept rendetalje/docs Try-it breakage), then redeploy 6d6fef9",
-    "owner: apply social preview images in UI (no API exists)",
-    "resolve brand#19/sentinel#7 (no decision record found on PC)",
-    "owner: upgrade GitHub tier or change wi-frontend visibility to enable branch protection"
-  ],
-  "wave10_baseline": {
-    "aftergraph.org": {
-      "http": 200,
-      "bytes": 31717,
-      "serves": "pre-adoption (deploy ed92365 pending secrets)"
-    },
-    "docs.aftergraph.org": {
-      "http": 200,
-      "bytes": 32459,
-      "serves": "pre-adoption"
-    },
-    "work-intelligence.aftergraph.org": {
-      "http": 200,
-      "note": "live deploy predates Wave-7 source fix; source on main verified clean (zero wie-host refs, CORS defaults to verified domain)"
-    }
+ "mission": "aftergraph-brand-os-org-rollout",
+ "status": "complete-with-naming-blocker",
+ "canonical_repo": "Aftergraph/brand",
+ "branch": "brand-os/canonical-v1-2",
+ "brand_version": "1.1.0",
+ "verified_zip_sha256": "0cb36d4ce5d7b6b3636cbe53559b8e40fc3fc54fb93c56f4b13d4262c292b1a7",
+ "organization_repo_count": 27,
+ "completed": [
+  "package-verification",
+  "live-repo-inventory",
+  "canonical-brand-foundation",
+  "semantic-symbol-system",
+  "architecture-primitives",
+  "evidence-visual-system",
+  "social-generator",
+  "favicon-export",
+  "brand-validator",
+  "migration-guide",
+  "wave1-visual-qa",
+  "wave1-linkedin-overlap-fix",
+  "wave1-og-png-regen",
+  "wave1-merge-8a1f878",
+  "brand-release-1.1.0",
+  "wave2-adoption-matrix-pr21",
+  "wave4-surface-registry",
+  "wave3-github-provenance",
+  "wave5-all-repos-adopted",
+  "wave6-live-captures",
+  "wave7-site-integration-merged",
+  "wave8-org-profile",
+  "wave9-external-retry",
+  "wave10-live-baseline",
+  "wave11-independent-audit",
+  "wave11-sentinel-banner-7affb92",
+  "wave11-wi-frontend-contract-159ad87",
+  "wave11-matrix-27repos-aecf4eb",
+  "wave12-wi-frontend-vds-deploy-live",
+  "wave12-skill-abi-adopted-658b311",
+  "wave12-skillport-initialized-5732701",
+  "wave12-matrix-2da1f76",
+  "wave12-backend-halted-cors-policy",
+  "wave12-wi-backend-vds-redeploy-single-origin-6d6fef9"
+ ],
+ "release": {
+  "tag": "v1.1.0",
+  "commit": "8a1f878004ec69303d0bfdc8f65f2e5e0045cb09",
+  "tarball_sha256": "3d881b90d99a5af04a922fad0381c562d5b7dff766732b64350605db97bd6f8f"
+ },
+ "blocked": [
+  {
+   "item": "sentinel-final-identity",
+   "reason": "P0 naming/trademark review",
+   "issues": [
+    "Aftergraph/brand#19",
+    "Aftergraph/sentinel#7"
+   ]
   }
+ ],
+ "external": [
+  {
+   "item": "mobbin",
+   "reason": "paid plan required"
+  },
+  {
+   "item": "canva-brand-kit",
+   "reason": "no existing kit and connector does not expose kit creation"
+  },
+  {
+   "item": "production-deploys",
+   "reason": "no Cloudflare token anywhere on PC (env, wrangler stores, docs, histories, .env, credential files all negative) so site/docs dispatch stays blocked; WI frontend VDS deploy DONE and live 2026-09-10 (159ad87, og tags verified); WI backend halted on CORS policy (see blocked); WI hostnames behind Cloudflare proxy, exact binding needs dashboard/token"
+  },
+  {
+   "item": "sentinel-final-identity",
+   "reason": "naming/trademark review open"
+  },
+  {
+   "item": "social-previews-marketplace",
+   "reason": "UI-only settings, no API"
+  },
+  {
+   "item": "wi-frontend-branch-protection",
+   "reason": "private repo on free tier: protection API returns 403; merges rely on PR review discipline until owner upgrades tier or changes visibility"
+  },
+  {
+   "item": "skill-abi-skillport-uninitialized",
+   "reason": "both created 2026-09-09 empty (no branches/commits); adopt on owner initialization, matrix EXEMPT rows recorded"
+  }
+ ],
+ "next": [
+  "owner: provide Cloudflare API token + account ID (not found on PC), then re-run site/docs dispatch",
+  "owner: decide WI backend CORS allowlist (keep 3 origins and relax deploy script, or narrow to 1 and accept rendetalje/docs Try-it breakage), then redeploy 6d6fef9",
+  "owner: apply social preview images in UI (no API exists)",
+  "resolve brand#19/sentinel#7 (no decision record found on PC)",
+  "owner: upgrade GitHub tier or change wi-frontend visibility to enable branch protection"
+ ],
+ "wave10_baseline": {
+  "aftergraph.org": {
+   "http": 200,
+   "bytes": 31717,
+   "serves": "pre-adoption (deploy ed92365 pending secrets)"
+  },
+  "docs.aftergraph.org": {
+   "http": 200,
+   "bytes": 32459,
+   "serves": "pre-adoption"
+  },
+  "work-intelligence.aftergraph.org": {
+   "http": 200,
+   "note": "live deploy predates Wave-7 source fix; source on main verified clean (zero wie-host refs, CORS defaults to verified domain)"
+  }
+ }
 }
