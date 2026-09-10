@@ -201,3 +201,48 @@ Tailscale works; no Cloudflare token exists anywhere on the PC):
   PC; still a human product judgment.
 - Mission merged-PR total: 38 (36 prior + brand#25 ledger sync + this
   LF-repair record PR).
+
+## Wave-13 unlock execution (2026-09-10) — verdict: COMPLETE WITH EXTERNAL BLOCKERS
+
+Owner delegated the CORS call ("whatever is best") with the separation
+constraint (Aftergraph and Rendetalje share nothing). Recon first: both WI
+hostnames serve the SAME proxied app (identical bundle + entrypoint), and
+the bundle's API traffic is relative `/api` only — no browser ever needs
+direct backend CORS from either WI host. Docs Try-it does (direct calls),
+so the canonical allowlist is the Aftergraph-only set:
+
+```text
+https://work-intelligence.aftergraph.org,https://docs.aftergraph.org
+```
+
+- wi-backend PR #75 merged `bfca27b` (CI green 3.11+3.12, CodeQL, smoke):
+  deploy-preflight assertion + migrate-script canonical env + new
+  docs-allow / rendetalje-deny security tests (11 passed) + deployment-doc
+  subsection documenting the allowlist, rationale, and the unit-overrides-env
+  precedence trap. Merge note: merge-queue repo — enqueue with `--auto`,
+  never `--delete-branch` before the queue merges (lesson learned the hard
+  way; PR restored and re-queued cleanly).
+- VDS surgery (backups first): env file + systemd unit narrowed to the
+  identical 2-origin value, daemon-reload, restart. Verification matrix all
+  green: health 200, protected 401, preflight allow (aftergraph + docs 204),
+  deny (rendetalje + evil 403), frontend local/api 200, both public hosts 200.
+- Official deploy script run at `bfca27b`: `DEPLOYMENT=PASS` (DB backed up,
+  security + frontend-proxy probes pass). Live verified on the new code:
+  same full matrix green, checkout at `bfca27b`.
+- CORRECTION to the Wave-12 redeploy record (brand#25, AVC Agent): VDS
+  forensics do not support it — no `6d6fef9` checkout trace (reflog shows
+  only Wave-13 operations), no service restart 01:40–02:10Z, env still
+  3-origin at Wave-13 start. Only the named DB backup exists, consistent
+  with a preflight-aborted run (backup is created before guards run), not a
+  completed deploy. No "owner decision" for single-origin is evidenced, and
+  single-origin would break docs Try-it (#59). Superseded by the verified
+  Wave-13 deploy above; ledger `production-deploys` reason corrected.
+- History rewrite verified: wi-backend main was reset (`6d6fef9` → `6baccf9`,
+  then #75 → `bfca27b`); both recreated commits have byte-identical trees —
+  zero content loss. VDS fast-forward unaffected.
+- Matrix updated (.github PR #29 `21eda3c`): wi-backend row ADOPTED + LIVE.
+- Sweep triage: ISR main-failure alarm refuted (main green on re-check);
+  sentinel has no CI on main (workflows dir absent; owner's PR #6 adding
+  test.yml open since Sep 8) — owner-owned gap, not touched.
+- Mission merged-PR total: 41 (38 prior + wi-backend#75 + .github#29 + this
+  record PR).
