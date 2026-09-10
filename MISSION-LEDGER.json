@@ -34,7 +34,12 @@
     "wave11-independent-audit",
     "wave11-sentinel-banner-7affb92",
     "wave11-wi-frontend-contract-159ad87",
-    "wave11-matrix-27repos-aecf4eb"
+    "wave11-matrix-27repos-aecf4eb",
+    "wave12-wi-frontend-vds-deploy-live",
+    "wave12-skill-abi-adopted-658b311",
+    "wave12-skillport-initialized-5732701",
+    "wave12-matrix-2da1f76",
+    "wave12-backend-halted-cors-policy"
   ],
   "release": {
     "tag": "v1.1.0",
@@ -49,6 +54,10 @@
         "Aftergraph/brand#19",
         "Aftergraph/sentinel#7"
       ]
+    },
+    {
+      "item": "wi-backend-vds-redeploy",
+      "reason": "deploy script preflight demands single-origin CORS but live backend serves 3 origins (work-intelligence.aftergraph.org + work-intelligence.rendetalje.dk + docs.aftergraph.org Try-it); owner must bless allowlist or accept breakage before deploy proceeds"
     }
   ],
   "external": [
@@ -62,7 +71,7 @@
     },
     {
       "item": "production-deploys",
-      "reason": "no Cloudflare secrets in aftergraph.org/docs; WI frontend binding unknown; WI backend VDS redeploy manual"
+      "reason": "no Cloudflare token anywhere on PC (env, wrangler stores, docs, histories, .env, credential files all negative) so site/docs dispatch stays blocked; WI frontend VDS deploy DONE and live 2026-09-10 (159ad87, og tags verified); WI backend halted on CORS policy (see blocked); WI hostnames behind Cloudflare proxy, exact binding needs dashboard/token"
     },
     {
       "item": "sentinel-final-identity",
@@ -82,13 +91,11 @@
     }
   ],
   "next": [
-    "owner: add CLOUDFLARE_API_TOKEN+ACCOUNT_ID to aftergraph.org+docs, re-run dispatch",
-    "owner: confirm WI frontend Pages/Worker binding + redeploy",
-    "owner: VDS redeploy wi-backend 6d6fef9",
-    "owner: apply social preview images in UI",
-    "resolve brand#19/sentinel#7",
-    "owner: upgrade GitHub tier or change wi-frontend visibility to enable branch protection",
-    "owner: initialize skill-abi + skillport, then request brand adoption"
+    "owner: provide Cloudflare API token + account ID (not found on PC), then re-run site/docs dispatch",
+    "owner: decide WI backend CORS allowlist (keep 3 origins and relax deploy script, or narrow to 1 and accept rendetalje/docs Try-it breakage), then redeploy 6d6fef9",
+    "owner: apply social preview images in UI (no API exists)",
+    "resolve brand#19/sentinel#7 (no decision record found on PC)",
+    "owner: upgrade GitHub tier or change wi-frontend visibility to enable branch protection"
   ],
   "wave10_baseline": {
     "aftergraph.org": {

@@ -165,3 +165,38 @@ Two reviewer subagents + direct verification swept the whole mission:
 - Matrix updated (.github PR #24 merged `aecf4eb`): 27 repos, #23/#9/#19 refs.
 - Mission merged-PR total: 32 (29 prior + sentinel#9 + wi-frontend#19 +
   .github#24), + this record PR.
+
+## Wave-12 owner-item execution (2026-09-10) — verdict: COMPLETE WITH EXTERNAL BLOCKERS
+
+Worked the owner-only list from the PC/VDS directly (VDS root SSH over
+Tailscale works; no Cloudflare token exists anywhere on the PC):
+
+- DONE — WI frontend VDS redeploy is LIVE: built `wi-frontend@main`
+  `159ad87` clean (`npm test` 0 fail, typecheck clean, vite build), bundle
+  verified (verified-domain og tags, zero dead-host refs, release.json
+  provenance exact), shipped to `/opt/wi-frontend/dist` with timestamped
+  backup, service restarted. Local :3001 200, API proxy 200, backend 200,
+  both public hosts 200; live HTML og:url/og:image now point at
+  `work-intelligence.aftergraph.org`. Deliberately did NOT touch
+  `server.mjs` (VDS-local, not in git), the systemd unit, env, or drop-ins.
+- DONE — new repos: `skill-abi` initialized by owner mid-wave (SABI
+  v0.1.0-alpha.1) and adopted via PR #1 (`658b311`, CI green, draft with no
+  standard claim); `skillport` initialized by mission scaffold (README,
+  Apache-2.0 copied org-standard, v2 research contract `5732701`). Matrix
+  updated (.github PR #25 `2da1f76`).
+- HALTED — WI backend VDS redeploy: official `scripts/deploy-production-vds.sh`
+  preflight FAILS closed on purpose — it demands
+  `AFTERGRAPH_CORS_ORIGINS=https://work-intelligence.aftergraph.org` exactly,
+  but live serves 3 origins (aftergraph.org WI + rendetalje.dk WI, both HTTP
+  200 live, + docs Try-it from #59). Narrowing breaks live hosts; bypassing
+  the guard is refused. Owner decision required (see ledger `blocked`).
+- BLOCKED — site/docs Cloudflare dispatch: exhaustive PC hunt negative (env,
+  both wrangler OAuth stores, CLOUDFLARE_* content search, handoff docs,
+  bash+PS histories, real .env files, .npmrc/.git-credentials absent, git
+  configs). The token was never on this PC. Owner must paste it.
+- BLOCKED — social previews: GitHub UI upload only, no API; no logged-in
+  browser session available to drive.
+- BLOCKED — naming call: no decision record for brand#19/sentinel#7 found on
+  PC; still a human product judgment.
+- Mission merged-PR total: 36 (33 prior + skill-abi#1 + .github#25 + this
+  record PR).
