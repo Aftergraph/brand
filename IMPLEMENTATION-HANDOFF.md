@@ -127,3 +127,41 @@ All actionable work is merged. Remaining items need owner authority or third par
   work-intelligence 200; real captures + capture.json committed per surface.
 - Owner actions: Cloudflare secrets -> re-dispatch site+docs; WI binding +
   redeploys; social preview UI settings; brand#19/sentinel#7 decision.
+
+## Wave-11 independent audit (2026-09-10) — verdict: COMPLETE WITH EXTERNAL BLOCKERS
+
+Two reviewer subagents + direct verification swept the whole mission:
+
+- Release integrity (dual-route): tag `v1.1.0` -> `8a1f878004ec69303d0bfdc8f65f2e5e0045cb09`;
+  tarball `aftergraph-brand-1.1.0.tgz` SHA-256 `3d881b90…bd6f8f` MATCH on
+  re-download. All 29 claimed mission PRs re-verified MERGED with head
+  branches deleted; zero leftover `brand-os/*` branches org-wide.
+- Mysteries resolved: brand#21 = post-merge handoff record; .github#23 =
+  matrix closeout; site#66 / docs#22 / wi-frontend#18 = Wave-6 evidence
+  captures. All merged.
+- Inventory drift: org grew 25 -> 27 repos. `skill-abi` (public) +
+  `skillport` (private), created 2026-09-09, are EMPTY (no branches) ->
+  recorded EXEMPT-uninitialized in matrix (adopt on initialization).
+- FIXED Sentinel front door: README presented the product with no pointer to
+  the open naming review. Added working-title banner linking brand#19,
+  sentinel#7, `docs/brand-identity.md`, `brand/PROVENANCE.md`
+  (sentinel PR #9 merged `7affb92`; protection restored byte-identical).
+- FIXED wi-frontend machine-readable pin: added `brand-assets.json` schema v2
+  (product class, `endorsed-product` identity, pinned 1.1.0/8a1f878), matching
+  `public/BRAND-PROVENANCE.md` (wi-frontend PR #19 merged `159ad87`;
+  verify + works-execution checks green).
+- Verified clean, no action: WI dead-host refs absent on main in both WI repos;
+  wi-backend CORS defaults to `https://work-intelligence.aftergraph.org`
+  (secure mode rejects `*`); docs `og-docs.png` committed at the exact path
+  `og:image` references (staleness is live-deploy-only); site sync pins
+  `BRAND_VERSION='1.1.0'` + tarball SHA; site deploy failure is the known
+  missing-secrets block (fails at `Deploy exact HEAD to Cloudflare Workers`);
+  `.github/brand/manifest.json` v1.0.0 + ABDE altName retained deliberately
+  per checkpoint rule (fenced by `brand/PROVENANCE.md`, parse-guarded by
+  `brand-assets.yml`) — accepted residual, not a drift.
+- New residuals for owner: wi-frontend branch protection impossible (private
+  free-tier repo, API 403) — PR review discipline until tier/visibility
+  change; consider requiring CI checks in protection where currently zero.
+- Matrix updated (.github PR #24 merged `aecf4eb`): 27 repos, #23/#9/#19 refs.
+- Mission merged-PR total: 32 (29 prior + sentinel#9 + wi-frontend#19 +
+  .github#24), + this record PR.
