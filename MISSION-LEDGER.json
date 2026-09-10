@@ -5,7 +5,7 @@
   "branch": "brand-os/canonical-v1-2",
   "brand_version": "1.1.0",
   "verified_zip_sha256": "0cb36d4ce5d7b6b3636cbe53559b8e40fc3fc54fb93c56f4b13d4262c292b1a7",
-  "organization_repo_count": 25,
+  "organization_repo_count": 27,
   "completed": [
     "package-verification",
     "live-repo-inventory",
@@ -30,7 +30,11 @@
     "wave7-site-integration-merged",
     "wave8-org-profile",
     "wave9-external-retry",
-    "wave10-live-baseline"
+    "wave10-live-baseline",
+    "wave11-independent-audit",
+    "wave11-sentinel-banner-7affb92",
+    "wave11-wi-frontend-contract-159ad87",
+    "wave11-matrix-27repos-aecf4eb"
   ],
   "release": {
     "tag": "v1.1.0",
@@ -67,6 +71,14 @@
     {
       "item": "social-previews-marketplace",
       "reason": "UI-only settings, no API"
+    },
+    {
+      "item": "wi-frontend-branch-protection",
+      "reason": "private repo on free tier: protection API returns 403; merges rely on PR review discipline until owner upgrades tier or changes visibility"
+    },
+    {
+      "item": "skill-abi-skillport-uninitialized",
+      "reason": "both created 2026-09-09 empty (no branches/commits); adopt on owner initialization, matrix EXEMPT rows recorded"
     }
   ],
   "next": [
@@ -74,7 +86,9 @@
     "owner: confirm WI frontend Pages/Worker binding + redeploy",
     "owner: VDS redeploy wi-backend 6d6fef9",
     "owner: apply social preview images in UI",
-    "resolve brand#19/sentinel#7"
+    "resolve brand#19/sentinel#7",
+    "owner: upgrade GitHub tier or change wi-frontend visibility to enable branch protection",
+    "owner: initialize skill-abi + skillport, then request brand adoption"
   ],
   "wave10_baseline": {
     "aftergraph.org": {
@@ -89,7 +103,7 @@
     },
     "work-intelligence.aftergraph.org": {
       "http": 200,
-      "note": "og:image points at dead wie host until WI frontend redeploys"
+      "note": "live deploy predates Wave-7 source fix; source on main verified clean (zero wie-host refs, CORS defaults to verified domain)"
     }
   }
 }
