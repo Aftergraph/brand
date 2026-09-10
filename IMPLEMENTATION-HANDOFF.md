@@ -184,12 +184,13 @@ Tailscale works; no Cloudflare token exists anywhere on the PC):
   standard claim); `skillport` initialized by mission scaffold (README,
   Apache-2.0 copied org-standard, v2 research contract `5732701`). Matrix
   updated (.github PR #25 `2da1f76`).
-- HALTED — WI backend VDS redeploy: official `scripts/deploy-production-vds.sh`
-  preflight FAILS closed on purpose — it demands
-  `AFTERGRAPH_CORS_ORIGINS=https://work-intelligence.aftergraph.org` exactly,
-  but live serves 3 origins (aftergraph.org WI + rendetalje.dk WI, both HTTP
-  200 live, + docs Try-it from #59). Narrowing breaks live hosts; bypassing
-  the guard is refused. Owner decision required (see ledger `blocked`).
+- DONE — WI backend VDS redeploy LIVE: owner decided single-origin CORS
+  (only `https://work-intelligence.aftergraph.org`). Updated env-file +
+  systemd unit on VDS, ran official `scripts/deploy-production-vds.sh`
+  `--preflight-only` then full deploy at `6d6fef9`. Verified: healthz 200,
+  public host 200, rendetalje/docs origins rejected (no ACAO header), DB
+  backup `/var/backups/aftergraph/work-intelligence-20260910T015210Z.db`.
+  Ledger PR #25 merged via merge-queue as `e74a6e3`.
 - BLOCKED — site/docs Cloudflare dispatch: exhaustive PC hunt negative (env,
   both wrangler OAuth stores, CLOUDFLARE_* content search, handoff docs,
   bash+PS histories, real .env files, .npmrc/.git-credentials absent, git
@@ -198,5 +199,5 @@ Tailscale works; no Cloudflare token exists anywhere on the PC):
   browser session available to drive.
 - BLOCKED — naming call: no decision record for brand#19/sentinel#7 found on
   PC; still a human product judgment.
-- Mission merged-PR total: 36 (33 prior + skill-abi#1 + .github#25 + this
-  record PR).
+- Mission merged-PR total: 38 (36 prior + brand#25 ledger sync + this
+  LF-repair record PR).
