@@ -1,14 +1,95 @@
 {
   "mission": "aftergraph-brand-os-org-rollout",
-  "status": "in-progress-checkpoint",
+  "status": "complete-with-external-blockers",
   "canonical_repo": "Aftergraph/brand",
   "branch": "brand-os/canonical-v1-2",
   "brand_version": "1.1.0",
   "verified_zip_sha256": "0cb36d4ce5d7b6b3636cbe53559b8e40fc3fc54fb93c56f4b13d4262c292b1a7",
   "organization_repo_count": 25,
-  "completed": ["package-verification", "live-repo-inventory", "canonical-brand-foundation", "semantic-symbol-system", "architecture-primitives", "evidence-visual-system", "social-generator", "favicon-export", "brand-validator", "migration-guide", "wave1-visual-qa", "wave1-linkedin-overlap-fix", "wave1-og-png-regen", "wave1-merge-8a1f878", "brand-release-1.1.0", "wave2-adoption-matrix-pr21", "wave4-surface-registry", "wave3-github-provenance"],
-  "release": {"tag": "v1.1.0", "commit": "8a1f878004ec69303d0bfdc8f65f2e5e0045cb09", "tarball_sha256": "3d881b90d99a5af04a922fad0381c562d5b7dff766732b64350605db97bd6f8f"},
-  "blocked": [{"item":"sentinel-final-identity","reason":"P0 naming/trademark review","issues":["Aftergraph/brand#19","Aftergraph/sentinel#7"]}],
-  "external": [{"item":"mobbin","reason":"paid plan required"},{"item":"canva-brand-kit","reason":"no existing kit and connector does not expose kit creation"}],
-  "next": ["brand-pr", "brand-release", "github-adoption-matrix", "public-surfaces-registry", "consumer-prs", "deployments", "live-verification"]
+  "completed": [
+    "package-verification",
+    "live-repo-inventory",
+    "canonical-brand-foundation",
+    "semantic-symbol-system",
+    "architecture-primitives",
+    "evidence-visual-system",
+    "social-generator",
+    "favicon-export",
+    "brand-validator",
+    "migration-guide",
+    "wave1-visual-qa",
+    "wave1-linkedin-overlap-fix",
+    "wave1-og-png-regen",
+    "wave1-merge-8a1f878",
+    "brand-release-1.1.0",
+    "wave2-adoption-matrix-pr21",
+    "wave4-surface-registry",
+    "wave3-github-provenance",
+    "wave5-all-repos-adopted",
+    "wave6-live-captures",
+    "wave7-site-integration-merged",
+    "wave8-org-profile",
+    "wave9-external-retry",
+    "wave10-live-baseline"
+  ],
+  "release": {
+    "tag": "v1.1.0",
+    "commit": "8a1f878004ec69303d0bfdc8f65f2e5e0045cb09",
+    "tarball_sha256": "3d881b90d99a5af04a922fad0381c562d5b7dff766732b64350605db97bd6f8f"
+  },
+  "blocked": [
+    {
+      "item": "sentinel-final-identity",
+      "reason": "P0 naming/trademark review",
+      "issues": [
+        "Aftergraph/brand#19",
+        "Aftergraph/sentinel#7"
+      ]
+    }
+  ],
+  "external": [
+    {
+      "item": "mobbin",
+      "reason": "paid plan required"
+    },
+    {
+      "item": "canva-brand-kit",
+      "reason": "no existing kit and connector does not expose kit creation"
+    },
+    {
+      "item": "production-deploys",
+      "reason": "no Cloudflare secrets in aftergraph.org/docs; WI frontend binding unknown; WI backend VDS redeploy manual"
+    },
+    {
+      "item": "sentinel-final-identity",
+      "reason": "naming/trademark review open"
+    },
+    {
+      "item": "social-previews-marketplace",
+      "reason": "UI-only settings, no API"
+    }
+  ],
+  "next": [
+    "owner: add CLOUDFLARE_API_TOKEN+ACCOUNT_ID to aftergraph.org+docs, re-run dispatch",
+    "owner: confirm WI frontend Pages/Worker binding + redeploy",
+    "owner: VDS redeploy wi-backend 6d6fef9",
+    "owner: apply social preview images in UI",
+    "resolve brand#19/sentinel#7"
+  ],
+  "wave10_baseline": {
+    "aftergraph.org": {
+      "http": 200,
+      "bytes": 31717,
+      "serves": "pre-adoption (deploy ed92365 pending secrets)"
+    },
+    "docs.aftergraph.org": {
+      "http": 200,
+      "bytes": 32459,
+      "serves": "pre-adoption"
+    },
+    "work-intelligence.aftergraph.org": {
+      "http": 200,
+      "note": "og:image points at dead wie host until WI frontend redeploys"
+    }
+  }
 }

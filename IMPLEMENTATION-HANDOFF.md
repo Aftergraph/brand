@@ -112,3 +112,18 @@ git diff --check   -> PASS
 - Do not treat committed social-preview files as applied GitHub repository settings.
 - Do not declare the overall mission complete from this checkpoint.
 
+
+## Mission closeout (2026-09-10) — verdict: COMPLETE WITH EXTERNAL BLOCKERS
+
+All actionable work is merged. Remaining items need owner authority or third parties:
+
+- Merged this mission: brand#20 (8a1f878) + release v1.1.0 + #21; .github #21/#22/#23;
+  aftergraph.org #65 + evidence #66; docs #21 + evidence #22; wi-frontend #17/#18;
+  wi-backend #68; studio #49; sentinel #8; trust-gateway #85; works-execution #74;
+  runtime #114; model-registry #9; context-continuity #7; aie #68; ISR #69;
+  governance #138; afm #6; llm-rd #7; cron-fabric #29; AVC #1019; continuum #16;
+  skills-vault #65; veranza #4.
+- Live baseline verified (pre-adoption bytes): aftergraph.org 200, docs 200,
+  work-intelligence 200; real captures + capture.json committed per surface.
+- Owner actions: Cloudflare secrets -> re-dispatch site+docs; WI binding +
+  redeploys; social preview UI settings; brand#19/sentinel#7 decision.
