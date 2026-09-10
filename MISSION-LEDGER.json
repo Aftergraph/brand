@@ -40,7 +40,12 @@
   "wave12-skillport-initialized-5732701",
   "wave12-matrix-2da1f76",
   "wave12-backend-halted-cors-policy",
-  "wave12-wi-backend-vds-redeploy-single-origin-6d6fef9"
+  "wave12-wi-backend-vds-redeploy-single-origin-6d6fef9",
+  "wave13-cors-separation-75-bfca27b",
+  "wave13-wi-backend-vds-deploy-live-bfca27b",
+  "wave13-corrects-wave12-redeploy-record",
+  "wave13-history-rewrite-verified-zero-loss",
+  "wave13-matrix-21eda3c"
  ],
  "release": {
   "tag": "v1.1.0",
@@ -68,7 +73,7 @@
   },
   {
    "item": "production-deploys",
-   "reason": "no Cloudflare token anywhere on PC (env, wrangler stores, docs, histories, .env, credential files all negative) so site/docs dispatch stays blocked; WI frontend VDS deploy DONE and live 2026-09-10 (159ad87, og tags verified); WI backend redeploy DONE 2026-09-10 (6d6fef9, single-origin CORS per owner decision); WI hostnames behind Cloudflare proxy, exact binding needs dashboard/token"
+   "reason": "no Cloudflare token anywhere on PC so site/docs dispatch stays blocked; WI frontend VDS deploy DONE and live 2026-09-10 (159ad87, og tags verified); WI backend deploy DONE and live 2026-09-10 (bfca27b, Aftergraph-only CORS allowlist, verified end-to-end). CORRECTION: the Wave-12 record claiming a single-origin 6d6fef9 redeploy is unsupported by VDS forensics (no checkout trace, no restart, env still 3-origin at Wave-13 start; only a leftover DB backup exists) — superseded by the verified Wave-13 deploy. WI hostnames behind Cloudflare proxy, exact binding needs dashboard/token"
   },
   {
    "item": "sentinel-final-identity",
@@ -83,13 +88,12 @@
    "reason": "private repo on free tier: protection API returns 403; merges rely on PR review discipline until owner upgrades tier or changes visibility"
   },
   {
-   "item": "skill-abi-skillport-uninitialized",
-   "reason": "both created 2026-09-09 empty (no branches/commits); adopt on owner initialization, matrix EXEMPT rows recorded"
+   "item": "skill-abi-skillport-adopted",
+   "reason": "RESOLVED Wave-12: skill-abi adopted via PR #1, skillport initialized by mission scaffold; matrix rows ADOPTED"
   }
  ],
  "next": [
   "owner: provide Cloudflare API token + account ID (not found on PC), then re-run site/docs dispatch",
-  "owner: decide WI backend CORS allowlist (keep 3 origins and relax deploy script, or narrow to 1 and accept rendetalje/docs Try-it breakage), then redeploy 6d6fef9",
   "owner: apply social preview images in UI (no API exists)",
   "resolve brand#19/sentinel#7 (no decision record found on PC)",
   "owner: upgrade GitHub tier or change wi-frontend visibility to enable branch protection"
