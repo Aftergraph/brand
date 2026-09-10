@@ -68,7 +68,7 @@
   },
   {
    "item": "production-deploys",
-   "reason": "no Cloudflare token anywhere on PC (env, wrangler stores, docs, histories, .env, credential files all negative) so site/docs dispatch stays blocked; WI frontend VDS deploy DONE and live 2026-09-10 (159ad87, og tags verified); WI backend halted on CORS policy (see blocked); WI hostnames behind Cloudflare proxy, exact binding needs dashboard/token"
+   "reason": "no Cloudflare token anywhere on PC (env, wrangler stores, docs, histories, .env, credential files all negative) so site/docs dispatch stays blocked; WI frontend VDS deploy DONE and live 2026-09-10 (159ad87, og tags verified); WI backend redeploy DONE 2026-09-10 (6d6fef9, single-origin CORS per owner decision); WI hostnames behind Cloudflare proxy, exact binding needs dashboard/token"
   },
   {
    "item": "sentinel-final-identity",
