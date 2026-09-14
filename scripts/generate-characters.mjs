@@ -5,17 +5,30 @@ import path from 'node:path';
 const root = path.resolve(import.meta.dirname, '..');
 const roles = JSON.parse(fs.readFileSync(path.join(root, 'characters', 'roles.json'), 'utf8')).roles;
 const states = JSON.parse(fs.readFileSync(path.join(root, 'characters', 'states.json'), 'utf8')).states;
+const brandTokens = JSON.parse(fs.readFileSync(path.join(root, 'tokens.json'), 'utf8'));
 
 const C = Object.freeze({
-  black: '#080C14', midnight: '#0E1630', white: '#F5F7FA', slate: '#8993A4',
-  cyan: '#42C7E8', teal: '#24C4AD', violet: '#7759E8', amber: '#F0A64A',
-  blue: '#4C8BD8', danger: '#FF6B7A',
+  black: brandTokens.colors.institution_black,
+  midnight: brandTokens.colors.graph_midnight,
+  white: brandTokens.colors.evidence_white,
+  slate: brandTokens.colors.slate,
+  cyan: brandTokens.colors.control_cyan,
+  teal: brandTokens.colors.evidence_teal,
+  violet: brandTokens.colors.authority_violet,
+  amber: brandTokens.colors.decision_amber,
+  blue: brandTokens.colors.system_blue,
+  danger: brandTokens.semantic.dark.danger,
 });
 const tokenColor = Object.freeze({
   evidence_white:C.white, control_cyan:C.cyan, evidence_teal:C.teal,
   authority_violet:C.violet, decision_amber:C.amber, system_blue:C.blue, slate:C.slate,
   'semantic.dark.danger':C.danger,
 });
+const resolveToken = (token) => {
+  const color = tokenColor[token];
+  if (!color) throw new Error(`Unknown character color token: ${token}`);
+  return color;
+};
 
 const ensure = (p) => fs.mkdirSync(p, { recursive:true });
 const write = (rel, content) => { const p=path.join(root, rel); ensure(path.dirname(p)); fs.writeFileSync(p, content); };
@@ -55,12 +68,12 @@ function roleProp(id, accent) {
 }
 
 function roleSvg(role) {
-  const accent = tokenColor[role.accentToken];
+  const accent = resolveToken(role.accentToken);
   const id=titleId(`role-${role.id}`);
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="${id}"><title id="${id}">${esc(role.displayName)} — Aftergraph character archetype</title>${shell({accent})}${roleProp(role.id,accent)}</svg>\n`;
 }
 function avatarSvg(role) {
-  const accent=tokenColor[role.accentToken]; const id=titleId(`avatar-${role.id}`);
+  const accent=resolveToken(role.accentToken); const id=titleId(`avatar-${role.id}`);
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="${id}"><title id="${id}">${esc(role.displayName)} — Aftergraph avatar</title><circle cx="128" cy="132" r="78" fill="${C.midnight}" stroke="${C.white}" stroke-width="7"/><circle cx="128" cy="132" r="60" fill="${C.black}" stroke="${accent}" stroke-width="4"/><rect x="103" y="110" width="10" height="43" rx="5" fill="${accent}"/><rect x="143" y="110" width="10" height="43" rx="5" fill="${accent}"/><path d="M54 72 Q128 24 202 72" fill="none" stroke="${accent}" stroke-width="5"/><circle cx="54" cy="72" r="11" fill="${accent}"/><circle cx="128" cy="36" r="13" fill="${accent}"/><circle cx="202" cy="72" r="11" fill="${accent}"/></svg>\n`;
 }
 
@@ -80,7 +93,7 @@ function stateProp(id, accent) {
   }
 }
 function stateSvg(state) {
-  const accent=tokenColor[state.signalToken] || C.cyan; const id=titleId(`state-${state.id}`);
+  const accent=resolveToken(state.signalToken); const id=titleId(`state-${state.id}`);
   const pose = ['executing'].includes(state.id)?'active':['inspecting','verifying'].includes(state.id)?'inspect':'neutral';
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="${id}"><title id="${id}">Aftergraph actor state — ${esc(state.id)}</title>${shell({accent:C.white,pose})}${stateProp(state.id,accent)}</svg>\n`;
 }
@@ -99,6 +112,7 @@ for (const role of roles) {
 }
 for (const state of states) symbols.push(toSymbol(stateSvg(state), `ag-state-${state.id}`));
 
-const sprite = `<svg xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\">\n${symbols.join('\n')}\n</svg>\n`;
+const compactSymbols = symbols.map((symbol) => symbol.replace(/>\s+</g, '><'));
+const sprite = `<svg xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\">${compactSymbols.join('')}</svg>\n`;
 write('characters/character-sprite.svg', sprite);
 console.log(`Generated Aftergraph character sprite with ${symbols.length} symbols.`);

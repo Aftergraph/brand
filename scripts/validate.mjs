@@ -26,9 +26,16 @@ const expectedRoles = ['entity','guide','builder','verifier','observer','researc
 const actualRoles = (characterRoles.roles || []).map(x => x.id);
 if (JSON.stringify(actualRoles) !== JSON.stringify(expectedRoles)) errors.push('character roles must match canonical archetype set');
 if (JSON.stringify(characterRoles).toLowerCase().includes('sentinel')) errors.push('character roles cannot claim blocked Sentinel identity');
+const resolveCharacterToken = (token) => {
+  if (tokens.colors?.[token]) return tokens.colors[token];
+  if (token === 'semantic.dark.danger') return tokens.semantic?.dark?.danger;
+  return null;
+};
 for (const role of characterRoles.roles || []) {
-  const token = role.accentToken;
-  if (!token || (!tokens.colors?.[token] && !token.startsWith('semantic.'))) errors.push(`character role ${role.id}: unknown accent token ${token}`);
+  if (!resolveCharacterToken(role.accentToken)) errors.push(`character role ${role.id}: unknown accent token ${role.accentToken}`);
+}
+for (const state of characterStates.states || []) {
+  if (!resolveCharacterToken(state.signalToken)) errors.push(`character state ${state.id}: unknown signal token ${state.signalToken}`);
 }
 const expectedCharacterStates = ['idle','thinking','planning','executing','inspecting','waiting','blocked','approval-required','verifying','completed','failed'];
 const actualCharacterStates = (characterStates.states || []).map(x => x.id);

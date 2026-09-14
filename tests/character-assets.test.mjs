@@ -6,7 +6,8 @@ const readJson = (file) => JSON.parse(fs.readFileSync(file, 'utf8'));
 const roles = readJson('characters/roles.json');
 const states = readJson('characters/states.json');
 const manifest = readJson('characters/manifest.json');
-const canonicalHex = new Set(['#080C14','#0E1630','#F5F7FA','#8993A4','#42C7E8','#24C4AD','#7759E8','#F0A64A','#4C8BD8','#FF6B7A']);
+const tokens = readJson('tokens.json');
+const canonicalHex = new Set([...Object.values(tokens.colors), tokens.semantic.dark.danger].map((x) => x.toUpperCase()));
 
 test('character roles stay generic and governance-safe', () => {
   assert.deepEqual(roles.roles.map((x) => x.id), ['entity','guide','builder','verifier','observer','researcher']);
@@ -44,4 +45,10 @@ test('character semantic bindings reuse canonical Brand OS symbols', () => {
     assert.ok(file.startsWith('semantics/icons/'));
     assert.ok(fs.existsSync(file), `missing canonical semantic icon ${file}`);
   }
+});
+
+test('character generator derives palette from canonical Brand OS tokens', () => {
+  const source = fs.readFileSync('scripts/generate-characters.mjs', 'utf8');
+  assert.match(source, /tokens\.json/);
+  assert.doesNotMatch(source, /#[0-9A-Fa-f]{6}/);
 });
