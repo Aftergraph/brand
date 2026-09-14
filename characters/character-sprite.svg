@@ -1,0 +1,297 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<symbol id="ag-role-entity" viewBox="0 0 512 512"><title id="ag-role-entity-title">Aftergraph Entity — Aftergraph character archetype</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#F5F7FA"/>
+    <circle cx="362" cy="330" r="15" fill="#F5F7FA"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#F5F7FA" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#F5F7FA" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#F5F7FA"/><circle cx="256" cy="66" r="15" fill="#F5F7FA"/><circle cx="352" cy="115" r="13" fill="#F5F7FA"/>
+  </g><g fill="#F5F7FA"><circle cx="104" cy="268" r="12"/><circle cx="122" cy="306" r="8"/><circle cx="408" cy="270" r="12"/></g></symbol>
+<symbol id="ag-avatar-entity" viewBox="0 0 256 256"><title id="ag-avatar-entity-title">Aftergraph Entity — Aftergraph avatar</title><circle cx="128" cy="132" r="78" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/><circle cx="128" cy="132" r="60" fill="#080C14" stroke="#F5F7FA" stroke-width="4"/><rect x="103" y="110" width="10" height="43" rx="5" fill="#F5F7FA"/><rect x="143" y="110" width="10" height="43" rx="5" fill="#F5F7FA"/><path d="M54 72 Q128 24 202 72" fill="none" stroke="#F5F7FA" stroke-width="5"/><circle cx="54" cy="72" r="11" fill="#F5F7FA"/><circle cx="128" cy="36" r="13" fill="#F5F7FA"/><circle cx="202" cy="72" r="11" fill="#F5F7FA"/></symbol>
+<symbol id="ag-role-guide" viewBox="0 0 512 512"><title id="ag-role-guide-title">Guide — Aftergraph character archetype</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#42C7E8"/>
+    <circle cx="362" cy="330" r="15" fill="#42C7E8"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#42C7E8" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#42C7E8"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#42C7E8"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#42C7E8" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#42C7E8"/><circle cx="256" cy="66" r="15" fill="#42C7E8"/><circle cx="352" cy="115" r="13" fill="#42C7E8"/>
+  </g><g fill="none" stroke="#42C7E8" stroke-width="6"><path d="M86 245 Q104 186 144 154"/><circle cx="84" cy="250" r="12" fill="#42C7E8"/><circle cx="116" cy="196" r="9" fill="#42C7E8"/><circle cx="146" cy="150" r="12" fill="#42C7E8"/></g></symbol>
+<symbol id="ag-avatar-guide" viewBox="0 0 256 256"><title id="ag-avatar-guide-title">Guide — Aftergraph avatar</title><circle cx="128" cy="132" r="78" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/><circle cx="128" cy="132" r="60" fill="#080C14" stroke="#42C7E8" stroke-width="4"/><rect x="103" y="110" width="10" height="43" rx="5" fill="#42C7E8"/><rect x="143" y="110" width="10" height="43" rx="5" fill="#42C7E8"/><path d="M54 72 Q128 24 202 72" fill="none" stroke="#42C7E8" stroke-width="5"/><circle cx="54" cy="72" r="11" fill="#42C7E8"/><circle cx="128" cy="36" r="13" fill="#42C7E8"/><circle cx="202" cy="72" r="11" fill="#42C7E8"/></symbol>
+<symbol id="ag-role-builder" viewBox="0 0 512 512"><title id="ag-role-builder-title">Builder — Aftergraph character archetype</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#F0A64A"/>
+    <circle cx="362" cy="330" r="15" fill="#F0A64A"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#F0A64A" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#F0A64A"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#F0A64A"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#F0A64A" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#F0A64A"/><circle cx="256" cy="66" r="15" fill="#F0A64A"/><circle cx="352" cy="115" r="13" fill="#F0A64A"/>
+  </g><g stroke="#F0A64A" stroke-width="6" fill="#0E1630"><path d="M354 286 L418 252 L466 284 L404 320 Z"/><path d="M354 286 L354 354 L404 388 L404 320 Z"/><path d="M404 320 L466 284 L466 352 L404 388 Z"/></g></symbol>
+<symbol id="ag-avatar-builder" viewBox="0 0 256 256"><title id="ag-avatar-builder-title">Builder — Aftergraph avatar</title><circle cx="128" cy="132" r="78" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/><circle cx="128" cy="132" r="60" fill="#080C14" stroke="#F0A64A" stroke-width="4"/><rect x="103" y="110" width="10" height="43" rx="5" fill="#F0A64A"/><rect x="143" y="110" width="10" height="43" rx="5" fill="#F0A64A"/><path d="M54 72 Q128 24 202 72" fill="none" stroke="#F0A64A" stroke-width="5"/><circle cx="54" cy="72" r="11" fill="#F0A64A"/><circle cx="128" cy="36" r="13" fill="#F0A64A"/><circle cx="202" cy="72" r="11" fill="#F0A64A"/></symbol>
+<symbol id="ag-role-verifier" viewBox="0 0 512 512"><title id="ag-role-verifier-title">Verifier — Aftergraph character archetype</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#24C4AD"/>
+    <circle cx="362" cy="330" r="15" fill="#24C4AD"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#24C4AD" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#24C4AD"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#24C4AD"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#24C4AD" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#24C4AD"/><circle cx="256" cy="66" r="15" fill="#24C4AD"/><circle cx="352" cy="115" r="13" fill="#24C4AD"/>
+  </g><path d="M382 235 L448 260 L440 342 Q424 388 382 410 Q340 388 324 342 L316 260 Z" fill="#0E1630" stroke="#24C4AD" stroke-width="7"/><path d="M350 323 L374 348 L418 295" fill="none" stroke="#24C4AD" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ag-avatar-verifier" viewBox="0 0 256 256"><title id="ag-avatar-verifier-title">Verifier — Aftergraph avatar</title><circle cx="128" cy="132" r="78" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/><circle cx="128" cy="132" r="60" fill="#080C14" stroke="#24C4AD" stroke-width="4"/><rect x="103" y="110" width="10" height="43" rx="5" fill="#24C4AD"/><rect x="143" y="110" width="10" height="43" rx="5" fill="#24C4AD"/><path d="M54 72 Q128 24 202 72" fill="none" stroke="#24C4AD" stroke-width="5"/><circle cx="54" cy="72" r="11" fill="#24C4AD"/><circle cx="128" cy="36" r="13" fill="#24C4AD"/><circle cx="202" cy="72" r="11" fill="#24C4AD"/></symbol>
+<symbol id="ag-role-observer" viewBox="0 0 512 512"><title id="ag-role-observer-title">Observer — Aftergraph character archetype</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#4C8BD8"/>
+    <circle cx="362" cy="330" r="15" fill="#4C8BD8"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#4C8BD8" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#4C8BD8"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#4C8BD8"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#4C8BD8" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#4C8BD8"/><circle cx="256" cy="66" r="15" fill="#4C8BD8"/><circle cx="352" cy="115" r="13" fill="#4C8BD8"/>
+  </g><g fill="none" stroke="#4C8BD8" stroke-width="5"><circle cx="405" cy="310" r="74"/><ellipse cx="405" cy="310" rx="34" ry="74"/><path d="M331 310 H479 M344 274 Q405 300 466 274 M344 346 Q405 320 466 346"/></g></symbol>
+<symbol id="ag-avatar-observer" viewBox="0 0 256 256"><title id="ag-avatar-observer-title">Observer — Aftergraph avatar</title><circle cx="128" cy="132" r="78" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/><circle cx="128" cy="132" r="60" fill="#080C14" stroke="#4C8BD8" stroke-width="4"/><rect x="103" y="110" width="10" height="43" rx="5" fill="#4C8BD8"/><rect x="143" y="110" width="10" height="43" rx="5" fill="#4C8BD8"/><path d="M54 72 Q128 24 202 72" fill="none" stroke="#4C8BD8" stroke-width="5"/><circle cx="54" cy="72" r="11" fill="#4C8BD8"/><circle cx="128" cy="36" r="13" fill="#4C8BD8"/><circle cx="202" cy="72" r="11" fill="#4C8BD8"/></symbol>
+<symbol id="ag-role-researcher" viewBox="0 0 512 512"><title id="ag-role-researcher-title">Researcher — Aftergraph character archetype</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#7759E8"/>
+    <circle cx="362" cy="330" r="15" fill="#7759E8"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#7759E8" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#7759E8"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#7759E8"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#7759E8" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#7759E8"/><circle cx="256" cy="66" r="15" fill="#7759E8"/><circle cx="352" cy="115" r="13" fill="#7759E8"/>
+  </g><g fill="#0E1630" stroke="#7759E8" stroke-width="5"><rect x="351" y="238" width="74" height="92" rx="10"/><rect x="391" y="300" width="74" height="92" rx="10"/><path d="M365 260 H410 M365 280 H402 M405 324 H450 M405 344 H444"/></g></symbol>
+<symbol id="ag-avatar-researcher" viewBox="0 0 256 256"><title id="ag-avatar-researcher-title">Researcher — Aftergraph avatar</title><circle cx="128" cy="132" r="78" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/><circle cx="128" cy="132" r="60" fill="#080C14" stroke="#7759E8" stroke-width="4"/><rect x="103" y="110" width="10" height="43" rx="5" fill="#7759E8"/><rect x="143" y="110" width="10" height="43" rx="5" fill="#7759E8"/><path d="M54 72 Q128 24 202 72" fill="none" stroke="#7759E8" stroke-width="5"/><circle cx="54" cy="72" r="11" fill="#7759E8"/><circle cx="128" cy="36" r="13" fill="#7759E8"/><circle cx="202" cy="72" r="11" fill="#7759E8"/></symbol>
+<symbol id="ag-state-idle" viewBox="0 0 512 512"><title id="ag-state-idle-title">Aftergraph actor state — idle</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#F5F7FA"/>
+    <circle cx="362" cy="330" r="15" fill="#F5F7FA"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#F5F7FA" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#F5F7FA" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#F5F7FA"/><circle cx="256" cy="66" r="15" fill="#F5F7FA"/><circle cx="352" cy="115" r="13" fill="#F5F7FA"/>
+  </g></symbol>
+<symbol id="ag-state-thinking" viewBox="0 0 512 512"><title id="ag-state-thinking-title">Aftergraph actor state — thinking</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#F5F7FA"/>
+    <circle cx="362" cy="330" r="15" fill="#F5F7FA"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#F5F7FA" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#F5F7FA" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#F5F7FA"/><circle cx="256" cy="66" r="15" fill="#F5F7FA"/><circle cx="352" cy="115" r="13" fill="#F5F7FA"/>
+  </g><g fill="none" stroke="#42C7E8" stroke-width="7"><circle cx="408" cy="218" r="13" fill="#42C7E8"/><circle cx="439" cy="187" r="9" fill="#42C7E8"/><path d="M390 280 Q414 248 444 265 Q463 278 451 300 Q439 319 419 320 V342"/><circle cx="419" cy="367" r="7" fill="#42C7E8"/></g></symbol>
+<symbol id="ag-state-planning" viewBox="0 0 512 512"><title id="ag-state-planning-title">Aftergraph actor state — planning</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#F5F7FA"/>
+    <circle cx="362" cy="330" r="15" fill="#F5F7FA"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#F5F7FA" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#F5F7FA" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#F5F7FA"/><circle cx="256" cy="66" r="15" fill="#F5F7FA"/><circle cx="352" cy="115" r="13" fill="#F5F7FA"/>
+  </g><g fill="#0E1630" stroke="#4C8BD8" stroke-width="5"><rect x="350" y="236" width="116" height="116" rx="12"/><path d="M370 320 L397 286 L421 304 L448 266" fill="none"/><circle cx="370" cy="320" r="6" fill="#4C8BD8"/><circle cx="397" cy="286" r="6" fill="#4C8BD8"/><circle cx="421" cy="304" r="6" fill="#4C8BD8"/><circle cx="448" cy="266" r="6" fill="#4C8BD8"/></g></symbol>
+<symbol id="ag-state-executing" viewBox="0 0 512 512"><title id="ag-state-executing-title">Aftergraph actor state — executing</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 318" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 318" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="138" cy="318" r="15" fill="#F5F7FA"/>
+    <circle cx="374" cy="318" r="15" fill="#F5F7FA"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#F5F7FA" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#F5F7FA" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#F5F7FA"/><circle cx="256" cy="66" r="15" fill="#F5F7FA"/><circle cx="352" cy="115" r="13" fill="#F5F7FA"/>
+  </g><g stroke="#4C8BD8" stroke-width="6" fill="#0E1630"><path d="M354 286 L418 252 L466 284 L404 320 Z"/><path d="M354 286 L354 354 L404 388 L404 320 Z"/><path d="M404 320 L466 284 L466 352 L404 388 Z"/></g></symbol>
+<symbol id="ag-state-inspecting" viewBox="0 0 512 512"><title id="ag-state-inspecting-title">Aftergraph actor state — inspecting</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 300" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 300" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="300" r="15" fill="#F5F7FA"/>
+    <circle cx="362" cy="300" r="15" fill="#F5F7FA"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#F5F7FA" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#F5F7FA" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#F5F7FA"/><circle cx="256" cy="66" r="15" fill="#F5F7FA"/><circle cx="352" cy="115" r="13" fill="#F5F7FA"/>
+  </g><g fill="none" stroke="#42C7E8" stroke-width="8"><circle cx="408" cy="285" r="42"/><path d="M438 316 L468 348" stroke-linecap="round"/><circle cx="408" cy="285" r="12" fill="#42C7E8" stroke="none"/></g></symbol>
+<symbol id="ag-state-waiting" viewBox="0 0 512 512"><title id="ag-state-waiting-title">Aftergraph actor state — waiting</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#F5F7FA"/>
+    <circle cx="362" cy="330" r="15" fill="#F5F7FA"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#F5F7FA" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#F5F7FA" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#F5F7FA"/><circle cx="256" cy="66" r="15" fill="#F5F7FA"/><circle cx="352" cy="115" r="13" fill="#F5F7FA"/>
+  </g><g stroke="#8993A4" stroke-width="6" fill="#8993A4"><path d="M430 222 V372"/><circle cx="430" cy="222" r="11"/><circle cx="430" cy="297" r="9"/><circle cx="430" cy="372" r="11"/></g></symbol>
+<symbol id="ag-state-blocked" viewBox="0 0 512 512"><title id="ag-state-blocked-title">Aftergraph actor state — blocked</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#F5F7FA"/>
+    <circle cx="362" cy="330" r="15" fill="#F5F7FA"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#F5F7FA" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#F5F7FA" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#F5F7FA"/><circle cx="256" cy="66" r="15" fill="#F5F7FA"/><circle cx="352" cy="115" r="13" fill="#F5F7FA"/>
+  </g><g fill="#0E1630" stroke="#FF6B7A" stroke-width="7"><path d="M410 230 L474 354 H346 Z"/><path d="M410 270 V318"/><circle cx="410" cy="338" r="5" fill="#FF6B7A" stroke="none"/></g></symbol>
+<symbol id="ag-state-approval-required" viewBox="0 0 512 512"><title id="ag-state-approval-required-title">Aftergraph actor state — approval-required</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#F5F7FA"/>
+    <circle cx="362" cy="330" r="15" fill="#F5F7FA"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#F5F7FA" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#F5F7FA" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#F5F7FA"/><circle cx="256" cy="66" r="15" fill="#F5F7FA"/><circle cx="352" cy="115" r="13" fill="#F5F7FA"/>
+  </g><g fill="#0E1630" stroke="#F0A64A" stroke-width="6"><rect x="351" y="238" width="116" height="132" rx="14"/><circle cx="409" cy="278" r="20"/><path d="M376 337 Q409 307 442 337 V350 H376 Z"/></g></symbol>
+<symbol id="ag-state-verifying" viewBox="0 0 512 512"><title id="ag-state-verifying-title">Aftergraph actor state — verifying</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 300" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 300" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="300" r="15" fill="#F5F7FA"/>
+    <circle cx="362" cy="300" r="15" fill="#F5F7FA"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#F5F7FA" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#F5F7FA" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#F5F7FA"/><circle cx="256" cy="66" r="15" fill="#F5F7FA"/><circle cx="352" cy="115" r="13" fill="#F5F7FA"/>
+  </g><g fill="none" stroke="#24C4AD" stroke-width="7"><path d="M346 270 H454 M356 301 H444 M370 332 H430"/><circle cx="401" cy="301" r="64" opacity=".3"/><path d="M446 347 L470 371" stroke-linecap="round"/></g></symbol>
+<symbol id="ag-state-completed" viewBox="0 0 512 512"><title id="ag-state-completed-title">Aftergraph actor state — completed</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#F5F7FA"/>
+    <circle cx="362" cy="330" r="15" fill="#F5F7FA"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#F5F7FA" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#F5F7FA" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#F5F7FA"/><circle cx="256" cy="66" r="15" fill="#F5F7FA"/><circle cx="352" cy="115" r="13" fill="#F5F7FA"/>
+  </g><g fill="#0E1630" stroke="#4C8BD8" stroke-width="7"><rect x="354" y="252" width="112" height="112" rx="18"/><path d="M379 309 L402 333 L443 283" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></symbol>
+<symbol id="ag-state-failed" viewBox="0 0 512 512"><title id="ag-state-failed-title">Aftergraph actor state — failed</title><g transform="translate(0 0) scale(1)">
+    <ellipse cx="256" cy="455" rx="106" ry="16" fill="#0E1630" opacity=".55"/>
+    <path d="M182 337 L146 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 337 L366 430" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path d="M195 270 L147 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <path d="M317 270 L365 330" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="150" cy="330" r="15" fill="#F5F7FA"/>
+    <circle cx="362" cy="330" r="15" fill="#F5F7FA"/>
+    <path d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path d="M207 272 L256 314 L305 272 L291 344 L256 366 L221 344 Z" fill="#F5F7FA" opacity=".9"/>
+    <circle cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <circle cx="256" cy="190" r="76" fill="#080C14" stroke="#F5F7FA" stroke-width="4"/>
+    <rect x="224" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <rect x="276" y="162" width="12" height="52" rx="6" fill="#F5F7FA"/>
+    <path d="M160 115 Q256 46 352 115" fill="none" stroke="#F5F7FA" stroke-width="6"/>
+    <circle cx="160" cy="115" r="13" fill="#F5F7FA"/><circle cx="256" cy="66" r="15" fill="#F5F7FA"/><circle cx="352" cy="115" r="13" fill="#F5F7FA"/>
+  </g><g stroke="#FF6B7A" stroke-width="12" stroke-linecap="round"><path d="M365 266 L451 352 M451 266 L365 352"/></g></symbol>
+</svg>
