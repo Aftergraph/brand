@@ -23,3 +23,9 @@ test('CI contract includes base, all roles, and all non-idle state deltas', () =
     assert.ok(config.includes(`id: state-${state}`));
   }
 });
+
+test('GitHub CI installs the lockfile and enforces the high-severity dependency audit gate', () => {
+  const workflow=fs.readFileSync('.github/workflows/ci.yml','utf8');
+  assert.match(workflow,/run: npm ci/);
+  assert.match(workflow,/run: npm run audit:high/);
+});

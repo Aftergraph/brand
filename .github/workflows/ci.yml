@@ -25,6 +25,9 @@ jobs:
       - name: Install deterministic dev tooling
         run: npm ci
 
+      - name: Audit high severity dependencies
+        run: npm run audit:high
+
       - name: Regenerate canonical families
         run: npm run generate
 
