@@ -1,0 +1,25 @@
+{
+  "$schema": "aftergraph.character-rive-runtime.v1",
+  "version": "1.0.0",
+  "riveCliVersion": "rive 1.0.3",
+  "buildCommand": "npm run character:rive:build",
+  "artifact": {
+    "path": "characters/motion/rive/build/aftergraph_actor_presence.riv",
+    "bytes": 1555930,
+    "sha256": "0e75ae85ae37bc5e9a24ba2a74338d844b01bb64544388df7ed2dfbdcb9b8466"
+  },
+  "sources": {
+    "sourceManifest": {
+      "path": "characters/motion/rive/source-manifest.json",
+      "sha256": "03bb4e7c0618645aeac4e0e53edf0f2ff77a19f98badc377c29c9344c4dca4fa"
+    },
+    "scene": {
+      "path": "characters/motion/rive/scene.rml",
+      "sha256": "e0150d0ef130363d973957aedba35d6cfc3fb1a401d8418349a104e12ed8d9e5"
+    },
+    "script": {
+      "path": "characters/motion/rive/actor-presence.luau",
+      "sha256": "dfc214cc381d02eb13322b467ed5ea7faad42acfe0115fcd89e38322b54e3b8d"
+    }
+  }
+}

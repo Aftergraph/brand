@@ -1,8 +1,8 @@
 # Character authoring evidence
 
-External authoring gates are intentionally separate from automated SVG validation.
+External review gates are intentionally separate from automated SVG and runtime validation.
 
-Run `npm run character:authoring:preflight` immediately before an external authoring session. It records the exact Git candidate and SHA-256 hashes of canonical source files in the ignored `authoring-preflight.json` file.
+Run `npm run character:authoring:preflight` immediately before external review. It records the exact Git candidate, canonical source hashes, and the currently verified Rive runtime hash in the ignored `authoring-preflight.json` file.
 
 ## Illustrator gate
 
@@ -13,7 +13,7 @@ Run `npm run character:authoring:preflight` immediately before an external autho
 
 ## Rive gate
 
-Copy `rive-authoring.template.json` to `rive-authoring.json` only after the canonical SVG has been imported into Rive Editor, rig/state-machine authoring is complete, a `.riv` runtime file has been exported, and SVG/runtime parity has been reviewed.
+The runtime asset is authored in-repo with the official Rive CLI. Run `npm run character:rive:verify` and `npm run character:rive:qa`; then use `characters/motion/rive/runtime-manifest.json` as the cryptographic evidence binding for the tracked `.riv`. `rive-authoring.template.json` is retained as an optional review record when a human inspects or refines the file in Rive Editor.
 
 ## Human brand review
 

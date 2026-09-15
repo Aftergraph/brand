@@ -34,6 +34,12 @@ test('npm pack dry run contains editable source and generated SVGs but excludes 
   assert.ok(files.includes('characters/generated/themes/light/compositions/entity--idle.svg'));
   assert.ok(files.includes('characters/generated/themes/light/sprites/characters.svg'));
   assert.ok(files.includes('characters/contracts/components.d.ts'));
+  assert.ok(files.includes('characters/motion/rive/build/aftergraph_actor_presence.riv'));
+  assert.ok(files.includes('characters/motion/rive/runtime-manifest.json'));
+  assert.ok(files.includes('characters/motion/rive/scene.rml'));
+  assert.ok(files.includes('characters/motion/rive/actor-presence.luau'));
+  assert.ok(!files.includes('characters/motion/rive/build/problems.log'));
+  assert.ok(!files.includes('characters/motion/rive/build/rive.log'));
   assert.ok(files.every((x)=>!x.startsWith('exports/characters/')));
 });
 

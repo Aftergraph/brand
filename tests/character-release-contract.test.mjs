@@ -22,7 +22,7 @@ test('release contract declares the complete governed logical asset surface',()=
 test('release contract keeps external authoring gates truthful',()=>{
   const release=readJson('characters/release.json');
   assert.equal(release.gates.illustratorRoundtrip,'pending');
-  assert.equal(release.gates.riveRuntimeBinary,'not-authored');
+  assert.equal(release.gates.riveRuntimeBinary,'verified');
   assert.equal(release.gates.automatedVerification,'required');
   assert.equal(release.truthBoundary,'Characters are a view. Evidence is the truth.');
 });

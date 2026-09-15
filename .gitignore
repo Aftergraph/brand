@@ -10,3 +10,7 @@ exports/characters/
 characters/generated/qa/
 
 characters/ci/evidence/authoring-preflight.json
+# Rive CLI transient logs; keep the deterministic .riv runtime asset tracked.
+characters/motion/rive/build/*.log
+characters/motion/rive/build/*.png
+characters/motion/rive/build/*.data.json

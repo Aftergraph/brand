@@ -1,34 +1,30 @@
 # Rive authoring contract
 
-The editable SVG source tree remains the source of truth. Rive is a motion-authoring and runtime-delivery layer; it does not replace `characters/source/`.
+The editable SVG source tree remains the source of truth. Rive is a derived runtime-delivery layer and does not replace `characters/source/`.
 
-## Import
+## Canonical projection
 
-Import `characters/source/master/base-character.svg` into the Rive Editor. Imported SVG artwork is converted into native Rive vector objects such as groups, shapes, paths, fills, and strokes. Reconstruct role props, state props, and expression variants from the governed source modules using `rive-import-manifest.json` and the locked anchor/rig contracts.
+`npm run character:rive:generate` deterministically projects the governed role × state SVG compositions into a Rive CLI source project under `characters/motion/rive/`. The project uses RML for the 512 × 512 `ActorPresence` artboard and View Model contract, plus Luau for native vector drawing. No PNG, WebP, or flattened raster is embedded in the runtime asset.
 
-The artboard is exactly **512 × 512** and is named `ActorPresence`. Preserve the semantic layer names listed in the import manifest. Do not flatten role, state, face, halo, hand, limb, or shading groups into a single image.
+The `ActorPresence` View Model exposes `role`, `state`, `attention`, and `reducedMotion`. `completed` is execution state, not an independent verification verdict. `verifying` is an activity. Evidence, approval, and verification truth stay outside the character state machine.
 
-## Motion state machine
+## Runtime binary
 
-Create one state machine named `ActorPresence`. Bind `role`, `state`, `attention`, and `reducedMotion` from the runtime projection. `completed` is not a verification verdict. `verifying` is an activity. Evidence and independent verification remain outside the animation state machine.
+`npm run character:rive:build` uses the official Rive CLI `--once` build to produce `characters/motion/rive/build/aftergraph_actor_presence.riv`. The `.riv` file is a derived runtime artifact. `runtime-manifest.json` binds that binary by SHA-256 to the generated RML, Luau, and canonical source manifest.
 
-When `reducedMotion` is true, use the static equivalents defined in `characters/accessibility.json`; do not run looping breathing, orbit, scan, pulse, or progress animation.
+The build is reproducible: identical generated inputs must produce a byte-identical unsigned runtime file. The Rive Editor remains an optional inspection/refinement surface; it is no longer a prerequisite for producing the canonical runtime binary because the official Rive CLI can author the RML/Luau project directly.
 
-## Runtime artifact boundary
+## Runtime verification
 
-A `.riv` file is the binary runtime format exported from the Rive Editor. It is a derived runtime artifact, not the canonical source. The Rive runtime consumes that exported file; it is not the authoring API for creating or modifying the `.riv` container.
+`npm run character:rive:verify` checks source drift and Rive CLI problems. `npm run character:rive:qa` rebuilds the runtime asset, renders all eleven canonical states across all six roles through headless Rive, and round-trips the bound View Model values. The QA run uses `reducedMotion=true` so the captured frame is a stable static semantic representation.
 
-Do not attempt to generate a `.riv` file from the runtime libraries or by serializing an invented binary format. The required gate is editor authoring followed by runtime export and parity verification against the canonical SVG sources.
+Required invariants:
 
-## Evidence required before `runtimeFile.status` can change
+1. `characters/source/` remains canonical.
+2. `ActorPresence` stays exactly 512 × 512.
+3. All 6 roles and 11 states remain addressable from the bound View Model.
+4. Headless runtime renders are non-empty and state-distinct.
+5. `runtime-manifest.json` hashes match the tracked `.riv`, RML, Luau, and source manifest.
+6. No character state is treated as proof of approval, evidence, or verification.
 
-1. Rive Editor version and operator recorded.
-2. Canonical source commit and SHA-256 recorded.
-3. Required artboard/layers present after import.
-4. All six roles and eleven states exercised.
-5. Reduced-motion branch exercised.
-6. Browser/runtime screenshots compared to approved SVG baselines.
-7. Exported `.riv` SHA-256 recorded.
-8. No character state is treated as proof of approval, evidence, or verification.
-
-References: Rive documentation on SVG assets, runtime export, and `.riv` format (`rive.app/docs`).
+**Characters are a view. Evidence is the truth.**

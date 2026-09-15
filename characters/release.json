@@ -36,7 +36,7 @@
   "gates": {
     "automatedVerification": "required",
     "illustratorRoundtrip": "pending",
-    "riveRuntimeBinary": "not-authored",
+    "riveRuntimeBinary": "verified",
     "humanBrandReview": "pending"
   },
   "review": {
@@ -46,13 +46,14 @@
       "dark",
       "light"
     ],
-    "matrix": "6 roles \u00d7 11 states \u00d7 2 themes"
+    "matrix": "6 roles × 11 states × 2 themes"
   },
   "externalEvidence": {
     "preflightCommand": "npm run character:authoring:preflight",
     "preflightOutput": "characters/ci/evidence/authoring-preflight.json",
     "illustratorTemplate": "characters/ci/evidence/illustrator-roundtrip.template.json",
     "riveTemplate": "characters/ci/evidence/rive-authoring.template.json",
-    "humanBrandReviewTemplate": "characters/ci/evidence/human-brand-review.template.json"
+    "humanBrandReviewTemplate": "characters/ci/evidence/human-brand-review.template.json",
+    "riveRuntimeManifest": "characters/motion/rive/runtime-manifest.json"
   }
 }

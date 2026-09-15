@@ -17,6 +17,8 @@ function sourceRecord(rel) {
   return {path: rel, bytes: data.length, sha256: sha256(data)};
 }
 
+const runtimeManifest = JSON.parse(fs.readFileSync(path.join(root, 'characters/motion/rive/runtime-manifest.json'), 'utf8'));
+
 const sources = {
   baseCharacter: sourceRecord('characters/source/master/base-character.svg'),
   anchors: sourceRecord('characters/source/master/anchors.json'),
@@ -40,10 +42,12 @@ const evidence = {
       requirement: 'Open, edit, save, and reopen in Adobe Illustrator with named groups and gradients preserved.'
     },
     rive: {
-      status: 'pending-external',
-      evidenceFile: 'characters/ci/evidence/rive-authoring.json',
-      importManifest: 'characters/motion/rive-import-manifest.json',
-      requirement: 'Author in Rive Editor, export .riv, and verify visual/state parity against canonical SVG sources.'
+      status: 'verified-in-repo',
+      runtimeManifest: 'characters/motion/rive/runtime-manifest.json',
+      runtimeFile: runtimeManifest.artifact.path,
+      runtimeSha256: runtimeManifest.artifact.sha256,
+      authoringTool: runtimeManifest.riveCliVersion,
+      verificationCommand: 'npm run character:rive:qa'
     },
     humanBrandReview: {
       status: 'pending-external',

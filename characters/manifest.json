@@ -250,9 +250,12 @@
   "motion": {
     "authoring": "characters/motion/RIVE-AUTHORING.md",
     "importManifest": "characters/motion/rive-import-manifest.json",
-    "runtimeArtifactStatus": "not-authored",
+    "runtimeArtifactStatus": "verified",
     "spec": "characters/motion/motion.json",
-    "specification": "characters/motion/MOTION-SPEC.md"
+    "specification": "characters/motion/MOTION-SPEC.md",
+    "runtimeArtifact": "characters/motion/rive/build/aftergraph_actor_presence.riv",
+    "runtimeManifest": "characters/motion/rive/runtime-manifest.json",
+    "runtimeQa": "npm run character:rive:qa"
   },
   "compatibility": {
     "deprecatedSprite": "characters/character-sprite.svg",

@@ -23,7 +23,7 @@ The review surface is `characters/review/index.html`. It renders the generated S
 ## Deliberately still open
 
 - Adobe Illustrator roundtrip has not been performed; editable-group/gradient survival must be evidenced in the actual application.
-- Rive Editor authoring/export has not been performed; no `.riv` binary is claimed.
+- Rive CLI authoring and headless runtime QA are implemented and a tracked `.riv` binary is claimed through `characters/motion/rive/runtime-manifest.json`; optional human inspection in Rive Editor is still available but is not a release blocker.
 - Human brand review has not been performed. The reviewer must explicitly assess silhouette, role differentiation, state legibility, prop balance, dark/light behavior, compact readability, brand fit, and the evidence/truth boundary.
 
 Automated visual checks can reject clipping, drift, missing renders, and known contrast regressions. They cannot approve aesthetic quality or institutional brand fit.

@@ -66,11 +66,11 @@ Additional canonical source modules are:
 
 `npm run character:qa` executes geometry bounds, small-size rendering, context visibility, and Puppeteer + pixelmatch visual regression. The committed baseline suite contains 23 cases, including explicit role/state collision and light-theme regression cases; transient actual/diff images are not committed.
 
-`npm run character:export` creates a release-only `exports/characters/` tree containing **100 governed assets × 4 formats**: editable SVG plus PNG, WebP, and AVIF derivatives, each with byte size and SHA-256 in the release manifest. Raster derivatives are reproducible release artifacts and are intentionally not canonical source.
+`npm run character:export` creates a release-only `exports/characters/` tree containing **189 governed logical assets × 4 formats = 756 files**: editable SVG plus PNG, WebP, and AVIF derivatives, each with byte size and SHA-256 in the release manifest. Raster derivatives are reproducible release artifacts and are intentionally not canonical source.
 
 ## Motion layer
 
-`motion/rive-import-manifest.json` and `motion/RIVE-AUTHORING.md` define the Rive handoff. SVG remains canonical. A `.riv` file must be authored/exported through Rive Editor and parity-verified before it can be registered as a runtime artifact; no `.riv` file is claimed by this repository yet.
+`motion/rive-import-manifest.json` and `motion/RIVE-AUTHORING.md` define the Rive runtime projection. SVG remains canonical. The official Rive CLI deterministically authors `motion/rive/build/aftergraph_actor_presence.riv` from governed RML + Luau, and `motion/rive/runtime-manifest.json` binds the binary to its generated sources by SHA-256. Use `npm run character:rive:qa` for headless runtime verification.
 
 ## Production sprites
 
@@ -101,5 +101,5 @@ The release exporter contains 89 dark character assets, 89 light character asset
 - `review/index.html` — deterministic dark/light human-review surface covering roles, avatars, states, the full role×state matrix, and new supporting icons.
 - `npm run character:review:capture` — captures complete dark/light review PNGs into ignored QA output for reviewer handoff.
 - `review/VISUAL-AUDIT.md` — machine-assisted visual findings; it does not replace human brand approval.
-- `ci/evidence/` — templates for Illustrator roundtrip, Rive authoring, and human brand review evidence.
-- `npm run character:authoring:preflight` — binds an external authoring session to the exact candidate commit and source SHA-256 hashes.
+- `ci/evidence/` — Illustrator and human-review templates plus the Rive runtime evidence contract.
+- `npm run character:authoring:preflight` — binds the remaining external review gates and the verified Rive runtime artifact to the exact candidate commit and source SHA-256 hashes.
