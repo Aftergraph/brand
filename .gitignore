@@ -2,3 +2,18 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+# Character visual-regression runtime output
+characters/ci/snapshots/actual/
+characters/ci/snapshots/diff/
+characters/ci/snapshots/report.json
+exports/characters/
+characters/generated/qa/
+
+characters/ci/evidence/authoring-preflight.json
+# Rive CLI transient logs; keep the deterministic .riv runtime asset tracked.
+characters/motion/rive/build/*.log
+characters/motion/rive/build/*.png
+characters/motion/rive/build/*.data.json
+
+# Exact-HEAD external review handoff (generated artifact)
+dist/character-review-bundle/

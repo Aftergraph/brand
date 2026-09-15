@@ -1,0 +1,17 @@
+{
+  "$schema": "aftergraph.character-prop-slots.v1",
+  "version": "1.0.0",
+  "purpose": "Declare attachment slots and deterministic collision resolution for role and runtime-state props.",
+  "slots": {
+    "prop-left": { "x": 102, "y": 282, "parentJoint": "hand-left" },
+    "prop-right": { "x": 410, "y": 282, "parentJoint": "hand-right" },
+    "prop-center": { "x": 256, "y": 319, "parentJoint": "torso-center" }
+  },
+  "collisionPolicy": {
+    "priority": "state",
+    "roleFallback": {
+      "prop-right": "prop-left"
+    },
+    "undeclaredCollision": "preserve-source"
+  }
+}

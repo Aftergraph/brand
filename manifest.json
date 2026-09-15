@@ -42,6 +42,11 @@
     "system": "architecture, flows, evidence, trust boundaries",
     "cinematic": "campaign, release, research, storytelling"
   },
+  "characterSystem": {
+    "manifest": "characters/manifest.json",
+    "status": "candidate-vector",
+    "truthBoundary": "Characters are a view. Evidence is the truth."
+  },
   "assets": {
     "wordmark": "svg/aftergraph-wordmark.svg",
     "wordmarkLight": "svg/aftergraph-wordmark-light.svg",
@@ -91,7 +96,8 @@
     "typescript": "types.d.ts",
     "favicon": "exports/favicon",
     "rasterIdentity": "exports/identity",
-    "rasterSocial": "exports/social"
+    "rasterSocial": "exports/social",
+    "characters": "characters"
   },
   "repository": "https://github.com/Aftergraph/brand"
 }

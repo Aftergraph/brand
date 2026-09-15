@@ -1,0 +1,10 @@
+{
+  "$schema": "aftergraph.character-product-aliases.v1",
+  "version": "1.0.0",
+  "policy": "Product aliases resolve to generic character archetypes; aliases do not create product mascots or independent identities.",
+  "aliases": {
+    "Sentinel": "verifier",
+    "Forge": "builder",
+    "Atlas": "observer"
+  }
+}

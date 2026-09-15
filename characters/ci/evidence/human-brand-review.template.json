@@ -1,0 +1,21 @@
+{
+  "$schema": "aftergraph.character-human-brand-review.v1",
+  "candidateCommit": null,
+  "reviewer": null,
+  "timestampUtc": null,
+  "reviewSurface": "characters/review/index.html",
+  "criteria": {
+    "silhouetteConsistency": null,
+    "roleDifferentiation": null,
+    "stateLegibility": null,
+    "propCollisionFree": null,
+    "darkTheme": null,
+    "lightTheme": null,
+    "smallSizeReadability": null,
+    "brandFit": null,
+    "truthBoundary": null
+  },
+  "decision": "pending",
+  "issues": [],
+  "notes": null
+}

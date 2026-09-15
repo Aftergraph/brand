@@ -1,0 +1,59 @@
+{
+  "$schema": "aftergraph.character-release-contract.v1",
+  "version": "1.0.0",
+  "status": "candidate",
+  "truthBoundary": "Characters are a view. Evidence is the truth.",
+  "sourceOfTruth": "characters/source",
+  "generatedManifest": "characters/generated/manifest.json",
+  "exporter": "scripts/export-character-assets.mjs",
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "formats": [
+    "svg",
+    "png",
+    "webp",
+    "avif"
+  ],
+  "counts": {
+    "roles": 6,
+    "states": 11,
+    "compositionsPerTheme": 66,
+    "avatarsPerTheme": 6,
+    "standaloneRolesPerTheme": 6,
+    "standaloneStatesPerTheme": 11,
+    "themeSpecificPerTheme": 89,
+    "themeNeutral": 11,
+    "logicalAssets": 189,
+    "formatFiles": 756
+  },
+  "sprites": {
+    "dark": "characters/generated/sprites/characters.svg",
+    "light": "characters/generated/themes/light/sprites/characters.svg",
+    "icons": "characters/generated/sprites/icons.svg"
+  },
+  "gates": {
+    "automatedVerification": "required",
+    "illustratorRoundtrip": "pending",
+    "riveRuntimeBinary": "verified",
+    "humanBrandReview": "pending"
+  },
+  "review": {
+    "surface": "characters/review/index.html",
+    "generator": "scripts/generate-character-review.mjs",
+    "themes": [
+      "dark",
+      "light"
+    ],
+    "matrix": "6 roles × 11 states × 2 themes"
+  },
+  "externalEvidence": {
+    "preflightCommand": "npm run character:authoring:preflight",
+    "preflightOutput": "characters/ci/evidence/authoring-preflight.json",
+    "illustratorTemplate": "characters/ci/evidence/illustrator-roundtrip.template.json",
+    "riveTemplate": "characters/ci/evidence/rive-authoring.template.json",
+    "humanBrandReviewTemplate": "characters/ci/evidence/human-brand-review.template.json",
+    "riveRuntimeManifest": "characters/motion/rive/runtime-manifest.json"
+  }
+}

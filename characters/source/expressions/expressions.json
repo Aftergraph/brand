@@ -1,0 +1,30 @@
+{
+  "$schema": "aftergraph.character-expressions.v1",
+  "version": "1.0.0",
+  "anchor": "gaze-center",
+  "invariants": {
+    "expressionsAreOperationalNotEmotionalJudgements": true,
+    "expressionNeverEstablishesOutcome": true
+  },
+  "expressions": [
+    { "id": "neutral", "meaning": "Available or resolved attention." },
+    { "id": "focus-left", "meaning": "Attention biased toward left-side context." },
+    { "id": "focus-right", "meaning": "Attention biased toward right-side context." },
+    { "id": "blink", "meaning": "Transient idle micro-motion frame." },
+    { "id": "attentive", "meaning": "Elevated attention without outcome semantics." },
+    { "id": "narrowed", "meaning": "Inspection or verification focus." }
+  ],
+  "stateDefaults": {
+    "idle": "neutral",
+    "thinking": "focus-right",
+    "planning": "attentive",
+    "executing": "attentive",
+    "inspecting": "focus-right",
+    "waiting": "neutral",
+    "blocked": "attentive",
+    "approval-required": "attentive",
+    "verifying": "narrowed",
+    "completed": "neutral",
+    "failed": "neutral"
+  }
+}

@@ -1,0 +1,54 @@
+<Rive version="1" kind="fragment">
+  <Artboard defaultStateMachineId="0:7" viewModelId="0:400" clip="true" width="512" height="512" styleId="0:5" name="ActorPresence" id="0:2">
+    <LayoutComponentStyle name="Artboard Style" id="0:5"/>
+    <LayoutComponent width="512" height="512" styleId="0:11" name="Root Layout" id="0:10">
+      <LayoutComponentStyle layoutWidthScaleType="1" layoutHeightScaleType="1" widthUnitsValue="3" heightUnitsValue="3" name="Layout Style" id="0:11"/>
+      <ScriptedLayout scriptAssetId="0:80" name="Actor Presence Renderer" id="0:12"/>
+    </LayoutComponent>
+    <StateMachine name="ActorPresence" id="0:7">
+      <StateMachineLayer name="Projection" id="0:8"><AnyState x="200" y="-120"/><ExitState x="400" y="-120"/><EntryState x="0" y="0"/></StateMachineLayer>
+    </StateMachine>
+  </Artboard>
+
+  <DataEnumCustom name="Role" id="0:100">
+    <DataEnumValue key="entity" value="entity" id="0:101"/>
+    <DataEnumValue key="guide" value="guide" id="0:102"/>
+    <DataEnumValue key="builder" value="builder" id="0:103"/>
+    <DataEnumValue key="verifier" value="verifier" id="0:104"/>
+    <DataEnumValue key="observer" value="observer" id="0:105"/>
+    <DataEnumValue key="researcher" value="researcher" id="0:106"/>
+</DataEnumCustom>
+  <DataEnumCustom name="State" id="0:200">
+    <DataEnumValue key="idle" value="idle" id="0:201"/>
+    <DataEnumValue key="thinking" value="thinking" id="0:202"/>
+    <DataEnumValue key="planning" value="planning" id="0:203"/>
+    <DataEnumValue key="executing" value="executing" id="0:204"/>
+    <DataEnumValue key="inspecting" value="inspecting" id="0:205"/>
+    <DataEnumValue key="waiting" value="waiting" id="0:206"/>
+    <DataEnumValue key="blocked" value="blocked" id="0:207"/>
+    <DataEnumValue key="approval-required" value="approval-required" id="0:208"/>
+    <DataEnumValue key="verifying" value="verifying" id="0:209"/>
+    <DataEnumValue key="completed" value="completed" id="0:210"/>
+    <DataEnumValue key="failed" value="failed" id="0:211"/>
+</DataEnumCustom>
+  <DataEnumCustom name="Attention" id="0:300">
+    <DataEnumValue key="none" value="none" id="0:301"/>
+    <DataEnumValue key="informational" value="informational" id="0:302"/>
+    <DataEnumValue key="required" value="required" id="0:303"/>
+    <DataEnumValue key="critical" value="critical" id="0:304"/>
+</DataEnumCustom>
+
+  <ViewModel defaultInstanceId="0:410" name="ActorPresence" id="0:400">
+    <ViewModelPropertyEnumCustom enumId="0:100" name="role" id="0:401"/>
+    <ViewModelPropertyEnumCustom enumId="0:200" name="state" id="0:402"/>
+    <ViewModelPropertyEnumCustom enumId="0:300" name="attention" id="0:403"/>
+    <ViewModelPropertyBoolean name="reducedMotion" id="0:404"/>
+    <ViewModelInstance exports="true" name="Default" id="0:410">
+      <ViewModelInstanceEnum propertyValue="0:101" viewModelPropertyId="0:401"/>
+      <ViewModelInstanceEnum propertyValue="0:201" viewModelPropertyId="0:402"/>
+      <ViewModelInstanceEnum propertyValue="0:301" viewModelPropertyId="0:403"/>
+      <ViewModelInstanceBoolean propertyValue="false" viewModelPropertyId="0:404"/>
+    </ViewModelInstance>
+  </ViewModel>
+  <ScriptAsset file="actor-presence.luau" name="actor-presence" id="0:80"/>
+</Rive>

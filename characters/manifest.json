@@ -1,0 +1,266 @@
+{
+  "$schema": "aftergraph.character-assets.v1",
+  "version": "1.0.0",
+  "status": "candidate-vector",
+  "truthBoundary": "Characters are a view. Evidence is the truth.",
+  "sourceClass": "native-svg",
+  "sprite": "characters/character-sprite.svg",
+  "limitations": [
+    "v1 is a governed 2D product vector language; approved glossy 3D concept art remains a separate raster campaign/reference pack.",
+    "No authored .riv runtime binary is included; the SVG rig, motion vocabulary, and Rive import contract are source-controlled handoff artifacts.",
+    "Character completion state never establishes verified outcome status."
+  ],
+  "roles": "characters/roles.json",
+  "states": "characters/states.json",
+  "assets": [
+    {
+      "id": "character.entity",
+      "kind": "character-vector",
+      "role": "entity",
+      "format": "svg-symbol",
+      "symbol": "ag-role-entity"
+    },
+    {
+      "id": "avatar.entity",
+      "kind": "avatar-vector",
+      "role": "entity",
+      "format": "svg-symbol",
+      "symbol": "ag-avatar-entity"
+    },
+    {
+      "id": "character.guide",
+      "kind": "character-vector",
+      "role": "guide",
+      "format": "svg-symbol",
+      "symbol": "ag-role-guide"
+    },
+    {
+      "id": "avatar.guide",
+      "kind": "avatar-vector",
+      "role": "guide",
+      "format": "svg-symbol",
+      "symbol": "ag-avatar-guide"
+    },
+    {
+      "id": "character.builder",
+      "kind": "character-vector",
+      "role": "builder",
+      "format": "svg-symbol",
+      "symbol": "ag-role-builder"
+    },
+    {
+      "id": "avatar.builder",
+      "kind": "avatar-vector",
+      "role": "builder",
+      "format": "svg-symbol",
+      "symbol": "ag-avatar-builder"
+    },
+    {
+      "id": "character.verifier",
+      "kind": "character-vector",
+      "role": "verifier",
+      "format": "svg-symbol",
+      "symbol": "ag-role-verifier"
+    },
+    {
+      "id": "avatar.verifier",
+      "kind": "avatar-vector",
+      "role": "verifier",
+      "format": "svg-symbol",
+      "symbol": "ag-avatar-verifier"
+    },
+    {
+      "id": "character.observer",
+      "kind": "character-vector",
+      "role": "observer",
+      "format": "svg-symbol",
+      "symbol": "ag-role-observer"
+    },
+    {
+      "id": "avatar.observer",
+      "kind": "avatar-vector",
+      "role": "observer",
+      "format": "svg-symbol",
+      "symbol": "ag-avatar-observer"
+    },
+    {
+      "id": "character.researcher",
+      "kind": "character-vector",
+      "role": "researcher",
+      "format": "svg-symbol",
+      "symbol": "ag-role-researcher"
+    },
+    {
+      "id": "avatar.researcher",
+      "kind": "avatar-vector",
+      "role": "researcher",
+      "format": "svg-symbol",
+      "symbol": "ag-avatar-researcher"
+    },
+    {
+      "id": "state.idle",
+      "kind": "state-vector",
+      "state": "idle",
+      "format": "svg-symbol",
+      "symbol": "ag-state-idle"
+    },
+    {
+      "id": "state.thinking",
+      "kind": "state-vector",
+      "state": "thinking",
+      "format": "svg-symbol",
+      "symbol": "ag-state-thinking"
+    },
+    {
+      "id": "state.planning",
+      "kind": "state-vector",
+      "state": "planning",
+      "format": "svg-symbol",
+      "symbol": "ag-state-planning"
+    },
+    {
+      "id": "state.executing",
+      "kind": "state-vector",
+      "state": "executing",
+      "format": "svg-symbol",
+      "symbol": "ag-state-executing"
+    },
+    {
+      "id": "state.inspecting",
+      "kind": "state-vector",
+      "state": "inspecting",
+      "format": "svg-symbol",
+      "symbol": "ag-state-inspecting"
+    },
+    {
+      "id": "state.waiting",
+      "kind": "state-vector",
+      "state": "waiting",
+      "format": "svg-symbol",
+      "symbol": "ag-state-waiting"
+    },
+    {
+      "id": "state.blocked",
+      "kind": "state-vector",
+      "state": "blocked",
+      "format": "svg-symbol",
+      "symbol": "ag-state-blocked"
+    },
+    {
+      "id": "state.approval-required",
+      "kind": "state-vector",
+      "state": "approval-required",
+      "format": "svg-symbol",
+      "symbol": "ag-state-approval-required"
+    },
+    {
+      "id": "state.verifying",
+      "kind": "state-vector",
+      "state": "verifying",
+      "format": "svg-symbol",
+      "symbol": "ag-state-verifying"
+    },
+    {
+      "id": "state.completed",
+      "kind": "state-vector",
+      "state": "completed",
+      "format": "svg-symbol",
+      "symbol": "ag-state-completed"
+    },
+    {
+      "id": "state.failed",
+      "kind": "state-vector",
+      "state": "failed",
+      "format": "svg-symbol",
+      "symbol": "ag-state-failed"
+    }
+  ],
+  "semanticIconBindings": {
+    "approval": "semantics/icons/human-approval.svg",
+    "evidence": "semantics/icons/evidence.svg",
+    "execution": "semantics/icons/execution.svg",
+    "role": "semantics/icons/role.svg",
+    "runtime": "semantics/icons/runtime.svg",
+    "verification": "semantics/icons/verifier.svg",
+    "verified": "semantics/icons/state-verified.svg",
+    "revoked": "semantics/icons/state-revoked.svg",
+    "stale": "semantics/icons/state-stale.svg"
+  },
+  "canonicalSource": {
+    "master": "characters/source/master/base-character.svg",
+    "anchors": "characters/source/master/anchors.json",
+    "roles": "characters/source/roles/roles.svg",
+    "states": "characters/source/states/states.svg",
+    "expressions": "characters/source/expressions/expressions.svg",
+    "expressionRegistry": "characters/source/expressions/expressions.json",
+    "rig": "characters/source/rig/rig.json",
+    "supportingIcons": "characters/source/icons/new-icons.svg",
+    "iconMapping": "characters/source/icons/icon-mapping.json",
+    "propSlots": "characters/source/rig/slots.json"
+  },
+  "derivedAssets": {
+    "generator": "scripts/compose-characters.mjs",
+    "manifest": "characters/generated/manifest.json",
+    "roleCount": 6,
+    "stateCount": 11,
+    "compositionCount": 66,
+    "avatarCount": 6,
+    "newSupportingIconCount": 11,
+    "manualEditsAllowed": false,
+    "sprites": {
+      "icons": "characters/generated/sprites/icons.svg",
+      "characterSymbolCount": 89,
+      "supportingIconSymbolCount": 11,
+      "idsNamespaced": true,
+      "darkCharacters": "characters/generated/sprites/characters.svg",
+      "lightCharacters": "characters/generated/themes/light/sprites/characters.svg"
+    },
+    "themes": {
+      "dark": {
+        "root": "characters/generated",
+        "sprite": "characters/generated/sprites/characters.svg"
+      },
+      "light": {
+        "root": "characters/generated/themes/light",
+        "sprite": "characters/generated/themes/light/sprites/characters.svg"
+      }
+    },
+    "releaseExporter": "scripts/export-character-assets.mjs",
+    "releaseFormats": [
+      "svg",
+      "png",
+      "webp",
+      "avif"
+    ],
+    "releaseAssetCount": 189,
+    "releaseFileCount": 756
+  },
+  "quality": {
+    "sourceValidator": "scripts/validate-character-source.mjs",
+    "visualRegressionConfig": "characters/ci/ci-checks.yml",
+    "smallSizeReport": "characters/generated/qa/small-size.json",
+    "contextVisibilityReport": "characters/generated/qa/context-visibility.json",
+    "compositionBoundsReport": "characters/generated/qa/composition-bounds.json",
+    "accessibility": "characters/accessibility.json",
+    "themes": "characters/themes.json",
+    "reviewSurface": "characters/review/index.html",
+    "visualAudit": "characters/review/VISUAL-AUDIT.md",
+    "authoringEvidence": "characters/ci/evidence/README.md"
+  },
+  "motion": {
+    "authoring": "characters/motion/RIVE-AUTHORING.md",
+    "importManifest": "characters/motion/rive-import-manifest.json",
+    "runtimeArtifactStatus": "verified",
+    "spec": "characters/motion/motion.json",
+    "specification": "characters/motion/MOTION-SPEC.md",
+    "runtimeArtifact": "characters/motion/rive/build/aftergraph_actor_presence.riv",
+    "runtimeManifest": "characters/motion/rive/runtime-manifest.json",
+    "runtimeQa": "npm run character:rive:qa"
+  },
+  "compatibility": {
+    "deprecatedSprite": "characters/character-sprite.svg",
+    "deprecated": true,
+    "migration": "characters/README.md"
+  },
+  "release": "characters/release.json"
+}

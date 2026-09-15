@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
+  <defs>
+    <symbol id="ag-role-entity-prop" viewBox="0 0 512 512" data-role="entity" data-anchor-ref="prop-center" data-accent-token="evidence_white" data-accent="#F5F7FA">
+      <g id="entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
+        <circle cx="0" cy="0" r="22"/>
+        <circle cx="-42" cy="-24" r="8" fill="#F5F7FA"/>
+        <circle cx="42" cy="-24" r="8" fill="#F5F7FA"/>
+        <circle cx="0" cy="46" r="8" fill="#F5F7FA"/>
+        <path d="M-34 -20 L-16 -8 M34 -20 L16 -8 M0 38 V22"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-role-guide-prop" viewBox="0 0 512 512" data-role="guide" data-anchor-ref="prop-left" data-accent-token="control_cyan" data-accent="#42C7E8">
+      <g id="guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M102 282 C111 246 124 210 151 176"/>
+        <circle cx="102" cy="282" r="11" fill="#42C7E8"/>
+        <circle cx="126" cy="222" r="8" fill="#42C7E8"/>
+        <circle cx="151" cy="176" r="11" fill="#42C7E8"/>
+        <path d="M143 177 L158 168 L155 185"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-role-builder-prop" viewBox="0 0 512 512" data-role="builder" data-anchor-ref="prop-right" data-accent-token="decision_amber" data-accent="#F0A64A">
+      <g id="builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
+        <path d="M-54 -12 L0 -42 L48 -14 L-4 17 Z"/>
+        <path d="M-54 -12 L-54 48 L-4 78 L-4 17 Z"/>
+        <path d="M-4 17 L48 -14 L48 46 L-4 78 Z"/>
+        <path d="M0 -42 V17" fill="none"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-role-verifier-prop" viewBox="0 0 512 512" data-role="verifier" data-anchor-ref="prop-right" data-accent-token="evidence_teal" data-accent="#24C4AD">
+      <g id="verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
+        <path d="M0 -48 L54 -27 L47 35 C39 71 19 92 0 103 C-19 92 -39 71 -47 35 L-54 -27 Z"/>
+        <path d="M-24 24 L-5 44 L31 0" fill="none" stroke-linecap="round"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-role-observer-prop" viewBox="0 0 512 512" data-role="observer" data-anchor-ref="prop-right" data-accent-token="system_blue" data-accent="#4C8BD8">
+      <g id="observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
+        <circle cx="0" cy="0" r="66"/>
+        <ellipse cx="0" cy="0" rx="29" ry="66"/>
+        <path d="M-66 0 H66 M-54 -34 Q0 -8 54 -34 M-54 34 Q0 8 54 34"/>
+        <circle cx="43" cy="-42" r="8" fill="#4C8BD8" stroke="none"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-role-researcher-prop" viewBox="0 0 512 512" data-role="researcher" data-anchor-ref="prop-right" data-accent-token="authority_violet" data-accent="#7759E8">
+      <g id="researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
+        <rect x="-58" y="-54" width="70" height="90" rx="9"/>
+        <rect x="-12" y="4" width="70" height="90" rx="9"/>
+        <path d="M-42 -31 H-5 M-42 -12 H-12 M4 28 H42 M4 47 H35" fill="none" stroke-linecap="round"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>

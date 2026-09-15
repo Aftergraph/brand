@@ -1,0 +1,92 @@
+{
+  "$schema": "aftergraph.character-motion.v1",
+  "version": "1.0.0",
+  "stateMachine": "ActorPresence",
+  "invariants": {
+    "motionCanEstablishVerification": false,
+    "motionCanEstablishApproval": false,
+    "motionCanEstablishEvidence": false,
+    "reducedMotionDisablesLoops": true
+  },
+  "states": {
+    "idle": {
+      "mode": "ambient",
+      "outcomeSemantics": "none",
+      "normal": { "clip": "idle-breathe-orbit", "loop": true, "periodMs": 3200 },
+      "reduced": { "clip": "static-neutral", "loop": false }
+    },
+    "thinking": {
+      "mode": "processing",
+      "outcomeSemantics": "activity-only",
+      "normal": { "clip": "thinking-orbit-focus", "loop": true, "periodMs": 1600 },
+      "reduced": { "clip": "static-focus-right", "loop": false }
+    },
+    "planning": {
+      "mode": "processing",
+      "outcomeSemantics": "activity-only",
+      "normal": { "clip": "planning-node-weave", "loop": true, "periodMs": 2200 },
+      "reduced": { "clip": "static-attentive", "loop": false }
+    },
+    "executing": {
+      "mode": "active",
+      "outcomeSemantics": "activity-only",
+      "normal": { "clip": "execution-edge-flow", "loop": true, "periodMs": 1400 },
+      "reduced": { "clip": "static-forward-active", "loop": false }
+    },
+    "inspecting": {
+      "mode": "active",
+      "outcomeSemantics": "activity-only",
+      "normal": { "clip": "inspection-lens-scan", "loop": true, "periodMs": 1800 },
+      "reduced": { "clip": "static-inspect", "loop": false }
+    },
+    "waiting": {
+      "mode": "paused",
+      "outcomeSemantics": "dependency-only",
+      "normal": { "clip": "waiting-timeline-pulse", "loop": true, "periodMs": 2800 },
+      "reduced": { "clip": "static-paused", "loop": false }
+    },
+    "blocked": {
+      "mode": "attention",
+      "outcomeSemantics": "blocker-only",
+      "normal": { "clip": "blocked-halt-signal", "loop": true, "periodMs": 2400 },
+      "reduced": { "clip": "static-halt", "loop": false }
+    },
+    "approval-required": {
+      "mode": "attention",
+      "outcomeSemantics": "authority-request-only",
+      "normal": { "clip": "approval-gate-pulse", "loop": true, "periodMs": 2200 },
+      "reduced": { "clip": "static-open-palms", "loop": false }
+    },
+    "verifying": {
+      "mode": "inspection",
+      "outcomeSemantics": "activity-only",
+      "normal": { "clip": "verification-scan", "loop": true, "periodMs": 1700 },
+      "reduced": { "clip": "static-narrowed-inspection", "loop": false }
+    },
+    "completed": {
+      "mode": "terminal-transition",
+      "outcomeSemantics": "execution-complete-only",
+      "normal": { "clip": "completion-resolve", "loop": false, "durationMs": 360 },
+      "reduced": { "clip": "static-resolved", "loop": false }
+    },
+    "failed": {
+      "mode": "terminal-transition",
+      "outcomeSemantics": "execution-failed-only",
+      "normal": { "clip": "failure-halt", "loop": false, "durationMs": 300 },
+      "reduced": { "clip": "static-halt-lowered", "loop": false }
+    }
+  },
+  "transitions": [
+    { "from": "*", "to": "thinking", "durationMs": 180, "curve": "ease-out" },
+    { "from": "thinking", "to": "planning", "durationMs": 220, "curve": "ease-in-out" },
+    { "from": "planning", "to": "executing", "durationMs": 240, "curve": "ease-in-out" },
+    { "from": "executing", "to": "inspecting", "durationMs": 180, "curve": "ease-out" },
+    { "from": "*", "to": "waiting", "durationMs": 160, "curve": "ease-out" },
+    { "from": "*", "to": "blocked", "durationMs": 140, "curve": "ease-out" },
+    { "from": "*", "to": "approval-required", "durationMs": 180, "curve": "ease-out" },
+    { "from": "*", "to": "verifying", "durationMs": 200, "curve": "ease-in-out" },
+    { "from": "*", "to": "completed", "durationMs": 280, "curve": "ease-out" },
+    { "from": "*", "to": "failed", "durationMs": 180, "curve": "ease-out" },
+    { "from": "*", "to": "idle", "durationMs": 220, "curve": "ease-in-out" }
+  ]
+}

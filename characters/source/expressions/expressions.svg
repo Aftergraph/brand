@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
+  <defs>
+    <symbol id="ag-expression-neutral" viewBox="0 0 512 512" data-expression="neutral" data-anchor-ref="gaze-center">
+      <g fill="currentColor"><rect x="224" y="162" width="12" height="52" rx="6"/><rect x="276" y="162" width="12" height="52" rx="6"/></g>
+    </symbol>
+    <symbol id="ag-expression-focus-left" viewBox="0 0 512 512" data-expression="focus-left" data-anchor-ref="gaze-center">
+      <g fill="currentColor"><rect x="218" y="162" width="12" height="52" rx="6"/><rect x="270" y="162" width="12" height="52" rx="6"/></g>
+    </symbol>
+    <symbol id="ag-expression-focus-right" viewBox="0 0 512 512" data-expression="focus-right" data-anchor-ref="gaze-center">
+      <g fill="currentColor"><rect x="230" y="162" width="12" height="52" rx="6"/><rect x="282" y="162" width="12" height="52" rx="6"/></g>
+    </symbol>
+    <symbol id="ag-expression-blink" viewBox="0 0 512 512" data-expression="blink" data-anchor-ref="gaze-center">
+      <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M221 190 H239"/><path d="M273 190 H291"/></g>
+    </symbol>
+    <symbol id="ag-expression-attentive" viewBox="0 0 512 512" data-expression="attentive" data-anchor-ref="gaze-center">
+      <g fill="currentColor"><rect x="223" y="156" width="13" height="60" rx="6.5"/><rect x="276" y="156" width="13" height="60" rx="6.5"/></g>
+    </symbol>
+    <symbol id="ag-expression-narrowed" viewBox="0 0 512 512" data-expression="narrowed" data-anchor-ref="gaze-center">
+      <g fill="currentColor"><rect x="224" y="174" width="12" height="34" rx="6"/><rect x="276" y="174" width="12" height="34" rx="6"/></g>
+    </symbol>
+  </defs>
+</svg>
