@@ -36,6 +36,8 @@ test("review bundle is exact-HEAD, self-contained, and preserves pending externa
 test("manual review-bundle workflow uploads the exact-head handoff without publishing", () => {
   const workflow = fs.readFileSync(path.join(root, ".github/workflows/character-review-bundle.yml"), "utf8");
   assert.match(workflow, /workflow_dispatch:/);
+  assert.match(workflow, /pull_request:/);
+  assert.match(workflow, /characters\/\*\*/);
   assert.match(workflow, /npm run character:review:bundle/);
   assert.match(workflow, /actions\/upload-artifact@[0-9a-f]{40}/);
   assert.match(workflow, /aftergraph-character-review-/);
