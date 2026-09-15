@@ -45,6 +45,7 @@ New consumers compose the canonical base anatomy with one generic role module an
 - `ci/ci-checks.yml` — Illustrator roundtrip and visual-regression gate contract.
 - `governance/product-aliases.json` — product-to-generic-role alias boundary.
 - `roles.json`, `states.json`, `manifest.json` — compatibility/runtime registries.
+- `release.json` — governed release surface, expected counts, formats, themes, and external gate status.
 - `character-sprite.svg` — **deprecated** generated compatibility sprite.
 
 `npm run generate` still reproduces the deprecated sprite for compatibility. New generation work must target composition-derived exports from `source/`.

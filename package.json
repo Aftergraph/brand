@@ -45,6 +45,7 @@
     "./svg/*": "./svg/*",
     "./characters/*": "./characters/*",
     "./characters/manifest.json": "./characters/manifest.json",
+    "./characters/release.json": "./characters/release.json",
     "./characters/roles.json": "./characters/roles.json",
     "./characters/states.json": "./characters/states.json",
     "./characters/accessibility.json": "./characters/accessibility.json",
@@ -58,7 +59,8 @@
     "./characters/motion/*": "./characters/motion/*",
     "./characters/accessibility": "./characters/accessibility.json",
     "./characters/contexts": "./characters/contexts.json",
-    "./characters/themes": "./characters/themes.json"
+    "./characters/themes": "./characters/themes.json",
+    "./characters/release": "./characters/release.json"
   },
   "repository": {
     "type": "git",

@@ -254,5 +254,6 @@
     "deprecatedSprite": "characters/character-sprite.svg",
     "deprecated": true,
     "migration": "characters/README.md"
-  }
+  },
+  "release": "characters/release.json"
 }

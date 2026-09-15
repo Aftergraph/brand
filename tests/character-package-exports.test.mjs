@@ -10,6 +10,7 @@ const pkg=JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8'));
 test('package exposes canonical character contracts, source, generated vectors, and governance manifests explicitly',()=>{
   const expected={
     './characters/manifest.json':'./characters/manifest.json',
+    './characters/release.json':'./characters/release.json',
     './characters/roles.json':'./characters/roles.json',
     './characters/states.json':'./characters/states.json',
     './characters/accessibility.json':'./characters/accessibility.json',
