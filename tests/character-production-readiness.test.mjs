@@ -94,3 +94,65 @@ test("completed external evidence is bound to the exact candidate", async () => 
   assert.deepEqual(report.external.verified.sort(),["humanBrandReview","illustratorRoundtrip"]);
   fs.rmSync(tmp,{recursive:true,force:true});
 });
+
+
+test("production promotion converts a verified candidate into a derived release with provenance", async () => {
+  const {createHash}=await import("node:crypto");
+  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),"aftergraph-character-promote-"));
+  const copy=(rel)=>{const dst=path.join(tmp,rel);fs.mkdirSync(path.dirname(dst),{recursive:true});fs.copyFileSync(path.join(root,rel),dst);};
+  for(const rel of [
+    "characters/release.json","characters/generated/manifest.json",
+    "characters/motion/rive/runtime-manifest.json","characters/motion/rive/source-manifest.json",
+    "characters/motion/rive/scene.rml","characters/motion/rive/actor-presence.luau",
+    "characters/motion/rive/build/aftergraph_actor_presence.riv",
+    "characters/source/master/base-character.svg"
+  ]) copy(rel);
+  const candidate="approved-candidate";
+  const base=path.join(tmp,"characters/source/master/base-character.svg");
+  const inputSha=createHash("sha256").update(fs.readFileSync(base)).digest("hex");
+  const evidenceDir=path.join(tmp,"characters/ci/evidence"); fs.mkdirSync(evidenceDir,{recursive:true});
+  fs.writeFileSync(path.join(evidenceDir,"illustrator-roundtrip.json"),JSON.stringify({candidateCommit:candidate,inputSha256:inputSha,pass:true,openedWithoutConversionWarnings:true,artboard:{width:512,height:512,verified:true},requiredGroupsEditable:true,gradientsEditable:{"metal-highlight":true,"visor-glow":true},independentMoveUndoVerified:true,savedAsSvg11:true,reopenedSuccessfully:true,requiredGroupsPreservedAfterReopen:true,gradientsPreservedAfterReopen:true,outputSha256:"b".repeat(64)}));
+  fs.writeFileSync(path.join(evidenceDir,"human-brand-review.json"),JSON.stringify({candidateCommit:candidate,decision:"approved",criteria:{silhouetteConsistency:true,roleDifferentiation:true,stateLegibility:true,propCollisionFree:true,darkTheme:true,lightTheme:true,smallSizeReadability:true,brandFit:true,truthBoundary:true}}));
+  const mod=await import(`../scripts/promote-character-release.mjs?fixture=${Date.now()}`);
+  const attestation=mod.promoteCharacterRelease({root:tmp,candidateCommit:candidate});
+  const release=JSON.parse(fs.readFileSync(path.join(tmp,"characters/release.json"),"utf8"));
+  assert.equal(release.status,"release");
+  assert.equal(release.gates.illustratorRoundtrip,"verified");
+  assert.equal(release.gates.humanBrandReview,"verified");
+  assert.equal(attestation.candidateCommit,candidate);
+  assert.match(attestation.evidence.illustratorRoundtrip.sha256,/^[a-f0-9]{64}$/);
+  assert.match(attestation.evidence.humanBrandReview.sha256,/^[a-f0-9]{64}$/);
+  const verifier=await import(`../scripts/verify-character-production-readiness.mjs?attestation=${Date.now()}`);
+  const promoted=verifier.evaluateReadiness({root:tmp,candidateCommit:candidate});
+  assert.equal(promoted.attestation.valid,true,JSON.stringify(promoted.attestation));
+  const humanPath=path.join(evidenceDir,"human-brand-review.json");
+  const human=JSON.parse(fs.readFileSync(humanPath,"utf8")); human.decision="rejected"; fs.writeFileSync(humanPath,JSON.stringify(human));
+  const tampered=verifier.evaluateReadiness({root:tmp,candidateCommit:candidate});
+  assert.equal(tampered.attestation.valid,false);
+  fs.rmSync(tmp,{recursive:true,force:true});
+});
+
+test("package exposes an explicit production promotion command", () => {
+  const pkg=JSON.parse(fs.readFileSync(path.join(root,"package.json"),"utf8"));
+  assert.equal(pkg.scripts["character:release:promote"],"node scripts/promote-character-release.mjs");
+});
+
+test("production workflow accepts exact-candidate external evidence inputs before packaging", () => {
+  const workflow=fs.readFileSync(path.join(root,".github/workflows/character-release.yml"),"utf8");
+  assert.match(workflow,/candidate_sha:/);
+  assert.match(workflow,/illustrator_evidence_b64:/);
+  assert.match(workflow,/human_brand_review_b64:/);
+  assert.match(workflow,/confirm_release:/);
+  assert.match(workflow,/base64 --decode/);
+  assert.match(workflow,/npm run character:release:promote/);
+  assert.match(workflow,/ref: \$\{\{ inputs\.candidate_sha \}\}/);
+  assert.match(workflow,/production-attestation\.json/);
+});
+
+test("production documentation explains external evidence promotion without mutating the reviewed candidate", () => {
+  const readme=fs.readFileSync(path.join(root,"characters/README.md"),"utf8");
+  assert.match(readme,/candidate_sha/);
+  assert.match(readme,/production-attestation\.json/);
+  assert.match(readme,/external evidence/i);
+  assert.match(readme,/does not publish or merge automatically/i);
+});

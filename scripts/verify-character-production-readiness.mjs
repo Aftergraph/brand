@@ -13,6 +13,34 @@ function booleanChecklist(obj, keys) {
   return keys.every((key) => obj?.[key] === true);
 }
 
+function evaluateAttestation({root, candidateCommit, release, runtime}) {
+  const rel = "characters/production-attestation.json";
+  const file = path.join(root, rel);
+  const issues = [];
+  if (!exists(file)) return {path:rel, exists:false, valid:false, issues:["missing"]};
+  let attestation;
+  try { attestation = readJson(file); }
+  catch { return {path:rel, exists:true, valid:false, issues:["invalid-json"]}; }
+  const expect = (pass, issue) => { if (!pass) issues.push(issue); };
+  const releasePath = path.join(root, "characters/release.json");
+  expect(attestation.$schema === "aftergraph.character-production-attestation.v1", "schema");
+  expect(attestation.candidateCommit === candidateCommit, "candidate-commit");
+  expect(attestation.truthBoundary === release.truthBoundary, "truth-boundary");
+  expect(attestation.release?.path === "characters/release.json", "release-path");
+  expect(attestation.release?.status === "release" && release.status === "release", "release-status");
+  expect(attestation.release?.promotedSha256 === sha256(releasePath), "release-sha256");
+  expect(/^[a-f0-9]{64}$/.test(attestation.release?.prePromotionSha256 ?? ""), "pre-promotion-sha256");
+  for (const [id, relPath] of Object.entries({illustratorRoundtrip:"characters/ci/evidence/illustrator-roundtrip.json", humanBrandReview:"characters/ci/evidence/human-brand-review.json"})) {
+    const evidenceFile = path.join(root, relPath);
+    expect(attestation.evidence?.[id]?.path === relPath, `${id}-path`);
+    expect(exists(evidenceFile) && attestation.evidence?.[id]?.sha256 === sha256(evidenceFile), `${id}-sha256`);
+  }
+  expect(attestation.riveRuntime?.path === runtime.artifact.path, "rive-path");
+  expect(attestation.riveRuntime?.sha256 === runtime.artifact.sha256, "rive-sha256");
+  expect(Number.isFinite(Date.parse(attestation.promotedAt ?? "")), "promoted-at");
+  return {path:rel, exists:true, valid:issues.length === 0, issues};
+}
+
 export function evaluateReadiness({root = process.cwd(), candidateCommit}) {
   const release = readJson(path.join(root, "characters/release.json"));
   const generated = readJson(path.join(root, release.generatedManifest));
@@ -64,7 +92,8 @@ export function evaluateReadiness({root = process.cwd(), candidateCommit}) {
     (pass ? external.verified : external.invalid).push("humanBrandReview");
   }
 
-  return {candidateCommit, release, automated:{pass:automatedChecks.every((x) => x.pass), checks:automatedChecks}, external};
+  const attestation = evaluateAttestation({root, candidateCommit, release, runtime});
+  return {candidateCommit, release, automated:{pass:automatedChecks.every((x) => x.pass), checks:automatedChecks}, external, attestation};
 }
 
 function parseArgs(argv) {
@@ -92,6 +121,7 @@ function main() {
     if (report.release.gates.humanBrandReview !== "verified") blockers.push("human brand release gate is not verified");
     if (!report.external.verified.includes("illustratorRoundtrip")) blockers.push("illustrator evidence missing or invalid for exact HEAD");
     if (!report.external.verified.includes("humanBrandReview")) blockers.push("human brand evidence missing or invalid for exact HEAD");
+    if (!report.attestation.valid) blockers.push(`production attestation missing or invalid: ${report.attestation.issues.join(",")}`);
   }
   const verdict = blockers.length ? (args.mode === "production" ? "BLOCKED_EXTERNAL_GATES" : "NOT_READY") : (args.mode === "production" ? "PRODUCTION_READY" : "READY_FOR_EXTERNAL_GATES");
   const final = {...report, mode:args.mode, blockers, verdict};

@@ -2,6 +2,24 @@ name: Character Production Release Candidate
 
 on:
   workflow_dispatch:
+    inputs:
+      candidate_sha:
+        description: Exact approved character candidate commit SHA
+        required: true
+        type: string
+      illustrator_evidence_b64:
+        description: Base64-encoded completed illustrator-roundtrip.json
+        required: true
+        type: string
+      human_brand_review_b64:
+        description: Base64-encoded completed human-brand-review.json
+        required: true
+        type: string
+      confirm_release:
+        description: Confirm release generation after external gates are complete
+        required: true
+        default: false
+        type: boolean
 
 permissions:
   contents: read
@@ -9,12 +27,17 @@ permissions:
 env:
   RIVE_VERSION: "1.0.3"
   RIVE_INSTALLER_SHA256: "36ba445ffe27f5f814c59bb1c76e371bf47f9ed2448a681c4199783245c0e5b5"
-
 jobs:
   core:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ inputs.candidate_sha }}
+      - name: Verify release confirmation and exact candidate
+        run: |
+          test "${{ inputs.confirm_release }}" = "true"
+          test "$(git rev-parse HEAD)" = "${{ inputs.candidate_sha }}"
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 24
@@ -22,28 +45,32 @@ jobs:
       - run: npm run audit:high
       - run: npm run check
       - run: npm run character:qa
-      - run: npm run character:production:verify
+      - run: npm run character:candidate:verify
       - run: git diff --exit-code
 
   rive-runtime:
     runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ inputs.candidate_sha }}
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 24
       - run: npm ci
-      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libegl1 libgles2 libx11-6 libwayland-egl1 libxkbcommon0
+      - name: Install Rive runtime libraries
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libegl1 libgles2 libx11-6 libwayland-egl1 libxkbcommon0
       - name: Install pinned Rive CLI
         run: |
           curl -fsSL https://releases.rive.app/cli/install.sh -o /tmp/rive-install.sh
           echo "$RIVE_INSTALLER_SHA256  /tmp/rive-install.sh" | sha256sum --check -
           bash /tmp/rive-install.sh
           echo "$HOME/.rive/bin" >> "$GITHUB_PATH"
-          "$HOME/.rive/bin/rive" --version
-          test "$("$HOME/.rive/bin/rive" --version | awk '{print $2}')" = "$RIVE_VERSION"
-      - run: npm run generate
-      - run: npm run character:rive:verify && npm run character:rive:qa
+          export PATH="$HOME/.rive/bin:$PATH"
+          rive --version
+          test "$(rive --version | awk '{print $2}')" = "$RIVE_VERSION"
+      - run: npm run character:rive:verify
+      - run: npm run character:rive:qa
       - run: git diff --exit-code
 
   package:
@@ -51,20 +78,48 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ inputs.candidate_sha }}
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 24
       - run: npm ci
-      - run: npm run character:production:verify
-      - name: Export governed delivery assets
+      - name: Verify exact candidate before evidence intake
+        run: test "$(git rev-parse HEAD)" = "${{ inputs.candidate_sha }}"
+      - name: Materialize reviewed external evidence
+        env:
+          ILLUSTRATOR_EVIDENCE_B64: ${{ inputs.illustrator_evidence_b64 }}
+          HUMAN_BRAND_REVIEW_B64: ${{ inputs.human_brand_review_b64 }}
+        run: |
+          mkdir -p characters/ci/evidence
+          printf '%s' "$ILLUSTRATOR_EVIDENCE_B64" | base64 --decode > characters/ci/evidence/illustrator-roundtrip.json
+          printf '%s' "$HUMAN_BRAND_REVIEW_B64" | base64 --decode > characters/ci/evidence/human-brand-review.json
+          node -e "JSON.parse(require('fs').readFileSync('characters/ci/evidence/illustrator-roundtrip.json','utf8'));JSON.parse(require('fs').readFileSync('characters/ci/evidence/human-brand-review.json','utf8'))"
+      - name: Promote exact candidate to derived production release
+        run: npm run character:release:promote -- --candidate "${{ inputs.candidate_sha }}"
+      - name: Verify production provenance and gates
+        run: npm run character:production:verify
+      - name: Export governed production assets
         run: npm run character:export
-      - name: Build npm package
-        run: npm pack
-      - name: Upload verified package
+      - name: Pack npm release candidate
+        run: |
+          mkdir -p dist/npm
+          npm pack --pack-destination dist/npm
+          sha256sum dist/npm/*.tgz > dist/npm/SHA256SUMS
+      - name: Assemble production evidence bundle
+        run: |
+          mkdir -p dist/production-evidence
+          cp characters/production-attestation.json characters/release.json dist/production-evidence/
+          cp characters/ci/evidence/illustrator-roundtrip.json characters/ci/evidence/human-brand-review.json dist/production-evidence/
+          cp characters/motion/rive/runtime-manifest.json dist/production-evidence/
+          sha256sum dist/production-evidence/* > dist/production-evidence/SHA256SUMS
+      - name: Upload production release candidate
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: aftergraph-brand-character-production-candidate
+          name: aftergraph-character-production-${{ inputs.candidate_sha }}
           path: |
-            aftergraph-brand-*.tgz
             exports/characters/
+            dist/npm/
+            dist/production-evidence/
           if-no-files-found: error
+          retention-days: 30

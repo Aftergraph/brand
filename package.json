@@ -26,7 +26,8 @@
     "character:rive:qa": "node scripts/verify-character-rive-runtime.mjs",
     "character:candidate:verify": "node scripts/verify-character-production-readiness.mjs --mode candidate",
     "character:production:verify": "node scripts/verify-character-production-readiness.mjs --mode production",
-    "character:review:bundle": "node scripts/prepare-character-review-bundle.mjs --out dist/character-review-bundle"
+    "character:review:bundle": "node scripts/prepare-character-review-bundle.mjs --out dist/character-review-bundle",
+    "character:release:promote": "node scripts/promote-character-release.mjs"
   },
   "bin": {
     "assetgen": "./scripts/assetgen.mjs"
