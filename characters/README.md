@@ -103,3 +103,11 @@ The release exporter contains 89 dark character assets, 89 light character asset
 - `review/VISUAL-AUDIT.md` — machine-assisted visual findings; it does not replace human brand approval.
 - `ci/evidence/` — Illustrator and human-review templates plus the Rive runtime evidence contract.
 - `npm run character:authoring:preflight` — binds the remaining external review gates and the verified Rive runtime artifact to the exact candidate commit and source SHA-256 hashes.
+
+## Production readiness gates
+
+`npm run character:candidate:verify` proves the automated release contract while allowing the two explicit external review gates to remain pending. It fails on source-of-truth drift, generated-count drift, broken Rive source bindings, or a runtime artifact/hash mismatch.
+
+`npm run character:production:verify` is fail-closed. Production requires `characters/release.json` to be promoted to `status: "release"`, both external gates to be marked `verified`, and exact-HEAD Illustrator plus human brand-review evidence under `characters/ci/evidence/`.
+
+The manual GitHub workflow `.github/workflows/character-release.yml` runs production verification, core QA, the pinned Rive runtime QA on Ubuntu 26.04, the full governed asset export, and `npm pack`. Only after every gate passes does it upload the npm tarball and `exports/characters/` delivery tree as a release-candidate artifact. It does not publish or merge automatically.

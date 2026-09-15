@@ -41,6 +41,9 @@ jobs:
       - name: Run Brand OS semantic validator and tests
         run: npm run validate && npm test
 
+      - name: Verify character candidate release readiness
+        run: npm run character:candidate:verify
+
       - name: Validate JSON schemas
         run: |
           node -e "JSON.parse(require('fs').readFileSync('tokens.json', 'utf8'))"

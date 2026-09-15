@@ -23,7 +23,9 @@
     "character:rive:generate": "node scripts/generate-character-rive.mjs",
     "character:rive:verify": "node scripts/verify-character-rive.mjs",
     "character:rive:build": "node scripts/build-character-rive.mjs",
-    "character:rive:qa": "node scripts/verify-character-rive-runtime.mjs"
+    "character:rive:qa": "node scripts/verify-character-rive-runtime.mjs",
+    "character:candidate:verify": "node scripts/verify-character-production-readiness.mjs --mode candidate",
+    "character:production:verify": "node scripts/verify-character-production-readiness.mjs --mode production"
   },
   "bin": {
     "assetgen": "./scripts/assetgen.mjs"
