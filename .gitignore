@@ -14,3 +14,6 @@ characters/ci/evidence/authoring-preflight.json
 characters/motion/rive/build/*.log
 characters/motion/rive/build/*.png
 characters/motion/rive/build/*.data.json
+
+# Exact-HEAD external review handoff (generated artifact)
+dist/character-review-bundle/

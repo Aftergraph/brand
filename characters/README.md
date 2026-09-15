@@ -103,6 +103,7 @@ The release exporter contains 89 dark character assets, 89 light character asset
 - `review/VISUAL-AUDIT.md` — machine-assisted visual findings; it does not replace human brand approval.
 - `ci/evidence/` — Illustrator and human-review templates plus the Rive runtime evidence contract.
 - `npm run character:authoring:preflight` — binds the remaining external review gates and the verified Rive runtime artifact to the exact candidate commit and source SHA-256 hashes.
+- `npm run character:review:bundle` — creates an ignored, exact-HEAD reviewer handoff under `dist/character-review-bundle/` with canonical Illustrator source, review UI, preflight hashes, pending evidence forms, and Rive runtime evidence.
 
 ## Production readiness gates
 
