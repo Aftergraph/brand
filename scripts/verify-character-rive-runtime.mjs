@@ -6,6 +6,7 @@ import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import pixelmatch from 'pixelmatch';
 import {PNG} from 'pngjs';
+import {assertVisiblePng} from './lib/rive-render-validation.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const project = path.join(root, 'characters/motion/rive');
@@ -44,7 +45,7 @@ try {
     const png = path.join(tmp, `${stem}.png`);
     const dump = path.join(tmp, `${stem}.json`);
     execFileSync(rive, [project, `--screenshot=${png}`, `--data=role=${role}`, `--data=state=${state}`, `--data=attention=${attention}`, '--data=reducedMotion=true', `--data-dump=${dump}`, '--quiet'], {cwd:root, stdio:'pipe'});
-    if (!fs.existsSync(png) || fs.statSync(png).size < 4096) throw new Error(`${stem} did not produce a valid headless render.`);
+    assertVisiblePng(png, 32);
     const vm = JSON.parse(fs.readFileSync(dump, 'utf8')).viewModel;
     const values = Object.fromEntries(vm.properties.map((p) => [p.name,p.value]));
     if (values.role !== role || values.state !== state || values.attention !== attention || values.reducedMotion !== true) throw new Error(`${stem} data binding did not round-trip.`);

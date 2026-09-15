@@ -130,3 +130,22 @@ test('GitHub CI provisions the runtime libraries required by the pinned Rive CLI
   assert.match(ci, /node-version:\s*24/);
   assert.match(ci, /apt-get install[^\n]*libegl1[^\n]*libgles2[^\n]*libx11-6[^\n]*libwayland-egl1[^\n]*libxkbcommon0/);
 });
+
+
+test('Rive headless render validity is based on decoded visible pixels, not PNG byte size', async () => {
+  const helper = path.join(root, 'scripts/lib/rive-render-validation.mjs');
+  assert.ok(fs.existsSync(helper), 'missing pixel-based Rive render validator');
+  const {assertVisiblePng} = await import(`file://${helper}`);
+  const {PNG} = await import('pngjs');
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'aftergraph-rive-png-'));
+  const visible = new PNG({width:512, height:512});
+  for (let i = 0; i < 64; i++) visible.data[i * 4 + 3] = 255;
+  const visiblePath = path.join(tmp, 'visible.png');
+  fs.writeFileSync(visiblePath, PNG.sync.write(visible));
+  assert.ok(fs.statSync(visiblePath).size < 4096, 'fixture must reproduce small valid PNG');
+  assert.doesNotThrow(() => assertVisiblePng(visiblePath, 32));
+  const blankPath = path.join(tmp, 'blank.png');
+  fs.writeFileSync(blankPath, PNG.sync.write(new PNG({width:512, height:512})));
+  assert.throws(() => assertVisiblePng(blankPath, 32), /visible pixels/);
+  fs.rmSync(tmp, {recursive:true, force:true});
+});
