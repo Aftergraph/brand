@@ -70,7 +70,7 @@ Additional canonical source modules are:
 
 ## Motion layer
 
-`motion/rive-import-manifest.json` and `motion/RIVE-AUTHORING.md` define the Rive runtime projection. SVG remains canonical. The official Rive CLI deterministically authors `motion/rive/build/aftergraph_actor_presence.riv` from governed RML + Luau, and `motion/rive/runtime-manifest.json` binds the binary to its generated sources by SHA-256. Use `npm run character:rive:qa` for headless runtime verification.
+`motion/rive-import-manifest.json` and `motion/RIVE-AUTHORING.md` define the Rive runtime projection. SVG remains canonical. The official Rive CLI deterministically authors `motion/rive/build/aftergraph_actor_presence.riv` from governed RML + Luau, and `motion/rive/runtime-manifest.json` binds the binary to its generated sources by SHA-256. Use `npm run character:rive:qa` for headless runtime verification. QA exercises all 11 governed states, proves active motion changes rendered pixels, and proves `reducedMotion=true` stays static. GitHub CI installs the official Rive CLI pinned to `1.0.3`, verifies its installer SHA-256, rebuilds the runtime, and rejects generated/runtime drift.
 
 ## Production sprites
 

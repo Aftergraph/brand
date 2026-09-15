@@ -89,3 +89,37 @@ echo '{"success":true}'
     stdio: 'pipe',
   }), /Rive resolved scene reported 1 problem/);
 });
+
+test('Rive runtime projects governed motion and bypasses it under reduced motion', () => {
+  const luau = read('characters/motion/rive/actor-presence.luau');
+  assert.match(luau, /local MOTION_PERIODS: \{\[string\]: number\} = \{/);
+  assert.match(luau, /function motionTransform\(state: string, elapsed: number, attention: string\): Mat2D/);
+  assert.match(luau, /if not reduced then\s+renderer:transform\(motionTransform\(state, self\.elapsed, attention\)\)/);
+  assert.match(luau, /MOTION_PERIODS\[state\]/);
+});
+
+test('Rive runtime QA proves active motion changes pixels while reduced motion stays static', () => {
+  const qa = read('scripts/verify-character-rive-runtime.mjs');
+  assert.match(qa, /from 'pixelmatch'/);
+  assert.match(qa, /from 'pngjs'/);
+  assert.match(qa, /--advance=400ms/);
+  assert.match(qa, /active motion produced too little pixel delta/);
+  assert.match(qa, /reduced motion was not static/);
+});
+
+
+test('GitHub CI pins the official Rive CLI and enforces runtime QA', () => {
+  const ci = read('.github/workflows/ci.yml');
+  assert.match(ci, /RIVE_VERSION:\s*["']?1\.0\.3["']?/);
+  assert.match(ci, /releases\.rive\.app\/cli\/install\.sh/);
+  assert.match(ci, /rive --version/);
+  assert.match(ci, /npm run character:rive:verify/);
+  assert.match(ci, /npm run character:rive:qa/);
+});
+
+
+test('Rive motion pixel QA covers every governed runtime state', () => {
+  const qa = read('scripts/verify-character-rive-runtime.mjs');
+  assert.match(qa, /const motionCases = cases;/);
+  assert.match(qa, /motionEvidence\.push/);
+});

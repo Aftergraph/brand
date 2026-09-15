@@ -4,11 +4,19 @@ import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
+import pixelmatch from 'pixelmatch';
+import {PNG} from 'pngjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const project = path.join(root, 'characters/motion/rive');
 const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
 const sha256File = (p) => crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const pixelDelta = (aPath, bPath) => {
+  const a = PNG.sync.read(fs.readFileSync(aPath));
+  const b = PNG.sync.read(fs.readFileSync(bPath));
+  if (a.width !== b.width || a.height !== b.height) throw new Error(`Rive QA image dimensions differ: ${a.width}x${a.height} vs ${b.width}x${b.height}.`);
+  return pixelmatch(a.data, b.data, null, a.width, a.height, {threshold:0.1});
+};
 const candidates = [process.env.RIVE_CLI, 'rive', path.join(os.homedir(), '.rive/bin/rive')].filter(Boolean);
 let rive = null;
 for (const candidate of candidates) {
@@ -43,7 +51,27 @@ try {
     hashes.add(sha256File(png));
   }
   if (hashes.size !== cases.length) throw new Error(`Expected ${cases.length} distinct runtime renders, got ${hashes.size}.`);
+
+  const motionCases = cases;
+  const motionEvidence = [];
+  for (const [role,state,attention] of motionCases) {
+    const stem = `${role}--${state}`;
+    const reducedBase = path.join(tmp, `${stem}.png`);
+    const reducedAdvanced = path.join(tmp, `${stem}--reduced-400.png`);
+    const activeBase = path.join(tmp, `${stem}--active-0.png`);
+    const activeAdvanced = path.join(tmp, `${stem}--active-400.png`);
+    const common = [`--data=role=${role}`, `--data=state=${state}`, `--data=attention=${attention}`, '--quiet'];
+    execFileSync(rive, [project, `--screenshot=${reducedAdvanced}`, ...common, '--data=reducedMotion=true', '--advance=400ms'], {cwd:root, stdio:'pipe'});
+    execFileSync(rive, [project, `--screenshot=${activeBase}`, ...common, '--data=reducedMotion=false'], {cwd:root, stdio:'pipe'});
+    execFileSync(rive, [project, `--screenshot=${activeAdvanced}`, ...common, '--data=reducedMotion=false', '--advance=400ms'], {cwd:root, stdio:'pipe'});
+    const activeDelta = pixelDelta(activeBase, activeAdvanced);
+    if (activeDelta < 40) throw new Error(`${stem} active motion produced too little pixel delta (${activeDelta}).`);
+    const reducedDelta = pixelDelta(reducedBase, reducedAdvanced);
+    if (reducedDelta > 2) throw new Error(`${stem} reduced motion was not static (${reducedDelta} differing pixels).`);
+    motionEvidence.push({role, state, attention, activeDelta, reducedDelta});
+  }
+  console.log(`Rive motion evidence: ${motionEvidence.map((x) => `${x.state}=${x.activeDelta}/${x.reducedDelta}`).join(', ')} (active/reduced pixel delta).`);
 } finally {
   fs.rmSync(tmp, {recursive:true, force:true});
 }
-console.log(`Rive runtime QA passed: ${cases.length} state renders, ${canonicalRoles.length} roles covered, data binding round-tripped.`);
+console.log(`Rive runtime QA passed: ${cases.length} state renders, ${canonicalRoles.length} roles covered, data binding round-tripped, active motion changed pixels and reduced motion stayed static.`);

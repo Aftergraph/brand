@@ -16,7 +16,7 @@ The build is reproducible: identical generated inputs must produce a byte-identi
 
 ## Runtime verification
 
-`npm run character:rive:verify` checks source drift and Rive CLI problems. `npm run character:rive:qa` rebuilds the runtime asset, renders all eleven canonical states across all six roles through headless Rive, and round-trips the bound View Model values. The QA run uses `reducedMotion=true` so the captured frame is a stable static semantic representation.
+`npm run character:rive:verify` checks source drift and Rive CLI problems. `npm run character:rive:qa` rebuilds the runtime asset, renders all eleven canonical states across all six roles through headless Rive, and round-trips the bound View Model values. For every governed state it also compares frames at 0 ms and 400 ms: active motion must produce a measurable pixel delta while `reducedMotion=true` must remain static. The emitted per-state active/reduced pixel deltas are runtime evidence, not semantic truth.
 
 Required invariants:
 
@@ -24,7 +24,8 @@ Required invariants:
 2. `ActorPresence` stays exactly 512 × 512.
 3. All 6 roles and 11 states remain addressable from the bound View Model.
 4. Headless runtime renders are non-empty and state-distinct.
-5. `runtime-manifest.json` hashes match the tracked `.riv`, RML, Luau, and source manifest.
-6. No character state is treated as proof of approval, evidence, or verification.
+5. Every governed state produces measurable active motion while reduced-motion renders remain static.
+6. `runtime-manifest.json` hashes match the tracked `.riv`, RML, Luau, and source manifest.
+7. No character state is treated as proof of approval, evidence, or verification.
 
 **Characters are a view. Evidence is the truth.**

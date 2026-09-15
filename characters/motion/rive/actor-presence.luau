@@ -26996,6 +26996,77 @@ local COMPOSITIONS: {[string]: (Renderer) -> ()} = {
   ["researcher:failed"] = drawComposition66,
 }
 
+local MOTION_PERIODS: {[string]: number} = {
+  ["idle"] = 3.2,
+  ["thinking"] = 1.6,
+  ["planning"] = 2.2,
+  ["executing"] = 1.4,
+  ["inspecting"] = 1.8,
+  ["waiting"] = 2.8,
+  ["blocked"] = 2.4,
+  ["approval-required"] = 2.2,
+  ["verifying"] = 1.7,
+  ["completed"] = 0.36,
+  ["failed"] = 0.3,
+}
+
+local function motionIntensity(attention: string): number
+  if attention == 'critical' then return 1.35 end
+  if attention == 'required' then return 1.18 end
+  if attention == 'informational' then return 1.0 end
+  return 0.82
+end
+
+function motionTransform(state: string, elapsed: number, attention: string): Mat2D
+  local period = MOTION_PERIODS[state] or 2.0
+  local phase = (elapsed / period) * math.pi * 2
+  local dx = 0.0
+  local dy = 0.0
+  local rotation = 0.0
+  local scale = 1.0
+  local intensity = motionIntensity(attention)
+
+  if state == 'idle' then
+    dy = math.sin(phase) * 1.2
+    scale = 1.0 + math.sin(phase) * 0.003
+  elseif state == 'thinking' then
+    dy = math.sin(phase) * 1.6
+    rotation = math.sin(phase) * 0.007
+  elseif state == 'planning' then
+    scale = 1.0 + math.sin(phase) * 0.004
+  elseif state == 'executing' then
+    dx = math.sin(phase) * 1.8
+    scale = 1.0 + math.max(0, math.sin(phase)) * 0.004
+  elseif state == 'inspecting' then
+    rotation = math.sin(phase) * 0.009
+  elseif state == 'waiting' then
+    dy = math.sin(phase) * 0.8
+  elseif state == 'blocked' then
+    dx = math.sin(phase) * 0.7
+  elseif state == 'approval-required' then
+    scale = 1.0 + math.max(0, math.sin(phase)) * 0.006
+  elseif state == 'verifying' then
+    rotation = math.sin(phase) * 0.006
+    dy = math.sin(phase * 2) * 0.7
+  elseif state == 'completed' then
+    local t = math.min(elapsed / period, 1.0)
+    scale = 0.985 + 0.015 * t
+  elseif state == 'failed' then
+    local t = math.min(elapsed / period, 1.0)
+    dy = 2.0 * t
+  end
+
+  dx *= intensity
+  dy *= intensity
+  rotation *= intensity
+  scale = 1.0 + (scale - 1.0) * intensity
+  return Mat2D.withTranslation(dx, dy)
+    * Mat2D.withTranslation(256, 256)
+    * Mat2D.withRotation(rotation)
+    * Mat2D.withScale(scale, scale)
+    * Mat2D.withTranslation(-256, -256)
+end
+
 type ActorPresence = {
   size: Vector, role: PropertyEnum?, state: PropertyEnum?, attention: PropertyEnum?,
   reducedMotion: Property<boolean>?, elapsed: number,
@@ -27023,11 +27094,16 @@ end
 function draw(self: ActorPresence, renderer: Renderer)
   local role = if self.role ~= nil then self.role.value else 'entity'
   local state = if self.state ~= nil then self.state.value else 'idle'
+  local attention = if self.attention ~= nil then self.attention.value else 'none'
+  local reduced = self.reducedMotion ~= nil and self.reducedMotion.value
   local fn = COMPOSITIONS[role .. ':' .. state] or COMPOSITIONS['entity:idle']
   local sx = self.size.x / 512
   local sy = self.size.y / 512
   renderer:save()
   renderer:transform(Mat2D.withScale(sx, sy))
+  if not reduced then
+    renderer:transform(motionTransform(state, self.elapsed, attention))
+  end
   if fn ~= nil then
     fn(renderer)
   end
