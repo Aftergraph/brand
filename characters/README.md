@@ -48,3 +48,48 @@ New consumers compose the canonical base anatomy with one generic role module an
 - `character-sprite.svg` — **deprecated** generated compatibility sprite.
 
 `npm run generate` still reproduces the deprecated sprite for compatibility. New generation work must target composition-derived exports from `source/`.
+
+## Compositional production pipeline
+
+`npm run generate` now produces the deterministic compositional vector layer under `generated/`: six standalone roles, eleven standalone states, six avatars derived from the same head anatomy, all sixty-six role × state combinations, eleven newly required supporting icons, and integrity manifests. Derived files are never hand-authored; `scripts/compose-characters.mjs --check` and `scripts/generate-character-icons.mjs --check` reject drift.
+
+Additional canonical source modules are:
+
+- `source/expressions/expressions.svg` + `expressions.json` — operational face/expression vocabulary and state defaults.
+- `source/rig/rig.json` — pivot hierarchy and bounded joint rotation contract.
+- `source/icons/new-icons.svg` — only the Supporting Icons v1 concepts that could not reuse Brand OS semantics.
+- `accessibility.json` + `ACCESSIBILITY.md` — semantic/decorative modes, non-color cues, and reduced-motion fallbacks.
+- `contexts.json` — governed dark, light, transparent, and high-contrast visibility QA contexts.
+
+## QA and release exports
+
+`npm run character:qa` executes geometry bounds, small-size rendering, context visibility, and Puppeteer + pixelmatch visual regression. Baseline snapshots are committed; transient actual/diff images are not.
+
+`npm run character:export` creates a release-only `exports/characters/` tree containing **100 governed assets × 4 formats**: editable SVG plus PNG, WebP, and AVIF derivatives, each with byte size and SHA-256 in the release manifest. Raster derivatives are reproducible release artifacts and are intentionally not canonical source.
+
+## Motion layer
+
+`motion/rive-import-manifest.json` and `motion/RIVE-AUTHORING.md` define the Rive handoff. SVG remains canonical. A `.riv` file must be authored/exported through Rive Editor and parity-verified before it can be registered as a runtime artifact; no `.riv` file is claimed by this repository yet.
+
+## Production sprites
+
+`generated/sprites/characters.svg` is the compositional SVG sprite and contains **89 namespaced symbols**: six roles, eleven states, six avatars, and all sixty-six role × state combinations. `generated/sprites/icons.svg` contains the eleven new Supporting Icons v1 symbols. Internal IDs and gradient references are namespaced per symbol so sprite composition cannot collide in the DOM.
+
+The root-level `character-sprite.svg` remains the deprecated 23-symbol compatibility artifact; do not confuse it with the compositional sprite under `generated/sprites/`.
+
+## Motion vocabulary
+
+`motion/motion.json` defines the machine-readable motion vocabulary and state transitions. Normal motion may loop for active states; every reduced-motion variant is static and non-looping. Motion can communicate activity and attention only and cannot establish evidence, approval, or verification.
+
+## Themes and release exports
+
+The editable source is authored once. `characters/themes.json` derives dark and light product variants from canonical Brand OS tokens; theme variants are generated outputs and must never be hand-edited.
+
+- Dark generated vectors: `characters/generated/{roles,states,avatars,compositions}`.
+- Light generated vectors: `characters/generated/themes/light/{roles,states,avatars,compositions}`.
+- Dark runtime sprite: `characters/generated/sprites/characters.svg`.
+- Light runtime sprite: `characters/generated/themes/light/sprites/characters.svg`.
+- Theme-neutral supporting icons: `characters/generated/sprites/icons.svg`.
+- Release exporter: `npm run character:export` creates SVG, PNG, WebP, and AVIF variants plus a SHA-256 manifest under `exports/characters/`.
+
+The release exporter contains 89 dark character assets, 89 light character assets, and 11 theme-neutral supporting icons: 189 governed logical assets / 756 format files. Raster files are delivery artifacts only; the layered SVG source tree remains canonical.

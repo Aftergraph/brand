@@ -2,3 +2,9 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+# Character visual-regression runtime output
+characters/ci/snapshots/actual/
+characters/ci/snapshots/diff/
+characters/ci/snapshots/report.json
+exports/characters/
+characters/generated/qa/

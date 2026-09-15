@@ -1,0 +1,97 @@
+{
+  "schema": "aftergraph.character-visual-snapshots.v1",
+  "mode": "baseline",
+  "viewport": {
+    "width": 512,
+    "height": 512,
+    "deviceScaleFactor": 1
+  },
+  "browser": "Chrome/151.0.7922.34",
+  "cases": [
+    {
+      "id": "base-character",
+      "path": "characters/ci/snapshots/baseline/base-character.png",
+      "sha256": "c3e6443db61d696efa534d3fb29b183a8488cc8a71aeb00f24398c93e8420ea5"
+    },
+    {
+      "id": "role-entity",
+      "path": "characters/ci/snapshots/baseline/role-entity.png",
+      "sha256": "f372999492277b1e8873d83bcfeac12f4c2bff43abd7165faf01b4c790581121"
+    },
+    {
+      "id": "role-guide",
+      "path": "characters/ci/snapshots/baseline/role-guide.png",
+      "sha256": "fcf544a3329396be9fd413200442ae521dd00591257e71d5651f81d6d52ce33f"
+    },
+    {
+      "id": "role-builder",
+      "path": "characters/ci/snapshots/baseline/role-builder.png",
+      "sha256": "84cb14f06d556d057df0a1a8cfa153748c9b0a34e177ca649d70aa7ded39a1fc"
+    },
+    {
+      "id": "role-verifier",
+      "path": "characters/ci/snapshots/baseline/role-verifier.png",
+      "sha256": "374939c1ac12a049d3cefa3acb1dc27d98da480c62f23b6052b8fe753b59b76c"
+    },
+    {
+      "id": "role-observer",
+      "path": "characters/ci/snapshots/baseline/role-observer.png",
+      "sha256": "45b172a913fec01c01b3e3558e1cbd66595ed00d709813efe92ee2cdb417e85c"
+    },
+    {
+      "id": "role-researcher",
+      "path": "characters/ci/snapshots/baseline/role-researcher.png",
+      "sha256": "a668665a9eaf087d0a78e0ada4764cd26ee3c8390438b5f4a3083764e9dbd486"
+    },
+    {
+      "id": "state-thinking",
+      "path": "characters/ci/snapshots/baseline/state-thinking.png",
+      "sha256": "ec03dfcd8ad3c8f52d8483bfa313140a114e54b4fc4a11973e2331085098345c"
+    },
+    {
+      "id": "state-planning",
+      "path": "characters/ci/snapshots/baseline/state-planning.png",
+      "sha256": "eb8ab22953a5a659631325936fbff6b5bbda34335ebe3928d957724f56637f0f"
+    },
+    {
+      "id": "state-executing",
+      "path": "characters/ci/snapshots/baseline/state-executing.png",
+      "sha256": "bf05724b323fab0549f81861a04d48443c6759d2a12434a7f41cf18a4e41e7e4"
+    },
+    {
+      "id": "state-inspecting",
+      "path": "characters/ci/snapshots/baseline/state-inspecting.png",
+      "sha256": "b963e2bcabd73604d1deea1db77ff762ec4ea6504a1f54ef7e2da455f991e8fc"
+    },
+    {
+      "id": "state-waiting",
+      "path": "characters/ci/snapshots/baseline/state-waiting.png",
+      "sha256": "50bf239eba6c5be0a01992ac08f091d237ac48f16220a56985e61aa61d3cd9ee"
+    },
+    {
+      "id": "state-blocked",
+      "path": "characters/ci/snapshots/baseline/state-blocked.png",
+      "sha256": "5c1ff19830ba14d54d3b7d2d62893e9ab2f145ba89553587595ace40c7cae6a6"
+    },
+    {
+      "id": "state-approval-required",
+      "path": "characters/ci/snapshots/baseline/state-approval-required.png",
+      "sha256": "704966e7433d8d86c2e24687d8b27efcaf9deb33b31963e9c28cbe97ba5cca12"
+    },
+    {
+      "id": "state-verifying",
+      "path": "characters/ci/snapshots/baseline/state-verifying.png",
+      "sha256": "009a190b36c11b2733af542866cd2fb4210f4f4c2c98fb1f3d510b8cd0b9f03d"
+    },
+    {
+      "id": "state-completed",
+      "path": "characters/ci/snapshots/baseline/state-completed.png",
+      "sha256": "b51cd47a6bec9c716218e10e80bcc3e3f3fd3125863230c24293c63b756d75e3"
+    },
+    {
+      "id": "state-failed",
+      "path": "characters/ci/snapshots/baseline/state-failed.png",
+      "sha256": "ab5a8648f5a78a637a7e957046ebc03ef4b61836a39a9a04c22df36cf4704447"
+    }
+  ]
+}

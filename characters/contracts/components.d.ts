@@ -5,6 +5,7 @@ export type CharacterState =
   | 'blocked' | 'approval-required' | 'verifying' | 'completed' | 'failed';
 export type AttentionLevel = 'none' | 'informational' | 'required' | 'critical';
 export type VerificationVerdict = 'not-run' | 'running' | 'passed' | 'failed' | 'indeterminate';
+export type CharacterVisualMode = 'semantic' | 'decorative';
 
 export interface ProgressDescriptor {
   current: number;
@@ -29,6 +30,7 @@ export interface ActorPresenceBaseProps {
   progress?: ProgressDescriptor;
   evidence?: readonly EvidenceRef[];
   attention?: AttentionLevel;
+  visualMode?: CharacterVisualMode;
   ariaLabel?: string;
 }
 

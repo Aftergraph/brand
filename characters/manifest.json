@@ -6,8 +6,8 @@
   "sourceClass": "native-svg",
   "sprite": "characters/character-sprite.svg",
   "limitations": [
-    "v1 is a static 2D product vector language; the approved 3D concept art remains a separate raster campaign/reference pack.",
-    "No Rive or Lottie motion rig is included in v1.",
+    "v1 is a governed 2D product vector language; approved glossy 3D concept art remains a separate raster campaign/reference pack.",
+    "No authored .riv runtime binary is included; the SVG rig, motion vocabulary, and Rive import contract are source-controlled handoff artifacts.",
     "Character completion state never establishes verified outcome status."
   ],
   "roles": "characters/roles.json",
@@ -185,5 +185,74 @@
     "verified": "semantics/icons/state-verified.svg",
     "revoked": "semantics/icons/state-revoked.svg",
     "stale": "semantics/icons/state-stale.svg"
+  },
+  "canonicalSource": {
+    "master": "characters/source/master/base-character.svg",
+    "anchors": "characters/source/master/anchors.json",
+    "roles": "characters/source/roles/roles.svg",
+    "states": "characters/source/states/states.svg",
+    "expressions": "characters/source/expressions/expressions.svg",
+    "expressionRegistry": "characters/source/expressions/expressions.json",
+    "rig": "characters/source/rig/rig.json",
+    "supportingIcons": "characters/source/icons/new-icons.svg",
+    "iconMapping": "characters/source/icons/icon-mapping.json"
+  },
+  "derivedAssets": {
+    "generator": "scripts/compose-characters.mjs",
+    "manifest": "characters/generated/manifest.json",
+    "roleCount": 6,
+    "stateCount": 11,
+    "compositionCount": 66,
+    "avatarCount": 6,
+    "newSupportingIconCount": 11,
+    "manualEditsAllowed": false,
+    "sprites": {
+      "icons": "characters/generated/sprites/icons.svg",
+      "characterSymbolCount": 89,
+      "supportingIconSymbolCount": 11,
+      "idsNamespaced": true,
+      "darkCharacters": "characters/generated/sprites/characters.svg",
+      "lightCharacters": "characters/generated/themes/light/sprites/characters.svg"
+    },
+    "themes": {
+      "dark": {
+        "root": "characters/generated",
+        "sprite": "characters/generated/sprites/characters.svg"
+      },
+      "light": {
+        "root": "characters/generated/themes/light",
+        "sprite": "characters/generated/themes/light/sprites/characters.svg"
+      }
+    },
+    "releaseExporter": "scripts/export-character-assets.mjs",
+    "releaseFormats": [
+      "svg",
+      "png",
+      "webp",
+      "avif"
+    ],
+    "releaseAssetCount": 189,
+    "releaseFileCount": 756
+  },
+  "quality": {
+    "sourceValidator": "scripts/validate-character-source.mjs",
+    "visualRegressionConfig": "characters/ci/ci-checks.yml",
+    "smallSizeReport": "characters/generated/qa/small-size.json",
+    "contextVisibilityReport": "characters/generated/qa/context-visibility.json",
+    "compositionBoundsReport": "characters/generated/qa/composition-bounds.json",
+    "accessibility": "characters/accessibility.json",
+    "themes": "characters/themes.json"
+  },
+  "motion": {
+    "authoring": "characters/motion/RIVE-AUTHORING.md",
+    "importManifest": "characters/motion/rive-import-manifest.json",
+    "runtimeArtifactStatus": "not-authored",
+    "spec": "characters/motion/motion.json",
+    "specification": "characters/motion/MOTION-SPEC.md"
+  },
+  "compatibility": {
+    "deprecatedSprite": "characters/character-sprite.svg",
+    "deprecated": true,
+    "migration": "characters/README.md"
   }
 }

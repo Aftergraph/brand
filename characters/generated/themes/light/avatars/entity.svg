@@ -1,0 +1,36 @@
+<!-- GENERATED FILE: edit characters/source/*, never this derived file. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="96 36 320 280" role="img" aria-labelledby="generated-title generated-desc" data-generated="aftergraph-character-composition-v1" data-kind="avatar" data-theme="light" data-role="entity">
+  <title id="generated-title">Aftergraph Entity — avatar</title>
+  <desc id="generated-desc">Compact avatar derived from the same halo, head, face, and shading anatomy as the full entity character.</desc>
+  <defs>
+    <linearGradient id="metal-highlight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080C14" stop-opacity="0.96"/>
+      <stop offset="0.48" stop-color="#4F5868" stop-opacity="0.78"/>
+      <stop offset="1" stop-color="#080C14" stop-opacity="0.92"/>
+    </linearGradient>
+    <radialGradient id="visor-glow" cx="50%" cy="46%" r="62%">
+      <stop offset="0" stop-color="#080C14" stop-opacity="0.34"/>
+      <stop offset="0.58" stop-color="#080C14" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#080C14" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g id="composition-root">
+  <g id="halo" data-pivot-anchor="halo-center">
+    <ellipse id="halo-ring" cx="256" cy="145" rx="124" ry="75" fill="none" stroke="#080C14" stroke-width="6"/>
+    <circle id="halo-node-left" cx="143" cy="132" r="13" fill="#080C14"/>
+    <circle id="halo-node-top" cx="256" cy="72" r="15" fill="#080C14"/>
+    <circle id="halo-node-right" cx="369" cy="132" r="13" fill="#080C14"/>
+  </g>
+  <g id="head" data-pivot-anchor="head-center">
+    <circle id="head-shell" cx="256" cy="190" r="98" fill="#0E1630" stroke="#080C14" stroke-width="8"/>
+    <path id="head-highlight" d="M193 132 A92 92 0 0 1 319 132" fill="none" stroke="url(#metal-highlight)" stroke-width="7" stroke-linecap="round"/>
+    <circle id="visor" cx="256" cy="190" r="76" fill="#080C14" stroke="#080C14" stroke-width="4"/>
+    <circle id="visor-glow-field" cx="256" cy="190" r="72" fill="url(#visor-glow)"/>
+  </g>
+  <g id="shading" aria-hidden="true" pointer-events="none">
+    <path id="head-rim-light" d="M184 141 A98 98 0 0 1 329 145" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.38"/>
+    <path id="visor-ambient-occlusion" d="M198 226 A76 76 0 0 0 314 226" fill="none" stroke="#080C14" stroke-width="12" stroke-linecap="round" opacity="0.66"/>
+  </g>
+  <g id="face" data-pivot-anchor="gaze-center" data-expression="neutral" color="#080C14"><g fill="currentColor"><rect x="224" y="162" width="12" height="52" rx="6"/><rect x="276" y="162" width="12" height="52" rx="6"/></g></g>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+{
+  "$schema": "aftergraph.character-themes.v1",
+  "version": "1.0.0",
+  "themes": {
+    "dark": {
+      "source": true,
+      "replacements": {}
+    },
+    "light": {
+      "source": false,
+      "replacements": {
+        "colors.evidence_white": "semantic.light.text",
+        "colors.slate": "semantic.light.textMuted",
+        "colors.control_cyan": "semantic.light.control",
+        "colors.evidence_teal": "semantic.light.evidence",
+        "colors.authority_violet": "semantic.light.authority",
+        "colors.decision_amber": "semantic.light.decision",
+        "colors.system_blue": "semantic.light.system",
+        "semantic.dark.danger": "semantic.light.danger"
+      }
+    }
+  }
+}

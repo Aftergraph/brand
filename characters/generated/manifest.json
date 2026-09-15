@@ -1,0 +1,1159 @@
+{
+  "$schema": "aftergraph.character-generated-assets.v1",
+  "version": "1.0.0",
+  "sourceOfTruth": "characters/source",
+  "generator": "scripts/compose-characters.mjs",
+  "viewBox": "0 0 512 512",
+  "themes": {
+    "dark": {
+      "root": "characters/generated"
+    },
+    "light": {
+      "root": "characters/generated/themes/light"
+    }
+  },
+  "roles": [
+    {
+      "id": "entity",
+      "path": "characters/generated/roles/entity.svg"
+    },
+    {
+      "id": "guide",
+      "path": "characters/generated/roles/guide.svg"
+    },
+    {
+      "id": "builder",
+      "path": "characters/generated/roles/builder.svg"
+    },
+    {
+      "id": "verifier",
+      "path": "characters/generated/roles/verifier.svg"
+    },
+    {
+      "id": "observer",
+      "path": "characters/generated/roles/observer.svg"
+    },
+    {
+      "id": "researcher",
+      "path": "characters/generated/roles/researcher.svg"
+    }
+  ],
+  "states": [
+    {
+      "id": "idle",
+      "path": "characters/generated/states/idle.svg"
+    },
+    {
+      "id": "thinking",
+      "path": "characters/generated/states/thinking.svg"
+    },
+    {
+      "id": "planning",
+      "path": "characters/generated/states/planning.svg"
+    },
+    {
+      "id": "executing",
+      "path": "characters/generated/states/executing.svg"
+    },
+    {
+      "id": "inspecting",
+      "path": "characters/generated/states/inspecting.svg"
+    },
+    {
+      "id": "waiting",
+      "path": "characters/generated/states/waiting.svg"
+    },
+    {
+      "id": "blocked",
+      "path": "characters/generated/states/blocked.svg"
+    },
+    {
+      "id": "approval-required",
+      "path": "characters/generated/states/approval-required.svg"
+    },
+    {
+      "id": "verifying",
+      "path": "characters/generated/states/verifying.svg"
+    },
+    {
+      "id": "completed",
+      "path": "characters/generated/states/completed.svg"
+    },
+    {
+      "id": "failed",
+      "path": "characters/generated/states/failed.svg"
+    }
+  ],
+  "avatars": [
+    {
+      "id": "entity",
+      "path": "characters/generated/avatars/entity.svg"
+    },
+    {
+      "id": "guide",
+      "path": "characters/generated/avatars/guide.svg"
+    },
+    {
+      "id": "builder",
+      "path": "characters/generated/avatars/builder.svg"
+    },
+    {
+      "id": "verifier",
+      "path": "characters/generated/avatars/verifier.svg"
+    },
+    {
+      "id": "observer",
+      "path": "characters/generated/avatars/observer.svg"
+    },
+    {
+      "id": "researcher",
+      "path": "characters/generated/avatars/researcher.svg"
+    }
+  ],
+  "compositions": [
+    {
+      "role": "entity",
+      "state": "idle",
+      "path": "characters/generated/compositions/entity--idle.svg"
+    },
+    {
+      "role": "entity",
+      "state": "thinking",
+      "path": "characters/generated/compositions/entity--thinking.svg"
+    },
+    {
+      "role": "entity",
+      "state": "planning",
+      "path": "characters/generated/compositions/entity--planning.svg"
+    },
+    {
+      "role": "entity",
+      "state": "executing",
+      "path": "characters/generated/compositions/entity--executing.svg"
+    },
+    {
+      "role": "entity",
+      "state": "inspecting",
+      "path": "characters/generated/compositions/entity--inspecting.svg"
+    },
+    {
+      "role": "entity",
+      "state": "waiting",
+      "path": "characters/generated/compositions/entity--waiting.svg"
+    },
+    {
+      "role": "entity",
+      "state": "blocked",
+      "path": "characters/generated/compositions/entity--blocked.svg"
+    },
+    {
+      "role": "entity",
+      "state": "approval-required",
+      "path": "characters/generated/compositions/entity--approval-required.svg"
+    },
+    {
+      "role": "entity",
+      "state": "verifying",
+      "path": "characters/generated/compositions/entity--verifying.svg"
+    },
+    {
+      "role": "entity",
+      "state": "completed",
+      "path": "characters/generated/compositions/entity--completed.svg"
+    },
+    {
+      "role": "entity",
+      "state": "failed",
+      "path": "characters/generated/compositions/entity--failed.svg"
+    },
+    {
+      "role": "guide",
+      "state": "idle",
+      "path": "characters/generated/compositions/guide--idle.svg"
+    },
+    {
+      "role": "guide",
+      "state": "thinking",
+      "path": "characters/generated/compositions/guide--thinking.svg"
+    },
+    {
+      "role": "guide",
+      "state": "planning",
+      "path": "characters/generated/compositions/guide--planning.svg"
+    },
+    {
+      "role": "guide",
+      "state": "executing",
+      "path": "characters/generated/compositions/guide--executing.svg"
+    },
+    {
+      "role": "guide",
+      "state": "inspecting",
+      "path": "characters/generated/compositions/guide--inspecting.svg"
+    },
+    {
+      "role": "guide",
+      "state": "waiting",
+      "path": "characters/generated/compositions/guide--waiting.svg"
+    },
+    {
+      "role": "guide",
+      "state": "blocked",
+      "path": "characters/generated/compositions/guide--blocked.svg"
+    },
+    {
+      "role": "guide",
+      "state": "approval-required",
+      "path": "characters/generated/compositions/guide--approval-required.svg"
+    },
+    {
+      "role": "guide",
+      "state": "verifying",
+      "path": "characters/generated/compositions/guide--verifying.svg"
+    },
+    {
+      "role": "guide",
+      "state": "completed",
+      "path": "characters/generated/compositions/guide--completed.svg"
+    },
+    {
+      "role": "guide",
+      "state": "failed",
+      "path": "characters/generated/compositions/guide--failed.svg"
+    },
+    {
+      "role": "builder",
+      "state": "idle",
+      "path": "characters/generated/compositions/builder--idle.svg"
+    },
+    {
+      "role": "builder",
+      "state": "thinking",
+      "path": "characters/generated/compositions/builder--thinking.svg"
+    },
+    {
+      "role": "builder",
+      "state": "planning",
+      "path": "characters/generated/compositions/builder--planning.svg"
+    },
+    {
+      "role": "builder",
+      "state": "executing",
+      "path": "characters/generated/compositions/builder--executing.svg"
+    },
+    {
+      "role": "builder",
+      "state": "inspecting",
+      "path": "characters/generated/compositions/builder--inspecting.svg"
+    },
+    {
+      "role": "builder",
+      "state": "waiting",
+      "path": "characters/generated/compositions/builder--waiting.svg"
+    },
+    {
+      "role": "builder",
+      "state": "blocked",
+      "path": "characters/generated/compositions/builder--blocked.svg"
+    },
+    {
+      "role": "builder",
+      "state": "approval-required",
+      "path": "characters/generated/compositions/builder--approval-required.svg"
+    },
+    {
+      "role": "builder",
+      "state": "verifying",
+      "path": "characters/generated/compositions/builder--verifying.svg"
+    },
+    {
+      "role": "builder",
+      "state": "completed",
+      "path": "characters/generated/compositions/builder--completed.svg"
+    },
+    {
+      "role": "builder",
+      "state": "failed",
+      "path": "characters/generated/compositions/builder--failed.svg"
+    },
+    {
+      "role": "verifier",
+      "state": "idle",
+      "path": "characters/generated/compositions/verifier--idle.svg"
+    },
+    {
+      "role": "verifier",
+      "state": "thinking",
+      "path": "characters/generated/compositions/verifier--thinking.svg"
+    },
+    {
+      "role": "verifier",
+      "state": "planning",
+      "path": "characters/generated/compositions/verifier--planning.svg"
+    },
+    {
+      "role": "verifier",
+      "state": "executing",
+      "path": "characters/generated/compositions/verifier--executing.svg"
+    },
+    {
+      "role": "verifier",
+      "state": "inspecting",
+      "path": "characters/generated/compositions/verifier--inspecting.svg"
+    },
+    {
+      "role": "verifier",
+      "state": "waiting",
+      "path": "characters/generated/compositions/verifier--waiting.svg"
+    },
+    {
+      "role": "verifier",
+      "state": "blocked",
+      "path": "characters/generated/compositions/verifier--blocked.svg"
+    },
+    {
+      "role": "verifier",
+      "state": "approval-required",
+      "path": "characters/generated/compositions/verifier--approval-required.svg"
+    },
+    {
+      "role": "verifier",
+      "state": "verifying",
+      "path": "characters/generated/compositions/verifier--verifying.svg"
+    },
+    {
+      "role": "verifier",
+      "state": "completed",
+      "path": "characters/generated/compositions/verifier--completed.svg"
+    },
+    {
+      "role": "verifier",
+      "state": "failed",
+      "path": "characters/generated/compositions/verifier--failed.svg"
+    },
+    {
+      "role": "observer",
+      "state": "idle",
+      "path": "characters/generated/compositions/observer--idle.svg"
+    },
+    {
+      "role": "observer",
+      "state": "thinking",
+      "path": "characters/generated/compositions/observer--thinking.svg"
+    },
+    {
+      "role": "observer",
+      "state": "planning",
+      "path": "characters/generated/compositions/observer--planning.svg"
+    },
+    {
+      "role": "observer",
+      "state": "executing",
+      "path": "characters/generated/compositions/observer--executing.svg"
+    },
+    {
+      "role": "observer",
+      "state": "inspecting",
+      "path": "characters/generated/compositions/observer--inspecting.svg"
+    },
+    {
+      "role": "observer",
+      "state": "waiting",
+      "path": "characters/generated/compositions/observer--waiting.svg"
+    },
+    {
+      "role": "observer",
+      "state": "blocked",
+      "path": "characters/generated/compositions/observer--blocked.svg"
+    },
+    {
+      "role": "observer",
+      "state": "approval-required",
+      "path": "characters/generated/compositions/observer--approval-required.svg"
+    },
+    {
+      "role": "observer",
+      "state": "verifying",
+      "path": "characters/generated/compositions/observer--verifying.svg"
+    },
+    {
+      "role": "observer",
+      "state": "completed",
+      "path": "characters/generated/compositions/observer--completed.svg"
+    },
+    {
+      "role": "observer",
+      "state": "failed",
+      "path": "characters/generated/compositions/observer--failed.svg"
+    },
+    {
+      "role": "researcher",
+      "state": "idle",
+      "path": "characters/generated/compositions/researcher--idle.svg"
+    },
+    {
+      "role": "researcher",
+      "state": "thinking",
+      "path": "characters/generated/compositions/researcher--thinking.svg"
+    },
+    {
+      "role": "researcher",
+      "state": "planning",
+      "path": "characters/generated/compositions/researcher--planning.svg"
+    },
+    {
+      "role": "researcher",
+      "state": "executing",
+      "path": "characters/generated/compositions/researcher--executing.svg"
+    },
+    {
+      "role": "researcher",
+      "state": "inspecting",
+      "path": "characters/generated/compositions/researcher--inspecting.svg"
+    },
+    {
+      "role": "researcher",
+      "state": "waiting",
+      "path": "characters/generated/compositions/researcher--waiting.svg"
+    },
+    {
+      "role": "researcher",
+      "state": "blocked",
+      "path": "characters/generated/compositions/researcher--blocked.svg"
+    },
+    {
+      "role": "researcher",
+      "state": "approval-required",
+      "path": "characters/generated/compositions/researcher--approval-required.svg"
+    },
+    {
+      "role": "researcher",
+      "state": "verifying",
+      "path": "characters/generated/compositions/researcher--verifying.svg"
+    },
+    {
+      "role": "researcher",
+      "state": "completed",
+      "path": "characters/generated/compositions/researcher--completed.svg"
+    },
+    {
+      "role": "researcher",
+      "state": "failed",
+      "path": "characters/generated/compositions/researcher--failed.svg"
+    }
+  ],
+  "integrity": [
+    {
+      "path": "characters/generated/roles/entity.svg",
+      "sha256": "004308156baa92c311ecf3d1efe0c54acd2a759cc3da806e7a044e5cb877cc7b"
+    },
+    {
+      "path": "characters/generated/roles/guide.svg",
+      "sha256": "6d3e9fd2c4bc5d4b808a2e7845553b17d3f2a15189134ac5c39bece99b7d977d"
+    },
+    {
+      "path": "characters/generated/roles/builder.svg",
+      "sha256": "17dc7a2c7f121bbbc3a2ec5cfb0e01fa34f92e4ba4b251cca0d69a49790994ea"
+    },
+    {
+      "path": "characters/generated/roles/verifier.svg",
+      "sha256": "ae5861b18544dd0e210d1396a9e3ef860bd182af6fe472003c994f8de1c6eae3"
+    },
+    {
+      "path": "characters/generated/roles/observer.svg",
+      "sha256": "83ae466425691c16e1167feb3509df44314a9cc9901e24412a56589186e217b7"
+    },
+    {
+      "path": "characters/generated/roles/researcher.svg",
+      "sha256": "932312debf779795eae994c7a30be4b01800629d34b1007304b749fefd76fe23"
+    },
+    {
+      "path": "characters/generated/states/idle.svg",
+      "sha256": "ca82c6ff4de7e750b2d288cdf50a0811f0480152353786952502ae358c88f4af"
+    },
+    {
+      "path": "characters/generated/states/thinking.svg",
+      "sha256": "edce91c0a4b21de7fd36961ad7858032600c325896a8bd5a48eccb7a89368df2"
+    },
+    {
+      "path": "characters/generated/states/planning.svg",
+      "sha256": "ac92fd25ea64b58340e5deff65bfde17d265e454067b0043f043f8d888932ac9"
+    },
+    {
+      "path": "characters/generated/states/executing.svg",
+      "sha256": "5cdafb429e7c3ec96d9c8bba9d1c030ba3606fe07654a5f61895ad3c6c669108"
+    },
+    {
+      "path": "characters/generated/states/inspecting.svg",
+      "sha256": "e3ab98d73cc205e32b379d2f72c89926490831ecba92ec14474d3aec46b1a728"
+    },
+    {
+      "path": "characters/generated/states/waiting.svg",
+      "sha256": "260d3242302bb9de41b60bb2a02c4c51e3e4aa9bf91c2b21726ffc8ac598d9ac"
+    },
+    {
+      "path": "characters/generated/states/blocked.svg",
+      "sha256": "13816d48c7dad63acdd1146ed3e30567f0eb6eb546782ec5e5fe734dc6ff9548"
+    },
+    {
+      "path": "characters/generated/states/approval-required.svg",
+      "sha256": "1d582a0a171b055f8e6a47e8368c23fadf075175f6f101d2891d31c12280195f"
+    },
+    {
+      "path": "characters/generated/states/verifying.svg",
+      "sha256": "e9fe8ef37f2c7d249b06f3642b31f306bb2bd1b5709837945bb72ba11f9a714a"
+    },
+    {
+      "path": "characters/generated/states/completed.svg",
+      "sha256": "fa009d5ef97cd107cdf7cb20a673bd0496533b96a57b4ef38369fc9064b448e1"
+    },
+    {
+      "path": "characters/generated/states/failed.svg",
+      "sha256": "173624858234c185ed5f8cd3ce209f1bc4a685b612cf817b7b30787cff14244a"
+    },
+    {
+      "path": "characters/generated/compositions/entity--idle.svg",
+      "sha256": "be440678811a16865c9f6a86a42e113588bab170b5dc98f4deb087c6ac2c6db0"
+    },
+    {
+      "path": "characters/generated/compositions/entity--thinking.svg",
+      "sha256": "cd1ae45e2f86faf9f60bfacc782d421ec6e671c801fa6b5b0ea155285a216f05"
+    },
+    {
+      "path": "characters/generated/compositions/entity--planning.svg",
+      "sha256": "0ae39544c6aa9d80b9a2aae674a46f1597f42786e817e9d4a8b2c75d1b3d5440"
+    },
+    {
+      "path": "characters/generated/compositions/entity--executing.svg",
+      "sha256": "a01456b0e67df41c9cf12f4d385b959454a7cededd520f8ac6d6f65fb120f35b"
+    },
+    {
+      "path": "characters/generated/compositions/entity--inspecting.svg",
+      "sha256": "e38470455a6de941b873aca778d4d5e605186fe27d9bf60c07cc2453acd4ced7"
+    },
+    {
+      "path": "characters/generated/compositions/entity--waiting.svg",
+      "sha256": "746a44541d60aee4c3286d94c231f5a83d7be23e89ae44600f0c0daa7b60f36f"
+    },
+    {
+      "path": "characters/generated/compositions/entity--blocked.svg",
+      "sha256": "e950a56e908030016cb1ba3f19e8c173960c5f96b473b725397c5f7da400f7e0"
+    },
+    {
+      "path": "characters/generated/compositions/entity--approval-required.svg",
+      "sha256": "3c0e59b22b1bbc3ecb59da6d49b17831a4cca3f84b4abd8cf23039a0b5935df8"
+    },
+    {
+      "path": "characters/generated/compositions/entity--verifying.svg",
+      "sha256": "064203650f5b0814d2ad6bd9a6993a98381f597bcda3d14f4c153211ca7a9a08"
+    },
+    {
+      "path": "characters/generated/compositions/entity--completed.svg",
+      "sha256": "fa0cf9d34edbe77c277f42fedffb42e1bbbc874b7a3a82ef83d51676c96333ad"
+    },
+    {
+      "path": "characters/generated/compositions/entity--failed.svg",
+      "sha256": "300e9a3957d38e04865dcb03fcdd7d3912caa1bef9df9eba2247a490ff424aa9"
+    },
+    {
+      "path": "characters/generated/compositions/guide--idle.svg",
+      "sha256": "f6e072d2340ba8440c01c962431f065195b2ca52dd7bd15b912a4053f5e7337d"
+    },
+    {
+      "path": "characters/generated/compositions/guide--thinking.svg",
+      "sha256": "c57907544c8e1566000d3c822e76353d73e9735b476ba7c9ca01aeee1d27730d"
+    },
+    {
+      "path": "characters/generated/compositions/guide--planning.svg",
+      "sha256": "4016084f66b1c927896973b44aa079d48c0090639e88bf18f572e687c036989c"
+    },
+    {
+      "path": "characters/generated/compositions/guide--executing.svg",
+      "sha256": "c0632b35a5df39eaa25664fe6101cfbd2274a073a6f9df0f4b0e7b4022710369"
+    },
+    {
+      "path": "characters/generated/compositions/guide--inspecting.svg",
+      "sha256": "6299cd17042bbe2b078dc2e4a12be54190952195edea524525c05a48e4fa1c8a"
+    },
+    {
+      "path": "characters/generated/compositions/guide--waiting.svg",
+      "sha256": "73dad6dfa528ace4342b3e2fbedbe84138304ab00a8b62b12c385db3249a1f4a"
+    },
+    {
+      "path": "characters/generated/compositions/guide--blocked.svg",
+      "sha256": "b391e6114edd993b7dc464bd27394d1e68f6e0404b55c34d641a9436dcddfb6e"
+    },
+    {
+      "path": "characters/generated/compositions/guide--approval-required.svg",
+      "sha256": "4606e7306c918eea2825ec560e3714edc7c24c04ca227d0a9ee380dc12c1b784"
+    },
+    {
+      "path": "characters/generated/compositions/guide--verifying.svg",
+      "sha256": "273e350810eeb1f727a4de0386fdaf7a45d496a810229750e65a52d94d914736"
+    },
+    {
+      "path": "characters/generated/compositions/guide--completed.svg",
+      "sha256": "9b332bd58b1998a863c9db3a8b48d57827f471757c73897092c4627dd88ed2f1"
+    },
+    {
+      "path": "characters/generated/compositions/guide--failed.svg",
+      "sha256": "ed3fc60d80799ddd8c2ff930b6e6ca00c61ebbd575525347e92e53cb2df59088"
+    },
+    {
+      "path": "characters/generated/compositions/builder--idle.svg",
+      "sha256": "e3d819a42c6da11ae275177a8c2d324243e389cee5c0f6b700a682e315718e22"
+    },
+    {
+      "path": "characters/generated/compositions/builder--thinking.svg",
+      "sha256": "ef1f6d1d6499c5d5f5ed34f91f86fd6a6cea4997fb0ec60ce1601a4be32c364b"
+    },
+    {
+      "path": "characters/generated/compositions/builder--planning.svg",
+      "sha256": "e08eaf0bd649c6fdd76a586b8f19d32a91adbf0fde6058fa0910dc7e453cac5f"
+    },
+    {
+      "path": "characters/generated/compositions/builder--executing.svg",
+      "sha256": "eb47d6015c6297f72526d5e78f1d78c7e4b7a3d826bfc994b078d85023d0c11b"
+    },
+    {
+      "path": "characters/generated/compositions/builder--inspecting.svg",
+      "sha256": "38363bf49724f242d554e1d25e08076259fe1d68e1ff267eeb403e1e319b931a"
+    },
+    {
+      "path": "characters/generated/compositions/builder--waiting.svg",
+      "sha256": "bdd60c6984b75b943b7cf9f3f3cb7c527cdeaff722440b7577210c6b6455f346"
+    },
+    {
+      "path": "characters/generated/compositions/builder--blocked.svg",
+      "sha256": "1fbd8b87ffea4afb14b9d6c8585b6ee6f355e0af57e37d2123c97eb24b571690"
+    },
+    {
+      "path": "characters/generated/compositions/builder--approval-required.svg",
+      "sha256": "bd0d6615c3cb97be8fef066eb49877021234c3ba36fac14b46874e82e4a83dc9"
+    },
+    {
+      "path": "characters/generated/compositions/builder--verifying.svg",
+      "sha256": "a99dc4241f2040892a58213cb87e643c2b2b4980c15e7067f0745d5b44a45166"
+    },
+    {
+      "path": "characters/generated/compositions/builder--completed.svg",
+      "sha256": "431d3be5e58ff7f487626fb8445a5c1b7f265db06e9169a99c5c76202fb6d1fc"
+    },
+    {
+      "path": "characters/generated/compositions/builder--failed.svg",
+      "sha256": "53d7f6e7a1839c3df153e7e018d939bea3eabc5ccab307861c390c1b490db87a"
+    },
+    {
+      "path": "characters/generated/compositions/verifier--idle.svg",
+      "sha256": "4d5c6b1a5e12e90146b5fce94ff3868e63034c772ceead79926cb463e72ce2ef"
+    },
+    {
+      "path": "characters/generated/compositions/verifier--thinking.svg",
+      "sha256": "4700adb686576e75d03de29211cafb3284834d9ab9bd23e5d5c9a90d35285964"
+    },
+    {
+      "path": "characters/generated/compositions/verifier--planning.svg",
+      "sha256": "8d98b0d15a6b2988f8030235ebdc6e2f9178a0fe85b248c3423993fe5e877fb9"
+    },
+    {
+      "path": "characters/generated/compositions/verifier--executing.svg",
+      "sha256": "639cee6bf5745d633ac661b6822bcc8a57e0ec74e08c572feb79ffacc52df3ad"
+    },
+    {
+      "path": "characters/generated/compositions/verifier--inspecting.svg",
+      "sha256": "6ee66679977f18988af09f8a1e9efebff4bedd33aef9c7b2275a8ac8358b2c35"
+    },
+    {
+      "path": "characters/generated/compositions/verifier--waiting.svg",
+      "sha256": "2f1e0844f98bd6d5002f7afa3894f170bf03fce209a138e4048117a017b96f94"
+    },
+    {
+      "path": "characters/generated/compositions/verifier--blocked.svg",
+      "sha256": "20ee8a12490f07208657221a3a5934b18dbf47a7c2a8f15bf0f1a3834bc3aceb"
+    },
+    {
+      "path": "characters/generated/compositions/verifier--approval-required.svg",
+      "sha256": "f7b4a82fa1036617b08b910e678d60afbbf114737912c418dff1ba88c707795a"
+    },
+    {
+      "path": "characters/generated/compositions/verifier--verifying.svg",
+      "sha256": "427569f90cde73364e1d1fd3c961a2ff80b2d5d8ccb982a8ed7a74147d33638c"
+    },
+    {
+      "path": "characters/generated/compositions/verifier--completed.svg",
+      "sha256": "b3f8604e4e1435d096971e05f3e3ed208cd6180be7ea8d7c1f8972f5b771fa44"
+    },
+    {
+      "path": "characters/generated/compositions/verifier--failed.svg",
+      "sha256": "ea8da24f3150ba2f6e549a2820bf89b1ff20eccd66977d57a37d95cb24ec3f4e"
+    },
+    {
+      "path": "characters/generated/compositions/observer--idle.svg",
+      "sha256": "1bcacbe30fc1117e1f5f93efe1a3dcacafd773ed101de30272502fb82515b1db"
+    },
+    {
+      "path": "characters/generated/compositions/observer--thinking.svg",
+      "sha256": "a692273c660074be4bfba367b893dd515c5d47700cf98048e30202bf10867369"
+    },
+    {
+      "path": "characters/generated/compositions/observer--planning.svg",
+      "sha256": "827c4874f406ad87b879aa5cf6215c2c94367826eefa089b8563f09a1fdf0416"
+    },
+    {
+      "path": "characters/generated/compositions/observer--executing.svg",
+      "sha256": "37032e207dff031808fddea314147bbbfd303560acaf15b4c290cffee5961f76"
+    },
+    {
+      "path": "characters/generated/compositions/observer--inspecting.svg",
+      "sha256": "019b46d699fa592c3e9fa2ad6d2a0ac26cad608dbb30d3ae9266c7f336c8bbfb"
+    },
+    {
+      "path": "characters/generated/compositions/observer--waiting.svg",
+      "sha256": "bfc383c0140c9d1ee48c5b8b4688214dcf979f40909af74766d988f0c6bdbfd2"
+    },
+    {
+      "path": "characters/generated/compositions/observer--blocked.svg",
+      "sha256": "1f2c2119a248732579369cc1ef08085823eb9e26326b47c855d137cb32dd40d3"
+    },
+    {
+      "path": "characters/generated/compositions/observer--approval-required.svg",
+      "sha256": "fe0de4cb110163ab90d070dceba82dbe764a657e81cf14e74dea6cf09286d650"
+    },
+    {
+      "path": "characters/generated/compositions/observer--verifying.svg",
+      "sha256": "adf9d28b677b984d51fdccabc74ae67f9bc12772f65161b1abaea65b5e532531"
+    },
+    {
+      "path": "characters/generated/compositions/observer--completed.svg",
+      "sha256": "2f471b0f7b486b00a462ed967f6f7d324ec2f1d633254bd5a3626d9327797615"
+    },
+    {
+      "path": "characters/generated/compositions/observer--failed.svg",
+      "sha256": "44a70825466ae0dd911d800de21301b1d04f3cfebe87d0e62c50678d791b886d"
+    },
+    {
+      "path": "characters/generated/compositions/researcher--idle.svg",
+      "sha256": "750e343abfe118dc0f7fef0b89e4056899e04a8c71506edb4fbf702babd84afe"
+    },
+    {
+      "path": "characters/generated/compositions/researcher--thinking.svg",
+      "sha256": "5e6da3ae81e89f39248897bc63224513acdf680e8fba5d074b637215fdf6dc2c"
+    },
+    {
+      "path": "characters/generated/compositions/researcher--planning.svg",
+      "sha256": "a869a7170d09538d89d75e4f4f09bddf167c984605caa3f289ea3b6d88caf863"
+    },
+    {
+      "path": "characters/generated/compositions/researcher--executing.svg",
+      "sha256": "36c434f0744b467e83d73cc67f98d955461ac256312f077f1066796142ee48b9"
+    },
+    {
+      "path": "characters/generated/compositions/researcher--inspecting.svg",
+      "sha256": "f5485a141ed0485c355039d55870c2bbc89f8928ac9508fea9ff89b96a886d5f"
+    },
+    {
+      "path": "characters/generated/compositions/researcher--waiting.svg",
+      "sha256": "d27a0ff72583baf58b85d3c548432efa60d08816ccfe541fc215f6a84468a7f7"
+    },
+    {
+      "path": "characters/generated/compositions/researcher--blocked.svg",
+      "sha256": "9d5c1ad095d845b9cc55c984c064564f3c699b9fe32bbd0fe1e999e70c37f7c7"
+    },
+    {
+      "path": "characters/generated/compositions/researcher--approval-required.svg",
+      "sha256": "1b981486d7a9fa4f7ca89b701563d339363226510be034d88ecd020fdd8ef89a"
+    },
+    {
+      "path": "characters/generated/compositions/researcher--verifying.svg",
+      "sha256": "ce130dd2cdb9d11cd85fd525c47af050f8aa49b30198a55331defbc0f8a0f711"
+    },
+    {
+      "path": "characters/generated/compositions/researcher--completed.svg",
+      "sha256": "d00d06371cc2394e71376236775384638961cda4a6245407af29810557fb8532"
+    },
+    {
+      "path": "characters/generated/compositions/researcher--failed.svg",
+      "sha256": "552794b431afa5eccc861511681e78c274b208d40b85752350318638b726486a"
+    },
+    {
+      "path": "characters/generated/avatars/entity.svg",
+      "sha256": "2eddcff44a444834d0662c1079af8357c0761a261df3c4b368b0fa994ab6309c"
+    },
+    {
+      "path": "characters/generated/avatars/guide.svg",
+      "sha256": "2700319d607ac7498c0586064a211fb6584c58ee9a549c9710c4ffc5db0b8fdf"
+    },
+    {
+      "path": "characters/generated/avatars/builder.svg",
+      "sha256": "255fef1fc8bd2da7ef29518cdd742c882c49204ccd439b40f1cd1806f21633bf"
+    },
+    {
+      "path": "characters/generated/avatars/verifier.svg",
+      "sha256": "c52e208fe5c4b88eea271c6e4242f19d8fb8681e6b3c5ecf0030debfdbe5d6a3"
+    },
+    {
+      "path": "characters/generated/avatars/observer.svg",
+      "sha256": "5ce5da3c7f3ed22f8daf728e797828e76c24b174bffd69530e4a67c91aff167e"
+    },
+    {
+      "path": "characters/generated/avatars/researcher.svg",
+      "sha256": "a3e90e7e8ecb0f12a8cc1054fa2ecfbab252c9c3e600d5b1d2f516603a68b9cb"
+    },
+    {
+      "path": "characters/generated/themes/light/roles/entity.svg",
+      "sha256": "073410b19b0a1d400427ab60e6c84ff37c43c8431f2be85f380f5a382c44c13f"
+    },
+    {
+      "path": "characters/generated/themes/light/roles/guide.svg",
+      "sha256": "6b16f014e76dab4552111287032df61181aa9e1c0770a886ff371f53ebe2c0c2"
+    },
+    {
+      "path": "characters/generated/themes/light/roles/builder.svg",
+      "sha256": "810a0207279675b82984f79f5ec5a49d30165a665d8ad5938fd04b731e60c87d"
+    },
+    {
+      "path": "characters/generated/themes/light/roles/verifier.svg",
+      "sha256": "3e060c25318d446eaf7ce4ee92ece121d0ae88a917c7a379c9ecffcb2e6fbe06"
+    },
+    {
+      "path": "characters/generated/themes/light/roles/observer.svg",
+      "sha256": "825b6688f92407980bc0e435b64e5b5dd3924050a8d29063c59388e7921b9799"
+    },
+    {
+      "path": "characters/generated/themes/light/roles/researcher.svg",
+      "sha256": "e817eca0a81a05ae16b7fa32cd3644054fdd280f076c29af370bfee519196002"
+    },
+    {
+      "path": "characters/generated/themes/light/states/idle.svg",
+      "sha256": "348fe8d5ee3333dd0da667a26363ddf8df4da63e979433e066b6c47bc519c629"
+    },
+    {
+      "path": "characters/generated/themes/light/states/thinking.svg",
+      "sha256": "ac155fa96ebc7b2d753fe63c1e541061ab0b14c429169e708754fe596e80d162"
+    },
+    {
+      "path": "characters/generated/themes/light/states/planning.svg",
+      "sha256": "2e8962efb985b62acfb61124727a7144942a105fbebb1762204cb44a1ef2b1f7"
+    },
+    {
+      "path": "characters/generated/themes/light/states/executing.svg",
+      "sha256": "9835959a87c1bc0c2a8739f5f6b020e5d7ed2a08eb4911bf8c00a6f5ae3b01c9"
+    },
+    {
+      "path": "characters/generated/themes/light/states/inspecting.svg",
+      "sha256": "f40298d4d75e6833f767bd7e1ed0f1e195444a5eca6f6dd0497d5fd051afc74a"
+    },
+    {
+      "path": "characters/generated/themes/light/states/waiting.svg",
+      "sha256": "f7af60893214bd44802d4e0658405935014b0b043a94f5f605c617345eb61d1d"
+    },
+    {
+      "path": "characters/generated/themes/light/states/blocked.svg",
+      "sha256": "c4d6a17676340a0c55d5700b323e9402ab8692690a6d5ebca03317367f1ae685"
+    },
+    {
+      "path": "characters/generated/themes/light/states/approval-required.svg",
+      "sha256": "e391f6acc845be662914a78ceaf0af277179b84c5df1b9fd1337f3f15e129c22"
+    },
+    {
+      "path": "characters/generated/themes/light/states/verifying.svg",
+      "sha256": "3b04613895cc301786f579c64ab788ed9a990181d59f83265709820dcc241c97"
+    },
+    {
+      "path": "characters/generated/themes/light/states/completed.svg",
+      "sha256": "00ddebeb7db6c937614e2dcd860cc15e820dd319a9fa4f4a25ebc5ca6eb791e1"
+    },
+    {
+      "path": "characters/generated/themes/light/states/failed.svg",
+      "sha256": "5e8cb415fadd746436385031199cdecbcbca06bed431bca83d2ea6c76be9a106"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/entity--idle.svg",
+      "sha256": "4e22a5f3388af67263ba752fa0885f1280742fdf46cbd891e6b37a4825988558"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/entity--thinking.svg",
+      "sha256": "acb8b559a3c289663c2283a29e0742b38f4f7e6a6efe77050394f6d5b5a344d5"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/entity--planning.svg",
+      "sha256": "7e29a852a814f79775b3cfa904254c30dbc9351524beb89ae08354fbf281b394"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/entity--executing.svg",
+      "sha256": "59f0c0e7d88e1becb63ba89603f2d9ade54d799f0686ff6dd79a44b7a5149697"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/entity--inspecting.svg",
+      "sha256": "ea9f8085a0288b72efb606f73367aab77b74758c66ccc984cf0710c5683d2ef5"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/entity--waiting.svg",
+      "sha256": "74aa17a19d381a74837b89cbd7b7dc229cbb7d71547e3d6c0849085e376f7bc5"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/entity--blocked.svg",
+      "sha256": "a2809da5d87cc59c2a8585909786faaf468e433f719850b8717296a174dc8329"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/entity--approval-required.svg",
+      "sha256": "c1f1efd355597f63292332ee13b1da67102abfface2b3759c3f6c027ff25abd6"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/entity--verifying.svg",
+      "sha256": "4c9dbad69811b0b0729a991bcea8835b01242d6e253f923dfa06c86331992bd6"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/entity--completed.svg",
+      "sha256": "ddd834a5e44a1ee61f058125c18e0e560ee7c9fb12c8b3e8e63864859d41da40"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/entity--failed.svg",
+      "sha256": "789dbe70b8b488c2fb158c494711a3f74e49258ac02b2f74b9f8730322b3c150"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/guide--idle.svg",
+      "sha256": "99d8632ef93b4ece927878852afe213c09f32f3ec116cc23971adf3fa0259006"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/guide--thinking.svg",
+      "sha256": "5f2ac6b6c5c8b43e3819dbba5d9782977257e1f60e8385672ca988b38f22a125"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/guide--planning.svg",
+      "sha256": "80091c9534a88a76903a39b8b5af1ce7019942e85fa69a72ab6d897f8bacc2f6"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/guide--executing.svg",
+      "sha256": "c11000ebbc0b90c8bde37d18206398ce50cd5f13387a19dddfe80354583bd48b"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/guide--inspecting.svg",
+      "sha256": "d4ebe946eaa8bafaa6acbb0b5589adff1f855629b8350f4be167d343e550c77a"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/guide--waiting.svg",
+      "sha256": "30a36009f4cb03cf9c51d374f46ac4d09d34be39493c821ae8ca273b217d87fe"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/guide--blocked.svg",
+      "sha256": "7c94b0a671e3827f07aedb9fb03596f2d945ddb1837be4cd698c885e647ef865"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/guide--approval-required.svg",
+      "sha256": "a5de3e08201170a0593a7523620ea1e6091817fb193bf41d1805f8d6e4e991d4"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/guide--verifying.svg",
+      "sha256": "e6d81d7678393d6cafde26d6b59a77f3e0db383e49dd2028e1bcea307f442439"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/guide--completed.svg",
+      "sha256": "d1781d8186fb1f628a63809bb6b2e562e47f790e7ead00680f09785695ae9f63"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/guide--failed.svg",
+      "sha256": "c48a43ded024804aaa807555df9fe78b32290f8b4e277fac72f29a8311875fa1"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/builder--idle.svg",
+      "sha256": "919cca411d192e1feb51114bef349ec5fb8b203869e9830458d3e403363ca858"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/builder--thinking.svg",
+      "sha256": "1dbf374862bbf9014d10d3e3e5f8c961a72941f27b392558813353510757307f"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/builder--planning.svg",
+      "sha256": "d58d7ad7f03ac2328c36ead76153647d4068673a7d4ba31349d6fa926295ce25"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/builder--executing.svg",
+      "sha256": "20813ad657629568188d7f4de65e2a97a423fe9ca16de1463d82587a0fc1ad9c"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/builder--inspecting.svg",
+      "sha256": "ee7cee1e8198e28cfa66c10f4e507021acd9295b0abb4498ed6a5930cb5f1fee"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/builder--waiting.svg",
+      "sha256": "a92d3db7dd13bc49a41a7f4449e8bbe6b83e59b8926458d30a4eb4b3f2214590"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/builder--blocked.svg",
+      "sha256": "75042caec237a1d223a754baab8caf3ff3beefc94c7f9ea0b2d7d6c258ab788c"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/builder--approval-required.svg",
+      "sha256": "882b0bb95a23c269ea91cad13212c2bd80003467a6b8b1a73d766e1912a8bac2"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/builder--verifying.svg",
+      "sha256": "9fa75604845cd2cf090713982797d83b1592a8151436445af14c43abb12664e1"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/builder--completed.svg",
+      "sha256": "c97ead583cd07edd72ec380a9c90552761aa6baf20d2eea7b1ad0a7da92e7d29"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/builder--failed.svg",
+      "sha256": "50e7941a0e982f420f8a93473df3f548a052bd1bb329db41161d6ce1d3c80c1c"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/verifier--idle.svg",
+      "sha256": "8e6ba86502e6d2baf8fb733859cd862fd57815b05ba5018b81f497bbd203a4a5"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/verifier--thinking.svg",
+      "sha256": "28943e151ff8d060907273fc5f9732aa3199d7bba0cd576517c97e29a93aa989"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/verifier--planning.svg",
+      "sha256": "6035e38fcb59960da591e715eb628452b6379810687beeca556c36a021311e39"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/verifier--executing.svg",
+      "sha256": "d9083919e8150dbe7a4b5c638ef6e820f4672174b2f534a9ad9047616bb8d7a4"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/verifier--inspecting.svg",
+      "sha256": "f72f18796f52113e24fe99edcefd7061d3aa6d34ea5216c84d30f19b30d9e96a"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/verifier--waiting.svg",
+      "sha256": "d7096b1d0f78b813795a64b311d277300068951e491465012c0b22208ebfb3ce"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/verifier--blocked.svg",
+      "sha256": "1218da637c90704eb0102a27286e8f71130154ac640c80027e9f9aefc35ab0fe"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/verifier--approval-required.svg",
+      "sha256": "1a4ea12ac6821b68c0a5555e0b0cececa9eea09aa50dc864e485475e633675a2"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/verifier--verifying.svg",
+      "sha256": "4b16a508f1a1f04e8ebd3fb010c0cde0efe330ad6979a33822b8d6ecf42034d6"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/verifier--completed.svg",
+      "sha256": "ec5661322a41a062164f423295f084223a5210c9a7463cdb3c657c92c997fe6b"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/verifier--failed.svg",
+      "sha256": "92fb599dfa38a20c9e4459e03d8eb1681374823ddd41662b263aa176a9e63dbf"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/observer--idle.svg",
+      "sha256": "bc2ed55d5d91c1f9335e09b8b202d9bc52cdaa8038706ce36ceb7922dac2ca82"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/observer--thinking.svg",
+      "sha256": "96da8140e4a4f7be60c424e97354e23ec14df69ac67a63e702ffd37285541365"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/observer--planning.svg",
+      "sha256": "bdd77290711c5a306d520d8e20d719ff444f5630f3771ea04bb4c7926d2b9eaf"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/observer--executing.svg",
+      "sha256": "f10f62347fd83c47be3d3858bec63cb87cb7cf94bb69160876bf385850a58309"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/observer--inspecting.svg",
+      "sha256": "38fcf97acefb21b215c76a7b3daee9e17dc3747842504c639f9fea5197f5af2d"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/observer--waiting.svg",
+      "sha256": "5db70b4760e74d17bea62af8317f9d0492570b98988deabddf47d036f8f9296b"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/observer--blocked.svg",
+      "sha256": "a0869ca7faab7f013373fe411b8ac13285834c298ec74fce325ee919c08f8db6"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/observer--approval-required.svg",
+      "sha256": "9919863486d084dced79cfa417630a69b635502ca715a1043d42285947b1ce2e"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/observer--verifying.svg",
+      "sha256": "9ce026375ed710b3755fd84f586067698c7959ddbb8346ed74c7b20eec304bf5"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/observer--completed.svg",
+      "sha256": "c135fbe8cdd200a8770b207f35f3006d396c63b23369418818c084c90cb893cf"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/observer--failed.svg",
+      "sha256": "48aab6845d8df3efecf4c2233fd688cf0e6d77898e16f8836596f4b5be87062b"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/researcher--idle.svg",
+      "sha256": "3993ee764e5cea168f9d44b91ac303d876fe03aa38c027117181081d29bc4835"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/researcher--thinking.svg",
+      "sha256": "12d94053542812bd36592e0c402589b2cb7f7baed0e0d87c68fdfbcf0048bac2"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/researcher--planning.svg",
+      "sha256": "b3a409699dce78da7f39508be6b80302de2ca2eaf93c32bbd2b16b1e7834da16"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/researcher--executing.svg",
+      "sha256": "b196d561368d6e98b8f9db132a827c62bfd5ab716bf3e4051a84043b2a10a98f"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/researcher--inspecting.svg",
+      "sha256": "3f2068789702196ebd40775b9b5f1328f2d435ab5c61e14e92b9bfce0c3c7d4b"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/researcher--waiting.svg",
+      "sha256": "969ce5a09c4da0afa8d8923020def8332ae078e4bae5784f056210d6664de0a8"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/researcher--blocked.svg",
+      "sha256": "2f991b43325994d0b9d68dbc64fef741fdd0feb533ae259ecffd68fbc4903102"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/researcher--approval-required.svg",
+      "sha256": "2d115816132b6073aa1021a4e950ae37331095794c6f1e1a68c3315b71d09e52"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/researcher--verifying.svg",
+      "sha256": "0879afef22a0dbaa8c1018a30d55b3382b7b1c64a35da99f9bd695f8ba4eb976"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/researcher--completed.svg",
+      "sha256": "8e83cffbdb013f4c18a34954f8b1654994db4bb525d46fd85ee80c07f93f8451"
+    },
+    {
+      "path": "characters/generated/themes/light/compositions/researcher--failed.svg",
+      "sha256": "518a05d6ae94f3b7003b9b204327600d64ec429638280a937182ec6700c74c5a"
+    },
+    {
+      "path": "characters/generated/themes/light/avatars/entity.svg",
+      "sha256": "38bc2e8fdd0d5c0e3f655103283954e7802d039295eb9033eb7c073c8bf05a56"
+    },
+    {
+      "path": "characters/generated/themes/light/avatars/guide.svg",
+      "sha256": "86200b0448e9374f99aba821adc19acb367ba4761caf558210daea3fef66b8f0"
+    },
+    {
+      "path": "characters/generated/themes/light/avatars/builder.svg",
+      "sha256": "08ca66c6bac534ae3d5e04508cca2a9e9b4e9d07b9eb923975cb9e4dcf15902f"
+    },
+    {
+      "path": "characters/generated/themes/light/avatars/verifier.svg",
+      "sha256": "e327afc61b099f5181e600a1df0da1001d444845e07a044dc39a67b29e852fea"
+    },
+    {
+      "path": "characters/generated/themes/light/avatars/observer.svg",
+      "sha256": "3c1f12ad9c084d0e9371e35995a1caf752b4ccd70887a67a807cea15298866e4"
+    },
+    {
+      "path": "characters/generated/themes/light/avatars/researcher.svg",
+      "sha256": "5d7d7247d5ff69cec7fb02923b23e6efae9ac566f8fd5cd5c82a9dc1458e60a7"
+    }
+  ]
+}

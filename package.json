@@ -4,13 +4,23 @@
   "description": "Canonical Brand OS, visual assets, semantic symbols, and UI contracts for Aftergraph",
   "type": "module",
   "scripts": {
-    "generate": "node scripts/generate-icons.mjs && node scripts/generate-families.mjs && node scripts/generate-characters.mjs",
-    "export-assets": "node scripts/export-assets.mjs",
-    "validate": "node scripts/validate.mjs",
+    "generate": "node scripts/generate-icons.mjs && node scripts/generate-families.mjs && node scripts/generate-characters.mjs && node scripts/compose-characters.mjs && node scripts/generate-character-icons.mjs && node scripts/generate-character-sprites.mjs",
+    "export-assets": "node scripts/export-assets.mjs && node scripts/export-character-assets.mjs --out exports/characters",
+    "validate": "node scripts/validate.mjs && node scripts/validate-character-source.mjs",
     "test": "node --test",
-    "check": "npm run generate && npm run validate && npm test"
+    "check": "npm run generate && npm run validate && npm test",
+    "character:generate": "node scripts/compose-characters.mjs && node scripts/generate-character-icons.mjs && node scripts/generate-character-sprites.mjs",
+    "character:bounds": "node characters/ci/verify-composition-bounds.mjs --report characters/generated/qa/composition-bounds.json",
+    "character:visual:render": "node characters/ci/render-snapshots.mjs --config characters/ci/ci-checks.yml",
+    "character:visual:check": "npm run character:visual:render && node characters/ci/compare-snapshots.mjs --config characters/ci/ci-checks.yml",
+    "character:visual:update": "node characters/ci/render-snapshots.mjs --config characters/ci/ci-checks.yml --baseline",
+    "audit:high": "npm audit --audit-level=high",
+    "character:export": "node scripts/export-character-assets.mjs --out exports/characters",
+    "character:qa": "npm run character:bounds && node characters/ci/verify-small-sizes.mjs --report characters/generated/qa/small-size.json && node characters/ci/verify-contexts.mjs --report characters/generated/qa/context-visibility.json && npm run character:visual:check"
   },
-  "bin": { "assetgen": "./scripts/assetgen.mjs" },
+  "bin": {
+    "assetgen": "./scripts/assetgen.mjs"
+  },
   "main": "./index.mjs",
   "module": "./index.mjs",
   "types": "./types.d.ts",
@@ -33,7 +43,22 @@
       "import": "./react.mjs"
     },
     "./svg/*": "./svg/*",
-    "./characters/*": "./characters/*"
+    "./characters/*": "./characters/*",
+    "./characters/manifest.json": "./characters/manifest.json",
+    "./characters/roles.json": "./characters/roles.json",
+    "./characters/states.json": "./characters/states.json",
+    "./characters/accessibility.json": "./characters/accessibility.json",
+    "./characters/contexts.json": "./characters/contexts.json",
+    "./characters/themes.json": "./characters/themes.json",
+    "./characters/contracts": {
+      "types": "./characters/contracts/components.d.ts"
+    },
+    "./characters/source/*": "./characters/source/*",
+    "./characters/generated/*": "./characters/generated/*",
+    "./characters/motion/*": "./characters/motion/*",
+    "./characters/accessibility": "./characters/accessibility.json",
+    "./characters/contexts": "./characters/contexts.json",
+    "./characters/themes": "./characters/themes.json"
   },
   "repository": {
     "type": "git",
@@ -58,9 +83,30 @@
     "manifest.json",
     "USAGE-RULES.md",
     "DESIGN-SYSTEM.md",
-    "svg", "identity", "semantics", "social", "editorial", "product", "wallpaper", "characters",
-    "schemas", "scripts", "registry.json", "BRAND-ARCHITECTURE.md",
-    "NAMING-AND-LANGUAGE.md", "ACCESSIBILITY.md", "MOTION.md",
-    "SCREENSHOT-STANDARD.md", "RESEARCH-VISUAL-STANDARD.md", "PRESS-AND-MEDIA.md"
-  ]
+    "svg",
+    "identity",
+    "semantics",
+    "social",
+    "editorial",
+    "product",
+    "wallpaper",
+    "characters",
+    "schemas",
+    "scripts",
+    "registry.json",
+    "BRAND-ARCHITECTURE.md",
+    "NAMING-AND-LANGUAGE.md",
+    "ACCESSIBILITY.md",
+    "MOTION.md",
+    "SCREENSHOT-STANDARD.md",
+    "RESEARCH-VISUAL-STANDARD.md",
+    "PRESS-AND-MEDIA.md"
+  ],
+  "devDependencies": {
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
+    "puppeteer-core": "^25.11.0",
+    "sharp": "^0.35.4",
+    "yaml": "^2.9.1"
+  }
 }
