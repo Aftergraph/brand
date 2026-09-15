@@ -123,3 +123,10 @@ test('Rive motion pixel QA covers every governed runtime state', () => {
   assert.match(qa, /const motionCases = cases;/);
   assert.match(qa, /motionEvidence\.push/);
 });
+
+
+test('GitHub CI provisions the runtime libraries required by the pinned Rive CLI on hosted Ubuntu', () => {
+  const ci = read('.github/workflows/ci.yml');
+  assert.match(ci, /node-version:\s*24/);
+  assert.match(ci, /apt-get install[^\n]*libegl1[^\n]*libgles2[^\n]*libx11-6[^\n]*libwayland-egl1[^\n]*libxkbcommon0/);
+});
