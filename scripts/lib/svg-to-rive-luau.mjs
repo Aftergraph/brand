@@ -328,11 +328,12 @@ export function compositionFunctionLua(key, svg, index) {
 
 export function compositionMapLua(entries) {
   const functions=[];
-  const mappings=[];
+  const dispatch=[];
   entries.forEach(({key,svg},index)=>{
     const item=compositionFunctionLua(key,svg,index+1);
+    const [role,state]=key.split(':');
     functions.push(item.source);
-    mappings.push(`  ["${key}"] = ${item.name},`);
+    dispatch.push(`  if role == '${role}' and state == '${state}' then ${item.name}(renderer); return true end`);
   });
-  return `${functions.join('\n\n')}\n\nlocal COMPOSITIONS: {[string]: (Renderer) -> ()} = {\n${mappings.join('\n')}\n}`;
+  return `${functions.join('\n\n')}\n\nlocal function drawProjection(renderer: Renderer, role: string, state: string): boolean\n${dispatch.join('\n')}\n  return false\nend`;
 }

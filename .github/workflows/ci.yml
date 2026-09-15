@@ -29,29 +29,13 @@ jobs:
       - name: Install deterministic dev tooling
         run: npm ci
 
-      - name: Install Rive runtime libraries
-        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libegl1 libgles2 libx11-6 libwayland-egl1 libxkbcommon0
-
-      - name: Install pinned Rive CLI
-        run: |
-          curl -fsSL https://releases.rive.app/cli/install.sh -o /tmp/rive-install.sh
-          echo "$RIVE_INSTALLER_SHA256  /tmp/rive-install.sh" | sha256sum --check -
-          bash /tmp/rive-install.sh
-          export PATH="$HOME/.rive/bin:$PATH"
-          echo "$HOME/.rive/bin" >> "$GITHUB_PATH"
-          rive --version
-          test "$(rive --version | awk '{print $2}')" = "$RIVE_VERSION"
-
       - name: Audit high severity dependencies
         run: npm run audit:high
 
       - name: Regenerate canonical families
         run: npm run generate
 
-      - name: Verify Rive source and runtime behavior
-        run: npm run character:rive:verify && npm run character:rive:qa
-
-      - name: Reject generated and runtime drift
+      - name: Reject generated drift
         run: git diff --exit-code
 
       - name: Run Brand OS semantic validator and tests
@@ -96,3 +80,40 @@ jobs:
             }
             console.log('Brand tokens valid.');
           "
+
+  rive-runtime:
+    runs-on: ubuntu-26.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+
+      - name: Install deterministic dev tooling
+        run: npm ci
+
+      - name: Install Rive runtime libraries
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libegl1 libgles2 libx11-6 libwayland-egl1 libxkbcommon0
+
+      - name: Install pinned Rive CLI
+        run: |
+          curl -fsSL https://releases.rive.app/cli/install.sh -o /tmp/rive-install.sh
+          echo "$RIVE_INSTALLER_SHA256  /tmp/rive-install.sh" | sha256sum --check -
+          bash /tmp/rive-install.sh
+          export PATH="$HOME/.rive/bin:$PATH"
+          echo "$HOME/.rive/bin" >> "$GITHUB_PATH"
+          rive --version
+          test "$(rive --version | awk '{print $2}')" = "$RIVE_VERSION"
+
+      - name: Regenerate canonical character sources
+        run: npm run generate
+
+      - name: Verify Rive source and runtime behavior
+        run: npm run character:rive:verify && npm run character:rive:qa
+
+      - name: Reject generated and runtime drift
+        run: git diff --exit-code

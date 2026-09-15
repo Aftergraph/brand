@@ -60,15 +60,16 @@ test('Rive runtime source projects every governed role/state composition from th
   assert.match(luau, /getEnum\('state'\)/);
   assert.match(luau, /getBoolean\('reducedMotion'\)/);
   for (const role of roles) for (const state of states) {
-    assert.match(luau, new RegExp(`\\["${role}:${state}"\\]\\s*=`), `${role}:${state} missing`);
+    assert.match(luau, new RegExp(`role == '${role}' and state == '${state}'`), `${role}:${state} missing`);
   }
   assert.doesNotMatch(luau, /<image\b|\.png\b|\.webp\b/i);
 });
 
-test('Rive runtime dispatch narrows the selected composition before calling it', () => {
+test('Rive runtime dispatch calls the selected projection directly', () => {
   const luau = read('characters/motion/rive/actor-presence.luau');
-  assert.match(luau, /local COMPOSITIONS: \{\[string\]: \(Renderer\) -> \(\)\} = \{/);
-  assert.match(luau, /if fn ~= nil then\s+fn\(renderer\)\s+end/);
+  assert.match(luau, /local function drawProjection\(renderer: Renderer, role: string, state: string\): boolean/);
+  assert.match(luau, /local projected = drawProjection\(renderer, role, state\)/);
+  assert.match(luau, /if not projected then\s+drawComposition1\(renderer\)\s+end/);
 });
 
 
@@ -132,6 +133,15 @@ test('GitHub CI provisions the runtime libraries required by the pinned Rive CLI
 });
 
 
+test('GitHub CI isolates Rive runtime QA on Ubuntu 26.04 while keeping core verification on the GA runner', () => {
+  const ci = read('.github/workflows/ci.yml');
+  assert.match(ci, /verify:\n\s+runs-on:\s*ubuntu-latest/);
+  assert.match(ci, /rive-runtime:\n\s+runs-on:\s*ubuntu-26\.04/);
+  assert.match(ci, /rive-runtime:[\s\S]*npm run character:rive:verify && npm run character:rive:qa/);
+  assert.match(ci, /rive-runtime:[\s\S]*git diff --exit-code/);
+});
+
+
 test('Rive headless render validity is based on decoded visible pixels, not PNG byte size', async () => {
   const helper = path.join(root, 'scripts/lib/rive-render-validation.mjs');
   assert.ok(fs.existsSync(helper), 'missing pixel-based Rive render validator');
@@ -148,4 +158,37 @@ test('Rive headless render validity is based on decoded visible pixels, not PNG 
   fs.writeFileSync(blankPath, PNG.sync.write(new PNG({width:512, height:512})));
   assert.throws(() => assertVisiblePng(blankPath, 32), /visible pixels/);
   fs.rmSync(tmp, {recursive:true, force:true});
+});
+
+
+test('reduced-motion runtime invalidates once when bound projection data changes', () => {
+  const luau = read('characters/motion/rive/actor-presence.luau');
+  const qa = read('scripts/verify-character-rive-runtime.mjs');
+  assert.match(luau, /lastProjectionKey: string\?/);
+  assert.match(luau, /local changed = projectionKey ~= self\.lastProjectionKey/);
+  assert.match(luau, /self\.lastProjectionKey = projectionKey/);
+  assert.match(luau, /return changed or not reduced/);
+  assert.match(qa, /--advance=1ms/);
+});
+
+
+test('Rive projection dispatch avoids dynamic function-table lookup', () => {
+  const luau = read('characters/motion/rive/actor-presence.luau');
+  assert.match(luau, /local function drawProjection\(renderer: Renderer, role: string, state: string\): boolean/);
+  assert.match(luau, /if role == 'entity' and state == 'idle' then drawComposition1\(renderer\); return true end/);
+  assert.match(luau, /if role == 'researcher' and state == 'failed' then drawComposition66\(renderer\); return true end/);
+  assert.doesNotMatch(luau, /COMPOSITIONS\[role \.\. ':' \.\. state\]/);
+});
+
+
+test('Rive applies scale and motion transforms before drawing the selected projection', () => {
+  const luau = read('characters/motion/rive/actor-presence.luau');
+  const drawStart = luau.indexOf('function draw(self: ActorPresence, renderer: Renderer)');
+  const drawEnd = luau.indexOf("return function(context: Context): Layout<ActorPresence>", drawStart);
+  const draw = luau.slice(drawStart, drawEnd);
+  const saveAt = draw.indexOf('renderer:save()');
+  const scaleAt = draw.indexOf('renderer:transform(Mat2D.withScale(sx, sy))');
+  const motionAt = draw.indexOf('renderer:transform(motionTransform(state, self.elapsed, attention))');
+  const projectionAt = draw.indexOf('drawProjection(renderer, role, state)');
+  assert.ok(saveAt >= 0 && scaleAt > saveAt && motionAt > scaleAt && projectionAt > motionAt, 'projection must render inside scale/motion transforms');
 });

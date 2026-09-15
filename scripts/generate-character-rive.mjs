@@ -133,7 +133,7 @@ end
 
 type ActorPresence = {
   size: Vector, role: PropertyEnum?, state: PropertyEnum?, attention: PropertyEnum?,
-  reducedMotion: Property<boolean>?, elapsed: number,
+  reducedMotion: Property<boolean>?, elapsed: number, lastProjectionKey: string?,
 }
 
 function init(self: ActorPresence, context: Context): boolean
@@ -150,9 +150,15 @@ end
 function resize(self: ActorPresence, size: Vector) self.size = size end
 
 function advance(self: ActorPresence, seconds: number): boolean
+  local role = if self.role ~= nil then self.role.value else 'entity'
+  local state = if self.state ~= nil then self.state.value else 'idle'
+  local attention = if self.attention ~= nil then self.attention.value else 'none'
   local reduced = self.reducedMotion ~= nil and self.reducedMotion.value
+  local projectionKey = role .. ':' .. state .. ':' .. attention .. ':' .. (if reduced then 'reduced' else 'active')
+  local changed = projectionKey ~= self.lastProjectionKey
+  self.lastProjectionKey = projectionKey
   if not reduced then self.elapsed += seconds end
-  return not reduced
+  return changed or not reduced
 end
 
 function draw(self: ActorPresence, renderer: Renderer)
@@ -160,7 +166,6 @@ function draw(self: ActorPresence, renderer: Renderer)
   local state = if self.state ~= nil then self.state.value else 'idle'
   local attention = if self.attention ~= nil then self.attention.value else 'none'
   local reduced = self.reducedMotion ~= nil and self.reducedMotion.value
-  local fn = COMPOSITIONS[role .. ':' .. state] or COMPOSITIONS['entity:idle']
   local sx = self.size.x / 512
   local sy = self.size.y / 512
   renderer:save()
@@ -168,14 +173,15 @@ function draw(self: ActorPresence, renderer: Renderer)
   if not reduced then
     renderer:transform(motionTransform(state, self.elapsed, attention))
   end
-  if fn ~= nil then
-    fn(renderer)
+  local projected = drawProjection(renderer, role, state)
+  if not projected then
+    drawComposition1(renderer)
   end
   renderer:restore()
 end
 
 return function(context: Context): Layout<ActorPresence>
-  return { size=Vector.xy(512,512), role=nil, state=nil, attention=nil, reducedMotion=nil, elapsed=0, init=init, resize=resize, advance=advance, draw=draw }
+  return { size=Vector.xy(512,512), role=nil, state=nil, attention=nil, reducedMotion=nil, elapsed=0, lastProjectionKey=nil, init=init, resize=resize, advance=advance, draw=draw }
 end
 `;
 const yaml = `name: aftergraph_actor_presence\nmain: ActorPresence\nlogs:\n  file: build/rive.log\n  problems: build/problems.log\n`;

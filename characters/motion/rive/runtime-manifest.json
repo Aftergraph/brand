@@ -5,8 +5,8 @@
   "buildCommand": "npm run character:rive:build",
   "artifact": {
     "path": "characters/motion/rive/build/aftergraph_actor_presence.riv",
-    "bytes": 1558354,
-    "sha256": "aa61813da3c0b5ba88043d37c43273dcc8f4c2cb46df17dda51fb667ff53d83e"
+    "bytes": 1559875,
+    "sha256": "8847206f604b720f945908c27b4ceca73a817536f493dca4dab40e33507fb8f3"
   },
   "sources": {
     "sourceManifest": {
@@ -19,7 +19,7 @@
     },
     "script": {
       "path": "characters/motion/rive/actor-presence.luau",
-      "sha256": "04356107d335a4999e5d6913d9d5ca5782bd23795876f16104bcb0e234f65eff"
+      "sha256": "91b85557236c7856822ec5c2ddee0b1835329a59f4f715ef919812bb28b556eb"
     }
   }
 }

@@ -26927,74 +26927,75 @@ local function drawComposition66(renderer: Renderer)
   end
 end
 
-local COMPOSITIONS: {[string]: (Renderer) -> ()} = {
-  ["entity:idle"] = drawComposition1,
-  ["entity:thinking"] = drawComposition2,
-  ["entity:planning"] = drawComposition3,
-  ["entity:executing"] = drawComposition4,
-  ["entity:inspecting"] = drawComposition5,
-  ["entity:waiting"] = drawComposition6,
-  ["entity:blocked"] = drawComposition7,
-  ["entity:approval-required"] = drawComposition8,
-  ["entity:verifying"] = drawComposition9,
-  ["entity:completed"] = drawComposition10,
-  ["entity:failed"] = drawComposition11,
-  ["guide:idle"] = drawComposition12,
-  ["guide:thinking"] = drawComposition13,
-  ["guide:planning"] = drawComposition14,
-  ["guide:executing"] = drawComposition15,
-  ["guide:inspecting"] = drawComposition16,
-  ["guide:waiting"] = drawComposition17,
-  ["guide:blocked"] = drawComposition18,
-  ["guide:approval-required"] = drawComposition19,
-  ["guide:verifying"] = drawComposition20,
-  ["guide:completed"] = drawComposition21,
-  ["guide:failed"] = drawComposition22,
-  ["builder:idle"] = drawComposition23,
-  ["builder:thinking"] = drawComposition24,
-  ["builder:planning"] = drawComposition25,
-  ["builder:executing"] = drawComposition26,
-  ["builder:inspecting"] = drawComposition27,
-  ["builder:waiting"] = drawComposition28,
-  ["builder:blocked"] = drawComposition29,
-  ["builder:approval-required"] = drawComposition30,
-  ["builder:verifying"] = drawComposition31,
-  ["builder:completed"] = drawComposition32,
-  ["builder:failed"] = drawComposition33,
-  ["verifier:idle"] = drawComposition34,
-  ["verifier:thinking"] = drawComposition35,
-  ["verifier:planning"] = drawComposition36,
-  ["verifier:executing"] = drawComposition37,
-  ["verifier:inspecting"] = drawComposition38,
-  ["verifier:waiting"] = drawComposition39,
-  ["verifier:blocked"] = drawComposition40,
-  ["verifier:approval-required"] = drawComposition41,
-  ["verifier:verifying"] = drawComposition42,
-  ["verifier:completed"] = drawComposition43,
-  ["verifier:failed"] = drawComposition44,
-  ["observer:idle"] = drawComposition45,
-  ["observer:thinking"] = drawComposition46,
-  ["observer:planning"] = drawComposition47,
-  ["observer:executing"] = drawComposition48,
-  ["observer:inspecting"] = drawComposition49,
-  ["observer:waiting"] = drawComposition50,
-  ["observer:blocked"] = drawComposition51,
-  ["observer:approval-required"] = drawComposition52,
-  ["observer:verifying"] = drawComposition53,
-  ["observer:completed"] = drawComposition54,
-  ["observer:failed"] = drawComposition55,
-  ["researcher:idle"] = drawComposition56,
-  ["researcher:thinking"] = drawComposition57,
-  ["researcher:planning"] = drawComposition58,
-  ["researcher:executing"] = drawComposition59,
-  ["researcher:inspecting"] = drawComposition60,
-  ["researcher:waiting"] = drawComposition61,
-  ["researcher:blocked"] = drawComposition62,
-  ["researcher:approval-required"] = drawComposition63,
-  ["researcher:verifying"] = drawComposition64,
-  ["researcher:completed"] = drawComposition65,
-  ["researcher:failed"] = drawComposition66,
-}
+local function drawProjection(renderer: Renderer, role: string, state: string): boolean
+  if role == 'entity' and state == 'idle' then drawComposition1(renderer); return true end
+  if role == 'entity' and state == 'thinking' then drawComposition2(renderer); return true end
+  if role == 'entity' and state == 'planning' then drawComposition3(renderer); return true end
+  if role == 'entity' and state == 'executing' then drawComposition4(renderer); return true end
+  if role == 'entity' and state == 'inspecting' then drawComposition5(renderer); return true end
+  if role == 'entity' and state == 'waiting' then drawComposition6(renderer); return true end
+  if role == 'entity' and state == 'blocked' then drawComposition7(renderer); return true end
+  if role == 'entity' and state == 'approval-required' then drawComposition8(renderer); return true end
+  if role == 'entity' and state == 'verifying' then drawComposition9(renderer); return true end
+  if role == 'entity' and state == 'completed' then drawComposition10(renderer); return true end
+  if role == 'entity' and state == 'failed' then drawComposition11(renderer); return true end
+  if role == 'guide' and state == 'idle' then drawComposition12(renderer); return true end
+  if role == 'guide' and state == 'thinking' then drawComposition13(renderer); return true end
+  if role == 'guide' and state == 'planning' then drawComposition14(renderer); return true end
+  if role == 'guide' and state == 'executing' then drawComposition15(renderer); return true end
+  if role == 'guide' and state == 'inspecting' then drawComposition16(renderer); return true end
+  if role == 'guide' and state == 'waiting' then drawComposition17(renderer); return true end
+  if role == 'guide' and state == 'blocked' then drawComposition18(renderer); return true end
+  if role == 'guide' and state == 'approval-required' then drawComposition19(renderer); return true end
+  if role == 'guide' and state == 'verifying' then drawComposition20(renderer); return true end
+  if role == 'guide' and state == 'completed' then drawComposition21(renderer); return true end
+  if role == 'guide' and state == 'failed' then drawComposition22(renderer); return true end
+  if role == 'builder' and state == 'idle' then drawComposition23(renderer); return true end
+  if role == 'builder' and state == 'thinking' then drawComposition24(renderer); return true end
+  if role == 'builder' and state == 'planning' then drawComposition25(renderer); return true end
+  if role == 'builder' and state == 'executing' then drawComposition26(renderer); return true end
+  if role == 'builder' and state == 'inspecting' then drawComposition27(renderer); return true end
+  if role == 'builder' and state == 'waiting' then drawComposition28(renderer); return true end
+  if role == 'builder' and state == 'blocked' then drawComposition29(renderer); return true end
+  if role == 'builder' and state == 'approval-required' then drawComposition30(renderer); return true end
+  if role == 'builder' and state == 'verifying' then drawComposition31(renderer); return true end
+  if role == 'builder' and state == 'completed' then drawComposition32(renderer); return true end
+  if role == 'builder' and state == 'failed' then drawComposition33(renderer); return true end
+  if role == 'verifier' and state == 'idle' then drawComposition34(renderer); return true end
+  if role == 'verifier' and state == 'thinking' then drawComposition35(renderer); return true end
+  if role == 'verifier' and state == 'planning' then drawComposition36(renderer); return true end
+  if role == 'verifier' and state == 'executing' then drawComposition37(renderer); return true end
+  if role == 'verifier' and state == 'inspecting' then drawComposition38(renderer); return true end
+  if role == 'verifier' and state == 'waiting' then drawComposition39(renderer); return true end
+  if role == 'verifier' and state == 'blocked' then drawComposition40(renderer); return true end
+  if role == 'verifier' and state == 'approval-required' then drawComposition41(renderer); return true end
+  if role == 'verifier' and state == 'verifying' then drawComposition42(renderer); return true end
+  if role == 'verifier' and state == 'completed' then drawComposition43(renderer); return true end
+  if role == 'verifier' and state == 'failed' then drawComposition44(renderer); return true end
+  if role == 'observer' and state == 'idle' then drawComposition45(renderer); return true end
+  if role == 'observer' and state == 'thinking' then drawComposition46(renderer); return true end
+  if role == 'observer' and state == 'planning' then drawComposition47(renderer); return true end
+  if role == 'observer' and state == 'executing' then drawComposition48(renderer); return true end
+  if role == 'observer' and state == 'inspecting' then drawComposition49(renderer); return true end
+  if role == 'observer' and state == 'waiting' then drawComposition50(renderer); return true end
+  if role == 'observer' and state == 'blocked' then drawComposition51(renderer); return true end
+  if role == 'observer' and state == 'approval-required' then drawComposition52(renderer); return true end
+  if role == 'observer' and state == 'verifying' then drawComposition53(renderer); return true end
+  if role == 'observer' and state == 'completed' then drawComposition54(renderer); return true end
+  if role == 'observer' and state == 'failed' then drawComposition55(renderer); return true end
+  if role == 'researcher' and state == 'idle' then drawComposition56(renderer); return true end
+  if role == 'researcher' and state == 'thinking' then drawComposition57(renderer); return true end
+  if role == 'researcher' and state == 'planning' then drawComposition58(renderer); return true end
+  if role == 'researcher' and state == 'executing' then drawComposition59(renderer); return true end
+  if role == 'researcher' and state == 'inspecting' then drawComposition60(renderer); return true end
+  if role == 'researcher' and state == 'waiting' then drawComposition61(renderer); return true end
+  if role == 'researcher' and state == 'blocked' then drawComposition62(renderer); return true end
+  if role == 'researcher' and state == 'approval-required' then drawComposition63(renderer); return true end
+  if role == 'researcher' and state == 'verifying' then drawComposition64(renderer); return true end
+  if role == 'researcher' and state == 'completed' then drawComposition65(renderer); return true end
+  if role == 'researcher' and state == 'failed' then drawComposition66(renderer); return true end
+  return false
+end
 
 local MOTION_PERIODS: {[string]: number} = {
   ["idle"] = 3.2,
@@ -27069,7 +27070,7 @@ end
 
 type ActorPresence = {
   size: Vector, role: PropertyEnum?, state: PropertyEnum?, attention: PropertyEnum?,
-  reducedMotion: Property<boolean>?, elapsed: number,
+  reducedMotion: Property<boolean>?, elapsed: number, lastProjectionKey: string?,
 }
 
 function init(self: ActorPresence, context: Context): boolean
@@ -27086,9 +27087,15 @@ end
 function resize(self: ActorPresence, size: Vector) self.size = size end
 
 function advance(self: ActorPresence, seconds: number): boolean
+  local role = if self.role ~= nil then self.role.value else 'entity'
+  local state = if self.state ~= nil then self.state.value else 'idle'
+  local attention = if self.attention ~= nil then self.attention.value else 'none'
   local reduced = self.reducedMotion ~= nil and self.reducedMotion.value
+  local projectionKey = role .. ':' .. state .. ':' .. attention .. ':' .. (if reduced then 'reduced' else 'active')
+  local changed = projectionKey ~= self.lastProjectionKey
+  self.lastProjectionKey = projectionKey
   if not reduced then self.elapsed += seconds end
-  return not reduced
+  return changed or not reduced
 end
 
 function draw(self: ActorPresence, renderer: Renderer)
@@ -27096,7 +27103,6 @@ function draw(self: ActorPresence, renderer: Renderer)
   local state = if self.state ~= nil then self.state.value else 'idle'
   local attention = if self.attention ~= nil then self.attention.value else 'none'
   local reduced = self.reducedMotion ~= nil and self.reducedMotion.value
-  local fn = COMPOSITIONS[role .. ':' .. state] or COMPOSITIONS['entity:idle']
   local sx = self.size.x / 512
   local sy = self.size.y / 512
   renderer:save()
@@ -27104,12 +27110,13 @@ function draw(self: ActorPresence, renderer: Renderer)
   if not reduced then
     renderer:transform(motionTransform(state, self.elapsed, attention))
   end
-  if fn ~= nil then
-    fn(renderer)
+  local projected = drawProjection(renderer, role, state)
+  if not projected then
+    drawComposition1(renderer)
   end
   renderer:restore()
 end
 
 return function(context: Context): Layout<ActorPresence>
-  return { size=Vector.xy(512,512), role=nil, state=nil, attention=nil, reducedMotion=nil, elapsed=0, init=init, resize=resize, advance=advance, draw=draw }
+  return { size=Vector.xy(512,512), role=nil, state=nil, attention=nil, reducedMotion=nil, elapsed=0, lastProjectionKey=nil, init=init, resize=resize, advance=advance, draw=draw }
 end

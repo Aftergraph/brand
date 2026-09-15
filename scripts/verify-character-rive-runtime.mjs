@@ -44,7 +44,7 @@ try {
     const stem = `${role}--${state}`;
     const png = path.join(tmp, `${stem}.png`);
     const dump = path.join(tmp, `${stem}.json`);
-    execFileSync(rive, [project, `--screenshot=${png}`, `--data=role=${role}`, `--data=state=${state}`, `--data=attention=${attention}`, '--data=reducedMotion=true', `--data-dump=${dump}`, '--quiet'], {cwd:root, stdio:'pipe'});
+    execFileSync(rive, [project, `--screenshot=${png}`, `--data=role=${role}`, `--data=state=${state}`, `--data=attention=${attention}`, '--data=reducedMotion=true', '--advance=1ms', `--data-dump=${dump}`, '--quiet'], {cwd:root, stdio:'pipe'});
     assertVisiblePng(png, 32);
     const vm = JSON.parse(fs.readFileSync(dump, 'utf8')).viewModel;
     const values = Object.fromEntries(vm.properties.map((p) => [p.name,p.value]));
