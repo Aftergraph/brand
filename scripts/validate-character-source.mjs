@@ -10,6 +10,7 @@ const readJson=(rel)=>JSON.parse(read(rel));
 const tokens=readJson('tokens.json');
 const anchorsDoc=readJson('characters/source/master/anchors.json');
 const anchorIds=new Set(anchorsDoc.anchors.map((a)=>a.id));
+const propSlotsDoc=readJson('characters/source/rig/slots.json');
 const requiredGroups=['halo','head','face','torso','arm-left','arm-right','hand-left','hand-right','leg-left','leg-right','shading'];
 const svgSources=[
   'characters/source/master/base-character.svg',
@@ -24,6 +25,7 @@ const leakageSources=[
   'characters/source/icons/icon-mapping.json',
   'characters/source/expressions/expressions.json',
   'characters/source/rig/rig.json',
+  'characters/source/rig/slots.json',
   'characters/contracts/components.d.ts',
   'characters/ci/ci-checks.yml',
 ];
@@ -88,6 +90,19 @@ for(const anchor of anchors){
   }
 }
 
+// Prop slots are an explicit source contract, not generator-local magic.
+for(const [slotId,slot] of Object.entries(propSlotsDoc.slots||{})){
+  const anchor=byId.get(slotId);
+  if(!anchor) errors.push(`prop slots: unknown anchor ${slotId}`);
+  else if(anchor.x!==slot.x||anchor.y!==slot.y) errors.push(`prop slots: coordinate drift for ${slotId}`);
+  if(slot.parentJoint&&slot.parentJoint!==anchor?.parentJoint) errors.push(`prop slots: parent drift for ${slotId}`);
+}
+if(propSlotsDoc.collisionPolicy?.priority!=='state') errors.push('prop slots: collision priority must be state');
+for(const [from,to] of Object.entries(propSlotsDoc.collisionPolicy?.roleFallback||{})){
+  if(!anchorIds.has(from)||!anchorIds.has(to)) errors.push(`prop slots: invalid fallback ${from} -> ${to}`);
+  if(from===to) errors.push(`prop slots: fallback cannot target same slot ${from}`);
+}
+
 for(const rel of leakageSources){
   const source=read(rel);
   if(/\b(?:Sentinel|Forge|Atlas)\b/.test(source)) errors.push(`${rel}: product alias leakage outside governance mapping`);
@@ -119,4 +134,4 @@ if(errors.length){
   for(const error of errors) console.error(`ERROR ${error}`);
   process.exit(1);
 }
-console.log(`Character source validation passed: ${requiredGroups.length} requiredGroups, ${anchors.length} anchors, ${svgSources.length} editable SVG source files; no duplicate id, embedded raster, unknown color, invalid anchor ref, product alias leakage, or generated-output drift.`);
+console.log(`Character source validation passed: ${requiredGroups.length} requiredGroups, ${anchors.length} anchors, ${svgSources.length} editable SVG source files; no duplicate id, embedded raster, unknown color, invalid anchor ref, invalid prop slots, product alias leakage, or generated-output drift.`);

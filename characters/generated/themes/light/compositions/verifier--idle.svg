@@ -69,7 +69,7 @@
     <path id="limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="role-prop" data-role="verifier" data-anchor-ref="prop-right"><g id="verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#15985D" stroke-width="7" stroke-linejoin="round">
+  <g id="role-prop" data-role="verifier" data-source-anchor="prop-right" data-resolved-anchor="prop-right" data-anchor-ref="prop-right"><g id="verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#15985D" stroke-width="7" stroke-linejoin="round">
         <path d="M0 -48 L54 -27 L47 35 C39 71 19 92 0 103 C-19 92 -39 71 -47 35 L-54 -27 Z"/>
         <path d="M-24 24 L-5 44 L31 0" fill="none" stroke-linecap="round"/>
       </g></g>

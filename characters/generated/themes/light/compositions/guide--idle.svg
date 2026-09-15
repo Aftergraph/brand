@@ -69,7 +69,7 @@
     <path id="limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="role-prop" data-role="guide" data-anchor-ref="prop-left"><g id="guide-route" fill="none" stroke="#0C52EF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="role-prop" data-role="guide" data-source-anchor="prop-left" data-resolved-anchor="prop-left" data-anchor-ref="prop-left"><g id="guide-route" fill="none" stroke="#0C52EF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M102 282 C111 246 124 210 151 176"/>
         <circle cx="102" cy="282" r="11" fill="#0C52EF"/>
         <circle cx="126" cy="222" r="8" fill="#0C52EF"/>

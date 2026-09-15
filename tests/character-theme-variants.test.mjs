@@ -40,3 +40,10 @@ test('light role variants remap structural white and accents to canonical light-
 test('theme-derived files remain deterministic',()=>{
   execFileSync(process.execPath,['scripts/compose-characters.mjs','--check'],{cwd:root,stdio:'pipe'});
 });
+
+test('light entity keeps a canonical light face signal against the dark visor while structural outlines remain dark', () => {
+  const tokens = readJson('tokens.json');
+  const entity = read('characters/generated/themes/light/roles/entity.svg');
+  assert.match(entity, new RegExp(`id="face"[^>]*color="${tokens.colors.evidence_white}"`));
+  assert.doesNotMatch(entity, new RegExp(`stroke="${tokens.colors.evidence_white}"`));
+});

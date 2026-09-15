@@ -19,6 +19,7 @@ const rolesSource = read('characters/source/roles/roles.svg');
 const statesSource = read('characters/source/states/states.svg');
 const expressionsSource = read('characters/source/expressions/expressions.svg');
 const expressionRegistry = readJson('characters/source/expressions/expressions.json');
+const propSlots = readJson('characters/source/rig/slots.json');
 const canonicalAccent = tokens.colors.control_cyan;
 
 const roleToken = (token) => {
@@ -38,6 +39,14 @@ function applyTheme(content, themeId) {
     const to = tokenPath(toPath);
     if (typeof from !== 'string' || typeof to !== 'string') throw new Error(`Invalid theme token mapping: ${fromPath} -> ${toPath}`);
     result = result.split(from).join(to);
+  }
+  for (const [roleId, override] of Object.entries(theme.roleOverrides || {})) {
+    if (!result.includes(`data-role="${roleId}"`)) continue;
+    if (override.faceColorToken) {
+      const faceColor = tokenPath(override.faceColorToken);
+      if (typeof faceColor !== 'string') throw new Error(`Invalid face color token: ${override.faceColorToken}`);
+      result = result.replace(/(<g id="face"[^>]*\bcolor=")[^"]+(")/, `$1${faceColor}$2`);
+    }
   }
   return result.replace('data-theme="dark"', `data-theme="${themeId}"`);
 }
@@ -88,6 +97,21 @@ function poseBase(baseGroups, stateSymbol) {
   return result;
 }
 
+function resolveRolePropPlacement(roleSymbol, stateSymbol) {
+  const sourceAnchor = roleSymbol.attrs['data-anchor-ref'];
+  const stateAnchor = stateSymbol.attrs['data-anchor-ref'];
+  let resolvedAnchor = sourceAnchor;
+  if (sourceAnchor === stateAnchor) {
+    resolvedAnchor = propSlots.collisionPolicy.roleFallback[sourceAnchor] || sourceAnchor;
+  }
+  const from = anchorMap.get(sourceAnchor);
+  const to = anchorMap.get(resolvedAnchor);
+  if (!from || !to) throw new Error(`Unknown prop anchor: ${sourceAnchor} -> ${resolvedAnchor}`);
+  const dx = to.x - from.x;
+  const dy = to.y - from.y;
+  return {sourceAnchor, resolvedAnchor, transform: dx || dy ? ` transform=\"translate(${dx} ${dy})\"` : ''};
+}
+
 const baseDefs = extractDefs(baseSource);
 const baseGroupOrder = ['halo','leg-left','leg-right','torso','arm-left','arm-right','hand-left','hand-right','head','face','shading'];
 const baseGroups = baseGroupOrder.map((id) => extractTopGroup(baseSource, id)).join('\n  ');
@@ -124,13 +148,14 @@ function composition(role, state) {
   const expressionId = expressionRegistry.stateDefaults[state.id];
   if (!expressionId) throw new Error(`No default expression for state ${state.id}`);
   const posed = poseBase(replaceFace(replaceAccent(baseGroups, accent), expressionId, accent), stateSymbol);
+  const rolePlacement = resolveRolePropPlacement(roleSymbol, stateSymbol);
   return svgDocument({
     title: `${role.displayName} — ${state.id}`,
     description: `Derived Aftergraph character composition for role ${role.id} in runtime state ${state.id}. Visual state is not evidence.`,
     role: role.id,
     state: state.id,
     accent,
-    groups: `${posed}\n  <g id="role-prop" data-role="${role.id}" data-anchor-ref="${roleSymbol.attrs['data-anchor-ref']}">${roleSymbol.body}</g>\n  <g id="state-prop" data-state="${state.id}" data-anchor-ref="${stateSymbol.attrs['data-anchor-ref']}" data-pose="${stateSymbol.attrs['data-pose'] || 'neutral'}">${stateSymbol.body}</g>`,
+    groups: `${posed}\n  <g id="role-prop" data-role="${role.id}" data-source-anchor="${rolePlacement.sourceAnchor}" data-resolved-anchor="${rolePlacement.resolvedAnchor}" data-anchor-ref="${rolePlacement.resolvedAnchor}"${rolePlacement.transform}>${roleSymbol.body}</g>\n  <g id="state-prop" data-state="${state.id}" data-anchor-ref="${stateSymbol.attrs['data-anchor-ref']}" data-pose="${stateSymbol.attrs['data-pose'] || 'neutral'}">${stateSymbol.body}</g>`,
   });
 }
 function roleStandalone(role) {

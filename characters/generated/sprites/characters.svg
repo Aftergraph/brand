@@ -1533,7 +1533,7 @@
     <path id="ag-character-composition-entity--idle--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-entity--idle--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-entity--idle--role-prop" data-role="entity" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--idle--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
+  <g id="ag-character-composition-entity--idle--role-prop" data-role="entity" data-source-anchor="prop-center" data-resolved-anchor="prop-center" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--idle--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
         <circle cx="0" cy="0" r="22"/>
         <circle cx="-42" cy="-24" r="8" fill="#F5F7FA"/>
         <circle cx="42" cy="-24" r="8" fill="#F5F7FA"/>
@@ -1613,7 +1613,7 @@
     <path id="ag-character-composition-entity--thinking--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-entity--thinking--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-entity--thinking--role-prop" data-role="entity" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--thinking--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
+  <g id="ag-character-composition-entity--thinking--role-prop" data-role="entity" data-source-anchor="prop-center" data-resolved-anchor="prop-center" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--thinking--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
         <circle cx="0" cy="0" r="22"/>
         <circle cx="-42" cy="-24" r="8" fill="#F5F7FA"/>
         <circle cx="42" cy="-24" r="8" fill="#F5F7FA"/>
@@ -1695,7 +1695,7 @@
     <path id="ag-character-composition-entity--planning--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-entity--planning--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-entity--planning--role-prop" data-role="entity" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--planning--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
+  <g id="ag-character-composition-entity--planning--role-prop" data-role="entity" data-source-anchor="prop-center" data-resolved-anchor="prop-center" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--planning--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
         <circle cx="0" cy="0" r="22"/>
         <circle cx="-42" cy="-24" r="8" fill="#F5F7FA"/>
         <circle cx="42" cy="-24" r="8" fill="#F5F7FA"/>
@@ -1777,7 +1777,7 @@
     <path id="ag-character-composition-entity--executing--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-entity--executing--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-entity--executing--role-prop" data-role="entity" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--executing--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
+  <g id="ag-character-composition-entity--executing--role-prop" data-role="entity" data-source-anchor="prop-center" data-resolved-anchor="prop-center" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--executing--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
         <circle cx="0" cy="0" r="22"/>
         <circle cx="-42" cy="-24" r="8" fill="#F5F7FA"/>
         <circle cx="42" cy="-24" r="8" fill="#F5F7FA"/>
@@ -1859,7 +1859,7 @@
     <path id="ag-character-composition-entity--inspecting--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-entity--inspecting--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-entity--inspecting--role-prop" data-role="entity" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--inspecting--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
+  <g id="ag-character-composition-entity--inspecting--role-prop" data-role="entity" data-source-anchor="prop-center" data-resolved-anchor="prop-center" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--inspecting--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
         <circle cx="0" cy="0" r="22"/>
         <circle cx="-42" cy="-24" r="8" fill="#F5F7FA"/>
         <circle cx="42" cy="-24" r="8" fill="#F5F7FA"/>
@@ -1939,7 +1939,7 @@
     <path id="ag-character-composition-entity--waiting--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-entity--waiting--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-entity--waiting--role-prop" data-role="entity" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--waiting--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
+  <g id="ag-character-composition-entity--waiting--role-prop" data-role="entity" data-source-anchor="prop-center" data-resolved-anchor="prop-center" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--waiting--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
         <circle cx="0" cy="0" r="22"/>
         <circle cx="-42" cy="-24" r="8" fill="#F5F7FA"/>
         <circle cx="42" cy="-24" r="8" fill="#F5F7FA"/>
@@ -2019,7 +2019,7 @@
     <path id="ag-character-composition-entity--blocked--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-entity--blocked--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-entity--blocked--role-prop" data-role="entity" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--blocked--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
+  <g id="ag-character-composition-entity--blocked--role-prop" data-role="entity" data-source-anchor="prop-center" data-resolved-anchor="prop-center" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--blocked--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
         <circle cx="0" cy="0" r="22"/>
         <circle cx="-42" cy="-24" r="8" fill="#F5F7FA"/>
         <circle cx="42" cy="-24" r="8" fill="#F5F7FA"/>
@@ -2099,7 +2099,7 @@
     <path id="ag-character-composition-entity--approval-required--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-entity--approval-required--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-entity--approval-required--role-prop" data-role="entity" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--approval-required--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
+  <g id="ag-character-composition-entity--approval-required--role-prop" data-role="entity" data-source-anchor="prop-center" data-resolved-anchor="prop-center" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--approval-required--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
         <circle cx="0" cy="0" r="22"/>
         <circle cx="-42" cy="-24" r="8" fill="#F5F7FA"/>
         <circle cx="42" cy="-24" r="8" fill="#F5F7FA"/>
@@ -2181,7 +2181,7 @@
     <path id="ag-character-composition-entity--verifying--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-entity--verifying--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-entity--verifying--role-prop" data-role="entity" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--verifying--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
+  <g id="ag-character-composition-entity--verifying--role-prop" data-role="entity" data-source-anchor="prop-center" data-resolved-anchor="prop-center" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--verifying--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
         <circle cx="0" cy="0" r="22"/>
         <circle cx="-42" cy="-24" r="8" fill="#F5F7FA"/>
         <circle cx="42" cy="-24" r="8" fill="#F5F7FA"/>
@@ -2261,7 +2261,7 @@
     <path id="ag-character-composition-entity--completed--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-entity--completed--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-entity--completed--role-prop" data-role="entity" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--completed--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
+  <g id="ag-character-composition-entity--completed--role-prop" data-role="entity" data-source-anchor="prop-center" data-resolved-anchor="prop-center" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--completed--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
         <circle cx="0" cy="0" r="22"/>
         <circle cx="-42" cy="-24" r="8" fill="#F5F7FA"/>
         <circle cx="42" cy="-24" r="8" fill="#F5F7FA"/>
@@ -2342,7 +2342,7 @@
     <path id="ag-character-composition-entity--failed--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-entity--failed--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-entity--failed--role-prop" data-role="entity" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--failed--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
+  <g id="ag-character-composition-entity--failed--role-prop" data-role="entity" data-source-anchor="prop-center" data-resolved-anchor="prop-center" data-anchor-ref="prop-center"><g id="ag-character-composition-entity--failed--entity-core" transform="translate(256 319)" fill="none" stroke="#F5F7FA" stroke-width="5">
         <circle cx="0" cy="0" r="22"/>
         <circle cx="-42" cy="-24" r="8" fill="#F5F7FA"/>
         <circle cx="42" cy="-24" r="8" fill="#F5F7FA"/>
@@ -2422,7 +2422,7 @@
     <path id="ag-character-composition-guide--idle--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-guide--idle--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-guide--idle--role-prop" data-role="guide" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--idle--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="ag-character-composition-guide--idle--role-prop" data-role="guide" data-source-anchor="prop-left" data-resolved-anchor="prop-left" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--idle--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M102 282 C111 246 124 210 151 176"/>
         <circle cx="102" cy="282" r="11" fill="#42C7E8"/>
         <circle cx="126" cy="222" r="8" fill="#42C7E8"/>
@@ -2502,7 +2502,7 @@
     <path id="ag-character-composition-guide--thinking--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-guide--thinking--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-guide--thinking--role-prop" data-role="guide" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--thinking--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="ag-character-composition-guide--thinking--role-prop" data-role="guide" data-source-anchor="prop-left" data-resolved-anchor="prop-left" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--thinking--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M102 282 C111 246 124 210 151 176"/>
         <circle cx="102" cy="282" r="11" fill="#42C7E8"/>
         <circle cx="126" cy="222" r="8" fill="#42C7E8"/>
@@ -2584,7 +2584,7 @@
     <path id="ag-character-composition-guide--planning--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-guide--planning--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-guide--planning--role-prop" data-role="guide" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--planning--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="ag-character-composition-guide--planning--role-prop" data-role="guide" data-source-anchor="prop-left" data-resolved-anchor="prop-left" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--planning--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M102 282 C111 246 124 210 151 176"/>
         <circle cx="102" cy="282" r="11" fill="#42C7E8"/>
         <circle cx="126" cy="222" r="8" fill="#42C7E8"/>
@@ -2666,7 +2666,7 @@
     <path id="ag-character-composition-guide--executing--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-guide--executing--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-guide--executing--role-prop" data-role="guide" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--executing--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="ag-character-composition-guide--executing--role-prop" data-role="guide" data-source-anchor="prop-left" data-resolved-anchor="prop-left" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--executing--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M102 282 C111 246 124 210 151 176"/>
         <circle cx="102" cy="282" r="11" fill="#42C7E8"/>
         <circle cx="126" cy="222" r="8" fill="#42C7E8"/>
@@ -2748,7 +2748,7 @@
     <path id="ag-character-composition-guide--inspecting--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-guide--inspecting--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-guide--inspecting--role-prop" data-role="guide" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--inspecting--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="ag-character-composition-guide--inspecting--role-prop" data-role="guide" data-source-anchor="prop-left" data-resolved-anchor="prop-left" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--inspecting--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M102 282 C111 246 124 210 151 176"/>
         <circle cx="102" cy="282" r="11" fill="#42C7E8"/>
         <circle cx="126" cy="222" r="8" fill="#42C7E8"/>
@@ -2828,7 +2828,7 @@
     <path id="ag-character-composition-guide--waiting--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-guide--waiting--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-guide--waiting--role-prop" data-role="guide" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--waiting--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="ag-character-composition-guide--waiting--role-prop" data-role="guide" data-source-anchor="prop-left" data-resolved-anchor="prop-left" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--waiting--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M102 282 C111 246 124 210 151 176"/>
         <circle cx="102" cy="282" r="11" fill="#42C7E8"/>
         <circle cx="126" cy="222" r="8" fill="#42C7E8"/>
@@ -2908,7 +2908,7 @@
     <path id="ag-character-composition-guide--blocked--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-guide--blocked--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-guide--blocked--role-prop" data-role="guide" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--blocked--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="ag-character-composition-guide--blocked--role-prop" data-role="guide" data-source-anchor="prop-left" data-resolved-anchor="prop-left" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--blocked--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M102 282 C111 246 124 210 151 176"/>
         <circle cx="102" cy="282" r="11" fill="#42C7E8"/>
         <circle cx="126" cy="222" r="8" fill="#42C7E8"/>
@@ -2988,7 +2988,7 @@
     <path id="ag-character-composition-guide--approval-required--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-guide--approval-required--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-guide--approval-required--role-prop" data-role="guide" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--approval-required--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="ag-character-composition-guide--approval-required--role-prop" data-role="guide" data-source-anchor="prop-left" data-resolved-anchor="prop-left" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--approval-required--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M102 282 C111 246 124 210 151 176"/>
         <circle cx="102" cy="282" r="11" fill="#42C7E8"/>
         <circle cx="126" cy="222" r="8" fill="#42C7E8"/>
@@ -3070,7 +3070,7 @@
     <path id="ag-character-composition-guide--verifying--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-guide--verifying--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-guide--verifying--role-prop" data-role="guide" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--verifying--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="ag-character-composition-guide--verifying--role-prop" data-role="guide" data-source-anchor="prop-left" data-resolved-anchor="prop-left" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--verifying--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M102 282 C111 246 124 210 151 176"/>
         <circle cx="102" cy="282" r="11" fill="#42C7E8"/>
         <circle cx="126" cy="222" r="8" fill="#42C7E8"/>
@@ -3150,7 +3150,7 @@
     <path id="ag-character-composition-guide--completed--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-guide--completed--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-guide--completed--role-prop" data-role="guide" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--completed--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="ag-character-composition-guide--completed--role-prop" data-role="guide" data-source-anchor="prop-left" data-resolved-anchor="prop-left" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--completed--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M102 282 C111 246 124 210 151 176"/>
         <circle cx="102" cy="282" r="11" fill="#42C7E8"/>
         <circle cx="126" cy="222" r="8" fill="#42C7E8"/>
@@ -3231,7 +3231,7 @@
     <path id="ag-character-composition-guide--failed--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-guide--failed--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-guide--failed--role-prop" data-role="guide" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--failed--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g id="ag-character-composition-guide--failed--role-prop" data-role="guide" data-source-anchor="prop-left" data-resolved-anchor="prop-left" data-anchor-ref="prop-left"><g id="ag-character-composition-guide--failed--guide-route" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M102 282 C111 246 124 210 151 176"/>
         <circle cx="102" cy="282" r="11" fill="#42C7E8"/>
         <circle cx="126" cy="222" r="8" fill="#42C7E8"/>
@@ -3311,7 +3311,7 @@
     <path id="ag-character-composition-builder--idle--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-builder--idle--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-builder--idle--role-prop" data-role="builder" data-anchor-ref="prop-right"><g id="ag-character-composition-builder--idle--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
+  <g id="ag-character-composition-builder--idle--role-prop" data-role="builder" data-source-anchor="prop-right" data-resolved-anchor="prop-right" data-anchor-ref="prop-right"><g id="ag-character-composition-builder--idle--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
         <path d="M-54 -12 L0 -42 L48 -14 L-4 17 Z"/>
         <path d="M-54 -12 L-54 48 L-4 78 L-4 17 Z"/>
         <path d="M-4 17 L48 -14 L48 46 L-4 78 Z"/>
@@ -3390,7 +3390,7 @@
     <path id="ag-character-composition-builder--thinking--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-builder--thinking--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-builder--thinking--role-prop" data-role="builder" data-anchor-ref="prop-right"><g id="ag-character-composition-builder--thinking--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
+  <g id="ag-character-composition-builder--thinking--role-prop" data-role="builder" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-builder--thinking--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
         <path d="M-54 -12 L0 -42 L48 -14 L-4 17 Z"/>
         <path d="M-54 -12 L-54 48 L-4 78 L-4 17 Z"/>
         <path d="M-4 17 L48 -14 L48 46 L-4 78 Z"/>
@@ -3471,7 +3471,7 @@
     <path id="ag-character-composition-builder--planning--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-builder--planning--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-builder--planning--role-prop" data-role="builder" data-anchor-ref="prop-right"><g id="ag-character-composition-builder--planning--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
+  <g id="ag-character-composition-builder--planning--role-prop" data-role="builder" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-builder--planning--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
         <path d="M-54 -12 L0 -42 L48 -14 L-4 17 Z"/>
         <path d="M-54 -12 L-54 48 L-4 78 L-4 17 Z"/>
         <path d="M-4 17 L48 -14 L48 46 L-4 78 Z"/>
@@ -3552,7 +3552,7 @@
     <path id="ag-character-composition-builder--executing--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-builder--executing--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-builder--executing--role-prop" data-role="builder" data-anchor-ref="prop-right"><g id="ag-character-composition-builder--executing--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
+  <g id="ag-character-composition-builder--executing--role-prop" data-role="builder" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-builder--executing--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
         <path d="M-54 -12 L0 -42 L48 -14 L-4 17 Z"/>
         <path d="M-54 -12 L-54 48 L-4 78 L-4 17 Z"/>
         <path d="M-4 17 L48 -14 L48 46 L-4 78 Z"/>
@@ -3633,7 +3633,7 @@
     <path id="ag-character-composition-builder--inspecting--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-builder--inspecting--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-builder--inspecting--role-prop" data-role="builder" data-anchor-ref="prop-right"><g id="ag-character-composition-builder--inspecting--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
+  <g id="ag-character-composition-builder--inspecting--role-prop" data-role="builder" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-builder--inspecting--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
         <path d="M-54 -12 L0 -42 L48 -14 L-4 17 Z"/>
         <path d="M-54 -12 L-54 48 L-4 78 L-4 17 Z"/>
         <path d="M-4 17 L48 -14 L48 46 L-4 78 Z"/>
@@ -3712,7 +3712,7 @@
     <path id="ag-character-composition-builder--waiting--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-builder--waiting--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-builder--waiting--role-prop" data-role="builder" data-anchor-ref="prop-right"><g id="ag-character-composition-builder--waiting--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
+  <g id="ag-character-composition-builder--waiting--role-prop" data-role="builder" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-builder--waiting--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
         <path d="M-54 -12 L0 -42 L48 -14 L-4 17 Z"/>
         <path d="M-54 -12 L-54 48 L-4 78 L-4 17 Z"/>
         <path d="M-4 17 L48 -14 L48 46 L-4 78 Z"/>
@@ -3791,7 +3791,7 @@
     <path id="ag-character-composition-builder--blocked--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-builder--blocked--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-builder--blocked--role-prop" data-role="builder" data-anchor-ref="prop-right"><g id="ag-character-composition-builder--blocked--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
+  <g id="ag-character-composition-builder--blocked--role-prop" data-role="builder" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-builder--blocked--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
         <path d="M-54 -12 L0 -42 L48 -14 L-4 17 Z"/>
         <path d="M-54 -12 L-54 48 L-4 78 L-4 17 Z"/>
         <path d="M-4 17 L48 -14 L48 46 L-4 78 Z"/>
@@ -3870,7 +3870,7 @@
     <path id="ag-character-composition-builder--approval-required--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-builder--approval-required--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-builder--approval-required--role-prop" data-role="builder" data-anchor-ref="prop-right"><g id="ag-character-composition-builder--approval-required--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
+  <g id="ag-character-composition-builder--approval-required--role-prop" data-role="builder" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-builder--approval-required--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
         <path d="M-54 -12 L0 -42 L48 -14 L-4 17 Z"/>
         <path d="M-54 -12 L-54 48 L-4 78 L-4 17 Z"/>
         <path d="M-4 17 L48 -14 L48 46 L-4 78 Z"/>
@@ -3951,7 +3951,7 @@
     <path id="ag-character-composition-builder--verifying--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-builder--verifying--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-builder--verifying--role-prop" data-role="builder" data-anchor-ref="prop-right"><g id="ag-character-composition-builder--verifying--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
+  <g id="ag-character-composition-builder--verifying--role-prop" data-role="builder" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-builder--verifying--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
         <path d="M-54 -12 L0 -42 L48 -14 L-4 17 Z"/>
         <path d="M-54 -12 L-54 48 L-4 78 L-4 17 Z"/>
         <path d="M-4 17 L48 -14 L48 46 L-4 78 Z"/>
@@ -4030,7 +4030,7 @@
     <path id="ag-character-composition-builder--completed--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-builder--completed--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-builder--completed--role-prop" data-role="builder" data-anchor-ref="prop-right"><g id="ag-character-composition-builder--completed--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
+  <g id="ag-character-composition-builder--completed--role-prop" data-role="builder" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-builder--completed--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
         <path d="M-54 -12 L0 -42 L48 -14 L-4 17 Z"/>
         <path d="M-54 -12 L-54 48 L-4 78 L-4 17 Z"/>
         <path d="M-4 17 L48 -14 L48 46 L-4 78 Z"/>
@@ -4110,7 +4110,7 @@
     <path id="ag-character-composition-builder--failed--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-builder--failed--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-builder--failed--role-prop" data-role="builder" data-anchor-ref="prop-right"><g id="ag-character-composition-builder--failed--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
+  <g id="ag-character-composition-builder--failed--role-prop" data-role="builder" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-builder--failed--builder-cube" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
         <path d="M-54 -12 L0 -42 L48 -14 L-4 17 Z"/>
         <path d="M-54 -12 L-54 48 L-4 78 L-4 17 Z"/>
         <path d="M-4 17 L48 -14 L48 46 L-4 78 Z"/>
@@ -4189,7 +4189,7 @@
     <path id="ag-character-composition-verifier--idle--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-verifier--idle--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-verifier--idle--role-prop" data-role="verifier" data-anchor-ref="prop-right"><g id="ag-character-composition-verifier--idle--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
+  <g id="ag-character-composition-verifier--idle--role-prop" data-role="verifier" data-source-anchor="prop-right" data-resolved-anchor="prop-right" data-anchor-ref="prop-right"><g id="ag-character-composition-verifier--idle--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
         <path d="M0 -48 L54 -27 L47 35 C39 71 19 92 0 103 C-19 92 -39 71 -47 35 L-54 -27 Z"/>
         <path d="M-24 24 L-5 44 L31 0" fill="none" stroke-linecap="round"/>
       </g></g>
@@ -4266,7 +4266,7 @@
     <path id="ag-character-composition-verifier--thinking--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-verifier--thinking--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-verifier--thinking--role-prop" data-role="verifier" data-anchor-ref="prop-right"><g id="ag-character-composition-verifier--thinking--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
+  <g id="ag-character-composition-verifier--thinking--role-prop" data-role="verifier" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-verifier--thinking--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
         <path d="M0 -48 L54 -27 L47 35 C39 71 19 92 0 103 C-19 92 -39 71 -47 35 L-54 -27 Z"/>
         <path d="M-24 24 L-5 44 L31 0" fill="none" stroke-linecap="round"/>
       </g></g>
@@ -4345,7 +4345,7 @@
     <path id="ag-character-composition-verifier--planning--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-verifier--planning--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-verifier--planning--role-prop" data-role="verifier" data-anchor-ref="prop-right"><g id="ag-character-composition-verifier--planning--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
+  <g id="ag-character-composition-verifier--planning--role-prop" data-role="verifier" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-verifier--planning--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
         <path d="M0 -48 L54 -27 L47 35 C39 71 19 92 0 103 C-19 92 -39 71 -47 35 L-54 -27 Z"/>
         <path d="M-24 24 L-5 44 L31 0" fill="none" stroke-linecap="round"/>
       </g></g>
@@ -4424,7 +4424,7 @@
     <path id="ag-character-composition-verifier--executing--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-verifier--executing--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-verifier--executing--role-prop" data-role="verifier" data-anchor-ref="prop-right"><g id="ag-character-composition-verifier--executing--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
+  <g id="ag-character-composition-verifier--executing--role-prop" data-role="verifier" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-verifier--executing--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
         <path d="M0 -48 L54 -27 L47 35 C39 71 19 92 0 103 C-19 92 -39 71 -47 35 L-54 -27 Z"/>
         <path d="M-24 24 L-5 44 L31 0" fill="none" stroke-linecap="round"/>
       </g></g>
@@ -4503,7 +4503,7 @@
     <path id="ag-character-composition-verifier--inspecting--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-verifier--inspecting--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-verifier--inspecting--role-prop" data-role="verifier" data-anchor-ref="prop-right"><g id="ag-character-composition-verifier--inspecting--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
+  <g id="ag-character-composition-verifier--inspecting--role-prop" data-role="verifier" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-verifier--inspecting--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
         <path d="M0 -48 L54 -27 L47 35 C39 71 19 92 0 103 C-19 92 -39 71 -47 35 L-54 -27 Z"/>
         <path d="M-24 24 L-5 44 L31 0" fill="none" stroke-linecap="round"/>
       </g></g>
@@ -4580,7 +4580,7 @@
     <path id="ag-character-composition-verifier--waiting--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-verifier--waiting--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-verifier--waiting--role-prop" data-role="verifier" data-anchor-ref="prop-right"><g id="ag-character-composition-verifier--waiting--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
+  <g id="ag-character-composition-verifier--waiting--role-prop" data-role="verifier" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-verifier--waiting--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
         <path d="M0 -48 L54 -27 L47 35 C39 71 19 92 0 103 C-19 92 -39 71 -47 35 L-54 -27 Z"/>
         <path d="M-24 24 L-5 44 L31 0" fill="none" stroke-linecap="round"/>
       </g></g>
@@ -4657,7 +4657,7 @@
     <path id="ag-character-composition-verifier--blocked--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-verifier--blocked--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-verifier--blocked--role-prop" data-role="verifier" data-anchor-ref="prop-right"><g id="ag-character-composition-verifier--blocked--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
+  <g id="ag-character-composition-verifier--blocked--role-prop" data-role="verifier" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-verifier--blocked--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
         <path d="M0 -48 L54 -27 L47 35 C39 71 19 92 0 103 C-19 92 -39 71 -47 35 L-54 -27 Z"/>
         <path d="M-24 24 L-5 44 L31 0" fill="none" stroke-linecap="round"/>
       </g></g>
@@ -4734,7 +4734,7 @@
     <path id="ag-character-composition-verifier--approval-required--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-verifier--approval-required--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-verifier--approval-required--role-prop" data-role="verifier" data-anchor-ref="prop-right"><g id="ag-character-composition-verifier--approval-required--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
+  <g id="ag-character-composition-verifier--approval-required--role-prop" data-role="verifier" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-verifier--approval-required--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
         <path d="M0 -48 L54 -27 L47 35 C39 71 19 92 0 103 C-19 92 -39 71 -47 35 L-54 -27 Z"/>
         <path d="M-24 24 L-5 44 L31 0" fill="none" stroke-linecap="round"/>
       </g></g>
@@ -4813,7 +4813,7 @@
     <path id="ag-character-composition-verifier--verifying--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-verifier--verifying--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-verifier--verifying--role-prop" data-role="verifier" data-anchor-ref="prop-right"><g id="ag-character-composition-verifier--verifying--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
+  <g id="ag-character-composition-verifier--verifying--role-prop" data-role="verifier" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-verifier--verifying--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
         <path d="M0 -48 L54 -27 L47 35 C39 71 19 92 0 103 C-19 92 -39 71 -47 35 L-54 -27 Z"/>
         <path d="M-24 24 L-5 44 L31 0" fill="none" stroke-linecap="round"/>
       </g></g>
@@ -4890,7 +4890,7 @@
     <path id="ag-character-composition-verifier--completed--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-verifier--completed--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-verifier--completed--role-prop" data-role="verifier" data-anchor-ref="prop-right"><g id="ag-character-composition-verifier--completed--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
+  <g id="ag-character-composition-verifier--completed--role-prop" data-role="verifier" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-verifier--completed--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
         <path d="M0 -48 L54 -27 L47 35 C39 71 19 92 0 103 C-19 92 -39 71 -47 35 L-54 -27 Z"/>
         <path d="M-24 24 L-5 44 L31 0" fill="none" stroke-linecap="round"/>
       </g></g>
@@ -4968,7 +4968,7 @@
     <path id="ag-character-composition-verifier--failed--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-verifier--failed--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-verifier--failed--role-prop" data-role="verifier" data-anchor-ref="prop-right"><g id="ag-character-composition-verifier--failed--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
+  <g id="ag-character-composition-verifier--failed--role-prop" data-role="verifier" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-verifier--failed--verifier-shield" transform="translate(410 282)" fill="#0E1630" stroke="#24C4AD" stroke-width="7" stroke-linejoin="round">
         <path d="M0 -48 L54 -27 L47 35 C39 71 19 92 0 103 C-19 92 -39 71 -47 35 L-54 -27 Z"/>
         <path d="M-24 24 L-5 44 L31 0" fill="none" stroke-linecap="round"/>
       </g></g>
@@ -5045,7 +5045,7 @@
     <path id="ag-character-composition-observer--idle--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-observer--idle--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-observer--idle--role-prop" data-role="observer" data-anchor-ref="prop-right"><g id="ag-character-composition-observer--idle--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
+  <g id="ag-character-composition-observer--idle--role-prop" data-role="observer" data-source-anchor="prop-right" data-resolved-anchor="prop-right" data-anchor-ref="prop-right"><g id="ag-character-composition-observer--idle--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
         <circle cx="0" cy="0" r="66"/>
         <ellipse cx="0" cy="0" rx="29" ry="66"/>
         <path d="M-66 0 H66 M-54 -34 Q0 -8 54 -34 M-54 34 Q0 8 54 34"/>
@@ -5124,7 +5124,7 @@
     <path id="ag-character-composition-observer--thinking--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-observer--thinking--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-observer--thinking--role-prop" data-role="observer" data-anchor-ref="prop-right"><g id="ag-character-composition-observer--thinking--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
+  <g id="ag-character-composition-observer--thinking--role-prop" data-role="observer" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-observer--thinking--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
         <circle cx="0" cy="0" r="66"/>
         <ellipse cx="0" cy="0" rx="29" ry="66"/>
         <path d="M-66 0 H66 M-54 -34 Q0 -8 54 -34 M-54 34 Q0 8 54 34"/>
@@ -5205,7 +5205,7 @@
     <path id="ag-character-composition-observer--planning--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-observer--planning--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-observer--planning--role-prop" data-role="observer" data-anchor-ref="prop-right"><g id="ag-character-composition-observer--planning--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
+  <g id="ag-character-composition-observer--planning--role-prop" data-role="observer" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-observer--planning--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
         <circle cx="0" cy="0" r="66"/>
         <ellipse cx="0" cy="0" rx="29" ry="66"/>
         <path d="M-66 0 H66 M-54 -34 Q0 -8 54 -34 M-54 34 Q0 8 54 34"/>
@@ -5286,7 +5286,7 @@
     <path id="ag-character-composition-observer--executing--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-observer--executing--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-observer--executing--role-prop" data-role="observer" data-anchor-ref="prop-right"><g id="ag-character-composition-observer--executing--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
+  <g id="ag-character-composition-observer--executing--role-prop" data-role="observer" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-observer--executing--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
         <circle cx="0" cy="0" r="66"/>
         <ellipse cx="0" cy="0" rx="29" ry="66"/>
         <path d="M-66 0 H66 M-54 -34 Q0 -8 54 -34 M-54 34 Q0 8 54 34"/>
@@ -5367,7 +5367,7 @@
     <path id="ag-character-composition-observer--inspecting--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-observer--inspecting--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-observer--inspecting--role-prop" data-role="observer" data-anchor-ref="prop-right"><g id="ag-character-composition-observer--inspecting--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
+  <g id="ag-character-composition-observer--inspecting--role-prop" data-role="observer" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-observer--inspecting--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
         <circle cx="0" cy="0" r="66"/>
         <ellipse cx="0" cy="0" rx="29" ry="66"/>
         <path d="M-66 0 H66 M-54 -34 Q0 -8 54 -34 M-54 34 Q0 8 54 34"/>
@@ -5446,7 +5446,7 @@
     <path id="ag-character-composition-observer--waiting--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-observer--waiting--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-observer--waiting--role-prop" data-role="observer" data-anchor-ref="prop-right"><g id="ag-character-composition-observer--waiting--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
+  <g id="ag-character-composition-observer--waiting--role-prop" data-role="observer" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-observer--waiting--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
         <circle cx="0" cy="0" r="66"/>
         <ellipse cx="0" cy="0" rx="29" ry="66"/>
         <path d="M-66 0 H66 M-54 -34 Q0 -8 54 -34 M-54 34 Q0 8 54 34"/>
@@ -5525,7 +5525,7 @@
     <path id="ag-character-composition-observer--blocked--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-observer--blocked--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-observer--blocked--role-prop" data-role="observer" data-anchor-ref="prop-right"><g id="ag-character-composition-observer--blocked--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
+  <g id="ag-character-composition-observer--blocked--role-prop" data-role="observer" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-observer--blocked--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
         <circle cx="0" cy="0" r="66"/>
         <ellipse cx="0" cy="0" rx="29" ry="66"/>
         <path d="M-66 0 H66 M-54 -34 Q0 -8 54 -34 M-54 34 Q0 8 54 34"/>
@@ -5604,7 +5604,7 @@
     <path id="ag-character-composition-observer--approval-required--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-observer--approval-required--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-observer--approval-required--role-prop" data-role="observer" data-anchor-ref="prop-right"><g id="ag-character-composition-observer--approval-required--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
+  <g id="ag-character-composition-observer--approval-required--role-prop" data-role="observer" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-observer--approval-required--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
         <circle cx="0" cy="0" r="66"/>
         <ellipse cx="0" cy="0" rx="29" ry="66"/>
         <path d="M-66 0 H66 M-54 -34 Q0 -8 54 -34 M-54 34 Q0 8 54 34"/>
@@ -5685,7 +5685,7 @@
     <path id="ag-character-composition-observer--verifying--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-observer--verifying--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-observer--verifying--role-prop" data-role="observer" data-anchor-ref="prop-right"><g id="ag-character-composition-observer--verifying--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
+  <g id="ag-character-composition-observer--verifying--role-prop" data-role="observer" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-observer--verifying--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
         <circle cx="0" cy="0" r="66"/>
         <ellipse cx="0" cy="0" rx="29" ry="66"/>
         <path d="M-66 0 H66 M-54 -34 Q0 -8 54 -34 M-54 34 Q0 8 54 34"/>
@@ -5764,7 +5764,7 @@
     <path id="ag-character-composition-observer--completed--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-observer--completed--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-observer--completed--role-prop" data-role="observer" data-anchor-ref="prop-right"><g id="ag-character-composition-observer--completed--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
+  <g id="ag-character-composition-observer--completed--role-prop" data-role="observer" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-observer--completed--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
         <circle cx="0" cy="0" r="66"/>
         <ellipse cx="0" cy="0" rx="29" ry="66"/>
         <path d="M-66 0 H66 M-54 -34 Q0 -8 54 -34 M-54 34 Q0 8 54 34"/>
@@ -5844,7 +5844,7 @@
     <path id="ag-character-composition-observer--failed--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-observer--failed--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-observer--failed--role-prop" data-role="observer" data-anchor-ref="prop-right"><g id="ag-character-composition-observer--failed--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
+  <g id="ag-character-composition-observer--failed--role-prop" data-role="observer" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-observer--failed--observer-globe" transform="translate(410 282)" fill="none" stroke="#4C8BD8" stroke-width="5">
         <circle cx="0" cy="0" r="66"/>
         <ellipse cx="0" cy="0" rx="29" ry="66"/>
         <path d="M-66 0 H66 M-54 -34 Q0 -8 54 -34 M-54 34 Q0 8 54 34"/>
@@ -5923,7 +5923,7 @@
     <path id="ag-character-composition-researcher--idle--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-researcher--idle--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-researcher--idle--role-prop" data-role="researcher" data-anchor-ref="prop-right"><g id="ag-character-composition-researcher--idle--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
+  <g id="ag-character-composition-researcher--idle--role-prop" data-role="researcher" data-source-anchor="prop-right" data-resolved-anchor="prop-right" data-anchor-ref="prop-right"><g id="ag-character-composition-researcher--idle--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
         <rect x="-58" y="-54" width="70" height="90" rx="9"/>
         <rect x="-12" y="4" width="70" height="90" rx="9"/>
         <path d="M-42 -31 H-5 M-42 -12 H-12 M4 28 H42 M4 47 H35" fill="none" stroke-linecap="round"/>
@@ -6001,7 +6001,7 @@
     <path id="ag-character-composition-researcher--thinking--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-researcher--thinking--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-researcher--thinking--role-prop" data-role="researcher" data-anchor-ref="prop-right"><g id="ag-character-composition-researcher--thinking--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
+  <g id="ag-character-composition-researcher--thinking--role-prop" data-role="researcher" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-researcher--thinking--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
         <rect x="-58" y="-54" width="70" height="90" rx="9"/>
         <rect x="-12" y="4" width="70" height="90" rx="9"/>
         <path d="M-42 -31 H-5 M-42 -12 H-12 M4 28 H42 M4 47 H35" fill="none" stroke-linecap="round"/>
@@ -6081,7 +6081,7 @@
     <path id="ag-character-composition-researcher--planning--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-researcher--planning--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-researcher--planning--role-prop" data-role="researcher" data-anchor-ref="prop-right"><g id="ag-character-composition-researcher--planning--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
+  <g id="ag-character-composition-researcher--planning--role-prop" data-role="researcher" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-researcher--planning--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
         <rect x="-58" y="-54" width="70" height="90" rx="9"/>
         <rect x="-12" y="4" width="70" height="90" rx="9"/>
         <path d="M-42 -31 H-5 M-42 -12 H-12 M4 28 H42 M4 47 H35" fill="none" stroke-linecap="round"/>
@@ -6161,7 +6161,7 @@
     <path id="ag-character-composition-researcher--executing--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-researcher--executing--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-researcher--executing--role-prop" data-role="researcher" data-anchor-ref="prop-right"><g id="ag-character-composition-researcher--executing--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
+  <g id="ag-character-composition-researcher--executing--role-prop" data-role="researcher" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-researcher--executing--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
         <rect x="-58" y="-54" width="70" height="90" rx="9"/>
         <rect x="-12" y="4" width="70" height="90" rx="9"/>
         <path d="M-42 -31 H-5 M-42 -12 H-12 M4 28 H42 M4 47 H35" fill="none" stroke-linecap="round"/>
@@ -6241,7 +6241,7 @@
     <path id="ag-character-composition-researcher--inspecting--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-researcher--inspecting--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-researcher--inspecting--role-prop" data-role="researcher" data-anchor-ref="prop-right"><g id="ag-character-composition-researcher--inspecting--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
+  <g id="ag-character-composition-researcher--inspecting--role-prop" data-role="researcher" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-researcher--inspecting--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
         <rect x="-58" y="-54" width="70" height="90" rx="9"/>
         <rect x="-12" y="4" width="70" height="90" rx="9"/>
         <path d="M-42 -31 H-5 M-42 -12 H-12 M4 28 H42 M4 47 H35" fill="none" stroke-linecap="round"/>
@@ -6319,7 +6319,7 @@
     <path id="ag-character-composition-researcher--waiting--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-researcher--waiting--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-researcher--waiting--role-prop" data-role="researcher" data-anchor-ref="prop-right"><g id="ag-character-composition-researcher--waiting--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
+  <g id="ag-character-composition-researcher--waiting--role-prop" data-role="researcher" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-researcher--waiting--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
         <rect x="-58" y="-54" width="70" height="90" rx="9"/>
         <rect x="-12" y="4" width="70" height="90" rx="9"/>
         <path d="M-42 -31 H-5 M-42 -12 H-12 M4 28 H42 M4 47 H35" fill="none" stroke-linecap="round"/>
@@ -6397,7 +6397,7 @@
     <path id="ag-character-composition-researcher--blocked--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-researcher--blocked--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-researcher--blocked--role-prop" data-role="researcher" data-anchor-ref="prop-right"><g id="ag-character-composition-researcher--blocked--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
+  <g id="ag-character-composition-researcher--blocked--role-prop" data-role="researcher" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-researcher--blocked--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
         <rect x="-58" y="-54" width="70" height="90" rx="9"/>
         <rect x="-12" y="4" width="70" height="90" rx="9"/>
         <path d="M-42 -31 H-5 M-42 -12 H-12 M4 28 H42 M4 47 H35" fill="none" stroke-linecap="round"/>
@@ -6475,7 +6475,7 @@
     <path id="ag-character-composition-researcher--approval-required--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-researcher--approval-required--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-researcher--approval-required--role-prop" data-role="researcher" data-anchor-ref="prop-right"><g id="ag-character-composition-researcher--approval-required--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
+  <g id="ag-character-composition-researcher--approval-required--role-prop" data-role="researcher" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-researcher--approval-required--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
         <rect x="-58" y="-54" width="70" height="90" rx="9"/>
         <rect x="-12" y="4" width="70" height="90" rx="9"/>
         <path d="M-42 -31 H-5 M-42 -12 H-12 M4 28 H42 M4 47 H35" fill="none" stroke-linecap="round"/>
@@ -6555,7 +6555,7 @@
     <path id="ag-character-composition-researcher--verifying--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-researcher--verifying--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-researcher--verifying--role-prop" data-role="researcher" data-anchor-ref="prop-right"><g id="ag-character-composition-researcher--verifying--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
+  <g id="ag-character-composition-researcher--verifying--role-prop" data-role="researcher" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-researcher--verifying--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
         <rect x="-58" y="-54" width="70" height="90" rx="9"/>
         <rect x="-12" y="4" width="70" height="90" rx="9"/>
         <path d="M-42 -31 H-5 M-42 -12 H-12 M4 28 H42 M4 47 H35" fill="none" stroke-linecap="round"/>
@@ -6633,7 +6633,7 @@
     <path id="ag-character-composition-researcher--completed--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-researcher--completed--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-researcher--completed--role-prop" data-role="researcher" data-anchor-ref="prop-right"><g id="ag-character-composition-researcher--completed--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
+  <g id="ag-character-composition-researcher--completed--role-prop" data-role="researcher" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-researcher--completed--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
         <rect x="-58" y="-54" width="70" height="90" rx="9"/>
         <rect x="-12" y="4" width="70" height="90" rx="9"/>
         <path d="M-42 -31 H-5 M-42 -12 H-12 M4 28 H42 M4 47 H35" fill="none" stroke-linecap="round"/>
@@ -6712,7 +6712,7 @@
     <path id="ag-character-composition-researcher--failed--limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
     <path id="ag-character-composition-researcher--failed--limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
   </g>
-  <g id="ag-character-composition-researcher--failed--role-prop" data-role="researcher" data-anchor-ref="prop-right"><g id="ag-character-composition-researcher--failed--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
+  <g id="ag-character-composition-researcher--failed--role-prop" data-role="researcher" data-source-anchor="prop-right" data-resolved-anchor="prop-left" data-anchor-ref="prop-left" transform="translate(-308 0)"><g id="ag-character-composition-researcher--failed--researcher-documents" transform="translate(410 282)" fill="#0E1630" stroke="#7759E8" stroke-width="5" stroke-linejoin="round">
         <rect x="-58" y="-54" width="70" height="90" rx="9"/>
         <rect x="-12" y="4" width="70" height="90" rx="9"/>
         <path d="M-42 -31 H-5 M-42 -12 H-12 M4 28 H42 M4 47 H35" fill="none" stroke-linecap="round"/>

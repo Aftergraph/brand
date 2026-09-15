@@ -1,0 +1,19 @@
+{
+  "$schema": "aftergraph.character-rive-authoring-evidence.v1",
+  "candidateCommit": null,
+  "editor": "Rive Editor",
+  "editorVersion": null,
+  "operator": null,
+  "timestampUtc": null,
+  "importManifest": "characters/motion/rive-import-manifest.json",
+  "artboard": { "name": "ActorPresence", "width": 512, "height": 512, "verified": null },
+  "requiredLayersPreserved": null,
+  "rolesExercised": [],
+  "statesExercised": [],
+  "reducedMotionExercised": null,
+  "runtimeFile": { "path": null, "sha256": null },
+  "svgParityVerified": null,
+  "truthBoundaryVerified": null,
+  "pass": null,
+  "notes": null
+}

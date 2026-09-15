@@ -64,7 +64,7 @@ Additional canonical source modules are:
 
 ## QA and release exports
 
-`npm run character:qa` executes geometry bounds, small-size rendering, context visibility, and Puppeteer + pixelmatch visual regression. Baseline snapshots are committed; transient actual/diff images are not.
+`npm run character:qa` executes geometry bounds, small-size rendering, context visibility, and Puppeteer + pixelmatch visual regression. The committed baseline suite contains 23 cases, including explicit role/state collision and light-theme regression cases; transient actual/diff images are not committed.
 
 `npm run character:export` creates a release-only `exports/characters/` tree containing **100 governed assets × 4 formats**: editable SVG plus PNG, WebP, and AVIF derivatives, each with byte size and SHA-256 in the release manifest. Raster derivatives are reproducible release artifacts and are intentionally not canonical source.
 
@@ -94,3 +94,12 @@ The editable source is authored once. `characters/themes.json` derives dark and 
 - Release exporter: `npm run character:export` creates SVG, PNG, WebP, and AVIF variants plus a SHA-256 manifest under `exports/characters/`.
 
 The release exporter contains 89 dark character assets, 89 light character assets, and 11 theme-neutral supporting icons: 189 governed logical assets / 756 format files. Raster files are delivery artifacts only; the layered SVG source tree remains canonical.
+
+## Review and external authoring evidence
+
+- `source/rig/slots.json` — governed attachment-slot and role/state collision policy.
+- `review/index.html` — deterministic dark/light human-review surface covering roles, avatars, states, the full role×state matrix, and new supporting icons.
+- `npm run character:review:capture` — captures complete dark/light review PNGs into ignored QA output for reviewer handoff.
+- `review/VISUAL-AUDIT.md` — machine-assisted visual findings; it does not replace human brand approval.
+- `ci/evidence/` — templates for Illustrator roundtrip, Rive authoring, and human brand review evidence.
+- `npm run character:authoring:preflight` — binds an external authoring session to the exact candidate commit and source SHA-256 hashes.

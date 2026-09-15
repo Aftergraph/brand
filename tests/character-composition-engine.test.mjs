@@ -51,3 +51,13 @@ test('role avatars derive from the same head anatomy instead of a separate drawi
 test('generated outputs are deterministic and reject manual drift', () => {
   execFileSync(process.execPath, ['scripts/compose-characters.mjs', '--check'], {cwd: root, stdio: 'pipe'});
 });
+
+test('composition engine resolves prop-slot collisions without moving state semantics off their canonical anchor', () => {
+  const builderThinking = fs.readFileSync(path.join(generatedRoot, 'compositions', 'builder--thinking.svg'), 'utf8');
+  assert.match(builderThinking, /id="role-prop"[^>]*data-source-anchor="prop-right"[^>]*data-resolved-anchor="prop-left"[^>]*transform="translate\(-308 0\)"/);
+  assert.match(builderThinking, /id="state-prop"[^>]*data-anchor-ref="prop-right"/);
+
+  const guideThinking = fs.readFileSync(path.join(generatedRoot, 'compositions', 'guide--thinking.svg'), 'utf8');
+  assert.match(guideThinking, /id="role-prop"[^>]*data-source-anchor="prop-left"[^>]*data-resolved-anchor="prop-left"/);
+  assert.doesNotMatch(guideThinking, /id="role-prop"[^>]*transform=/);
+});

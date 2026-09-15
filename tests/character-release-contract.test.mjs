@@ -26,3 +26,13 @@ test('release contract keeps external authoring gates truthful',()=>{
   assert.equal(release.gates.automatedVerification,'required');
   assert.equal(release.truthBoundary,'Characters are a view. Evidence is the truth.');
 });
+
+test('release contract exposes the human review surface and external evidence workflow',()=>{
+  const release=readJson('characters/release.json');
+  assert.equal(release.review.surface,'characters/review/index.html');
+  assert.equal(release.review.generator,'scripts/generate-character-review.mjs');
+  assert.equal(release.externalEvidence.preflightCommand,'npm run character:authoring:preflight');
+  assert.equal(release.externalEvidence.illustratorTemplate,'characters/ci/evidence/illustrator-roundtrip.template.json');
+  assert.equal(release.externalEvidence.riveTemplate,'characters/ci/evidence/rive-authoring.template.json');
+  assert.equal(release.externalEvidence.humanBrandReviewTemplate,'characters/ci/evidence/human-brand-review.template.json');
+});

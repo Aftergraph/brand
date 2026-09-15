@@ -36,3 +36,14 @@ test('npm pack dry run contains editable source and generated SVGs but excludes 
   assert.ok(files.includes('characters/contracts/components.d.ts'));
   assert.ok(files.every((x)=>!x.startsWith('exports/characters/')));
 });
+
+test('npm package excludes generated authoring preflight evidence while retaining evidence templates and review surface',()=>{
+  const output=execFileSync('npm',['pack','--dry-run','--json'],{cwd:root,encoding:'utf8'});
+  const files=JSON.parse(output)[0].files.map((x)=>x.path);
+  assert.ok(!files.includes('characters/ci/evidence/authoring-preflight.json'));
+  assert.ok(files.includes('characters/ci/evidence/illustrator-roundtrip.template.json'));
+  assert.ok(files.includes('characters/ci/evidence/rive-authoring.template.json'));
+  assert.ok(files.includes('characters/ci/evidence/human-brand-review.template.json'));
+  assert.ok(files.includes('characters/review/index.html'));
+  assert.ok(files.includes('characters/review/VISUAL-AUDIT.md'));
+});

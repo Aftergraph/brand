@@ -18,10 +18,14 @@ test('visual regression chooses Puppeteer plus pixelmatch with deterministic bou
 });
 
 test('CI contract includes base, all roles, and all non-idle state deltas', () => {
-  assert.equal((config.match(/\n    - id:/g) || []).length, 17);
+  assert.equal((config.match(/\n    - id:/g) || []).length, 23);
   for (const state of ['thinking','planning','executing','inspecting','waiting','blocked','approval-required','verifying','completed','failed']) {
     assert.ok(config.includes(`id: state-${state}`));
   }
+  for (const id of ['collision-builder-thinking','collision-verifier-verifying','collision-observer-blocked','collision-researcher-approval-required','light-entity-idle','light-builder-thinking']) {
+    assert.ok(config.includes(`id: ${id}`), id);
+  }
+  assert.match(config, /id: light-entity-idle[\s\S]*background: "#F5F7FA"/);
 });
 
 test('GitHub CI installs the lockfile and enforces the high-severity dependency audit gate', () => {

@@ -4,7 +4,7 @@
   "description": "Canonical Brand OS, visual assets, semantic symbols, and UI contracts for Aftergraph",
   "type": "module",
   "scripts": {
-    "generate": "node scripts/generate-icons.mjs && node scripts/generate-families.mjs && node scripts/generate-characters.mjs && node scripts/compose-characters.mjs && node scripts/generate-character-icons.mjs && node scripts/generate-character-sprites.mjs",
+    "generate": "node scripts/generate-icons.mjs && node scripts/generate-families.mjs && node scripts/generate-characters.mjs && node scripts/compose-characters.mjs && node scripts/generate-character-icons.mjs && node scripts/generate-character-sprites.mjs && node scripts/generate-character-review.mjs",
     "export-assets": "node scripts/export-assets.mjs && node scripts/export-character-assets.mjs --out exports/characters",
     "validate": "node scripts/validate.mjs && node scripts/validate-character-source.mjs",
     "test": "node --test",
@@ -16,7 +16,10 @@
     "character:visual:update": "node characters/ci/render-snapshots.mjs --config characters/ci/ci-checks.yml --baseline",
     "audit:high": "npm audit --audit-level=high",
     "character:export": "node scripts/export-character-assets.mjs --out exports/characters",
-    "character:qa": "npm run character:bounds && node characters/ci/verify-small-sizes.mjs --report characters/generated/qa/small-size.json && node characters/ci/verify-contexts.mjs --report characters/generated/qa/context-visibility.json && npm run character:visual:check"
+    "character:qa": "npm run character:bounds && node characters/ci/verify-small-sizes.mjs --report characters/generated/qa/small-size.json && node characters/ci/verify-contexts.mjs --report characters/generated/qa/context-visibility.json && npm run character:visual:check",
+    "character:review:generate": "node scripts/generate-character-review.mjs",
+    "character:authoring:preflight": "node scripts/prepare-character-authoring-evidence.mjs --out characters/ci/evidence/authoring-preflight.json",
+    "character:review:capture": "node characters/ci/capture-review.mjs"
   },
   "bin": {
     "assetgen": "./scripts/assetgen.mjs"

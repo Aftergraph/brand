@@ -8,3 +8,5 @@ characters/ci/snapshots/diff/
 characters/ci/snapshots/report.json
 exports/characters/
 characters/generated/qa/
+
+characters/ci/evidence/authoring-preflight.json

@@ -195,7 +195,8 @@
     "expressionRegistry": "characters/source/expressions/expressions.json",
     "rig": "characters/source/rig/rig.json",
     "supportingIcons": "characters/source/icons/new-icons.svg",
-    "iconMapping": "characters/source/icons/icon-mapping.json"
+    "iconMapping": "characters/source/icons/icon-mapping.json",
+    "propSlots": "characters/source/rig/slots.json"
   },
   "derivedAssets": {
     "generator": "scripts/compose-characters.mjs",
@@ -241,7 +242,10 @@
     "contextVisibilityReport": "characters/generated/qa/context-visibility.json",
     "compositionBoundsReport": "characters/generated/qa/composition-bounds.json",
     "accessibility": "characters/accessibility.json",
-    "themes": "characters/themes.json"
+    "themes": "characters/themes.json",
+    "reviewSurface": "characters/review/index.html",
+    "visualAudit": "characters/review/VISUAL-AUDIT.md",
+    "authoringEvidence": "characters/ci/evidence/README.md"
   },
   "motion": {
     "authoring": "characters/motion/RIVE-AUTHORING.md",

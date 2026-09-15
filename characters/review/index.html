@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aftergraph Character System Review</title>
+<style>
+:root{font-family:Inter,system-ui,sans-serif;color:#F5F7FA;background:#080C14;color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#080C14;color:#F5F7FA}main{max-width:1600px;margin:auto;padding:32px}h1{margin:0 0 8px}h2{margin-top:48px}h3{margin:32px 0 12px;color:#8993A4}p{color:#8993A4;max-width:80ch}.truth{color:#24C4AD;font-weight:700}.toolbar{position:sticky;top:0;z-index:5;display:flex;gap:12px;flex-wrap:wrap;padding:16px 0;background:#080C14E8;backdrop-filter:blur(12px)}label{display:grid;gap:4px;font-size:12px;color:#8993A4}select{min-width:160px;padding:8px;border:1px solid #2A3348;border-radius:8px;background:#0E1630;color:#F5F7FA}.asset-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.matrix{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.asset-card,.avatar-card,.icon-card,.composition-card{border:1px solid #24304A;border-radius:12px;overflow:hidden;background:#0E1630}.asset-card img,.avatar-card img,.icon-card img,.composition-card img{display:block;width:100%;aspect-ratio:1;object-fit:contain}.asset-card strong,.avatar-card strong,.icon-card strong{display:block;padding:10px 12px}.composition-card div{display:flex;justify-content:space-between;gap:8px;padding:8px 10px;font-size:12px}.composition-card span{color:#8993A4}.theme-section[data-theme="light"]{background:#F5F7FA;color:#080C14;margin:48px -24px 0;padding:24px;border-radius:16px}.theme-section[data-theme="light"] .asset-card,.theme-section[data-theme="light"] .avatar-card,.theme-section[data-theme="light"] .composition-card{background:#FFF;border-color:#D7DCE3}.theme-section[data-theme="light"] h3,.theme-section[data-theme="light"] p,.theme-section[data-theme="light"] .composition-card span{color:#4F5868}.icon-section{margin-top:48px;padding:24px;border:1px solid #24304A;border-radius:16px}.icon-card{background:#FFFFFF;color:#080C14;border-color:#D7DCE3}.icon-card img{padding:34px}.icon-card strong{text-transform:capitalize}[hidden]{display:none!important}
+</style></head><body><main>
+<h1>Aftergraph Character System Review</h1><p class="truth">Characters are a view. Evidence is the truth.</p>
+<p>This surface renders canonical generated SVGs only. It exists for human visual review; it does not replace source validation or evidence.</p>
+<div class="toolbar"><label>Theme<select id="theme"><option value="all">All</option><option value="dark">Dark</option><option value="light">Light</option></select></label><label>Role<select id="role"><option value="all">All</option><option value="entity">Aftergraph Entity</option><option value="guide">Guide</option><option value="builder">Builder</option><option value="verifier">Verifier</option><option value="observer">Observer</option><option value="researcher">Researcher</option></select></label><label>State<select id="state"><option value="all">All</option><option value="idle">idle</option><option value="thinking">thinking</option><option value="planning">planning</option><option value="executing">executing</option><option value="inspecting">inspecting</option><option value="waiting">waiting</option><option value="blocked">blocked</option><option value="approval-required">approval-required</option><option value="verifying">verifying</option><option value="completed">completed</option><option value="failed">failed</option></select></label></div>
+<section class="theme-section" data-theme="dark">
+    <header><h2>Dark theme</h2><p>Derived from canonical Brand OS tokens.</p></header>
+    <h3>Roles</h3><div class="asset-grid roles"><article class="asset-card" data-theme="dark" data-role="entity"><img src="../generated/roles/entity.svg" alt="Aftergraph Entity role"><strong>Aftergraph Entity</strong></article>
+<article class="asset-card" data-theme="dark" data-role="guide"><img src="../generated/roles/guide.svg" alt="Guide role"><strong>Guide</strong></article>
+<article class="asset-card" data-theme="dark" data-role="builder"><img src="../generated/roles/builder.svg" alt="Builder role"><strong>Builder</strong></article>
+<article class="asset-card" data-theme="dark" data-role="verifier"><img src="../generated/roles/verifier.svg" alt="Verifier role"><strong>Verifier</strong></article>
+<article class="asset-card" data-theme="dark" data-role="observer"><img src="../generated/roles/observer.svg" alt="Observer role"><strong>Observer</strong></article>
+<article class="asset-card" data-theme="dark" data-role="researcher"><img src="../generated/roles/researcher.svg" alt="Researcher role"><strong>Researcher</strong></article></div>
+    <h3>Avatars</h3><div class="asset-grid avatars"><article class="avatar-card" data-theme="dark" data-role="entity"><img src="../generated/avatars/entity.svg" alt="Aftergraph Entity avatar"><strong>Aftergraph Entity</strong></article>
+<article class="avatar-card" data-theme="dark" data-role="guide"><img src="../generated/avatars/guide.svg" alt="Guide avatar"><strong>Guide</strong></article>
+<article class="avatar-card" data-theme="dark" data-role="builder"><img src="../generated/avatars/builder.svg" alt="Builder avatar"><strong>Builder</strong></article>
+<article class="avatar-card" data-theme="dark" data-role="verifier"><img src="../generated/avatars/verifier.svg" alt="Verifier avatar"><strong>Verifier</strong></article>
+<article class="avatar-card" data-theme="dark" data-role="observer"><img src="../generated/avatars/observer.svg" alt="Observer avatar"><strong>Observer</strong></article>
+<article class="avatar-card" data-theme="dark" data-role="researcher"><img src="../generated/avatars/researcher.svg" alt="Researcher avatar"><strong>Researcher</strong></article></div>
+    <h3>States</h3><div class="asset-grid states"><article class="asset-card" data-theme="dark" data-state="idle"><img src="../generated/states/idle.svg" alt="idle state"><strong>idle</strong></article>
+<article class="asset-card" data-theme="dark" data-state="thinking"><img src="../generated/states/thinking.svg" alt="thinking state"><strong>thinking</strong></article>
+<article class="asset-card" data-theme="dark" data-state="planning"><img src="../generated/states/planning.svg" alt="planning state"><strong>planning</strong></article>
+<article class="asset-card" data-theme="dark" data-state="executing"><img src="../generated/states/executing.svg" alt="executing state"><strong>executing</strong></article>
+<article class="asset-card" data-theme="dark" data-state="inspecting"><img src="../generated/states/inspecting.svg" alt="inspecting state"><strong>inspecting</strong></article>
+<article class="asset-card" data-theme="dark" data-state="waiting"><img src="../generated/states/waiting.svg" alt="waiting state"><strong>waiting</strong></article>
+<article class="asset-card" data-theme="dark" data-state="blocked"><img src="../generated/states/blocked.svg" alt="blocked state"><strong>blocked</strong></article>
+<article class="asset-card" data-theme="dark" data-state="approval-required"><img src="../generated/states/approval-required.svg" alt="approval-required state"><strong>approval-required</strong></article>
+<article class="asset-card" data-theme="dark" data-state="verifying"><img src="../generated/states/verifying.svg" alt="verifying state"><strong>verifying</strong></article>
+<article class="asset-card" data-theme="dark" data-state="completed"><img src="../generated/states/completed.svg" alt="completed state"><strong>completed</strong></article>
+<article class="asset-card" data-theme="dark" data-state="failed"><img src="../generated/states/failed.svg" alt="failed state"><strong>failed</strong></article></div>
+    <h3>Role × state matrix</h3><div class="matrix"><article class="composition-card" data-theme="dark" data-role="entity" data-state="idle">
+    <img src="../generated/compositions/entity--idle.svg" alt="Aftergraph Entity, idle">
+    <div><strong>Aftergraph Entity</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="entity" data-state="thinking">
+    <img src="../generated/compositions/entity--thinking.svg" alt="Aftergraph Entity, thinking">
+    <div><strong>Aftergraph Entity</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="entity" data-state="planning">
+    <img src="../generated/compositions/entity--planning.svg" alt="Aftergraph Entity, planning">
+    <div><strong>Aftergraph Entity</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="entity" data-state="executing">
+    <img src="../generated/compositions/entity--executing.svg" alt="Aftergraph Entity, executing">
+    <div><strong>Aftergraph Entity</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="entity" data-state="inspecting">
+    <img src="../generated/compositions/entity--inspecting.svg" alt="Aftergraph Entity, inspecting">
+    <div><strong>Aftergraph Entity</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="entity" data-state="waiting">
+    <img src="../generated/compositions/entity--waiting.svg" alt="Aftergraph Entity, waiting">
+    <div><strong>Aftergraph Entity</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="entity" data-state="blocked">
+    <img src="../generated/compositions/entity--blocked.svg" alt="Aftergraph Entity, blocked">
+    <div><strong>Aftergraph Entity</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="entity" data-state="approval-required">
+    <img src="../generated/compositions/entity--approval-required.svg" alt="Aftergraph Entity, approval-required">
+    <div><strong>Aftergraph Entity</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="entity" data-state="verifying">
+    <img src="../generated/compositions/entity--verifying.svg" alt="Aftergraph Entity, verifying">
+    <div><strong>Aftergraph Entity</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="entity" data-state="completed">
+    <img src="../generated/compositions/entity--completed.svg" alt="Aftergraph Entity, completed">
+    <div><strong>Aftergraph Entity</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="entity" data-state="failed">
+    <img src="../generated/compositions/entity--failed.svg" alt="Aftergraph Entity, failed">
+    <div><strong>Aftergraph Entity</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="guide" data-state="idle">
+    <img src="../generated/compositions/guide--idle.svg" alt="Guide, idle">
+    <div><strong>Guide</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="guide" data-state="thinking">
+    <img src="../generated/compositions/guide--thinking.svg" alt="Guide, thinking">
+    <div><strong>Guide</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="guide" data-state="planning">
+    <img src="../generated/compositions/guide--planning.svg" alt="Guide, planning">
+    <div><strong>Guide</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="guide" data-state="executing">
+    <img src="../generated/compositions/guide--executing.svg" alt="Guide, executing">
+    <div><strong>Guide</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="guide" data-state="inspecting">
+    <img src="../generated/compositions/guide--inspecting.svg" alt="Guide, inspecting">
+    <div><strong>Guide</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="guide" data-state="waiting">
+    <img src="../generated/compositions/guide--waiting.svg" alt="Guide, waiting">
+    <div><strong>Guide</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="guide" data-state="blocked">
+    <img src="../generated/compositions/guide--blocked.svg" alt="Guide, blocked">
+    <div><strong>Guide</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="guide" data-state="approval-required">
+    <img src="../generated/compositions/guide--approval-required.svg" alt="Guide, approval-required">
+    <div><strong>Guide</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="guide" data-state="verifying">
+    <img src="../generated/compositions/guide--verifying.svg" alt="Guide, verifying">
+    <div><strong>Guide</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="guide" data-state="completed">
+    <img src="../generated/compositions/guide--completed.svg" alt="Guide, completed">
+    <div><strong>Guide</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="guide" data-state="failed">
+    <img src="../generated/compositions/guide--failed.svg" alt="Guide, failed">
+    <div><strong>Guide</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="builder" data-state="idle">
+    <img src="../generated/compositions/builder--idle.svg" alt="Builder, idle">
+    <div><strong>Builder</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="builder" data-state="thinking">
+    <img src="../generated/compositions/builder--thinking.svg" alt="Builder, thinking">
+    <div><strong>Builder</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="builder" data-state="planning">
+    <img src="../generated/compositions/builder--planning.svg" alt="Builder, planning">
+    <div><strong>Builder</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="builder" data-state="executing">
+    <img src="../generated/compositions/builder--executing.svg" alt="Builder, executing">
+    <div><strong>Builder</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="builder" data-state="inspecting">
+    <img src="../generated/compositions/builder--inspecting.svg" alt="Builder, inspecting">
+    <div><strong>Builder</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="builder" data-state="waiting">
+    <img src="../generated/compositions/builder--waiting.svg" alt="Builder, waiting">
+    <div><strong>Builder</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="builder" data-state="blocked">
+    <img src="../generated/compositions/builder--blocked.svg" alt="Builder, blocked">
+    <div><strong>Builder</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="builder" data-state="approval-required">
+    <img src="../generated/compositions/builder--approval-required.svg" alt="Builder, approval-required">
+    <div><strong>Builder</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="builder" data-state="verifying">
+    <img src="../generated/compositions/builder--verifying.svg" alt="Builder, verifying">
+    <div><strong>Builder</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="builder" data-state="completed">
+    <img src="../generated/compositions/builder--completed.svg" alt="Builder, completed">
+    <div><strong>Builder</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="builder" data-state="failed">
+    <img src="../generated/compositions/builder--failed.svg" alt="Builder, failed">
+    <div><strong>Builder</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="verifier" data-state="idle">
+    <img src="../generated/compositions/verifier--idle.svg" alt="Verifier, idle">
+    <div><strong>Verifier</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="verifier" data-state="thinking">
+    <img src="../generated/compositions/verifier--thinking.svg" alt="Verifier, thinking">
+    <div><strong>Verifier</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="verifier" data-state="planning">
+    <img src="../generated/compositions/verifier--planning.svg" alt="Verifier, planning">
+    <div><strong>Verifier</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="verifier" data-state="executing">
+    <img src="../generated/compositions/verifier--executing.svg" alt="Verifier, executing">
+    <div><strong>Verifier</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="verifier" data-state="inspecting">
+    <img src="../generated/compositions/verifier--inspecting.svg" alt="Verifier, inspecting">
+    <div><strong>Verifier</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="verifier" data-state="waiting">
+    <img src="../generated/compositions/verifier--waiting.svg" alt="Verifier, waiting">
+    <div><strong>Verifier</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="verifier" data-state="blocked">
+    <img src="../generated/compositions/verifier--blocked.svg" alt="Verifier, blocked">
+    <div><strong>Verifier</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="verifier" data-state="approval-required">
+    <img src="../generated/compositions/verifier--approval-required.svg" alt="Verifier, approval-required">
+    <div><strong>Verifier</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="verifier" data-state="verifying">
+    <img src="../generated/compositions/verifier--verifying.svg" alt="Verifier, verifying">
+    <div><strong>Verifier</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="verifier" data-state="completed">
+    <img src="../generated/compositions/verifier--completed.svg" alt="Verifier, completed">
+    <div><strong>Verifier</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="verifier" data-state="failed">
+    <img src="../generated/compositions/verifier--failed.svg" alt="Verifier, failed">
+    <div><strong>Verifier</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="observer" data-state="idle">
+    <img src="../generated/compositions/observer--idle.svg" alt="Observer, idle">
+    <div><strong>Observer</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="observer" data-state="thinking">
+    <img src="../generated/compositions/observer--thinking.svg" alt="Observer, thinking">
+    <div><strong>Observer</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="observer" data-state="planning">
+    <img src="../generated/compositions/observer--planning.svg" alt="Observer, planning">
+    <div><strong>Observer</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="observer" data-state="executing">
+    <img src="../generated/compositions/observer--executing.svg" alt="Observer, executing">
+    <div><strong>Observer</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="observer" data-state="inspecting">
+    <img src="../generated/compositions/observer--inspecting.svg" alt="Observer, inspecting">
+    <div><strong>Observer</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="observer" data-state="waiting">
+    <img src="../generated/compositions/observer--waiting.svg" alt="Observer, waiting">
+    <div><strong>Observer</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="observer" data-state="blocked">
+    <img src="../generated/compositions/observer--blocked.svg" alt="Observer, blocked">
+    <div><strong>Observer</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="observer" data-state="approval-required">
+    <img src="../generated/compositions/observer--approval-required.svg" alt="Observer, approval-required">
+    <div><strong>Observer</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="observer" data-state="verifying">
+    <img src="../generated/compositions/observer--verifying.svg" alt="Observer, verifying">
+    <div><strong>Observer</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="observer" data-state="completed">
+    <img src="../generated/compositions/observer--completed.svg" alt="Observer, completed">
+    <div><strong>Observer</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="observer" data-state="failed">
+    <img src="../generated/compositions/observer--failed.svg" alt="Observer, failed">
+    <div><strong>Observer</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="researcher" data-state="idle">
+    <img src="../generated/compositions/researcher--idle.svg" alt="Researcher, idle">
+    <div><strong>Researcher</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="researcher" data-state="thinking">
+    <img src="../generated/compositions/researcher--thinking.svg" alt="Researcher, thinking">
+    <div><strong>Researcher</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="researcher" data-state="planning">
+    <img src="../generated/compositions/researcher--planning.svg" alt="Researcher, planning">
+    <div><strong>Researcher</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="researcher" data-state="executing">
+    <img src="../generated/compositions/researcher--executing.svg" alt="Researcher, executing">
+    <div><strong>Researcher</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="researcher" data-state="inspecting">
+    <img src="../generated/compositions/researcher--inspecting.svg" alt="Researcher, inspecting">
+    <div><strong>Researcher</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="researcher" data-state="waiting">
+    <img src="../generated/compositions/researcher--waiting.svg" alt="Researcher, waiting">
+    <div><strong>Researcher</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="researcher" data-state="blocked">
+    <img src="../generated/compositions/researcher--blocked.svg" alt="Researcher, blocked">
+    <div><strong>Researcher</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="researcher" data-state="approval-required">
+    <img src="../generated/compositions/researcher--approval-required.svg" alt="Researcher, approval-required">
+    <div><strong>Researcher</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="researcher" data-state="verifying">
+    <img src="../generated/compositions/researcher--verifying.svg" alt="Researcher, verifying">
+    <div><strong>Researcher</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="researcher" data-state="completed">
+    <img src="../generated/compositions/researcher--completed.svg" alt="Researcher, completed">
+    <div><strong>Researcher</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" data-theme="dark" data-role="researcher" data-state="failed">
+    <img src="../generated/compositions/researcher--failed.svg" alt="Researcher, failed">
+    <div><strong>Researcher</strong><span>failed</span></div>
+  </article></div>
+  </section>
+<section class="theme-section" data-theme="light">
+    <header><h2>Light theme</h2><p>Derived from canonical Brand OS tokens.</p></header>
+    <h3>Roles</h3><div class="asset-grid roles"><article class="asset-card" data-theme="light" data-role="entity"><img src="../generated/themes/light/roles/entity.svg" alt="Aftergraph Entity role"><strong>Aftergraph Entity</strong></article>
+<article class="asset-card" data-theme="light" data-role="guide"><img src="../generated/themes/light/roles/guide.svg" alt="Guide role"><strong>Guide</strong></article>
+<article class="asset-card" data-theme="light" data-role="builder"><img src="../generated/themes/light/roles/builder.svg" alt="Builder role"><strong>Builder</strong></article>
+<article class="asset-card" data-theme="light" data-role="verifier"><img src="../generated/themes/light/roles/verifier.svg" alt="Verifier role"><strong>Verifier</strong></article>
+<article class="asset-card" data-theme="light" data-role="observer"><img src="../generated/themes/light/roles/observer.svg" alt="Observer role"><strong>Observer</strong></article>
+<article class="asset-card" data-theme="light" data-role="researcher"><img src="../generated/themes/light/roles/researcher.svg" alt="Researcher role"><strong>Researcher</strong></article></div>
+    <h3>Avatars</h3><div class="asset-grid avatars"><article class="avatar-card" data-theme="light" data-role="entity"><img src="../generated/themes/light/avatars/entity.svg" alt="Aftergraph Entity avatar"><strong>Aftergraph Entity</strong></article>
+<article class="avatar-card" data-theme="light" data-role="guide"><img src="../generated/themes/light/avatars/guide.svg" alt="Guide avatar"><strong>Guide</strong></article>
+<article class="avatar-card" data-theme="light" data-role="builder"><img src="../generated/themes/light/avatars/builder.svg" alt="Builder avatar"><strong>Builder</strong></article>
+<article class="avatar-card" data-theme="light" data-role="verifier"><img src="../generated/themes/light/avatars/verifier.svg" alt="Verifier avatar"><strong>Verifier</strong></article>
+<article class="avatar-card" data-theme="light" data-role="observer"><img src="../generated/themes/light/avatars/observer.svg" alt="Observer avatar"><strong>Observer</strong></article>
+<article class="avatar-card" data-theme="light" data-role="researcher"><img src="../generated/themes/light/avatars/researcher.svg" alt="Researcher avatar"><strong>Researcher</strong></article></div>
+    <h3>States</h3><div class="asset-grid states"><article class="asset-card" data-theme="light" data-state="idle"><img src="../generated/themes/light/states/idle.svg" alt="idle state"><strong>idle</strong></article>
+<article class="asset-card" data-theme="light" data-state="thinking"><img src="../generated/themes/light/states/thinking.svg" alt="thinking state"><strong>thinking</strong></article>
+<article class="asset-card" data-theme="light" data-state="planning"><img src="../generated/themes/light/states/planning.svg" alt="planning state"><strong>planning</strong></article>
+<article class="asset-card" data-theme="light" data-state="executing"><img src="../generated/themes/light/states/executing.svg" alt="executing state"><strong>executing</strong></article>
+<article class="asset-card" data-theme="light" data-state="inspecting"><img src="../generated/themes/light/states/inspecting.svg" alt="inspecting state"><strong>inspecting</strong></article>
+<article class="asset-card" data-theme="light" data-state="waiting"><img src="../generated/themes/light/states/waiting.svg" alt="waiting state"><strong>waiting</strong></article>
+<article class="asset-card" data-theme="light" data-state="blocked"><img src="../generated/themes/light/states/blocked.svg" alt="blocked state"><strong>blocked</strong></article>
+<article class="asset-card" data-theme="light" data-state="approval-required"><img src="../generated/themes/light/states/approval-required.svg" alt="approval-required state"><strong>approval-required</strong></article>
+<article class="asset-card" data-theme="light" data-state="verifying"><img src="../generated/themes/light/states/verifying.svg" alt="verifying state"><strong>verifying</strong></article>
+<article class="asset-card" data-theme="light" data-state="completed"><img src="../generated/themes/light/states/completed.svg" alt="completed state"><strong>completed</strong></article>
+<article class="asset-card" data-theme="light" data-state="failed"><img src="../generated/themes/light/states/failed.svg" alt="failed state"><strong>failed</strong></article></div>
+    <h3>Role × state matrix</h3><div class="matrix"><article class="composition-card" data-theme="light" data-role="entity" data-state="idle">
+    <img src="../generated/themes/light/compositions/entity--idle.svg" alt="Aftergraph Entity, idle">
+    <div><strong>Aftergraph Entity</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="entity" data-state="thinking">
+    <img src="../generated/themes/light/compositions/entity--thinking.svg" alt="Aftergraph Entity, thinking">
+    <div><strong>Aftergraph Entity</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="entity" data-state="planning">
+    <img src="../generated/themes/light/compositions/entity--planning.svg" alt="Aftergraph Entity, planning">
+    <div><strong>Aftergraph Entity</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="entity" data-state="executing">
+    <img src="../generated/themes/light/compositions/entity--executing.svg" alt="Aftergraph Entity, executing">
+    <div><strong>Aftergraph Entity</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="entity" data-state="inspecting">
+    <img src="../generated/themes/light/compositions/entity--inspecting.svg" alt="Aftergraph Entity, inspecting">
+    <div><strong>Aftergraph Entity</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="entity" data-state="waiting">
+    <img src="../generated/themes/light/compositions/entity--waiting.svg" alt="Aftergraph Entity, waiting">
+    <div><strong>Aftergraph Entity</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="entity" data-state="blocked">
+    <img src="../generated/themes/light/compositions/entity--blocked.svg" alt="Aftergraph Entity, blocked">
+    <div><strong>Aftergraph Entity</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="entity" data-state="approval-required">
+    <img src="../generated/themes/light/compositions/entity--approval-required.svg" alt="Aftergraph Entity, approval-required">
+    <div><strong>Aftergraph Entity</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="entity" data-state="verifying">
+    <img src="../generated/themes/light/compositions/entity--verifying.svg" alt="Aftergraph Entity, verifying">
+    <div><strong>Aftergraph Entity</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="entity" data-state="completed">
+    <img src="../generated/themes/light/compositions/entity--completed.svg" alt="Aftergraph Entity, completed">
+    <div><strong>Aftergraph Entity</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="entity" data-state="failed">
+    <img src="../generated/themes/light/compositions/entity--failed.svg" alt="Aftergraph Entity, failed">
+    <div><strong>Aftergraph Entity</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="guide" data-state="idle">
+    <img src="../generated/themes/light/compositions/guide--idle.svg" alt="Guide, idle">
+    <div><strong>Guide</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="guide" data-state="thinking">
+    <img src="../generated/themes/light/compositions/guide--thinking.svg" alt="Guide, thinking">
+    <div><strong>Guide</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="guide" data-state="planning">
+    <img src="../generated/themes/light/compositions/guide--planning.svg" alt="Guide, planning">
+    <div><strong>Guide</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="guide" data-state="executing">
+    <img src="../generated/themes/light/compositions/guide--executing.svg" alt="Guide, executing">
+    <div><strong>Guide</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="guide" data-state="inspecting">
+    <img src="../generated/themes/light/compositions/guide--inspecting.svg" alt="Guide, inspecting">
+    <div><strong>Guide</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="guide" data-state="waiting">
+    <img src="../generated/themes/light/compositions/guide--waiting.svg" alt="Guide, waiting">
+    <div><strong>Guide</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="guide" data-state="blocked">
+    <img src="../generated/themes/light/compositions/guide--blocked.svg" alt="Guide, blocked">
+    <div><strong>Guide</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="guide" data-state="approval-required">
+    <img src="../generated/themes/light/compositions/guide--approval-required.svg" alt="Guide, approval-required">
+    <div><strong>Guide</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="guide" data-state="verifying">
+    <img src="../generated/themes/light/compositions/guide--verifying.svg" alt="Guide, verifying">
+    <div><strong>Guide</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="guide" data-state="completed">
+    <img src="../generated/themes/light/compositions/guide--completed.svg" alt="Guide, completed">
+    <div><strong>Guide</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="guide" data-state="failed">
+    <img src="../generated/themes/light/compositions/guide--failed.svg" alt="Guide, failed">
+    <div><strong>Guide</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="builder" data-state="idle">
+    <img src="../generated/themes/light/compositions/builder--idle.svg" alt="Builder, idle">
+    <div><strong>Builder</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="builder" data-state="thinking">
+    <img src="../generated/themes/light/compositions/builder--thinking.svg" alt="Builder, thinking">
+    <div><strong>Builder</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="builder" data-state="planning">
+    <img src="../generated/themes/light/compositions/builder--planning.svg" alt="Builder, planning">
+    <div><strong>Builder</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="builder" data-state="executing">
+    <img src="../generated/themes/light/compositions/builder--executing.svg" alt="Builder, executing">
+    <div><strong>Builder</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="builder" data-state="inspecting">
+    <img src="../generated/themes/light/compositions/builder--inspecting.svg" alt="Builder, inspecting">
+    <div><strong>Builder</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="builder" data-state="waiting">
+    <img src="../generated/themes/light/compositions/builder--waiting.svg" alt="Builder, waiting">
+    <div><strong>Builder</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="builder" data-state="blocked">
+    <img src="../generated/themes/light/compositions/builder--blocked.svg" alt="Builder, blocked">
+    <div><strong>Builder</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="builder" data-state="approval-required">
+    <img src="../generated/themes/light/compositions/builder--approval-required.svg" alt="Builder, approval-required">
+    <div><strong>Builder</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="builder" data-state="verifying">
+    <img src="../generated/themes/light/compositions/builder--verifying.svg" alt="Builder, verifying">
+    <div><strong>Builder</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="builder" data-state="completed">
+    <img src="../generated/themes/light/compositions/builder--completed.svg" alt="Builder, completed">
+    <div><strong>Builder</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="builder" data-state="failed">
+    <img src="../generated/themes/light/compositions/builder--failed.svg" alt="Builder, failed">
+    <div><strong>Builder</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="verifier" data-state="idle">
+    <img src="../generated/themes/light/compositions/verifier--idle.svg" alt="Verifier, idle">
+    <div><strong>Verifier</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="verifier" data-state="thinking">
+    <img src="../generated/themes/light/compositions/verifier--thinking.svg" alt="Verifier, thinking">
+    <div><strong>Verifier</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="verifier" data-state="planning">
+    <img src="../generated/themes/light/compositions/verifier--planning.svg" alt="Verifier, planning">
+    <div><strong>Verifier</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="verifier" data-state="executing">
+    <img src="../generated/themes/light/compositions/verifier--executing.svg" alt="Verifier, executing">
+    <div><strong>Verifier</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="verifier" data-state="inspecting">
+    <img src="../generated/themes/light/compositions/verifier--inspecting.svg" alt="Verifier, inspecting">
+    <div><strong>Verifier</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="verifier" data-state="waiting">
+    <img src="../generated/themes/light/compositions/verifier--waiting.svg" alt="Verifier, waiting">
+    <div><strong>Verifier</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="verifier" data-state="blocked">
+    <img src="../generated/themes/light/compositions/verifier--blocked.svg" alt="Verifier, blocked">
+    <div><strong>Verifier</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="verifier" data-state="approval-required">
+    <img src="../generated/themes/light/compositions/verifier--approval-required.svg" alt="Verifier, approval-required">
+    <div><strong>Verifier</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="verifier" data-state="verifying">
+    <img src="../generated/themes/light/compositions/verifier--verifying.svg" alt="Verifier, verifying">
+    <div><strong>Verifier</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="verifier" data-state="completed">
+    <img src="../generated/themes/light/compositions/verifier--completed.svg" alt="Verifier, completed">
+    <div><strong>Verifier</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="verifier" data-state="failed">
+    <img src="../generated/themes/light/compositions/verifier--failed.svg" alt="Verifier, failed">
+    <div><strong>Verifier</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="observer" data-state="idle">
+    <img src="../generated/themes/light/compositions/observer--idle.svg" alt="Observer, idle">
+    <div><strong>Observer</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="observer" data-state="thinking">
+    <img src="../generated/themes/light/compositions/observer--thinking.svg" alt="Observer, thinking">
+    <div><strong>Observer</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="observer" data-state="planning">
+    <img src="../generated/themes/light/compositions/observer--planning.svg" alt="Observer, planning">
+    <div><strong>Observer</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="observer" data-state="executing">
+    <img src="../generated/themes/light/compositions/observer--executing.svg" alt="Observer, executing">
+    <div><strong>Observer</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="observer" data-state="inspecting">
+    <img src="../generated/themes/light/compositions/observer--inspecting.svg" alt="Observer, inspecting">
+    <div><strong>Observer</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="observer" data-state="waiting">
+    <img src="../generated/themes/light/compositions/observer--waiting.svg" alt="Observer, waiting">
+    <div><strong>Observer</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="observer" data-state="blocked">
+    <img src="../generated/themes/light/compositions/observer--blocked.svg" alt="Observer, blocked">
+    <div><strong>Observer</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="observer" data-state="approval-required">
+    <img src="../generated/themes/light/compositions/observer--approval-required.svg" alt="Observer, approval-required">
+    <div><strong>Observer</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="observer" data-state="verifying">
+    <img src="../generated/themes/light/compositions/observer--verifying.svg" alt="Observer, verifying">
+    <div><strong>Observer</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="observer" data-state="completed">
+    <img src="../generated/themes/light/compositions/observer--completed.svg" alt="Observer, completed">
+    <div><strong>Observer</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="observer" data-state="failed">
+    <img src="../generated/themes/light/compositions/observer--failed.svg" alt="Observer, failed">
+    <div><strong>Observer</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="researcher" data-state="idle">
+    <img src="../generated/themes/light/compositions/researcher--idle.svg" alt="Researcher, idle">
+    <div><strong>Researcher</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="researcher" data-state="thinking">
+    <img src="../generated/themes/light/compositions/researcher--thinking.svg" alt="Researcher, thinking">
+    <div><strong>Researcher</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="researcher" data-state="planning">
+    <img src="../generated/themes/light/compositions/researcher--planning.svg" alt="Researcher, planning">
+    <div><strong>Researcher</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="researcher" data-state="executing">
+    <img src="../generated/themes/light/compositions/researcher--executing.svg" alt="Researcher, executing">
+    <div><strong>Researcher</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="researcher" data-state="inspecting">
+    <img src="../generated/themes/light/compositions/researcher--inspecting.svg" alt="Researcher, inspecting">
+    <div><strong>Researcher</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="researcher" data-state="waiting">
+    <img src="../generated/themes/light/compositions/researcher--waiting.svg" alt="Researcher, waiting">
+    <div><strong>Researcher</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="researcher" data-state="blocked">
+    <img src="../generated/themes/light/compositions/researcher--blocked.svg" alt="Researcher, blocked">
+    <div><strong>Researcher</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="researcher" data-state="approval-required">
+    <img src="../generated/themes/light/compositions/researcher--approval-required.svg" alt="Researcher, approval-required">
+    <div><strong>Researcher</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="researcher" data-state="verifying">
+    <img src="../generated/themes/light/compositions/researcher--verifying.svg" alt="Researcher, verifying">
+    <div><strong>Researcher</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="researcher" data-state="completed">
+    <img src="../generated/themes/light/compositions/researcher--completed.svg" alt="Researcher, completed">
+    <div><strong>Researcher</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" data-theme="light" data-role="researcher" data-state="failed">
+    <img src="../generated/themes/light/compositions/researcher--failed.svg" alt="Researcher, failed">
+    <div><strong>Researcher</strong><span>failed</span></div>
+  </article></div>
+  </section>
+<section class="icon-section"><header><h2>Supporting icons</h2><p>Only concepts marked <code>new</code> in the Brand OS icon diff are rendered here.</p></header><div class="asset-grid icons"><article class="icon-card" data-icon="analytics"><img src="../generated/icons/analytics.svg" alt="analytics supporting icon"><strong>analytics</strong></article>
+<article class="icon-card" data-icon="deploy"><img src="../generated/icons/deploy.svg" alt="deploy supporting icon"><strong>deploy</strong></article>
+<article class="icon-card" data-icon="docs"><img src="../generated/icons/docs.svg" alt="docs supporting icon"><strong>docs</strong></article>
+<article class="icon-card" data-icon="error"><img src="../generated/icons/error.svg" alt="error supporting icon"><strong>error</strong></article>
+<article class="icon-card" data-icon="inspect"><img src="../generated/icons/inspect.svg" alt="inspect supporting icon"><strong>inspect</strong></article>
+<article class="icon-card" data-icon="node"><img src="../generated/icons/node.svg" alt="node supporting icon"><strong>node</strong></article>
+<article class="icon-card" data-icon="progress"><img src="../generated/icons/progress.svg" alt="progress supporting icon"><strong>progress</strong></article>
+<article class="icon-card" data-icon="success"><img src="../generated/icons/success.svg" alt="success supporting icon"><strong>success</strong></article>
+<article class="icon-card" data-icon="sync"><img src="../generated/icons/sync.svg" alt="sync supporting icon"><strong>sync</strong></article>
+<article class="icon-card" data-icon="task-list"><img src="../generated/icons/task-list.svg" alt="task-list supporting icon"><strong>task-list</strong></article>
+<article class="icon-card" data-icon="warning"><img src="../generated/icons/warning.svg" alt="warning supporting icon"><strong>warning</strong></article></div></section>
+<script>
+const controls=['theme','role','state'].map(id=>document.getElementById(id));
+function apply(){const [theme,role,state]=controls.map(x=>x.value);document.querySelectorAll('.composition-card').forEach(el=>{el.hidden=(theme!=='all'&&el.dataset.theme!==theme)||(role!=='all'&&el.dataset.role!==role)||(state!=='all'&&el.dataset.state!==state)});document.querySelectorAll('.theme-section').forEach(el=>{el.hidden=theme!=='all'&&el.dataset.theme!==theme});}
+controls.forEach(x=>x.addEventListener('change',apply));apply();
+</script></main></body></html>

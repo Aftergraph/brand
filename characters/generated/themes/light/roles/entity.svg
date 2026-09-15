@@ -60,7 +60,7 @@
     <circle id="visor" cx="256" cy="190" r="76" fill="#080C14" stroke="#080C14" stroke-width="4"/>
     <circle id="visor-glow-field" cx="256" cy="190" r="72" fill="url(#visor-glow)"/>
   </g>
-  <g id="face" data-pivot-anchor="gaze-center" data-expression="neutral" color="#080C14"><g fill="currentColor"><rect x="224" y="162" width="12" height="52" rx="6"/><rect x="276" y="162" width="12" height="52" rx="6"/></g></g>
+  <g id="face" data-pivot-anchor="gaze-center" data-expression="neutral" color="#F5F7FA"><g fill="currentColor"><rect x="224" y="162" width="12" height="52" rx="6"/><rect x="276" y="162" width="12" height="52" rx="6"/></g></g>
   <g id="shading" aria-hidden="true" pointer-events="none">
     <path id="head-rim-light" d="M184 141 A98 98 0 0 1 329 145" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.38"/>
     <path id="visor-ambient-occlusion" d="M198 226 A76 76 0 0 0 314 226" fill="none" stroke="#080C14" stroke-width="12" stroke-linecap="round" opacity="0.66"/>

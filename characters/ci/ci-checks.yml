@@ -61,6 +61,20 @@ visual_regression:
       compose: { role: entity, state: completed }
     - id: state-failed
       compose: { role: entity, state: failed }
+    - id: collision-builder-thinking
+      compose: { role: builder, state: thinking }
+    - id: collision-verifier-verifying
+      compose: { role: verifier, state: verifying }
+    - id: collision-observer-blocked
+      compose: { role: observer, state: blocked }
+    - id: collision-researcher-approval-required
+      compose: { role: researcher, state: approval-required }
+    - id: light-entity-idle
+      source: characters/generated/themes/light/compositions/entity--idle.svg
+      background: "#F5F7FA"
+    - id: light-builder-thinking
+      source: characters/generated/themes/light/compositions/builder--thinking.svg
+      background: "#F5F7FA"
   command_contract:
     install: npm ci
     render: node characters/ci/render-snapshots.mjs --config characters/ci/ci-checks.yml

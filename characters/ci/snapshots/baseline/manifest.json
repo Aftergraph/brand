@@ -92,6 +92,36 @@
       "id": "state-failed",
       "path": "characters/ci/snapshots/baseline/state-failed.png",
       "sha256": "ab5a8648f5a78a637a7e957046ebc03ef4b61836a39a9a04c22df36cf4704447"
+    },
+    {
+      "id": "collision-builder-thinking",
+      "path": "characters/ci/snapshots/baseline/collision-builder-thinking.png",
+      "sha256": "a7811382144b76706f1d5b4e6b15f1631754f547dd986fc6b6c14b5acc60cea5"
+    },
+    {
+      "id": "collision-verifier-verifying",
+      "path": "characters/ci/snapshots/baseline/collision-verifier-verifying.png",
+      "sha256": "4aafeb706dee3e67a06018b55afac8c69d4d9af9140f2b3d219fab8cf607c7c4"
+    },
+    {
+      "id": "collision-observer-blocked",
+      "path": "characters/ci/snapshots/baseline/collision-observer-blocked.png",
+      "sha256": "0dfb93613decbd4e22d1189a66bdb3c30ba7631113faee263f5c84cb437a68f3"
+    },
+    {
+      "id": "collision-researcher-approval-required",
+      "path": "characters/ci/snapshots/baseline/collision-researcher-approval-required.png",
+      "sha256": "33fef2d1e9eb86632a0d919288e65f30ad4973ee5accdfee7fada17cc9e0ae5f"
+    },
+    {
+      "id": "light-entity-idle",
+      "path": "characters/ci/snapshots/baseline/light-entity-idle.png",
+      "sha256": "ff6488bb36e4455abbb54d680d0b50b63aaa854bc11404c7492bf2ac11527e30"
+    },
+    {
+      "id": "light-builder-thinking",
+      "path": "characters/ci/snapshots/baseline/light-builder-thinking.png",
+      "sha256": "c0b10ad1f4705f3a31db7c13add52c33e37f08e738149a4c5c54d0c35a889f1e"
     }
   ]
 }

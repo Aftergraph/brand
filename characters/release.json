@@ -6,8 +6,16 @@
   "sourceOfTruth": "characters/source",
   "generatedManifest": "characters/generated/manifest.json",
   "exporter": "scripts/export-character-assets.mjs",
-  "themes": ["dark", "light"],
-  "formats": ["svg", "png", "webp", "avif"],
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "formats": [
+    "svg",
+    "png",
+    "webp",
+    "avif"
+  ],
   "counts": {
     "roles": 6,
     "states": 11,
@@ -30,5 +38,21 @@
     "illustratorRoundtrip": "pending",
     "riveRuntimeBinary": "not-authored",
     "humanBrandReview": "pending"
+  },
+  "review": {
+    "surface": "characters/review/index.html",
+    "generator": "scripts/generate-character-review.mjs",
+    "themes": [
+      "dark",
+      "light"
+    ],
+    "matrix": "6 roles \u00d7 11 states \u00d7 2 themes"
+  },
+  "externalEvidence": {
+    "preflightCommand": "npm run character:authoring:preflight",
+    "preflightOutput": "characters/ci/evidence/authoring-preflight.json",
+    "illustratorTemplate": "characters/ci/evidence/illustrator-roundtrip.template.json",
+    "riveTemplate": "characters/ci/evidence/rive-authoring.template.json",
+    "humanBrandReviewTemplate": "characters/ci/evidence/human-brand-review.template.json"
   }
 }

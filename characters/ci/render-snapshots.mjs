@@ -22,7 +22,8 @@ try{
     const sourcePath=renderCasePath(renderCase);
     if(!fs.existsSync(sourcePath)) throw new Error(`Missing render source for ${renderCase.id}: ${path.relative(repoRoot,sourcePath)}`);
     const svg=fs.readFileSync(sourcePath,'utf8');
-    await loadSvgIntoPage(page,svg,visual.background);
+    const background=renderCase.background||visual.background;
+    await loadSvgIntoPage(page,svg,background);
     const out=path.join(targetRoot,`${renderCase.id}.png`);
     await page.screenshot({path:out,type:'png',captureBeyondViewport:false});
     results.push({id:renderCase.id,path:path.relative(repoRoot,out),sha256:crypto.createHash('sha256').update(fs.readFileSync(out)).digest('hex')});
