@@ -41,5 +41,8 @@ test("manual review-bundle workflow uploads the exact-head handoff without publi
   assert.match(workflow, /npm run character:review:bundle/);
   assert.match(workflow, /actions\/upload-artifact@[0-9a-f]{40}/);
   assert.match(workflow, /aftergraph-character-review-/);
+  assert.ok(workflow.includes('CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}'));
+  assert.ok(workflow.includes('ref: ${{ env.CANDIDATE_SHA }}'));
+  assert.ok(workflow.includes('name: aftergraph-character-review-${{ env.CANDIDATE_SHA }}'));
   assert.doesNotMatch(workflow, /npm publish|merge_pull_request|gh pr merge|git push/);
 });
