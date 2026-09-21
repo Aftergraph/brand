@@ -1,42 +1,123 @@
 {
-  "schema_version": 1,
-  "artifact": "steward-entity-rigged-reference.glb",
-  "status": "deterministic-reference-build",
-  "sha256": "027be1855b420ba4735fcf0f1be85d19ad7a21fbed488d86813178960a4b1722",
-  "bytes": 181016,
-  "geometry_count": 25,
-  "node_count": 35,
-  "animations": [
-    "idle",
-    "blink",
-    "verify"
-  ],
-  "required_nodes": [
-    "steward_rig",
-    "head_pivot",
-    "eye_left",
-    "eye_right",
-    "right_shoulder",
-    "right_elbow",
-    "badge"
-  ],
-  "bounds": [
-    [
-      -1.280000001490116,
-      -0.7549999997019768,
-      -0.7799999713897705
+  "schema_version": 2,
+  "artifact_family": "STEWARD canonical 3D rig v1",
+  "status": "verified-structural-reference",
+  "source": {
+    "project": "Higgsfield 3D Jutsu",
+    "project_id": "2cefe187-1660-4af9-bfc9-5cadd765d5a3",
+    "project_revision": 2,
+    "authoring_runtime": "Blender 5.2 LTS",
+    "export_verification_runtime": "bpy 5.0.1",
+    "compatibility_note": "The Blender 5.2 .blend opened in bpy 5.0.1 with a newer-file warning; object, armature, bone, action and NLA structures were inspected intact before export."
+  },
+  "rig": {
+    "armature": "STEWARD_Rig",
+    "bone_count": 20,
+    "bones": [
+      "root",
+      "spine",
+      "neck",
+      "head",
+      "eye.L",
+      "eye.R",
+      "upper_arm.L",
+      "lower_arm.L",
+      "hand.L",
+      "upper_arm.R",
+      "lower_arm.R",
+      "hand.R",
+      "ring.R",
+      "badge",
+      "thigh.L",
+      "shin.L",
+      "foot.L",
+      "thigh.R",
+      "shin.R",
+      "foot.R"
     ],
-    [
-      1.3131546756271961,
-      3.8000000014901163,
-      0.8399999991059304
+    "actions": [
+      "blink",
+      "idle",
+      "verify"
+    ],
+    "nla_tracks": [
+      "idle",
+      "blink",
+      "verify"
+    ],
+    "authored_object_count": 34,
+    "materials": [
+      "Contact Shadow",
+      "Cream",
+      "Evidence White",
+      "Pine Teal",
+      "Steward Copper",
+      "Warm Ink"
     ]
-  ],
+  },
+  "exports": {
+    "glb": {
+      "bytes": 609908,
+      "sha256": "187819a9086b12366f33f5290db98f7921b55e0674bf4aaee000e76241cb605f",
+      "animation_names": [
+        "blink",
+        "idle",
+        "verify"
+      ],
+      "skin_count": 1,
+      "node_count": 53,
+      "mesh_count": 28,
+      "export_policy": {
+        "animation_mode": "ACTIONS",
+        "merge_animation": "NONE"
+      }
+    },
+    "fbx": {
+      "bytes": 810796,
+      "sha256": "b114acce383e92dcea66d69c969c2800a12d42d6a30a9b7379e47b761b2688b8",
+      "format": "Kaydara FBX Binary 7.4",
+      "export_scope": "ARMATURE,MESH,EMPTY,OTHER; camera/lights excluded for portability",
+      "roundtrip": {
+        "armatures": [
+          "STEWARD_Rig"
+        ],
+        "bone_count": 20,
+        "action_names": [
+          "STEWARD_Rig|STEWARD_Rig|blink",
+          "STEWARD_Rig|STEWARD_Rig|idle",
+          "STEWARD_Rig|STEWARD_Rig|verify"
+        ],
+        "object_count": 29
+      }
+    },
+    "blend": {
+      "sha256": "cbc857fe2cd2ee3edfce208e09e06d722b06c0384a84d0fe302f57b83da87a7b"
+    },
+    "package_zip": {
+      "sha256": "d10fc1d7b174630241dbde64a8cedba380e36dfaecc31ddb3bfe75d28b9b1024",
+      "contents": [
+        "steward-rig-v1.glb",
+        "steward-rig-v1.fbx",
+        "steward-rig-v1.blend",
+        "steward-rig-v1.evidence.json"
+      ],
+      "persistence_status": "upload transport not accepted as evidence; do not claim a confirmed public artifact URL"
+    }
+  },
+  "known_platform_behavior": {
+    "scene_builder_auto_glb": "The platform-finalized GLB at project revision 2 merges the Blender actions into one animation named STEWARD_Rig. It is not the canonical multi-clip export.",
+    "canonical_export_rule": "Use the explicit Blender ACTIONS export with merge_animation=NONE when separate idle, blink and verify clips are required."
+  },
   "verification": [
-    "GLB reparsed successfully",
-    "trimesh.load succeeded",
-    "required rig nodes present",
-    "required animation names present"
+    "Blender scene contains the named 20-bone armature",
+    "Blender scene contains blink, idle and verify actions plus matching NLA tracks",
+    "Explicit GLB reparsed as glTF 2.0 with one skin and three named animation clips",
+    "FBX has Kaydara binary header",
+    "FBX re-imported into a clean Blender runtime with STEWARD_Rig, 20 bones and blink/idle/verify actions"
   ],
-  "note": "This record describes a deterministic reference artifact. It is not an independent visual approval or a production verification verdict."
+  "limitations": [
+    "No visual QA verdict is claimed from the structural tests alone",
+    "The 3D Jutsu preview artifact exists but was not visually inspected by the assistant",
+    "Generated provider meshes remain non-canonical candidates"
+  ]
 }
