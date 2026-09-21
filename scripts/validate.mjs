@@ -44,6 +44,21 @@ for (const product of ['work-intelligence','studio','sentinel','steward']) {
     if (presence.id !== 'steward.presence.v1' || (presence.states||[]).length !== 12) errors.push('steward: invalid presence contract');
     const lottie=readJson('products/steward/motion/steward-presence.lottie.json');
     if (lottie.fr !== 60 || (lottie.markers||[]).length !== 12) errors.push('steward: invalid Lottie state markers');
+    const rig=readJson('products/steward/3d/reference-model.evidence.json');
+    const requiredClips=['idle','blink','verify'];
+    if (rig.schema_version !== 2 || rig.status !== 'verified-structural-reference') errors.push('steward: invalid 3D evidence version/status');
+    if (rig.rig?.armature !== 'STEWARD_Rig' || rig.rig?.bone_count !== 20) errors.push('steward: 3D rig identity/bone-count drift');
+    for (const clip of requiredClips) {
+      if (!(rig.rig?.actions||[]).includes(clip)) errors.push(`steward: missing rig action ${clip}`);
+      if (!(rig.exports?.glb?.animation_names||[]).includes(clip)) errors.push(`steward: missing GLB clip ${clip}`);
+      if (!(rig.exports?.fbx?.roundtrip?.action_names||[]).some(name=>name.toLowerCase().includes(clip))) errors.push(`steward: missing FBX roundtrip action ${clip}`);
+    }
+    const sha256=/^[0-9a-f]{64}$/;
+    for (const [format,digest] of [['glb',rig.exports?.glb?.sha256],['fbx',rig.exports?.fbx?.sha256],['blend',rig.exports?.blend?.sha256]]) {
+      if (!sha256.test(digest||'')) errors.push(`steward: invalid ${format} SHA-256 evidence`);
+    }
+    if (rig.exports?.glb?.skin_count !== 1) errors.push('steward: GLB must contain exactly one rig skin');
+    if (rig.exports?.fbx?.roundtrip?.bone_count !== 20) errors.push('steward: FBX roundtrip bone-count drift');
   }
 }
 
