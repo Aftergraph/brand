@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" role="img" aria-label="STEWARD Bounded Node correct use and prohibited logo modifications">
+  <rect width="1440" height="900" fill="#FAF6EF"/>
+  <style>
+    .h{font:700 44px Sora,Arial,sans-serif;fill:#1E1B16}
+    .t{font:600 24px Manrope,Arial,sans-serif;fill:#1E1B16}
+    .s{font:500 19px Manrope,Arial,sans-serif;fill:#6B665C}
+    .ok{fill:#23615E}.bad{fill:#9B2C2C}.panel{fill:#fff;stroke:#D8CFB8;stroke-width:2}
+  </style>
+  <text x="80" y="82" class="h">STEWARD Bounded Node usage</text>
+  <text x="80" y="120" class="s">Preserve geometry. Preserve the open custody gap. Preserve the copper node.</text>
+
+  <rect x="70" y="170" width="400" height="620" rx="28" class="panel"/>
+  <rect x="520" y="170" width="400" height="620" rx="28" class="panel"/>
+  <rect x="970" y="170" width="400" height="620" rx="28" class="panel"/>
+
+  <g transform="translate(142 245) scale(.5)">
+    <g fill="none" stroke="#1E1B16" stroke-width="36" stroke-linecap="round">
+      <path d="M 283 100 A 158 158 0 1 1 385 165"/>
+      <path d="M 385 165 A 158 158 0 0 0 283 100"/>
+    </g>
+    <circle cx="256" cy="296" r="58" fill="#C2703D"/>
+  </g>
+  <text x="270" y="565" text-anchor="middle" class="t ok">DO</text>
+  <text x="270" y="605" text-anchor="middle" class="t">Keep canonical geometry</text>
+  <text x="270" y="642" text-anchor="middle" class="s">Open gap at upper right</text>
+  <text x="270" y="674" text-anchor="middle" class="s">Copper node remains fixed</text>
+
+  <g transform="translate(592 245) scale(.5)">
+    <circle cx="256" cy="256" r="158" fill="none" stroke="#1E1B16" stroke-width="36"/>
+    <circle cx="256" cy="296" r="58" fill="#C2703D"/>
+  </g>
+  <text x="720" y="565" text-anchor="middle" class="t bad">DO NOT</text>
+  <text x="720" y="605" text-anchor="middle" class="t">Close the custody ring</text>
+  <path d="M650 700 L790 560 M650 560 L790 700" stroke="#9B2C2C" stroke-width="12" stroke-linecap="round" opacity=".14"/>
+
+  <g transform="translate(1000 275)">
+    <g transform="scale(.72 .42)">
+      <g fill="none" stroke="#1E1B16" stroke-width="36" stroke-linecap="round">
+        <path d="M 283 100 A 158 158 0 1 1 385 165"/>
+        <path d="M 385 165 A 158 158 0 0 0 283 100"/>
+      </g>
+      <circle cx="256" cy="296" r="58" fill="#C2703D"/>
+    </g>
+  </g>
+  <text x="1170" y="565" text-anchor="middle" class="t bad">DO NOT</text>
+  <text x="1170" y="605" text-anchor="middle" class="t">Stretch or squash the mark</text>
+  <text x="1170" y="642" text-anchor="middle" class="s">Scale proportionally only</text>
+
+  <text x="80" y="850" class="s">Identity is a product mark, not a certification seal or verification verdict.</text>
+</svg>
