@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "artifact": "steward-entity-rigged-reference.glb",
+  "status": "deterministic-reference-build",
+  "sha256": "027be1855b420ba4735fcf0f1be85d19ad7a21fbed488d86813178960a4b1722",
+  "bytes": 181016,
+  "geometry_count": 25,
+  "node_count": 35,
+  "animations": [
+    "idle",
+    "blink",
+    "verify"
+  ],
+  "required_nodes": [
+    "steward_rig",
+    "head_pivot",
+    "eye_left",
+    "eye_right",
+    "right_shoulder",
+    "right_elbow",
+    "badge"
+  ],
+  "bounds": [
+    [
+      -1.280000001490116,
+      -0.7549999997019768,
+      -0.7799999713897705
+    ],
+    [
+      1.3131546756271961,
+      3.8000000014901163,
+      0.8399999991059304
+    ]
+  ],
+  "verification": [
+    "GLB reparsed successfully",
+    "trimesh.load succeeded",
+    "required rig nodes present",
+    "required animation names present"
+  ],
+  "note": "This record describes a deterministic reference artifact. It is not an independent visual approval or a production verification verdict."
+}
