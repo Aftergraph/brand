@@ -30,10 +30,21 @@ for (const file of svgFiles) {
   if (/Provisional home of ABDE Intelligence/i.test(content)) errors.push(`${rel}: forbidden current legacy copy`);
 }
 for (const name of [...(semantics.concepts||[]).map(x=>x), ...(semantics.states||[]).map(x=>`state-${x}`)]) if (!fs.existsSync(path.join(root,'semantics/icons',`${name}.svg`))) errors.push(`missing generated symbol: ${name}`);
-for (const product of ['work-intelligence','studio','sentinel']) {
+for (const product of ['work-intelligence','studio','sentinel','steward']) {
   const p=readJson(`products/${product}/manifest.json`);
   if (p.brand_version !== manifest.version) errors.push(`${product}: brand version drift`);
   if (product==='sentinel' && (p.identity !== null || p.status !== 'blocked-naming-review')) errors.push('Sentinel identity must remain blocked until governed naming resolution');
+  if (product==='steward') {
+    if (p.parent !== 'Aftergraph' || p.class !== 'product-extension') errors.push('steward: invalid parent or class');
+    if (p.identity !== 'identity/bounded-node.svg') errors.push('steward: canonical identity path drift');
+    const scopedTokens=readJson('products/steward/tokens.json');
+    const expected={cream:'#FAF6EF',warm_ink:'#1E1B16',steward_copper:'#C2703D',pine_teal:'#23615E',moss:'#3E7C59'};
+    for (const [name,value] of Object.entries(expected)) if (scopedTokens.colors?.[name] !== value) errors.push(`steward token drift: ${name}`);
+    const presence=readJson('products/steward/motion/presence-contract.json');
+    if (presence.id !== 'steward.presence.v1' || (presence.states||[]).length !== 12) errors.push('steward: invalid presence contract');
+    const lottie=readJson('products/steward/motion/steward-presence.lottie.json');
+    if (lottie.fr !== 60 || (lottie.markers||[]).length !== 12) errors.push('steward: invalid Lottie state markers');
+  }
 }
 
 if (errors.length) { console.error(`Brand OS validation failed (${errors.length})`); errors.forEach(e=>console.error(`ERROR ${e}`)); process.exit(1); }
