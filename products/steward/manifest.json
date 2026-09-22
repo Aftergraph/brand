@@ -13,5 +13,6 @@
   "lottie_presence": "motion/steward-presence.lottie.json",
   "reference_3d_evidence": "3d/reference-model.evidence.json",
   "claim_boundary": "STEWARD identity and state motion are product projections only. They do not grant authority, establish execution truth, or constitute independent verification.",
-  "persona_role_contract": "persona-roles.json"
+  "persona_role_contract": "persona-roles.json",
+  "frontier_runtime_evidence": "3d/frontier-runtime.evidence.json"
 }
