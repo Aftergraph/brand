@@ -14,7 +14,7 @@
   },
   "classes": {
     "corporate": ["brand", ".github", "aftergraph.org"],
-    "products": ["studio", "wi-frontend"],
+    "products": ["studio", "wi-frontend", "steward"],
     "product_needs_review": ["sentinel"],
     "technologies": ["works-execution", "trust-gateway", "runtime", "model-registry", "aftergraph-cron-fabric", "context-continuity", "wi-backend", "skills-vault"],
     "research": ["aie", "afm", "continuum", "intelligence-systems-research", "llm-research-development"],
@@ -24,7 +24,8 @@
   "products": {
     "work-intelligence": { "display_name": "Work Intelligence", "status": "active", "accent": "system_blue" },
     "studio": { "display_name": "Studio", "status": "active", "accent": "authority_violet" },
-    "sentinel": { "display_name": "Sentinel", "status": "needs-review", "blocker": "Aftergraph/brand#19 and Aftergraph/sentinel#7" }
+    "sentinel": { "display_name": "Sentinel", "status": "needs-review", "blocker": "Aftergraph/brand#19 and Aftergraph/sentinel#7" },
+    "steward": { "display_name": "STEWARD", "status": "active-provisional", "identity_scope": "product-extension", "palette": "Custody & Cream", "claim_boundary": "Presence and identity do not inherit authority, execution, or verification claims." }
   },
   "evidence_classes": ["E0", "E1", "E2", "E3", "E4", "E5", "E6"],
   "legacy_public_terms": ["Provisional home of ABDE Intelligence", "ABDE Intelligence", "Autonomous Venture Company"],

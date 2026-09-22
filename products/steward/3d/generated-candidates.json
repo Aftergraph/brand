@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "generated-candidates-not-canonical",
+  "generated_at": "2026-09-21",
+  "source_image": "canonical STEWARD transparent entity sprite",
+  "candidates": [
+    {
+      "job_id": "a723d39b-299e-4723-8f43-f43dfbde75b9",
+      "requested_format": "gltf",
+      "returned_model_format": "glb",
+      "model": "https://storage.to3d.app/generated-3d/models/2026-09-21/task_a723d39b-299e-4723-8f43-f43dfbde75b9_model.glb",
+      "turntable": "https://storage.to3d.app/generated-3d/videos/2026-09-21/task_a723d39b-299e-4723-8f43-f43dfbde75b9_video.mp4",
+      "preview": "https://storage.to3d.app/generated-3d/images/2026-09-21/task_a723d39b-299e-4723-8f43-f43dfbde75b9_image.png"
+    },
+    {
+      "job_id": "0726f618-23fd-4675-a847-a5d648b933c8",
+      "requested_format": "fbx",
+      "returned_model_format": "glb",
+      "model": "https://storage.to3d.app/generated-3d/models/2026-09-21/task_0726f618-23fd-4675-a847-a5d648b933c8_model.glb",
+      "turntable": "https://storage.to3d.app/generated-3d/videos/2026-09-21/task_0726f618-23fd-4675-a847-a5d648b933c8_video.mp4",
+      "preview": "https://storage.to3d.app/generated-3d/images/2026-09-21/task_0726f618-23fd-4675-a847-a5d648b933c8_image.png"
+    }
+  ],
+  "caveat": "The provider returned GLB for both requests. No FBX delivery is claimed."
+}

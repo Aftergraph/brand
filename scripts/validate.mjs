@@ -30,10 +30,79 @@ for (const file of svgFiles) {
   if (/Provisional home of ABDE Intelligence/i.test(content)) errors.push(`${rel}: forbidden current legacy copy`);
 }
 for (const name of [...(semantics.concepts||[]).map(x=>x), ...(semantics.states||[]).map(x=>`state-${x}`)]) if (!fs.existsSync(path.join(root,'semantics/icons',`${name}.svg`))) errors.push(`missing generated symbol: ${name}`);
-for (const product of ['work-intelligence','studio','sentinel']) {
+for (const product of ['work-intelligence','studio','sentinel','steward']) {
   const p=readJson(`products/${product}/manifest.json`);
   if (p.brand_version !== manifest.version) errors.push(`${product}: brand version drift`);
   if (product==='sentinel' && (p.identity !== null || p.status !== 'blocked-naming-review')) errors.push('Sentinel identity must remain blocked until governed naming resolution');
+  if (product==='steward') {
+    if (p.parent !== 'Aftergraph' || p.class !== 'product-extension') errors.push('steward: invalid parent or class');
+    if (p.identity !== 'identity/bounded-node.svg') errors.push('steward: canonical identity path drift');
+    const scopedTokens=readJson('products/steward/tokens.json');
+    const expected={cream:'#FAF6EF',warm_ink:'#1E1B16',steward_copper:'#C2703D',pine_teal:'#23615E',moss:'#3E7C59'};
+    for (const [name,value] of Object.entries(expected)) if (scopedTokens.colors?.[name] !== value) errors.push(`steward token drift: ${name}`);
+    const presence=readJson('products/steward/motion/presence-contract.json');
+    if (presence.id !== 'steward.presence.v1' || (presence.states||[]).length !== 12) errors.push('steward: invalid presence contract');
+    if (p.persona_role_contract !== 'persona-roles.json') errors.push('steward: persona role contract path drift');
+    const personaRoles=readJson('products/steward/persona-roles.json');
+    const expectedRoles=['reviewer','subscriber','maintainer','observer','auditor','integrator'];
+    const expectedRoleAccents={
+      reviewer:'control_cyan',
+      subscriber:'system_blue',
+      maintainer:'steward_copper',
+      observer:'slate',
+      auditor:'pine_teal',
+      integrator:'decision_amber'
+    };
+    if (personaRoles.schema_version !== 'steward.persona-role-visual/1.0') errors.push('steward: invalid persona role schema version');
+    if (personaRoles.owner !== 'Aftergraph/brand' || personaRoles.product !== 'STEWARD') errors.push('steward: invalid persona role owner/product');
+    const observedRoles=(personaRoles.roles||[]).map(x=>x.id);
+    if (JSON.stringify(observedRoles) !== JSON.stringify(expectedRoles)) errors.push('steward: canonical persona role vocabulary drift');
+    for (const role of personaRoles.roles||[]) {
+      if (expectedRoleAccents[role.id] !== role.accent_token) errors.push(`steward: persona role accent drift: ${role.id}`);
+      if (role.authority_effect !== false) errors.push(`steward: persona role authority must remain false: ${role.id}`);
+      if (role.verification_effect !== false) errors.push(`steward: persona role verification must remain false: ${role.id}`);
+    }
+    if (p.frontier_runtime_evidence !== '3d/frontier-runtime.evidence.json') errors.push('steward: frontier runtime evidence path drift');
+    const frontier=readJson('products/steward/3d/frontier-runtime.evidence.json');
+    const expectedFrontierStates=['idle','thinking','planning','executing','inspecting','waiting','blocked','approval','verifying','approving','succeeded','failed'];
+    const expectedPersonaRoles=['reviewer','subscriber','maintainer','observer','auditor','integrator'];
+    if (frontier.id !== 'steward.frontier-runtime-evidence/1.0' || frontier.source_scene?.revision !== 5) errors.push('steward: invalid frontier runtime evidence id/revision');
+    if (frontier.source_scene?.armature !== 'STEWARD_Rig' || frontier.source_scene?.bone_count !== 20) errors.push('steward: frontier runtime rig drift');
+    if (frontier.source_scene?.proportion_profile !== 'frontier-proportions/1.0' || frontier.source_scene?.material_profile !== 'frontier-material/1.1') errors.push('steward: frontier runtime profile drift');
+    if (frontier.verified_runtime?.sha256 !== '018fb057659975d67a3f6de3dc90a5167bc046d3bf366e3c0a9fe6ec96ecf6a8') errors.push('steward: frontier runtime GLB digest drift');
+    if (JSON.stringify(frontier.verified_runtime?.animation_names||[]) !== JSON.stringify(['blink','idle','verify'])) errors.push('steward: frontier runtime clip drift');
+    if (JSON.stringify(frontier.surfaces?.state_pack?.states||[]) !== JSON.stringify(expectedFrontierStates)) errors.push('steward: frontier state vocabulary drift');
+    if (JSON.stringify(frontier.surfaces?.persona_roles?.roles||[]) !== JSON.stringify(expectedPersonaRoles)) errors.push('steward: frontier persona vocabulary drift');
+    if (frontier.surfaces?.motion_runtime?.manifest_sha256 !== '047464f20b75763d14d969fbb14fa16780a7d6dfdb554cb3a90e9e8809e92378') errors.push('steward: motion runtime manifest digest drift');
+    if (frontier.surfaces?.persona_roles?.manifest_sha256 !== '7ba7453e8c6ef610dee90aa74fc4966da83c5e425cfd9972e50c2152571bba09') errors.push('steward: persona manifest digest drift');
+    if (frontier.surfaces?.role_state_composition?.manifest_sha256 !== '6d726e68640d7b05603586598771100f79f655af51bfd3af0d3dbc4e542d77b6') errors.push('steward: role/state composition manifest digest drift');
+    if (frontier.surfaces?.role_state_composition?.evidence_sha256 !== 'b0d4bb0f540ddd137938418ee6d50b7fb75177c06ab4e446e76bdd56bb948c0a') errors.push('steward: role/state composition evidence digest drift');
+    if (frontier.surfaces?.role_state_composition?.combinations !== 72 || frontier.surfaces?.role_state_composition?.glb_loads_per_live_runtime !== 1) errors.push('steward: role/state composition coverage drift');
+    if (frontier.surfaces?.performance?.evidence_sha256 !== 'eba2656ffc7888124ed99b9913b06a0f48ed10ff0089feaac9652c850e49a5b4') errors.push('steward: performance evidence digest drift');
+    if (frontier.surfaces?.performance?.resource_bytes_reduction_percent !== 58.35 || frontier.surfaces?.performance?.webgl_ready_delta_ms !== 18) errors.push('steward: performance evidence metric drift');
+    if (frontier.surfaces?.accessibility?.evidence_sha256 !== '77531777a5603bde500058acd572daab04b7e88d0c998bb438d6be504710888a') errors.push('steward: accessibility evidence digest drift');
+    if (frontier.surfaces?.accessibility?.role_controls !== 6 || frontier.surfaces?.accessibility?.state_controls !== 12) errors.push('steward: accessibility control-count drift');
+    if (frontier.surfaces?.accessibility?.auto_mode_live_region !== 'off' || frontier.surfaces?.accessibility?.explicit_preview_live_region !== 'polite') errors.push('steward: accessibility live-region drift');
+    if (frontier.delivery?.public_edge_status !== 'blocked-401-unauthenticated') errors.push('steward: public edge status must not be upgraded without evidence');
+    for (const value of Object.values(frontier.qa||{})) if (value !== true) errors.push('steward: frontier QA evidence incomplete');
+    const lottie=readJson('products/steward/motion/steward-presence.lottie.json');
+    if (lottie.fr !== 60 || (lottie.markers||[]).length !== 12) errors.push('steward: invalid Lottie state markers');
+    const rig=readJson('products/steward/3d/reference-model.evidence.json');
+    const requiredClips=['idle','blink','verify'];
+    if (rig.schema_version !== 2 || rig.status !== 'verified-structural-reference') errors.push('steward: invalid 3D evidence version/status');
+    if (rig.rig?.armature !== 'STEWARD_Rig' || rig.rig?.bone_count !== 20) errors.push('steward: 3D rig identity/bone-count drift');
+    for (const clip of requiredClips) {
+      if (!(rig.rig?.actions||[]).includes(clip)) errors.push(`steward: missing rig action ${clip}`);
+      if (!(rig.exports?.glb?.animation_names||[]).includes(clip)) errors.push(`steward: missing GLB clip ${clip}`);
+      if (!(rig.exports?.fbx?.roundtrip?.action_names||[]).some(name=>name.toLowerCase().includes(clip))) errors.push(`steward: missing FBX roundtrip action ${clip}`);
+    }
+    const sha256=/^[0-9a-f]{64}$/;
+    for (const [format,digest] of [['glb',rig.exports?.glb?.sha256],['fbx',rig.exports?.fbx?.sha256],['blend',rig.exports?.blend?.sha256]]) {
+      if (!sha256.test(digest||'')) errors.push(`steward: invalid ${format} SHA-256 evidence`);
+    }
+    if (rig.exports?.glb?.skin_count !== 1) errors.push('steward: GLB must contain exactly one rig skin');
+    if (rig.exports?.fbx?.roundtrip?.bone_count !== 20) errors.push('steward: FBX roundtrip bone-count drift');
+  }
 }
 
 if (errors.length) { console.error(`Brand OS validation failed (${errors.length})`); errors.forEach(e=>console.error(`ERROR ${e}`)); process.exit(1); }

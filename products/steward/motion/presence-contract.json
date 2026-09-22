@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "id": "steward.presence.v1",
+  "source_of_truth": "product projection only",
+  "fps": 60,
+  "states": [
+    {
+      "id": "idle",
+      "accent": "steward_copper",
+      "motion": "ambient_breathe",
+      "truth": "observed_presence"
+    },
+    {
+      "id": "thinking",
+      "accent": "steward_copper",
+      "motion": "visor_attention",
+      "truth": "projected_activity"
+    },
+    {
+      "id": "planning",
+      "accent": "system_blue",
+      "motion": "ordered_scan",
+      "truth": "projected_activity"
+    },
+    {
+      "id": "executing",
+      "accent": "decision_amber",
+      "motion": "forward_action",
+      "truth": "projected_activity"
+    },
+    {
+      "id": "inspecting",
+      "accent": "control_cyan",
+      "motion": "focus_scan",
+      "truth": "projected_activity"
+    },
+    {
+      "id": "waiting",
+      "accent": "slate",
+      "motion": "slow_hold",
+      "truth": "projected_activity"
+    },
+    {
+      "id": "blocked",
+      "accent": "decision_amber",
+      "motion": "boundary_stop",
+      "truth": "projected_activity"
+    },
+    {
+      "id": "approval",
+      "accent": "authority_violet",
+      "motion": "attention_gate",
+      "truth": "approval_required"
+    },
+    {
+      "id": "verifying",
+      "accent": "pine_teal",
+      "motion": "custody_ring_raise",
+      "truth": "verification_in_progress"
+    },
+    {
+      "id": "approving",
+      "accent": "authority_violet",
+      "motion": "bounded_confirm",
+      "truth": "approval_in_progress"
+    },
+    {
+      "id": "succeeded",
+      "accent": "moss",
+      "motion": "settled_confirm",
+      "truth": "verified_only_when_backed_by_verdict"
+    },
+    {
+      "id": "failed",
+      "accent": "decision_amber",
+      "motion": "bounded_break",
+      "truth": "observed_failure"
+    }
+  ],
+  "interaction": {
+    "pointer_orientation_max_degrees": 6,
+    "ambient_translation_px": 4,
+    "blink_interval_seconds": [
+      3.5,
+      5.5
+    ],
+    "state_transition_ms": [
+      160,
+      420
+    ]
+  },
+  "reduced_motion": {
+    "continuous_motion": false,
+    "transition_ms": 0,
+    "preserve_state_label": true,
+    "preserve_final_pose": true
+  },
+  "invariants": [
+    "Selected is not authorized",
+    "Predicted is not observed",
+    "Completed is not verified",
+    "Presence is not canonical truth"
+  ]
+}

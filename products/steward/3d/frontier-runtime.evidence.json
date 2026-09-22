@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "id": "steward.frontier-runtime-evidence/1.0",
+  "status": "verified-source-runtime-external-delivery-blocked",
+  "source_scene": {
+    "provider": "higgsfield-3d-jutsu",
+    "project_id": "2cefe187-1660-4af9-bfc9-5cadd765d5a3",
+    "revision": 5,
+    "armature": "STEWARD_Rig",
+    "bone_count": 20,
+    "proportion_profile": "frontier-proportions/1.0",
+    "material_profile": "frontier-material/1.1",
+    "geometry_topology_changed": false,
+    "armature_changed": false
+  },
+  "verified_runtime": {
+    "asset": "/assets/steward-rig-v2.glb",
+    "sha256": "018fb057659975d67a3f6de3dc90a5167bc046d3bf366e3c0a9fe6ec96ecf6a8",
+    "website_source_commit": "a25fa626979b3f938e9cec232cbaef52771e9db3",
+    "node_count": 53,
+    "mesh_count": 28,
+    "skin_count": 1,
+    "animation_names": [
+      "blink",
+      "idle",
+      "verify"
+    ]
+  },
+  "surfaces": {
+    "state_pack": {
+      "schema": "steward.rig-state-assets/4.0",
+      "website_source_commit": "a25fa626979b3f938e9cec232cbaef52771e9db3",
+      "states": [
+        "idle",
+        "thinking",
+        "planning",
+        "executing",
+        "inspecting",
+        "waiting",
+        "blocked",
+        "approval",
+        "verifying",
+        "approving",
+        "succeeded",
+        "failed"
+      ]
+    },
+    "compact_presence": {
+      "schema": "steward.compact-presence-assets/1.0",
+      "website_source_commit": "04b075c2ba609c08e8a39ca1936badc3c6153911",
+      "states": [
+        "idle",
+        "verifying",
+        "succeeded"
+      ]
+    },
+    "motion_runtime": {
+      "contract": "steward.presence.v1",
+      "runtime": "steward.motion-runtime/2.0",
+      "manifest": "/assets/motion/presence-runtime-v2.json",
+      "manifest_sha256": "047464f20b75763d14d969fbb14fa16780a7d6dfdb554cb3a90e9e8809e92378",
+      "website_source_commit": "4c71ce1322281056c70dd896abefc03936fd43f6"
+    },
+    "presence_inspector": {
+      "surface": "steward.presence-inspector/1.0",
+      "website_source_commit": "12131e6fe54d8664bb4bb1977073036fbc50bb6a"
+    },
+    "persona_roles": {
+      "schema": "steward.persona-role-assets/1.0",
+      "manifest": "/assets/persona-roles/manifest-v1.json",
+      "manifest_sha256": "7ba7453e8c6ef610dee90aa74fc4966da83c5e425cfd9972e50c2152571bba09",
+      "website_source_commit": "b88ce626ea5f7aa70439da71600c25a9a6e24c27",
+      "roles": [
+        "reviewer",
+        "subscriber",
+        "maintainer",
+        "observer",
+        "auditor",
+        "integrator"
+      ]
+    },
+    "role_state_composition": {
+      "schema": "steward.role-state-composition-evidence/1.0",
+      "runtime": "steward.role-state-composition/1.0",
+      "runtime_strategy": "single-boot-live-composition",
+      "manifest": "/assets/motion/persona-role-accessories-v1.json",
+      "manifest_sha256": "6d726e68640d7b05603586598771100f79f655af51bfd3af0d3dbc4e542d77b6",
+      "evidence": "/assets/motion/persona-role-accessories-v1.evidence.json",
+      "evidence_sha256": "b0d4bb0f540ddd137938418ee6d50b7fb75177c06ab4e446e76bdd56bb948c0a",
+      "implementation_source_commit": "41081850a68b358b9313897adcd763455f69285c",
+      "evidence_publish_commit": "5754d67f2144f734f2ebe94fbf909280fd913a17",
+      "roles": 6,
+      "states": 12,
+      "combinations": 72,
+      "glb_loads_per_live_runtime": 1,
+      "fallback": "state-semantic-priority"
+    },
+    "performance": {
+      "schema": "steward.frontier-performance-evidence/1.0",
+      "evidence": "/assets/performance/frontier-performance-v1.json",
+      "evidence_sha256": "eba2656ffc7888124ed99b9913b06a0f48ed10ff0089feaac9652c850e49a5b4",
+      "baseline_source_commit": "5754d67f2144f734f2ebe94fbf909280fd913a17",
+      "implementation_commit": "443a54adae8397dedb846a926e70f5550fc5fe4c",
+      "evidence_publish_commit": "676f5a4371179daaa25c4005e7f92f99e9fa5fe2",
+      "resource_bytes_reduction_percent": 58.35,
+      "webgl_ready_delta_ms": 18
+    },
+    "accessibility": {
+      "schema": "steward.frontier-accessibility-evidence/1.0",
+      "evidence": "/assets/accessibility/frontier-accessibility-v1.json",
+      "evidence_sha256": "77531777a5603bde500058acd572daab04b7e88d0c998bb438d6be504710888a",
+      "implementation_commit": "0d1ea274198f75d4d65b4911e263cd5612b0022d",
+      "evidence_publish_commit": "41b9d2d4ad6689db6aeb831cfec0e4fe6548b815",
+      "role_controls": 6,
+      "state_controls": 12,
+      "auto_mode_live_region": "off",
+      "explicit_preview_live_region": "polite"
+    }
+  },
+  "qa": {
+    "rig_structure": true,
+    "animation_clips": true,
+    "state_asset_integrity": true,
+    "compact_presence_browser": true,
+    "motion_all_states": true,
+    "reduced_motion_stability": true,
+    "inspector_sync": true,
+    "persona_role_integrity": true,
+    "persona_role_browser": true,
+    "role_state_composition_72": true,
+    "single_boot_runtime": true,
+    "performance_measured": true,
+    "accessibility_semantics": true
+  },
+  "delivery": {
+    "provider": "higgsfield",
+    "production_status": "deployed",
+    "public_edge_status": "blocked-401-unauthenticated",
+    "issue": "Aftergraph/STEWARD-by-Aftergraph#28",
+    "claim": "Do not interpret provider deployment status as anonymous public reachability."
+  },
+  "claim_boundary": "All visual surfaces are projections only. They do not create authority, execution truth, approval truth, identity authority, or verification truth."
+}
