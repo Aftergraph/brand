@@ -62,6 +62,21 @@ for (const product of ['work-intelligence','studio','sentinel','steward']) {
       if (role.authority_effect !== false) errors.push(`steward: persona role authority must remain false: ${role.id}`);
       if (role.verification_effect !== false) errors.push(`steward: persona role verification must remain false: ${role.id}`);
     }
+    if (p.frontier_runtime_evidence !== '3d/frontier-runtime.evidence.json') errors.push('steward: frontier runtime evidence path drift');
+    const frontier=readJson('products/steward/3d/frontier-runtime.evidence.json');
+    const expectedFrontierStates=['idle','thinking','planning','executing','inspecting','waiting','blocked','approval','verifying','approving','succeeded','failed'];
+    const expectedPersonaRoles=['reviewer','subscriber','maintainer','observer','auditor','integrator'];
+    if (frontier.id !== 'steward.frontier-runtime-evidence/1.0' || frontier.source_scene?.revision !== 5) errors.push('steward: invalid frontier runtime evidence id/revision');
+    if (frontier.source_scene?.armature !== 'STEWARD_Rig' || frontier.source_scene?.bone_count !== 20) errors.push('steward: frontier runtime rig drift');
+    if (frontier.source_scene?.proportion_profile !== 'frontier-proportions/1.0' || frontier.source_scene?.material_profile !== 'frontier-material/1.1') errors.push('steward: frontier runtime profile drift');
+    if (frontier.verified_runtime?.sha256 !== '018fb057659975d67a3f6de3dc90a5167bc046d3bf366e3c0a9fe6ec96ecf6a8') errors.push('steward: frontier runtime GLB digest drift');
+    if (JSON.stringify(frontier.verified_runtime?.animation_names||[]) !== JSON.stringify(['blink','idle','verify'])) errors.push('steward: frontier runtime clip drift');
+    if (JSON.stringify(frontier.surfaces?.state_pack?.states||[]) !== JSON.stringify(expectedFrontierStates)) errors.push('steward: frontier state vocabulary drift');
+    if (JSON.stringify(frontier.surfaces?.persona_roles?.roles||[]) !== JSON.stringify(expectedPersonaRoles)) errors.push('steward: frontier persona vocabulary drift');
+    if (frontier.surfaces?.motion_runtime?.manifest_sha256 !== '047464f20b75763d14d969fbb14fa16780a7d6dfdb554cb3a90e9e8809e92378') errors.push('steward: motion runtime manifest digest drift');
+    if (frontier.surfaces?.persona_roles?.manifest_sha256 !== '7ba7453e8c6ef610dee90aa74fc4966da83c5e425cfd9972e50c2152571bba09') errors.push('steward: persona manifest digest drift');
+    if (frontier.delivery?.public_edge_status !== 'blocked-401-unauthenticated') errors.push('steward: public edge status must not be upgraded without evidence');
+    for (const value of Object.values(frontier.qa||{})) if (value !== true) errors.push('steward: frontier QA evidence incomplete');
     const lottie=readJson('products/steward/motion/steward-presence.lottie.json');
     if (lottie.fr !== 60 || (lottie.markers||[]).length !== 12) errors.push('steward: invalid Lottie state markers');
     const rig=readJson('products/steward/3d/reference-model.evidence.json');
