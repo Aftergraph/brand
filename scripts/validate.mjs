@@ -75,6 +75,14 @@ for (const product of ['work-intelligence','studio','sentinel','steward']) {
     if (JSON.stringify(frontier.surfaces?.persona_roles?.roles||[]) !== JSON.stringify(expectedPersonaRoles)) errors.push('steward: frontier persona vocabulary drift');
     if (frontier.surfaces?.motion_runtime?.manifest_sha256 !== '047464f20b75763d14d969fbb14fa16780a7d6dfdb554cb3a90e9e8809e92378') errors.push('steward: motion runtime manifest digest drift');
     if (frontier.surfaces?.persona_roles?.manifest_sha256 !== '7ba7453e8c6ef610dee90aa74fc4966da83c5e425cfd9972e50c2152571bba09') errors.push('steward: persona manifest digest drift');
+    if (frontier.surfaces?.role_state_composition?.manifest_sha256 !== '6d726e68640d7b05603586598771100f79f655af51bfd3af0d3dbc4e542d77b6') errors.push('steward: role/state composition manifest digest drift');
+    if (frontier.surfaces?.role_state_composition?.evidence_sha256 !== 'b0d4bb0f540ddd137938418ee6d50b7fb75177c06ab4e446e76bdd56bb948c0a') errors.push('steward: role/state composition evidence digest drift');
+    if (frontier.surfaces?.role_state_composition?.combinations !== 72 || frontier.surfaces?.role_state_composition?.glb_loads_per_live_runtime !== 1) errors.push('steward: role/state composition coverage drift');
+    if (frontier.surfaces?.performance?.evidence_sha256 !== 'eba2656ffc7888124ed99b9913b06a0f48ed10ff0089feaac9652c850e49a5b4') errors.push('steward: performance evidence digest drift');
+    if (frontier.surfaces?.performance?.resource_bytes_reduction_percent !== 58.35 || frontier.surfaces?.performance?.webgl_ready_delta_ms !== 18) errors.push('steward: performance evidence metric drift');
+    if (frontier.surfaces?.accessibility?.evidence_sha256 !== '77531777a5603bde500058acd572daab04b7e88d0c998bb438d6be504710888a') errors.push('steward: accessibility evidence digest drift');
+    if (frontier.surfaces?.accessibility?.role_controls !== 6 || frontier.surfaces?.accessibility?.state_controls !== 12) errors.push('steward: accessibility control-count drift');
+    if (frontier.surfaces?.accessibility?.auto_mode_live_region !== 'off' || frontier.surfaces?.accessibility?.explicit_preview_live_region !== 'polite') errors.push('steward: accessibility live-region drift');
     if (frontier.delivery?.public_edge_status !== 'blocked-401-unauthenticated') errors.push('steward: public edge status must not be upgraded without evidence');
     for (const value of Object.values(frontier.qa||{})) if (value !== true) errors.push('steward: frontier QA evidence incomplete');
     const lottie=readJson('products/steward/motion/steward-presence.lottie.json');
