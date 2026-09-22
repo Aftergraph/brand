@@ -78,6 +78,43 @@
         "auditor",
         "integrator"
       ]
+    },
+    "role_state_composition": {
+      "schema": "steward.role-state-composition-evidence/1.0",
+      "runtime": "steward.role-state-composition/1.0",
+      "runtime_strategy": "single-boot-live-composition",
+      "manifest": "/assets/motion/persona-role-accessories-v1.json",
+      "manifest_sha256": "6d726e68640d7b05603586598771100f79f655af51bfd3af0d3dbc4e542d77b6",
+      "evidence": "/assets/motion/persona-role-accessories-v1.evidence.json",
+      "evidence_sha256": "b0d4bb0f540ddd137938418ee6d50b7fb75177c06ab4e446e76bdd56bb948c0a",
+      "implementation_source_commit": "41081850a68b358b9313897adcd763455f69285c",
+      "evidence_publish_commit": "5754d67f2144f734f2ebe94fbf909280fd913a17",
+      "roles": 6,
+      "states": 12,
+      "combinations": 72,
+      "glb_loads_per_live_runtime": 1,
+      "fallback": "state-semantic-priority"
+    },
+    "performance": {
+      "schema": "steward.frontier-performance-evidence/1.0",
+      "evidence": "/assets/performance/frontier-performance-v1.json",
+      "evidence_sha256": "eba2656ffc7888124ed99b9913b06a0f48ed10ff0089feaac9652c850e49a5b4",
+      "baseline_source_commit": "5754d67f2144f734f2ebe94fbf909280fd913a17",
+      "implementation_commit": "443a54adae8397dedb846a926e70f5550fc5fe4c",
+      "evidence_publish_commit": "676f5a4371179daaa25c4005e7f92f99e9fa5fe2",
+      "resource_bytes_reduction_percent": 58.35,
+      "webgl_ready_delta_ms": 18
+    },
+    "accessibility": {
+      "schema": "steward.frontier-accessibility-evidence/1.0",
+      "evidence": "/assets/accessibility/frontier-accessibility-v1.json",
+      "evidence_sha256": "77531777a5603bde500058acd572daab04b7e88d0c998bb438d6be504710888a",
+      "implementation_commit": "0d1ea274198f75d4d65b4911e263cd5612b0022d",
+      "evidence_publish_commit": "41b9d2d4ad6689db6aeb831cfec0e4fe6548b815",
+      "role_controls": 6,
+      "state_controls": 12,
+      "auto_mode_live_region": "off",
+      "explicit_preview_live_region": "polite"
     }
   },
   "qa": {
@@ -89,7 +126,11 @@
     "reduced_motion_stability": true,
     "inspector_sync": true,
     "persona_role_integrity": true,
-    "persona_role_browser": true
+    "persona_role_browser": true,
+    "role_state_composition_72": true,
+    "single_boot_runtime": true,
+    "performance_measured": true,
+    "accessibility_semantics": true
   },
   "delivery": {
     "provider": "higgsfield",
