@@ -22,7 +22,7 @@ Authority remains with AIE. Policy enforcement remains with Trust Gateway. Durab
 
 - `identity/bounded-node.svg`: canonical product identity mark.
 - `tokens.json`: product-scoped Custody & Cream palette.
-- `CHARACTER-LAW.md`: immutable character and state rules.
+- `CHARACTER-LAW.md`: immutable character, role and state rules.\n- `persona-roles.json`: canonical six-role visual grammar and truth boundary.
 - `motion/presence-contract.json`: semantic motion and accessibility contract.
 - `motion/steward-presence.lottie.json`: portable Lottie presence signal with 12 named state markers.
 - `3d/reference-model.evidence.json`: evidence for the deterministic 3D reference build.
