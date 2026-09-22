@@ -2,93 +2,70 @@
 
 **Status:** proposed / needs brand-architecture review  
 **Owner:** Aftergraph  
+**Selected working direction:** **Endorsed POCK**  
 **Candidate identity:** **Orb-O**  
+**Endorsement:** **POCK by Aftergraph**  
 **Candidate tagline:** **AI teammates. Real work.**
 
-## Evidence recovered
+## Direction
 
-The September 22, 2026 POCK branding work produced a consistent candidate family centered on the Orb-O mark:
+POCK remains owned and endorsed by Aftergraph while retaining a distinctive product motif. The Orb-O is therefore developed as a POCK product symbol, not as a replacement for the Aftergraph master brand.
 
-- POCK wordmark with the `O` rendered as a blue → violet → cyan activity/orb symbol.
-- A smaller satellite dot at the upper-right of the orbital mark.
-- Dark and light lockups.
-- Standalone app icon / favicon treatment.
-- Monochrome treatment.
-- Activity-orb state family.
-- Brand-system compositions using Space Grotesk for brand/headlines and Inter for UI/body.
-- Candidate palette observed in the brand-system grid:
-  - Ink `#0B0D12`
-  - Cloud `#F6F7FB`
-  - Cobalt `#3D63FF`
-  - Violet `#7C5CFF`
-  - Mint / Verified `#27C7A1`
-  - Amber / Needs You `#F3A83B`
+The candidate asset family lives under `products/pock/candidate/` until PR #38 resolves promotion.
 
-Recovered candidate asset names from the working set include:
+## Recovered evidence
 
-- `POCK-logo med lysende orb.png`
-- `POCK-logo med glødende planetemblem.png`
-- `POCK brandidentitet og logopakke.png`
-- `POCK Brand System Grid.png`
-- `POCK brandguide med AI-orbtema.png`
-- `Neon planetorbit i mørk appikon.png`
+The September 22, 2026 branding work consistently used:
 
-These are evidence of the design direction, not yet repository-canonical production assets.
+- a POCK wordmark where the `O` becomes a blue → violet → cyan orbital mark;
+- a smaller satellite dot at the upper-right;
+- dark/light lockups;
+- app-icon and favicon forms;
+- monochrome treatment;
+- activity-orb states;
+- Space Grotesk for brand/headlines and Inter for UI/body;
+- the tagline **AI teammates. Real work.**
 
-## Canonical collision
+Source identity and provenance are recorded in `candidate/evidence/source-registry.json`. Raw source hashing is explicitly marked BLOCKED because the project-library source bytes could not be materialized; hashes are not invented.
 
-Current `BRAND-ARCHITECTURE.md` defines **Aftergraph as the master brand** and product treatment as:
-
-> `AFTERGRAPH / PRODUCT`
-
-with an endorsed lockup, product motif, limited accent, and no implication that a repository/service automatically becomes an independent brand.
-
-The recovered POCK work is visually closer to an autonomous identity than the current product rule permits.
-
-Therefore this change intentionally **does not**:
-
-- add POCK to `registry.json` as an active product,
-- declare the Orb-O mark canonical,
-- replace Aftergraph's master mark,
-- create public-release assets,
-- or alter the master-brand architecture.
-
-## Decision required
-
-Resolve one of these explicitly before canonical asset import:
-
-1. **Endorsed POCK** — preserve Orb-O as a product motif/symbol but use an `AFTERGRAPH / POCK` or `POCK by Aftergraph` endorsed lockup.
-2. **Exception / sub-brand** — amend Brand Architecture to permit POCK a stronger autonomous identity while retaining explicit Aftergraph ownership/endorsement.
-3. **Master-brand only** — retire the autonomous POCK wordmark and use Aftergraph product syntax exclusively.
-
-## Proposed asset hierarchy after decision
+## Candidate hierarchy
 
 ```text
 products/pock/
 ├── manifest.json
 ├── README.md
-├── identity/
-│   ├── lockup-dark.svg
-│   ├── lockup-light.svg
-│   ├── symbol.svg
-│   └── monochrome.svg
-├── app/
-│   ├── app-icon.svg
-│   └── favicon.svg
-├── states/
-│   ├── idle.svg
-│   ├── working.svg
-│   ├── searching.svg
-│   ├── solving.svg
-│   ├── needs-you.svg
-│   ├── verified.svg
-│   └── error.svg
-└── evidence/
-    └── source-registry.json
+└── candidate/
+    ├── tokens.json
+    ├── identity/
+    │   ├── symbol.svg
+    │   ├── lockup-dark.svg
+    │   ├── lockup-light.svg
+    │   └── monochrome.svg
+    ├── app/
+    │   ├── app-icon.svg
+    │   └── favicon.svg
+    ├── states/
+    │   ├── idle.svg
+    │   ├── working.svg
+    │   ├── searching.svg
+    │   ├── solving.svg
+    │   ├── needs-you.svg
+    │   ├── verified.svg
+    │   └── error.svg
+    └── evidence/
+        └── source-registry.json
 ```
 
-The production SVGs should be reconstructed/vectorized from the approved mark, not treated as screenshots cropped out of a brand board.
+## Promotion gate
+
+Candidate assets may move into canonical identity paths only after:
+
+1. Brand OS validation and tests pass.
+2. PR #38 explicitly approves endorsed POCK treatment.
+3. The asset family is visually reviewed at small and large sizes.
+4. Source provenance remains attached.
+5. Runtime semantics remain separate from the activity-orb visual layer.
 
 ## Runtime boundary
 
-The Orb-O and activity-orb visuals are presentation only. They must never become evidence of completion, approval, or verification. POCK runtime state remains governed by its canonical execution and verification contracts.
+Activity orbs are descriptive presentation. A green or `verified` visual must never itself be treated as verification evidence. Approval, completion, authority, and verification remain governed by POCK/Aftergraph runtime contracts.

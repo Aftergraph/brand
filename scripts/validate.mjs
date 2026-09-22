@@ -30,10 +30,19 @@ for (const file of svgFiles) {
   if (/Provisional home of ABDE Intelligence/i.test(content)) errors.push(`${rel}: forbidden current legacy copy`);
 }
 for (const name of [...(semantics.concepts||[]).map(x=>x), ...(semantics.states||[]).map(x=>`state-${x}`)]) if (!fs.existsSync(path.join(root,'semantics/icons',`${name}.svg`))) errors.push(`missing generated symbol: ${name}`);
-for (const product of ['work-intelligence','studio','sentinel']) {
+for (const product of ['work-intelligence','studio','sentinel','pock']) {
   const p=readJson(`products/${product}/manifest.json`);
   if (p.brand_version !== manifest.version) errors.push(`${product}: brand version drift`);
   if (product==='sentinel' && (p.identity !== null || p.status !== 'blocked-naming-review')) errors.push('Sentinel identity must remain blocked until governed naming resolution');
+  if (product==='pock') {
+    if (p.identity !== null || p.status !== 'proposed-identity-review') errors.push('POCK identity must remain candidate-only until governed brand approval');
+    const candidateAssets = collect(p.candidate_identity?.assets);
+    if (!candidateAssets.length) errors.push('POCK candidate asset registry is empty');
+    for (const file of candidateAssets) {
+      if (!file.startsWith('products/pock/candidate/')) errors.push(`POCK candidate asset escaped candidate root: ${file}`);
+      if (!fs.existsSync(path.join(root,file))) errors.push(`POCK candidate asset missing: ${file}`);
+    }
+  }
 }
 
 if (errors.length) { console.error(`Brand OS validation failed (${errors.length})`); errors.forEach(e=>console.error(`ERROR ${e}`)); process.exit(1); }

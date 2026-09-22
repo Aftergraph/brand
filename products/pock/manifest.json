@@ -9,11 +9,32 @@
   "identity": null,
   "candidate_identity": {
     "name": "Orb-O",
+    "endorsement": "POCK by Aftergraph",
     "description": "POCK wordmark with a blue-violet-cyan orbital O/symbol and satellite dot.",
-    "tagline": "AI teammates. Real work."
+    "tagline": "AI teammates. Real work.",
+    "assets_root": "products/pock/candidate",
+    "tokens": "products/pock/candidate/tokens.json",
+    "assets": {
+      "symbol": "products/pock/candidate/identity/symbol.svg",
+      "lockup_dark": "products/pock/candidate/identity/lockup-dark.svg",
+      "lockup_light": "products/pock/candidate/identity/lockup-light.svg",
+      "monochrome": "products/pock/candidate/identity/monochrome.svg",
+      "app_icon": "products/pock/candidate/app/app-icon.svg",
+      "favicon": "products/pock/candidate/app/favicon.svg",
+      "states": {
+        "idle": "products/pock/candidate/states/idle.svg",
+        "working": "products/pock/candidate/states/working.svg",
+        "searching": "products/pock/candidate/states/searching.svg",
+        "solving": "products/pock/candidate/states/solving.svg",
+        "needs_you": "products/pock/candidate/states/needs-you.svg",
+        "verified": "products/pock/candidate/states/verified.svg",
+        "error": "products/pock/candidate/states/error.svg"
+      }
+    },
+    "evidence": "products/pock/candidate/evidence/source-registry.json"
   },
   "blockers": [
-    "POCK currently presents as an autonomous visual identity while Aftergraph BRAND-ARCHITECTURE.md requires endorsed product treatment."
+    "Aftergraph/brand#38 must resolve the endorsed-product treatment before candidate assets are promoted to canonical identity paths."
   ],
-  "claim_boundary": "No POCK identity is canonical or approved for public distribution until the product endorsement treatment is resolved in Aftergraph/brand. This record does not alter runtime, governance, authority, or verification semantics."
+  "claim_boundary": "Candidate POCK visuals are presentation assets only. They do not establish runtime authority, approval, completion, or verification state."
 }
