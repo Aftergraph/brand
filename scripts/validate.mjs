@@ -42,6 +42,26 @@ for (const product of ['work-intelligence','studio','sentinel','steward']) {
     for (const [name,value] of Object.entries(expected)) if (scopedTokens.colors?.[name] !== value) errors.push(`steward token drift: ${name}`);
     const presence=readJson('products/steward/motion/presence-contract.json');
     if (presence.id !== 'steward.presence.v1' || (presence.states||[]).length !== 12) errors.push('steward: invalid presence contract');
+    if (p.persona_role_contract !== 'persona-roles.json') errors.push('steward: persona role contract path drift');
+    const personaRoles=readJson('products/steward/persona-roles.json');
+    const expectedRoles=['reviewer','subscriber','maintainer','observer','auditor','integrator'];
+    const expectedRoleAccents={
+      reviewer:'control_cyan',
+      subscriber:'system_blue',
+      maintainer:'steward_copper',
+      observer:'slate',
+      auditor:'pine_teal',
+      integrator:'decision_amber'
+    };
+    if (personaRoles.schema_version !== 'steward.persona-role-visual/1.0') errors.push('steward: invalid persona role schema version');
+    if (personaRoles.owner !== 'Aftergraph/brand' || personaRoles.product !== 'STEWARD') errors.push('steward: invalid persona role owner/product');
+    const observedRoles=(personaRoles.roles||[]).map(x=>x.id);
+    if (JSON.stringify(observedRoles) !== JSON.stringify(expectedRoles)) errors.push('steward: canonical persona role vocabulary drift');
+    for (const role of personaRoles.roles||[]) {
+      if (expectedRoleAccents[role.id] !== role.accent_token) errors.push(`steward: persona role accent drift: ${role.id}`);
+      if (role.authority_effect !== false) errors.push(`steward: persona role authority must remain false: ${role.id}`);
+      if (role.verification_effect !== false) errors.push(`steward: persona role verification must remain false: ${role.id}`);
+    }
     const lottie=readJson('products/steward/motion/steward-presence.lottie.json');
     if (lottie.fr !== 60 || (lottie.markers||[]).length !== 12) errors.push('steward: invalid Lottie state markers');
     const rig=readJson('products/steward/3d/reference-model.evidence.json');
