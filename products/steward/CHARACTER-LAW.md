@@ -16,6 +16,14 @@ STEWARD is one Aftergraph node entity expressed through roles and states. Roles 
 - The Bounded Node geometry is canonical. Do not close the custody-ring gap or move the copper node.
 - Character animation is a projection of system state. It does not become a source of authority, execution truth, or verification truth.
 
+## Canonical role vocabulary
+
+STEWARD role visuals follow `persona-roles.json` and the actor-persona role vocabulary:
+
+Reviewer, Subscriber, Maintainer, Observer, Auditor, Integrator.
+
+Every role is the same STEWARD entity. Role differences are restricted to accent, emissive state, functional accessory and pose. Role selection does not create authority or verification truth.
+
 ## Canonical state vocabulary
 
 Idle, Thinking, Planning, Executing, Inspecting, Waiting, Blocked, Approval, Verifying, Approving, Succeeded, Failed.
