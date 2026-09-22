@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="POCK working activity orb">
 <title>POCK working activity orb</title>
-<defs><linearGradient id="g" x1="40" y1="216" x2="216" y2="40"><stop stop-color="#3D63FF"/><stop offset=".55" stop-color="#7C5CFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><circle cx="128" cy="128" r="76" fill="none" stroke="url(#g)" stroke-width="17"/><path d="M78 128c18-44 82-62 110-20 24 36-10 78-50 78-35 0-61-27-60-58Z" fill="none" stroke="#7C5CFF" stroke-width="10" opacity=".65"/>
+<defs><linearGradient id="g" x1="40" y1="216" x2="216" y2="40"><stop stop-color="#3D63FF"/><stop offset=".55" stop-color="#7C5CFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs>
+<circle cx="128" cy="128" r="76" fill="none" stroke="url(#g)" stroke-width="17" stroke-linecap="round" stroke-dasharray="330 148" transform="rotate(-90 128 128)"/>
+<circle cx="188" cy="70" r="13" fill="url(#g)"/>
 </svg>
