@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "brand_version": "1.1.0",
+  "id": "pock",
+  "display_name": "POCK",
+  "parent": "Aftergraph",
+  "class": "product-needs-review",
+  "status": "proposed-identity-review",
+  "identity": null,
+  "candidate_identity": {
+    "name": "Orb-O",
+    "description": "POCK wordmark with a blue-violet-cyan orbital O/symbol and satellite dot.",
+    "tagline": "AI teammates. Real work."
+  },
+  "blockers": [
+    "POCK currently presents as an autonomous visual identity while Aftergraph BRAND-ARCHITECTURE.md requires endorsed product treatment."
+  ],
+  "claim_boundary": "No POCK identity is canonical or approved for public distribution until the product endorsement treatment is resolved in Aftergraph/brand. This record does not alter runtime, governance, authority, or verification semantics."
+}
