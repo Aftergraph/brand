@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "product": "POCK",
+  "identity": "Orb-O",
+  "status": "canonical",
+  "promotion_pr": "Aftergraph/brand#38",
+  "candidate_root": "products/pock/candidate",
+  "assets": [
+    {"path":"products/pock/identity/symbol.svg","git_blob_sha":"627c43c353f9bb9ab6fbb97f9f2f37bc24d93dfb"},
+    {"path":"products/pock/identity/lockup-dark.svg","git_blob_sha":"2548fd60aed2d917804148624fe2f2999bf70bcf"},
+    {"path":"products/pock/identity/lockup-light.svg","git_blob_sha":"92b0ff3c64b47e7f852e38787f884811ba0cca6e"},
+    {"path":"products/pock/identity/monochrome.svg","git_blob_sha":"f85a92d87a097c96e74e41225ca444411dc0684f"},
+    {"path":"products/pock/app/app-icon.svg","git_blob_sha":"3934d47f9b0a9ec9df1d4a7e80deeeec80cc09e6"},
+    {"path":"products/pock/app/favicon.svg","git_blob_sha":"597d74fd0577d6c4a6b82c54c9b07f72a923f2c8"},
+    {"path":"products/pock/states/idle.svg","git_blob_sha":"c35e1fad52f2643fb5fffe7c46dd3e975deb5c9b"},
+    {"path":"products/pock/states/working.svg","git_blob_sha":"bc231dd12157db50c8150f9642444f307a48c33a"},
+    {"path":"products/pock/states/searching.svg","git_blob_sha":"3f048327d908179dce1fbba8c63966b8302d26a0"},
+    {"path":"products/pock/states/solving.svg","git_blob_sha":"3ee19df6dbdd20cea412d20908975f67c9ba4f26"},
+    {"path":"products/pock/states/needs-you.svg","git_blob_sha":"0be6805d2bbdbbee194bf9d46789a5d42d18ef9e"},
+    {"path":"products/pock/states/verified.svg","git_blob_sha":"f08b4806aa4becd7f47143fd16ae8509f02ff572"},
+    {"path":"products/pock/states/error.svg","git_blob_sha":"5821125d9fef8208dfaa2177e763eaf111f62661"}
+  ],
+  "invariant": "Each canonical visual asset above is the same reviewed Git blob used by the final candidate family; promotion changed ownership/path, not artwork."
+}

@@ -14,8 +14,8 @@
   },
   "classes": {
     "corporate": ["brand", ".github", "aftergraph.org"],
-    "products": ["studio", "wi-frontend"],
-    "product_needs_review": ["sentinel", "pock"],
+    "products": ["studio", "wi-frontend", "pock"],
+    "product_needs_review": ["sentinel"],
     "technologies": ["works-execution", "trust-gateway", "runtime", "model-registry", "aftergraph-cron-fabric", "context-continuity", "wi-backend", "skills-vault"],
     "research": ["aie", "afm", "continuum", "intelligence-systems-research", "llm-research-development"],
     "governance": ["after-graph-governance"],
@@ -25,7 +25,14 @@
     "work-intelligence": { "display_name": "Work Intelligence", "status": "active", "accent": "system_blue" },
     "studio": { "display_name": "Studio", "status": "active", "accent": "authority_violet" },
     "sentinel": { "display_name": "Sentinel", "status": "needs-review", "blocker": "Aftergraph/brand#19 and Aftergraph/sentinel#7" },
-    "pock": { "display_name": "POCK", "status": "needs-review", "blocker": "Aftergraph/brand#38", "candidate_identity": "Orb-O", "endorsement": "POCK by Aftergraph" }
+    "pock": {
+      "display_name": "POCK",
+      "status": "active",
+      "identity": "Orb-O",
+      "endorsement": "POCK by Aftergraph",
+      "tagline": "AI teammates. Real work.",
+      "accent": "orb_gradient"
+    }
   },
   "evidence_classes": ["E0", "E1", "E2", "E3", "E4", "E5", "E6"],
   "legacy_public_terms": ["Provisional home of ABDE Intelligence", "ABDE Intelligence", "Autonomous Venture Company"],
