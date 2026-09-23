@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="POCK app icon">
+<title>POCK app icon</title>
+<defs>
+  <linearGradient id="bg" x1="80" y1="944" x2="944" y2="80" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#080A10"/>
+    <stop offset="1" stop-color="#11162A"/>
+  </linearGradient>
+  <linearGradient id="orb" x1="248" y1="784" x2="794" y2="226" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#3D63FF"/>
+    <stop offset=".52" stop-color="#7C5CFF"/>
+    <stop offset="1" stop-color="#22D3EE"/>
+  </linearGradient>
+</defs>
+<rect x="48" y="48" width="928" height="928" rx="224" fill="url(#bg)" stroke="#313A6B" stroke-width="10"/>
+<circle cx="476" cy="548" r="232" fill="none" stroke="url(#orb)" stroke-width="92"/>
+<circle cx="724" cy="284" r="58" fill="url(#orb)"/>
+</svg>

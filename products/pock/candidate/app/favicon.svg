@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="POCK favicon">
+<title>POCK favicon</title>
+<defs><linearGradient id="orb" x1="8" y1="56" x2="58" y2="6"><stop stop-color="#3D63FF"/><stop offset=".52" stop-color="#7C5CFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs>
+<rect x="2" y="2" width="60" height="60" rx="14" fill="#0B0D12"/>
+<circle cx="29" cy="34" r="15" fill="none" stroke="url(#orb)" stroke-width="7"/>
+<circle cx="47" cy="15" r="4" fill="url(#orb)"/>
+</svg>

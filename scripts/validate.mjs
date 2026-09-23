@@ -30,10 +30,30 @@ for (const file of svgFiles) {
   if (/Provisional home of ABDE Intelligence/i.test(content)) errors.push(`${rel}: forbidden current legacy copy`);
 }
 for (const name of [...(semantics.concepts||[]).map(x=>x), ...(semantics.states||[]).map(x=>`state-${x}`)]) if (!fs.existsSync(path.join(root,'semantics/icons',`${name}.svg`))) errors.push(`missing generated symbol: ${name}`);
-for (const product of ['work-intelligence','studio','sentinel']) {
+
+for (const product of ['work-intelligence','studio','sentinel','pock']) {
   const p=readJson(`products/${product}/manifest.json`);
   if (p.brand_version !== manifest.version) errors.push(`${product}: brand version drift`);
   if (product==='sentinel' && (p.identity !== null || p.status !== 'blocked-naming-review')) errors.push('Sentinel identity must remain blocked until governed naming resolution');
+  if (product==='pock') {
+    if (p.status !== 'active' || !p.identity) errors.push('POCK must be active with a canonical identity path after promotion');
+    if (registry.products?.pock?.status !== 'active') errors.push('POCK registry entry must be active after promotion');
+    if ((registry.classes?.product_needs_review || []).includes('pock')) errors.push('POCK cannot remain in product_needs_review after promotion');
+    if (!(registry.classes?.products || []).includes('pock')) errors.push('POCK must be listed in products after promotion');
+
+    const canonicalAssets = collect(p.identity_system?.assets);
+    if (!canonicalAssets.length) errors.push('POCK canonical asset registry is empty');
+    for (const file of canonicalAssets) {
+      if (!file.startsWith('products/pock/')) errors.push(`POCK canonical asset escaped product root: ${file}`);
+      if (file.startsWith('products/pock/candidate/')) errors.push(`POCK canonical manifest still references candidate asset: ${file}`);
+      if (!fs.existsSync(path.join(root,file))) errors.push(`POCK canonical asset missing: ${file}`);
+    }
+
+    const pockTokens=readJson('products/pock/tokens.json');
+    if (pockTokens.status !== 'canonical') errors.push('POCK product tokens must be canonical');
+    const qa=fs.readFileSync(path.join(root,'products/pock/showcase/design-qa.md'),'utf8');
+    if (!/Final result:\*\* passed|Final result:\s*passed/i.test(qa)) errors.push('POCK design QA must be passed before canonical promotion');
+  }
 }
 
 if (errors.length) { console.error(`Brand OS validation failed (${errors.length})`); errors.forEach(e=>console.error(`ERROR ${e}`)); process.exit(1); }
