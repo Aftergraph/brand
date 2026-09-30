@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "brand_version": "1.1.0",
+  "id": "pock",
+  "display_name": "POCK",
+  "parent": "Aftergraph",
+  "class": "product",
+  "status": "active",
+  "identity": "identity/lockup-dark.svg",
+  "identity_system": {
+    "name": "Orb-O",
+    "endorsement": "POCK by Aftergraph",
+    "description": "POCK wordmark with a blue-violet-cyan orbital O/symbol and satellite dot.",
+    "tagline": "AI teammates. Real work.",
+    "tokens": "products/pock/tokens.json",
+    "assets": {
+      "symbol": "products/pock/identity/symbol.svg",
+      "lockup_dark": "products/pock/identity/lockup-dark.svg",
+      "lockup_light": "products/pock/identity/lockup-light.svg",
+      "monochrome": "products/pock/identity/monochrome.svg",
+      "app_icon": "products/pock/app/app-icon.svg",
+      "favicon": "products/pock/app/favicon.svg",
+      "states": {
+        "idle": "products/pock/states/idle.svg",
+        "working": "products/pock/states/working.svg",
+        "searching": "products/pock/states/searching.svg",
+        "solving": "products/pock/states/solving.svg",
+        "needs_you": "products/pock/states/needs-you.svg",
+        "verified": "products/pock/states/verified.svg",
+        "error": "products/pock/states/error.svg"
+      }
+    },
+    "evidence": {
+      "source_registry": "products/pock/evidence/source-registry.json",
+      "canonical_assets": "products/pock/evidence/canonical-assets.json",
+      "visual_qa": "products/pock/evidence/VISUAL-QA.md",
+      "design_qa": "products/pock/showcase/design-qa.md"
+    }
+  },
+  "provenance": {
+    "promotion_pr": "Aftergraph/brand#38",
+    "candidate_root": "products/pock/candidate",
+    "promotion_rule": "Canonical assets are byte-identical Git blobs promoted from the reviewed candidate family."
+  },
+  "claim_boundary": "POCK visuals are presentation assets only. They do not establish runtime authority, approval, completion, or verification state."
+}

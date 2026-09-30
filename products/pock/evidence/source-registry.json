@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "product": "POCK",
+  "identity": "Orb-O",
+  "status": "source-evidence",
+  "sources": [
+    {
+      "name": "POCK-logo med lysende orb.png",
+      "file_id": "file_00000000938481f4b0f3be0f0c1b2634",
+      "library_file_id": "libfile_d3fb696f3aa481918d8db0187515440f",
+      "created_at": "2026-09-22T17:24:11.741790Z",
+      "size_bytes": 345381,
+      "sha256": null
+    },
+    {
+      "name": "POCK-logo med glødende planetemblem.png",
+      "file_id": "file_00000000bf1481fbb770dc288b4dc481",
+      "library_file_id": "libfile_ebba9460de288191bf301ee4bd4e82bd",
+      "created_at": "2026-09-22T17:24:26.507039Z",
+      "size_bytes": 459544,
+      "sha256": null
+    },
+    {
+      "name": "POCK brandidentitet og logopakke.png",
+      "file_id": "file_00000000b67c820b951f74b9d3e3aa4e",
+      "library_file_id": "libfile_dfe7375375ec8191a9f34ab2819e664e",
+      "created_at": "2026-09-22T17:27:04.762684Z",
+      "size_bytes": 1530809,
+      "sha256": null
+    },
+    {
+      "name": "POCK Brand System Grid.png",
+      "file_id": "file_000000003dd881f48d981e7104804b87",
+      "library_file_id": "libfile_2218b80650688191ac160d51842a0d38",
+      "created_at": "2026-09-22T17:41:58.266560Z",
+      "size_bytes": 1732472,
+      "sha256": null
+    }
+  ],
+  "raw_source_hash_status": "BLOCKED",
+  "raw_source_hash_blocker": "Project-library raw raster bytes were not authorized for materialization in the execution environment; their hashes are intentionally not fabricated.",
+  "canonical_derivation": "Canonical SVG masters were reconstructed from the recovered Orb-O direction, falsified at small sizes, reviewed through PR #38, and promoted as byte-identical Git blobs from the candidate family."
+}
