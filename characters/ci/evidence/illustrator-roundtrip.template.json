@@ -1,0 +1,22 @@
+{
+  "$schema": "aftergraph.character-illustrator-roundtrip-evidence.v1",
+  "candidateCommit": null,
+  "sourceFile": "characters/source/master/base-character.svg",
+  "inputSha256": null,
+  "operator": null,
+  "application": "Adobe Illustrator",
+  "applicationVersion": null,
+  "timestampUtc": null,
+  "openedWithoutConversionWarnings": null,
+  "artboard": { "width": 512, "height": 512, "verified": null },
+  "requiredGroupsEditable": null,
+  "gradientsEditable": { "metal-highlight": null, "visor-glow": null },
+  "independentMoveUndoVerified": null,
+  "savedAsSvg11": null,
+  "reopenedSuccessfully": null,
+  "requiredGroupsPreservedAfterReopen": null,
+  "gradientsPreservedAfterReopen": null,
+  "outputSha256": null,
+  "pass": null,
+  "notes": null
+}

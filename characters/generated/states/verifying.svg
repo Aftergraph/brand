@@ -1,0 +1,76 @@
+<!-- GENERATED FILE: edit characters/source/*, never this derived file. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="generated-title generated-desc" data-generated="aftergraph-character-composition-v1" data-kind="state" data-theme="dark" data-state="verifying">
+  <title id="generated-title">Aftergraph actor — verifying</title>
+  <desc id="generated-desc">Standalone runtime-state composition derived from canonical anatomy. Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.</desc>
+  <defs>
+    <linearGradient id="metal-highlight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5F7FA" stop-opacity="0.96"/>
+      <stop offset="0.48" stop-color="#8993A4" stop-opacity="0.78"/>
+      <stop offset="1" stop-color="#F5F7FA" stop-opacity="0.92"/>
+    </linearGradient>
+    <radialGradient id="visor-glow" cx="50%" cy="46%" r="62%">
+      <stop offset="0" stop-color="#42C7E8" stop-opacity="0.34"/>
+      <stop offset="0.58" stop-color="#42C7E8" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#42C7E8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g id="composition-root">
+  <g id="halo" data-pivot-anchor="halo-center">
+    <ellipse id="halo-ring" cx="256" cy="145" rx="124" ry="75" fill="none" stroke="#42C7E8" stroke-width="6"/>
+    <circle id="halo-node-left" cx="143" cy="132" r="13" fill="#42C7E8"/>
+    <circle id="halo-node-top" cx="256" cy="72" r="15" fill="#42C7E8"/>
+    <circle id="halo-node-right" cx="369" cy="132" r="13" fill="#42C7E8"/>
+  </g>
+  <g id="leg-left" data-pivot-anchor="hip-left">
+    <path id="thigh-left" d="M214 352 L190 401" fill="none" stroke="#8993A4" stroke-width="18" stroke-linecap="round"/>
+    <path id="shin-left" d="M190 401 L169 449" fill="none" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path id="foot-left" d="M169 449 L145 463 L184 463" fill="none" stroke="#F5F7FA" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="leg-right" data-pivot-anchor="hip-right">
+    <path id="thigh-right" d="M298 352 L322 401" fill="none" stroke="#8993A4" stroke-width="18" stroke-linecap="round"/>
+    <path id="shin-right" d="M322 401 L343 449" fill="none" stroke="#8993A4" stroke-width="16" stroke-linecap="round"/>
+    <path id="foot-right" d="M343 449 L367 463 L328 463" fill="none" stroke="#F5F7FA" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="torso" data-pivot-anchor="torso-center">
+    <path id="torso-shell" d="M188 256 L324 256 L344 356 L256 402 L168 356 Z" fill="#0E1630" stroke="#F5F7FA" stroke-width="7"/>
+    <path id="torso-panel" d="M207 273 L256 314 L305 273 L291 344 L256 366 L221 344 Z" fill="url(#metal-highlight)" opacity="0.92"/>
+    <circle id="chest-anchor-mark" cx="256" cy="319" r="5" fill="#42C7E8" opacity="0.92"/>
+  </g>
+  <g id="arm-left" data-pivot-anchor="shoulder-left">
+    <path id="upper-arm-left" d="M192 280 L160 314" fill="none" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle id="elbow-shell-left" cx="160" cy="314" r="11" fill="#0E1630" stroke="#8993A4" stroke-width="5"/>
+    <path id="forearm-left" d="M160 314 L146 349" fill="none" stroke="#F5F7FA" stroke-width="16" stroke-linecap="round"/>
+  </g>
+  <g id="arm-right" data-pivot-anchor="shoulder-right" transform="rotate(-22 320 280)">
+    <path id="upper-arm-right" d="M320 280 L352 314" fill="none" stroke="#F5F7FA" stroke-width="18" stroke-linecap="round"/>
+    <circle id="elbow-shell-right" cx="352" cy="314" r="11" fill="#0E1630" stroke="#8993A4" stroke-width="5"/>
+    <path id="forearm-right" d="M352 314 L366 349" fill="none" stroke="#F5F7FA" stroke-width="16" stroke-linecap="round"/>
+  </g>
+  <g id="hand-left" data-pivot-anchor="wrist-left">
+    <circle id="palm-left" cx="146" cy="349" r="16" fill="#42C7E8" stroke="#0E1630" stroke-width="4"/>
+    <path id="finger-left" d="M133 349 H118" fill="none" stroke="#F5F7FA" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g id="hand-right" data-pivot-anchor="wrist-right" transform="rotate(-22 320 280)">
+    <circle id="palm-right" cx="366" cy="349" r="16" fill="#42C7E8" stroke="#0E1630" stroke-width="4"/>
+    <path id="finger-right" d="M379 349 H394" fill="none" stroke="#F5F7FA" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g id="head" data-pivot-anchor="head-center">
+    <circle id="head-shell" cx="256" cy="190" r="98" fill="#0E1630" stroke="#F5F7FA" stroke-width="8"/>
+    <path id="head-highlight" d="M193 132 A92 92 0 0 1 319 132" fill="none" stroke="url(#metal-highlight)" stroke-width="7" stroke-linecap="round"/>
+    <circle id="visor" cx="256" cy="190" r="76" fill="#080C14" stroke="#42C7E8" stroke-width="4"/>
+    <circle id="visor-glow-field" cx="256" cy="190" r="72" fill="url(#visor-glow)"/>
+  </g>
+  <g id="face" data-pivot-anchor="gaze-center" data-expression="narrowed" color="#42C7E8"><g fill="currentColor"><rect x="224" y="174" width="12" height="34" rx="6"/><rect x="276" y="174" width="12" height="34" rx="6"/></g></g>
+  <g id="shading" aria-hidden="true" pointer-events="none">
+    <path id="head-rim-light" d="M184 141 A98 98 0 0 1 329 145" fill="none" stroke="#F5F7FA" stroke-width="5" stroke-linecap="round" opacity="0.38"/>
+    <path id="visor-ambient-occlusion" d="M198 226 A76 76 0 0 0 314 226" fill="none" stroke="#080C14" stroke-width="12" stroke-linecap="round" opacity="0.66"/>
+    <path id="torso-rim-light" d="M187 270 L177 350 L256 391" fill="none" stroke="#F5F7FA" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
+    <path id="torso-ambient-occlusion" d="M207 348 Q256 386 305 348" fill="none" stroke="#080C14" stroke-width="13" stroke-linecap="round" opacity="0.38"/>
+    <path id="limb-ambient-left" d="M192 286 L164 315 L150 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
+    <path id="limb-ambient-right" d="M320 286 L348 315 L362 346" fill="none" stroke="#080C14" stroke-width="5" stroke-linecap="round" opacity="0.28"/>
+  </g>
+  <g id="state-prop" data-state="verifying" data-anchor-ref="prop-right" data-pose="inspect-scan"><g id="verification-scan" transform="translate(410 282)" fill="none" stroke="#24C4AD" stroke-width="7" stroke-linecap="round">
+        <circle cx="-8" cy="0" r="58" opacity="0.32"/><path d="M-52 -26 H36 M-42 0 H42 M-30 26 H30"/><path d="M35 36 L58 59"/>
+      </g></g>
+  </g>
+</svg>

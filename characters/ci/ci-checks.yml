@@ -1,0 +1,82 @@
+version: 1
+character_source_root: characters/source
+
+illustrator_roundtrip:
+  mode: manual-logged-checklist
+  required: true
+  evidence_file: characters/ci/evidence/illustrator-roundtrip.json
+  source_file: characters/source/master/base-character.svg
+  checklist:
+    - open source_file in Adobe Illustrator without conversion warnings
+    - verify canonical artboard is exactly 512x512
+    - verify named groups halo, head, face, torso, arm-left, arm-right, hand-left, hand-right, leg-left, leg-right, shading remain independently editable
+    - verify metal-highlight and visor-glow remain editable SVG gradients
+    - move each major named group independently and undo without geometry loss
+    - save as SVG 1.1 with presentation attributes preserved
+    - reopen the saved SVG and verify all required named groups and gradients still exist
+    - record operator, application_version, timestamp_utc, input_sha256, output_sha256, pass, notes in evidence_file
+  pass_condition: evidence_file exists and pass is true for the exact candidate commit
+
+visual_regression:
+  tool: puppeteer+pixelmatch
+  required: true
+  browser: chromium-stable
+  viewport: { width: 512, height: 512, deviceScaleFactor: 1 }
+  background: "#080C14"
+  pixelmatch_threshold: 0.10
+  max_diff_pixels: 24
+  snapshot_root: characters/ci/snapshots
+  render_cases:
+    - id: base-character
+      source: characters/source/master/base-character.svg
+    - id: role-entity
+      compose: { role: entity, state: idle }
+    - id: role-guide
+      compose: { role: guide, state: idle }
+    - id: role-builder
+      compose: { role: builder, state: idle }
+    - id: role-verifier
+      compose: { role: verifier, state: idle }
+    - id: role-observer
+      compose: { role: observer, state: idle }
+    - id: role-researcher
+      compose: { role: researcher, state: idle }
+    - id: state-thinking
+      compose: { role: entity, state: thinking }
+    - id: state-planning
+      compose: { role: entity, state: planning }
+    - id: state-executing
+      compose: { role: entity, state: executing }
+    - id: state-inspecting
+      compose: { role: entity, state: inspecting }
+    - id: state-waiting
+      compose: { role: entity, state: waiting }
+    - id: state-blocked
+      compose: { role: entity, state: blocked }
+    - id: state-approval-required
+      compose: { role: entity, state: approval-required }
+    - id: state-verifying
+      compose: { role: entity, state: verifying }
+    - id: state-completed
+      compose: { role: entity, state: completed }
+    - id: state-failed
+      compose: { role: entity, state: failed }
+    - id: collision-builder-thinking
+      compose: { role: builder, state: thinking }
+    - id: collision-verifier-verifying
+      compose: { role: verifier, state: verifying }
+    - id: collision-observer-blocked
+      compose: { role: observer, state: blocked }
+    - id: collision-researcher-approval-required
+      compose: { role: researcher, state: approval-required }
+    - id: light-entity-idle
+      source: characters/generated/themes/light/compositions/entity--idle.svg
+      background: "#F5F7FA"
+    - id: light-builder-thinking
+      source: characters/generated/themes/light/compositions/builder--thinking.svg
+      background: "#F5F7FA"
+  command_contract:
+    install: npm ci
+    render: node characters/ci/render-snapshots.mjs --config characters/ci/ci-checks.yml
+    compare: node characters/ci/compare-snapshots.mjs --config characters/ci/ci-checks.yml
+    fail_on: missing-baseline | render-error | diff-pixels-exceed-max

@@ -1,0 +1,28 @@
+{
+  "$schema": "aftergraph.character-accessibility.v1",
+  "version": "1.0.0",
+  "colorOnlySemanticsAllowed": false,
+  "semanticMode": {
+    "role": "img",
+    "labelSource": "ariaLabel or synthesized actor label + role + state + progress",
+    "stateTextRequired": true,
+    "evidenceTextRequired": true
+  },
+  "decorativeMode": {
+    "ariaHidden": true,
+    "requiresAdjacentTextState": true
+  },
+  "statePresentation": {
+    "idle": { "textLabel": "Idle", "nonColorCue": "three-dot idle marker", "reducedMotion": "static neutral pose" },
+    "thinking": { "textLabel": "Thinking", "nonColorCue": "thinking-node mark", "reducedMotion": "static focus-right expression" },
+    "planning": { "textLabel": "Planning", "nonColorCue": "plan graph", "reducedMotion": "static attentive pose" },
+    "executing": { "textLabel": "Executing", "nonColorCue": "directed execution edge", "reducedMotion": "static forward-active pose" },
+    "inspecting": { "textLabel": "Inspecting", "nonColorCue": "inspection lens", "reducedMotion": "static inspect pose" },
+    "waiting": { "textLabel": "Waiting", "nonColorCue": "paused timeline", "reducedMotion": "static paused pose" },
+    "blocked": { "textLabel": "Blocked", "nonColorCue": "warning triangle", "reducedMotion": "static halt pose" },
+    "approval-required": { "textLabel": "Approval required", "nonColorCue": "authority gate", "reducedMotion": "static open-palms pose" },
+    "verifying": { "textLabel": "Verifying", "nonColorCue": "scan lines", "reducedMotion": "static narrowed inspection pose" },
+    "completed": { "textLabel": "Completed", "nonColorCue": "completion check container", "reducedMotion": "static resolved pose" },
+    "failed": { "textLabel": "Failed", "nonColorCue": "failure cross", "reducedMotion": "static halt-lowered pose" }
+  }
+}

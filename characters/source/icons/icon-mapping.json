@@ -1,0 +1,21 @@
+[
+  { "concept": "analytics", "existing_brandos_id": null, "action": "new" },
+  { "concept": "approval", "existing_brandos_id": "human-approval", "action": "reuse" },
+  { "concept": "build", "existing_brandos_id": "execution", "action": "reuse" },
+  { "concept": "deploy", "existing_brandos_id": null, "action": "new" },
+  { "concept": "docs", "existing_brandos_id": null, "action": "new" },
+  { "concept": "error", "existing_brandos_id": null, "action": "new" },
+  { "concept": "evidence", "existing_brandos_id": "evidence", "action": "reuse" },
+  { "concept": "graph", "existing_brandos_id": "topology", "action": "reuse" },
+  { "concept": "inspect", "existing_brandos_id": null, "action": "new" },
+  { "concept": "link-path", "existing_brandos_id": "trajectory", "action": "reuse" },
+  { "concept": "network-globe", "existing_brandos_id": "federation", "action": "reuse" },
+  { "concept": "node", "existing_brandos_id": null, "action": "new" },
+  { "concept": "progress", "existing_brandos_id": null, "action": "new" },
+  { "concept": "shield", "existing_brandos_id": "trust-domain", "action": "reuse" },
+  { "concept": "success", "existing_brandos_id": null, "action": "new" },
+  { "concept": "sync", "existing_brandos_id": null, "action": "new" },
+  { "concept": "task-list", "existing_brandos_id": null, "action": "new" },
+  { "concept": "user", "existing_brandos_id": "principal", "action": "reuse" },
+  { "concept": "warning", "existing_brandos_id": null, "action": "new" }
+]

@@ -1,0 +1,81 @@
+{
+  "$schema": "aftergraph.character-roles.v1",
+  "version": "1.0.0",
+  "invariants": {
+    "rolesAreArchetypesNotProductBrands": true,
+    "roleAccentNeverEncodesRuntimeState": true
+  },
+  "roles": [
+    {
+      "id": "entity",
+      "displayName": "Aftergraph Entity",
+      "archetype": "core",
+      "accentToken": "evidence_white",
+      "verbs": [
+        "orient",
+        "connect",
+        "represent"
+      ]
+    },
+    {
+      "id": "guide",
+      "displayName": "Guide",
+      "archetype": "coordinator",
+      "accentToken": "control_cyan",
+      "verbs": [
+        "coordinate",
+        "clarify",
+        "align",
+        "route"
+      ]
+    },
+    {
+      "id": "builder",
+      "displayName": "Builder",
+      "archetype": "builder",
+      "accentToken": "decision_amber",
+      "verbs": [
+        "build",
+        "integrate",
+        "iterate",
+        "deliver"
+      ]
+    },
+    {
+      "id": "verifier",
+      "displayName": "Verifier",
+      "archetype": "verifier",
+      "accentToken": "evidence_teal",
+      "verbs": [
+        "inspect",
+        "verify",
+        "protect",
+        "flag-risk"
+      ]
+    },
+    {
+      "id": "observer",
+      "displayName": "Observer",
+      "archetype": "observer",
+      "accentToken": "system_blue",
+      "verbs": [
+        "observe",
+        "map",
+        "analyze",
+        "find-signal"
+      ]
+    },
+    {
+      "id": "researcher",
+      "displayName": "Researcher",
+      "archetype": "researcher",
+      "accentToken": "authority_violet",
+      "verbs": [
+        "explore",
+        "synthesize",
+        "cite",
+        "discover"
+      ]
+    }
+  ]
+}

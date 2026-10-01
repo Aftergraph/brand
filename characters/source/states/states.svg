@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
+  <defs>
+    <symbol id="ag-state-idle-prop" viewBox="0 0 512 512" data-state="idle" data-anchor-ref="prop-center" data-signal-token="slate" data-signal="#8993A4" data-pose="neutral">
+      <g id="idle-pulse" transform="translate(256 319)" fill="#8993A4">
+        <circle cx="-18" cy="0" r="5" opacity="0.45"/><circle cx="0" cy="0" r="6" opacity="0.72"/><circle cx="18" cy="0" r="5" opacity="0.45"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-state-thinking-prop" viewBox="0 0 512 512" data-state="thinking" data-anchor-ref="prop-right" data-signal-token="control_cyan" data-signal="#42C7E8" data-pose="head-focus-right" data-arm-right-angle="-18">
+      <g id="thinking-nodes" transform="translate(410 282)" fill="none" stroke="#42C7E8" stroke-width="6" stroke-linecap="round">
+        <circle cx="-18" cy="-64" r="10" fill="#42C7E8"/><circle cx="18" cy="-90" r="7" fill="#42C7E8"/>
+        <path d="M-40 -6 C-28 -34 4 -40 20 -23 C36 -6 25 17 7 25 V43"/>
+        <circle cx="7" cy="62" r="6" fill="#42C7E8" stroke="none"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-state-planning-prop" viewBox="0 0 512 512" data-state="planning" data-anchor-ref="prop-right" data-signal-token="system_blue" data-signal="#4C8BD8" data-pose="two-hand-center" data-arm-left-angle="10" data-arm-right-angle="-10">
+      <g id="planning-graph" transform="translate(410 282)" fill="#0E1630" stroke="#4C8BD8" stroke-width="5" stroke-linejoin="round">
+        <rect x="-62" y="-54" width="124" height="108" rx="12"/>
+        <path d="M-42 27 L-14 -8 L10 10 L41 -27" fill="none"/>
+        <circle cx="-42" cy="27" r="6" fill="#4C8BD8"/><circle cx="-14" cy="-8" r="6" fill="#4C8BD8"/><circle cx="10" cy="10" r="6" fill="#4C8BD8"/><circle cx="41" cy="-27" r="6" fill="#4C8BD8"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-state-executing-prop" viewBox="0 0 512 512" data-state="executing" data-anchor-ref="prop-right" data-signal-token="system_blue" data-signal="#4C8BD8" data-pose="forward-active" data-arm-left-angle="-14" data-arm-right-angle="14">
+      <g id="execution-edge" fill="none" stroke="#4C8BD8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M256 319 C310 318 350 304 397 286"/>
+        <path d="M389 273 L410 282 L393 298"/>
+        <circle cx="256" cy="319" r="8" fill="#4C8BD8" stroke="none"/><circle cx="410" cy="282" r="9" fill="#4C8BD8" stroke="none"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-state-inspecting-prop" viewBox="0 0 512 512" data-state="inspecting" data-anchor-ref="prop-right" data-signal-token="control_cyan" data-signal="#42C7E8" data-pose="arm-right-inspect" data-arm-right-angle="-24">
+      <g id="inspection-lens" transform="translate(410 282)" fill="none" stroke="#42C7E8" stroke-width="8" stroke-linecap="round">
+        <circle cx="-8" cy="-8" r="42"/><path d="M22 22 L54 54"/><circle cx="-8" cy="-8" r="10" fill="#42C7E8" stroke="none"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-state-waiting-prop" viewBox="0 0 512 512" data-state="waiting" data-anchor-ref="prop-right" data-signal-token="slate" data-signal="#8993A4" data-pose="neutral-paused">
+      <g id="waiting-timeline" transform="translate(410 282)" stroke="#8993A4" stroke-width="6" fill="#8993A4">
+        <path d="M0 -62 V68"/><circle cx="0" cy="-62" r="10"/><circle cx="0" cy="2" r="7"/><circle cx="0" cy="68" r="10"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-state-blocked-prop" viewBox="0 0 512 512" data-state="blocked" data-anchor-ref="prop-right" data-signal-token="semantic.dark.danger" data-signal="#FF6B7A" data-pose="halt" data-arm-left-angle="8" data-arm-right-angle="-8">
+      <g id="blocked-warning" transform="translate(410 282)" fill="#0E1630" stroke="#FF6B7A" stroke-width="7" stroke-linejoin="round">
+        <path d="M0 -62 L66 58 H-66 Z"/><path d="M0 -24 V18"/><circle cx="0" cy="39" r="6" fill="#FF6B7A" stroke="none"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-state-approval-required-prop" viewBox="0 0 512 512" data-state="approval-required" data-anchor-ref="prop-right" data-signal-token="decision_amber" data-signal="#F0A64A" data-pose="open-palms" data-arm-left-angle="-20" data-arm-right-angle="20">
+      <g id="approval-gate" transform="translate(410 282)" fill="#0E1630" stroke="#F0A64A" stroke-width="6" stroke-linejoin="round">
+        <rect x="-58" y="-62" width="116" height="124" rx="14"/>
+        <circle cx="0" cy="-20" r="19"/><path d="M-32 36 Q0 6 32 36 V48 H-32 Z"/>
+        <path d="M-74 -74 V74 M74 -74 V74" fill="none" stroke-linecap="round"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-state-verifying-prop" viewBox="0 0 512 512" data-state="verifying" data-anchor-ref="prop-right" data-signal-token="evidence_teal" data-signal="#24C4AD" data-pose="inspect-scan" data-arm-right-angle="-22">
+      <g id="verification-scan" transform="translate(410 282)" fill="none" stroke="#24C4AD" stroke-width="7" stroke-linecap="round">
+        <circle cx="-8" cy="0" r="58" opacity="0.32"/><path d="M-52 -26 H36 M-42 0 H42 M-30 26 H30"/><path d="M35 36 L58 59"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-state-completed-prop" viewBox="0 0 512 512" data-state="completed" data-anchor-ref="prop-right" data-signal-token="system_blue" data-signal="#4C8BD8" data-pose="neutral-resolved">
+      <g id="completed-mark" transform="translate(410 282)" fill="#0E1630" stroke="#4C8BD8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="-56" y="-56" width="112" height="112" rx="17"/>
+        <path d="M-31 2 L-8 25 L33 -25" fill="none"/>
+      </g>
+    </symbol>
+
+    <symbol id="ag-state-failed-prop" viewBox="0 0 512 512" data-state="failed" data-anchor-ref="prop-right" data-signal-token="semantic.dark.danger" data-signal="#FF6B7A" data-pose="halt-lowered" data-arm-left-angle="10" data-arm-right-angle="-10">
+      <g id="failed-mark" transform="translate(410 282)" fill="none" stroke="#FF6B7A" stroke-width="12" stroke-linecap="round">
+        <path d="M-42 -42 L42 42 M42 -42 L-42 42"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>

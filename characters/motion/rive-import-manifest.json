@@ -1,0 +1,88 @@
+{
+  "$schema": "aftergraph.character-rive-import.v1",
+  "version": "1.0.0",
+  "canonicalSource": "characters/source/master/base-character.svg",
+  "artboard": {
+    "name": "ActorPresence",
+    "width": 512,
+    "height": 512
+  },
+  "sources": [
+    "characters/source/master/base-character.svg",
+    "characters/source/master/anchors.json",
+    "characters/source/roles/roles.svg",
+    "characters/source/states/states.svg",
+    "characters/source/expressions/expressions.svg",
+    "characters/source/expressions/expressions.json",
+    "characters/source/rig/rig.json"
+  ],
+  "layerMap": [
+    "halo",
+    "head",
+    "face",
+    "torso",
+    "arm-left",
+    "arm-right",
+    "hand-left",
+    "hand-right",
+    "leg-left",
+    "leg-right",
+    "shading",
+    "role-prop",
+    "state-prop"
+  ],
+  "inputs": {
+    "role": {
+      "type": "enum",
+      "values": [
+        "entity",
+        "guide",
+        "builder",
+        "verifier",
+        "observer",
+        "researcher"
+      ]
+    },
+    "state": {
+      "type": "enum",
+      "values": [
+        "idle",
+        "thinking",
+        "planning",
+        "executing",
+        "inspecting",
+        "waiting",
+        "blocked",
+        "approval-required",
+        "verifying",
+        "completed",
+        "failed"
+      ]
+    },
+    "attention": {
+      "type": "enum",
+      "values": [
+        "none",
+        "informational",
+        "required",
+        "critical"
+      ]
+    },
+    "reducedMotion": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "stateMachine": {
+    "name": "ActorPresence",
+    "truthBoundary": "Inputs are projections of runtime state. Rive animation never establishes evidence, approval, completion truth, or verification verdicts."
+  },
+  "runtimeFile": {
+    "path": "characters/motion/rive/build/aftergraph_actor_presence.riv",
+    "status": "verified",
+    "authoringMode": "rive-cli-rml-luau",
+    "sourceProject": "characters/motion/rive",
+    "buildCommand": "npm run character:rive:build",
+    "verificationCommand": "npm run character:rive:qa"
+  }
+}

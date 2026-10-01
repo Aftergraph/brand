@@ -1,0 +1,5 @@
+name: aftergraph_actor_presence
+main: ActorPresence
+logs:
+  file: build/rive.log
+  problems: build/problems.log

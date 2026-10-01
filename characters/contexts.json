@@ -1,0 +1,11 @@
+{
+  "$schema": "aftergraph.character-contexts.v1",
+  "version": "1.0.0",
+  "purpose": "Visibility QA contexts only; these do not introduce new brand colors.",
+  "contexts": [
+    { "id": "dark", "theme": "dark", "background": "#080C14", "token": "semantic.dark.canvas" },
+    { "id": "light", "theme": "light", "background": "#F5F7FA", "token": "semantic.light.canvas" },
+    { "id": "transparent", "theme": "dark", "background": null, "token": null },
+    { "id": "high-contrast", "theme": "light", "background": "#FFFFFF", "token": "semantic.light.surface" }
+  ]
+}

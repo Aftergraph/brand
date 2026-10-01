@@ -1,0 +1,73 @@
+{
+  "$schema": "aftergraph.character-states.v1",
+  "version": "1.0.0",
+  "truthBoundary": "Visual state must be derived from runtime state; it cannot establish evidence, approval, or verification.",
+  "states": [
+    {
+      "id": "idle",
+      "attention": "none",
+      "signalToken": "slate",
+      "meaning": "Actor is available and not actively processing work."
+    },
+    {
+      "id": "thinking",
+      "attention": "informational",
+      "signalToken": "control_cyan",
+      "meaning": "Actor is processing context or reasoning."
+    },
+    {
+      "id": "planning",
+      "attention": "informational",
+      "signalToken": "system_blue",
+      "meaning": "Actor is structuring an intended course of action."
+    },
+    {
+      "id": "executing",
+      "attention": "informational",
+      "signalToken": "system_blue",
+      "meaning": "Actor is taking an authorized action."
+    },
+    {
+      "id": "inspecting",
+      "attention": "informational",
+      "signalToken": "control_cyan",
+      "meaning": "Actor is examining an artifact, system, or evidence."
+    },
+    {
+      "id": "waiting",
+      "attention": "none",
+      "signalToken": "slate",
+      "meaning": "Actor is paused on an external dependency, event, or timer."
+    },
+    {
+      "id": "blocked",
+      "attention": "required",
+      "signalToken": "semantic.dark.danger",
+      "meaning": "Actor cannot continue until a blocker is resolved."
+    },
+    {
+      "id": "approval-required",
+      "attention": "required",
+      "signalToken": "decision_amber",
+      "meaning": "Continuation requires an explicit human authority decision."
+    },
+    {
+      "id": "verifying",
+      "attention": "informational",
+      "signalToken": "evidence_teal",
+      "meaning": "Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict."
+    },
+    {
+      "id": "completed",
+      "attention": "none",
+      "signalToken": "system_blue",
+      "meaning": "Actor execution completed; this state does not imply independent verification or acceptance."
+    },
+    {
+      "id": "failed",
+      "attention": "critical",
+      "signalToken": "semantic.dark.danger",
+      "meaning": "Actor execution failed to complete the required operation; this is not an independent verification verdict."
+    }
+  ]
+}

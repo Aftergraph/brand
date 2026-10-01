@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en" data-review-surface="v2"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><title>Aftergraph Character System Review</title><style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#F5F7FA;background:#080C14;color-scheme:dark;--bg:#080C14;--surface:#0E1630;--surface-2:#121D39;--border:#24304A;--text:#F5F7FA;--muted:#8993A4;--cyan:#42C7E8;--teal:#24C4AD;--amber:#F0A64A;--danger:#FF6B7A;--max:1600px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 75% -10%,rgba(66,199,232,.09),transparent 30rem),var(--bg);color:var(--text)}a{color:inherit}button,select{font:inherit}button{cursor:pointer}img{max-width:100%}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.site-shell{max-width:var(--max);margin:auto;padding:0 32px 80px}
+.site-header{min-height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(137,147,164,.18);gap:24px}.brand-lockup{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.brand-mark{width:30px;height:30px;border:1px solid var(--border);border-radius:50%;display:grid;place-items:center;color:var(--cyan)}.brand-mark:before{content:"";width:8px;height:8px;border:2px solid currentColor;border-radius:50%;box-shadow:11px -5px 0 -3px var(--cyan),-9px 8px 0 -3px var(--cyan)}.header-meta{display:flex;gap:18px;color:var(--muted);font-size:12px}
+.hero{padding:72px 0 36px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr);gap:56px;align-items:center}.hero-copy h1{font-size:clamp(48px,7vw,104px);line-height:.93;letter-spacing:-.06em;margin:0;max-width:10ch}.hero-copy>p{color:var(--muted);font-size:17px;line-height:1.65;max-width:62ch;margin:24px 0}.truth{color:var(--teal)!important;font-size:14px!important;font-weight:700;letter-spacing:.02em}.stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:32px}.stat{min-width:96px}.stat strong{display:block;font-size:28px;letter-spacing:-.04em}.stat span{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.focus-stage{background:linear-gradient(180deg,rgba(18,29,57,.96),rgba(14,22,48,.92));border:1px solid var(--border);border-radius:26px;padding:18px;box-shadow:0 30px 80px rgba(0,0,0,.28)}.focus-canvas{position:relative;min-height:500px;display:grid;place-items:center;border:1px solid rgba(137,147,164,.14);border-radius:18px;background:radial-gradient(circle at 50% 35%,rgba(66,199,232,.09),transparent 47%),#0B1124;overflow:hidden}.focus-canvas img{width:min(86%,500px);aspect-ratio:1;object-fit:contain}.focus-caption{display:grid;grid-template-columns:1fr auto;gap:16px;padding:18px 6px 4px}.focus-caption strong{display:block;font-size:18px}.focus-caption p{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.5}.focus-state{color:var(--cyan);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;align-self:start;padding-top:3px}
+
+.toolbar-wrap{position:sticky;top:0;z-index:20;margin:24px -16px 0;padding:12px 16px;background:rgba(8,12,20,.82);backdrop-filter:blur(18px);border-top:1px solid transparent;border-bottom:1px solid rgba(137,147,164,.14)}.toolbar{display:flex;align-items:end;gap:12px;flex-wrap:wrap}.toolbar label{display:grid;gap:7px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}.toolbar select{min-width:164px;padding:11px 36px 11px 12px;border:1px solid var(--border);border-radius:10px;background:#0E1630;color:var(--text)}.toolbar .toolbar-spacer{flex:1}.result-count{color:var(--muted);font-size:12px;padding:0 4px 10px}.reset{padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text)}.reset:hover{border-color:#405073}.toolbar select:focus-visible,.reset:focus-visible,.composition-card:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.review-gates{margin:56px 0 72px;border-top:1px solid rgba(137,147,164,.18);padding-top:32px}.review-gates .section-heading{margin-bottom:20px}.gate-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.gate-card{padding:18px;border:1px solid var(--border);border-radius:14px;background:rgba(14,22,48,.72)}.gate-top{display:flex;justify-content:space-between;gap:14px;align-items:start}.gate-top span{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:4px 7px}.gate-card[data-status="verified"] .gate-top span{color:var(--teal);border-color:rgba(36,196,173,.36)}.gate-card[data-status="pending"] .gate-top span{color:var(--amber);border-color:rgba(240,166,74,.36)}.gate-card p{color:var(--muted);font-size:12px;line-height:1.5;margin:12px 0 0}
+.theme-section,.icon-section{margin-top:72px;scroll-margin-top:100px}.section-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.6fr);gap:32px;align-items:end;margin-bottom:32px}.section-heading h2{margin:0;font-size:clamp(32px,4vw,56px);letter-spacing:-.04em}.section-heading>p{margin:0;color:var(--muted);line-height:1.6}.section-index{margin:0 0 8px!important;color:var(--cyan)!important;font:11px ui-monospace,SFMono-Regular,Menlo,monospace}.subsection{margin-top:38px}.subhead{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:14px;border-bottom:1px solid rgba(137,147,164,.12);padding-bottom:10px}.subhead h3{margin:0;font-size:15px}.subhead span{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+
+.asset-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.matrix{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.asset-card,.avatar-card,.icon-card,.composition-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--surface);transition:transform .16s ease,border-color .16s ease,background .16s ease}.composition-card{cursor:pointer}.composition-card:hover{transform:translateY(-2px);border-color:#405073}.asset-card img,.avatar-card img,.icon-card img,.composition-card img{display:block;width:100%;aspect-ratio:1;object-fit:contain}.asset-meta,.card-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px}.asset-meta span,.card-meta span{color:var(--muted);font-size:11px}.avatar-card strong,.icon-card strong{display:block;padding:10px 12px}.icon-card{background:#FFF;color:#080C14;border-color:#D7DCE3}.icon-card img{padding:34px}.icon-card strong{text-transform:capitalize}.theme-section[data-theme="light"]{background:#F5F7FA;color:#080C14;margin-left:-20px;margin-right:-20px;padding:36px 20px 44px;border-radius:22px}.theme-section[data-theme="light"] .asset-card,.theme-section[data-theme="light"] .avatar-card,.theme-section[data-theme="light"] .composition-card{background:#FFF;border-color:#D7DCE3}.theme-section[data-theme="light"] .subhead{border-color:#D7DCE3}.theme-section[data-theme="light"] .subhead span,.theme-section[data-theme="light"] .asset-meta span,.theme-section[data-theme="light"] .card-meta span,.theme-section[data-theme="light"] .section-heading>p{color:#4F5868}.theme-section[data-theme="light"] .section-index{color:#255B82!important}
+[hidden]{display:none!important}.site-footer{margin-top:72px;padding-top:28px;border-top:1px solid rgba(137,147,164,.18);display:flex;justify-content:space-between;gap:24px;color:var(--muted);font-size:12px}.site-footer strong{color:var(--text)}
+@media (max-width:900px){.site-shell{padding:0 18px 56px}.site-header{min-height:64px}.header-meta{display:none}.hero{padding-top:44px;grid-template-columns:1fr;gap:28px}.focus-canvas{min-height:380px}.gate-grid{grid-template-columns:1fr 1fr}.section-heading{grid-template-columns:1fr}.toolbar{align-items:stretch}.toolbar label{flex:1 1 150px}.toolbar select{width:100%;min-width:0}.toolbar-spacer{display:none}.result-count{width:100%;padding:2px 0 4px}.theme-section[data-theme="light"]{margin-left:-8px;margin-right:-8px}.site-footer{flex-direction:column}}
+@media (max-width:560px){.hero-copy h1{font-size:48px}.stats{gap:20px}.stat strong{font-size:24px}.focus-canvas{min-height:310px}.gate-grid{grid-template-columns:1fr}.asset-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.matrix{grid-template-columns:repeat(2,minmax(0,1fr))}.section-heading h2{font-size:36px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.asset-card,.avatar-card,.icon-card,.composition-card{transition:none}.composition-card:hover{transform:none}}
+</style></head>
+<body><div class="site-shell">
+<header class="site-header"><div class="brand-lockup"><span class="brand-mark" aria-hidden="true"></span><span>Aftergraph / Character System</span></div><div class="header-meta"><span>v1.0.0</span><span>candidate</span><span>189 logical assets</span></div></header>
+<main>
+<section class="hero" id="overview"><div class="hero-copy"><h1>Actor presence, without pretending it is proof.</h1><p>One governed character species, six reusable roles, eleven runtime states and two derived themes. This surface exists to review visual consistency, semantic legibility and brand fit before release.</p><p class="truth">Characters are a view. Evidence is the truth.</p><div class="stats"><div class="stat"><strong>6</strong><span>roles</span></div><div class="stat"><strong>11</strong><span>states</span></div><div class="stat"><strong>132</strong><span>compositions</span></div><div class="stat"><strong>756</strong><span>export files</span></div></div></div>
+<aside class="focus-stage" aria-label="Selected character preview"><div class="focus-canvas"><img id="focus-preview" src="../generated/compositions/entity--idle.svg" alt="Aftergraph Entity, idle"></div><div class="focus-caption"><div><strong id="focus-role">Aftergraph Entity</strong><p id="focus-detail">Actor is available and not actively processing work.</p></div><span class="focus-state" id="focus-state">idle</span></div></aside></section>
+<section class="review-gates" id="gates"><div class="section-heading"><div><p class="section-index">Release gates</p><h2>Evidence before release.</h2></div><p>The site can help a reviewer inspect the system. It cannot convert visual review into verification, approval or evidence by itself.</p></div><div class="gate-grid"><article class="gate-card" data-status="required"><div class="gate-top"><strong>Automated verification</strong><span>required</span></div><p>CI, semantic validation, visual regression, packaging</p></article>
+<article class="gate-card" data-status="verified"><div class="gate-top"><strong>Rive runtime</strong><span>verified</span></div><p>Derived runtime binary and headless motion QA</p></article>
+<article class="gate-card" data-status="pending"><div class="gate-top"><strong>Illustrator roundtrip</strong><span>pending</span></div><p>External editable-source survival check</p></article>
+<article class="gate-card" data-status="pending"><div class="gate-top"><strong>Human brand review</strong><span>pending</span></div><p>Aesthetic, semantic, compact-size and institutional fit</p></article></div></section>
+<div class="toolbar-wrap"><div class="toolbar" aria-label="Character review filters"><label>Theme<select id="theme"><option value="all">Both themes</option><option value="dark" selected>Dark</option><option value="light">Light</option></select></label><label>Role<select id="role"><option value="all">All roles</option><option value="entity">Aftergraph Entity</option><option value="guide">Guide</option><option value="builder">Builder</option><option value="verifier">Verifier</option><option value="observer">Observer</option><option value="researcher">Researcher</option></select></label><label>State<select id="state"><option value="all">All states</option><option value="idle">idle</option><option value="thinking">thinking</option><option value="planning">planning</option><option value="executing">executing</option><option value="inspecting">inspecting</option><option value="waiting">waiting</option><option value="blocked">blocked</option><option value="approval-required">approval-required</option><option value="verifying">verifying</option><option value="completed">completed</option><option value="failed">failed</option></select></label><button type="button" class="reset" id="reset">Reset</button><div class="toolbar-spacer"></div><div id="result-count" class="result-count" role="status" aria-live="polite"></div></div></div>
+<section class="theme-section" data-theme="dark" id="theme-dark">
+    <header class="section-heading"><div><p class="section-index">01</p><h2>Dark theme</h2></div><p>Same governed geometry, derived through canonical Brand OS tokens.</p></header>
+    <div class="subsection"><div class="subhead"><h3>Roles</h3><span>6 archetypes</span></div><div class="asset-grid roles"><article class="asset-card" data-theme="dark" data-role="entity"><img src="../generated/roles/entity.svg" alt="Aftergraph Entity role"><div class="asset-meta"><strong>Aftergraph Entity</strong><span>core</span></div></article>
+<article class="asset-card" data-theme="dark" data-role="guide"><img src="../generated/roles/guide.svg" alt="Guide role"><div class="asset-meta"><strong>Guide</strong><span>coordinator</span></div></article>
+<article class="asset-card" data-theme="dark" data-role="builder"><img src="../generated/roles/builder.svg" alt="Builder role"><div class="asset-meta"><strong>Builder</strong><span>builder</span></div></article>
+<article class="asset-card" data-theme="dark" data-role="verifier"><img src="../generated/roles/verifier.svg" alt="Verifier role"><div class="asset-meta"><strong>Verifier</strong><span>verifier</span></div></article>
+<article class="asset-card" data-theme="dark" data-role="observer"><img src="../generated/roles/observer.svg" alt="Observer role"><div class="asset-meta"><strong>Observer</strong><span>observer</span></div></article>
+<article class="asset-card" data-theme="dark" data-role="researcher"><img src="../generated/roles/researcher.svg" alt="Researcher role"><div class="asset-meta"><strong>Researcher</strong><span>researcher</span></div></article></div></div>
+    <div class="subsection"><div class="subhead"><h3>Avatars</h3><span>6 compact derivatives</span></div><div class="asset-grid avatars"><article class="avatar-card" data-theme="dark" data-role="entity"><img src="../generated/avatars/entity.svg" alt="Aftergraph Entity avatar"><strong>Aftergraph Entity</strong></article>
+<article class="avatar-card" data-theme="dark" data-role="guide"><img src="../generated/avatars/guide.svg" alt="Guide avatar"><strong>Guide</strong></article>
+<article class="avatar-card" data-theme="dark" data-role="builder"><img src="../generated/avatars/builder.svg" alt="Builder avatar"><strong>Builder</strong></article>
+<article class="avatar-card" data-theme="dark" data-role="verifier"><img src="../generated/avatars/verifier.svg" alt="Verifier avatar"><strong>Verifier</strong></article>
+<article class="avatar-card" data-theme="dark" data-role="observer"><img src="../generated/avatars/observer.svg" alt="Observer avatar"><strong>Observer</strong></article>
+<article class="avatar-card" data-theme="dark" data-role="researcher"><img src="../generated/avatars/researcher.svg" alt="Researcher avatar"><strong>Researcher</strong></article></div></div>
+    <div class="subsection"><div class="subhead"><h3>States</h3><span>11 runtime states</span></div><div class="asset-grid states"><article class="asset-card" data-theme="dark" data-state="idle"><img src="../generated/states/idle.svg" alt="idle state"><div class="asset-meta"><strong>idle</strong><span>none</span></div></article>
+<article class="asset-card" data-theme="dark" data-state="thinking"><img src="../generated/states/thinking.svg" alt="thinking state"><div class="asset-meta"><strong>thinking</strong><span>informational</span></div></article>
+<article class="asset-card" data-theme="dark" data-state="planning"><img src="../generated/states/planning.svg" alt="planning state"><div class="asset-meta"><strong>planning</strong><span>informational</span></div></article>
+<article class="asset-card" data-theme="dark" data-state="executing"><img src="../generated/states/executing.svg" alt="executing state"><div class="asset-meta"><strong>executing</strong><span>informational</span></div></article>
+<article class="asset-card" data-theme="dark" data-state="inspecting"><img src="../generated/states/inspecting.svg" alt="inspecting state"><div class="asset-meta"><strong>inspecting</strong><span>informational</span></div></article>
+<article class="asset-card" data-theme="dark" data-state="waiting"><img src="../generated/states/waiting.svg" alt="waiting state"><div class="asset-meta"><strong>waiting</strong><span>none</span></div></article>
+<article class="asset-card" data-theme="dark" data-state="blocked"><img src="../generated/states/blocked.svg" alt="blocked state"><div class="asset-meta"><strong>blocked</strong><span>required</span></div></article>
+<article class="asset-card" data-theme="dark" data-state="approval-required"><img src="../generated/states/approval-required.svg" alt="approval-required state"><div class="asset-meta"><strong>approval-required</strong><span>required</span></div></article>
+<article class="asset-card" data-theme="dark" data-state="verifying"><img src="../generated/states/verifying.svg" alt="verifying state"><div class="asset-meta"><strong>verifying</strong><span>informational</span></div></article>
+<article class="asset-card" data-theme="dark" data-state="completed"><img src="../generated/states/completed.svg" alt="completed state"><div class="asset-meta"><strong>completed</strong><span>none</span></div></article>
+<article class="asset-card" data-theme="dark" data-state="failed"><img src="../generated/states/failed.svg" alt="failed state"><div class="asset-meta"><strong>failed</strong><span>critical</span></div></article></div></div>
+    <div class="subsection matrix-section"><div class="subhead"><h3>Role × state matrix</h3><span class="matrix-count-label">66 combinations</span></div><div class="matrix"><article class="composition-card" tabindex="0" data-theme="dark" data-role="entity" data-state="idle" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is available and not actively processing work.">
+    <img src="../generated/compositions/entity--idle.svg" alt="Aftergraph Entity, idle">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="entity" data-state="thinking" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is processing context or reasoning.">
+    <img src="../generated/compositions/entity--thinking.svg" alt="Aftergraph Entity, thinking">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="entity" data-state="planning" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is structuring an intended course of action.">
+    <img src="../generated/compositions/entity--planning.svg" alt="Aftergraph Entity, planning">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="entity" data-state="executing" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is taking an authorized action.">
+    <img src="../generated/compositions/entity--executing.svg" alt="Aftergraph Entity, executing">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="entity" data-state="inspecting" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is examining an artifact, system, or evidence.">
+    <img src="../generated/compositions/entity--inspecting.svg" alt="Aftergraph Entity, inspecting">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="entity" data-state="waiting" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is paused on an external dependency, event, or timer.">
+    <img src="../generated/compositions/entity--waiting.svg" alt="Aftergraph Entity, waiting">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="entity" data-state="blocked" data-role-verbs="orient, connect, represent" data-state-meaning="Actor cannot continue until a blocker is resolved.">
+    <img src="../generated/compositions/entity--blocked.svg" alt="Aftergraph Entity, blocked">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="entity" data-state="approval-required" data-role-verbs="orient, connect, represent" data-state-meaning="Continuation requires an explicit human authority decision.">
+    <img src="../generated/compositions/entity--approval-required.svg" alt="Aftergraph Entity, approval-required">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="entity" data-state="verifying" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.">
+    <img src="../generated/compositions/entity--verifying.svg" alt="Aftergraph Entity, verifying">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="entity" data-state="completed" data-role-verbs="orient, connect, represent" data-state-meaning="Actor execution completed; this state does not imply independent verification or acceptance.">
+    <img src="../generated/compositions/entity--completed.svg" alt="Aftergraph Entity, completed">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="entity" data-state="failed" data-role-verbs="orient, connect, represent" data-state-meaning="Actor execution failed to complete the required operation; this is not an independent verification verdict.">
+    <img src="../generated/compositions/entity--failed.svg" alt="Aftergraph Entity, failed">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="guide" data-state="idle" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is available and not actively processing work.">
+    <img src="../generated/compositions/guide--idle.svg" alt="Guide, idle">
+    <div class="card-meta"><strong>Guide</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="guide" data-state="thinking" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is processing context or reasoning.">
+    <img src="../generated/compositions/guide--thinking.svg" alt="Guide, thinking">
+    <div class="card-meta"><strong>Guide</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="guide" data-state="planning" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is structuring an intended course of action.">
+    <img src="../generated/compositions/guide--planning.svg" alt="Guide, planning">
+    <div class="card-meta"><strong>Guide</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="guide" data-state="executing" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is taking an authorized action.">
+    <img src="../generated/compositions/guide--executing.svg" alt="Guide, executing">
+    <div class="card-meta"><strong>Guide</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="guide" data-state="inspecting" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is examining an artifact, system, or evidence.">
+    <img src="../generated/compositions/guide--inspecting.svg" alt="Guide, inspecting">
+    <div class="card-meta"><strong>Guide</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="guide" data-state="waiting" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is paused on an external dependency, event, or timer.">
+    <img src="../generated/compositions/guide--waiting.svg" alt="Guide, waiting">
+    <div class="card-meta"><strong>Guide</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="guide" data-state="blocked" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor cannot continue until a blocker is resolved.">
+    <img src="../generated/compositions/guide--blocked.svg" alt="Guide, blocked">
+    <div class="card-meta"><strong>Guide</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="guide" data-state="approval-required" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Continuation requires an explicit human authority decision.">
+    <img src="../generated/compositions/guide--approval-required.svg" alt="Guide, approval-required">
+    <div class="card-meta"><strong>Guide</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="guide" data-state="verifying" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.">
+    <img src="../generated/compositions/guide--verifying.svg" alt="Guide, verifying">
+    <div class="card-meta"><strong>Guide</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="guide" data-state="completed" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor execution completed; this state does not imply independent verification or acceptance.">
+    <img src="../generated/compositions/guide--completed.svg" alt="Guide, completed">
+    <div class="card-meta"><strong>Guide</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="guide" data-state="failed" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor execution failed to complete the required operation; this is not an independent verification verdict.">
+    <img src="../generated/compositions/guide--failed.svg" alt="Guide, failed">
+    <div class="card-meta"><strong>Guide</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="builder" data-state="idle" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is available and not actively processing work.">
+    <img src="../generated/compositions/builder--idle.svg" alt="Builder, idle">
+    <div class="card-meta"><strong>Builder</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="builder" data-state="thinking" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is processing context or reasoning.">
+    <img src="../generated/compositions/builder--thinking.svg" alt="Builder, thinking">
+    <div class="card-meta"><strong>Builder</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="builder" data-state="planning" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is structuring an intended course of action.">
+    <img src="../generated/compositions/builder--planning.svg" alt="Builder, planning">
+    <div class="card-meta"><strong>Builder</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="builder" data-state="executing" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is taking an authorized action.">
+    <img src="../generated/compositions/builder--executing.svg" alt="Builder, executing">
+    <div class="card-meta"><strong>Builder</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="builder" data-state="inspecting" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is examining an artifact, system, or evidence.">
+    <img src="../generated/compositions/builder--inspecting.svg" alt="Builder, inspecting">
+    <div class="card-meta"><strong>Builder</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="builder" data-state="waiting" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is paused on an external dependency, event, or timer.">
+    <img src="../generated/compositions/builder--waiting.svg" alt="Builder, waiting">
+    <div class="card-meta"><strong>Builder</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="builder" data-state="blocked" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor cannot continue until a blocker is resolved.">
+    <img src="../generated/compositions/builder--blocked.svg" alt="Builder, blocked">
+    <div class="card-meta"><strong>Builder</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="builder" data-state="approval-required" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Continuation requires an explicit human authority decision.">
+    <img src="../generated/compositions/builder--approval-required.svg" alt="Builder, approval-required">
+    <div class="card-meta"><strong>Builder</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="builder" data-state="verifying" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.">
+    <img src="../generated/compositions/builder--verifying.svg" alt="Builder, verifying">
+    <div class="card-meta"><strong>Builder</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="builder" data-state="completed" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor execution completed; this state does not imply independent verification or acceptance.">
+    <img src="../generated/compositions/builder--completed.svg" alt="Builder, completed">
+    <div class="card-meta"><strong>Builder</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="builder" data-state="failed" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor execution failed to complete the required operation; this is not an independent verification verdict.">
+    <img src="../generated/compositions/builder--failed.svg" alt="Builder, failed">
+    <div class="card-meta"><strong>Builder</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="verifier" data-state="idle" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is available and not actively processing work.">
+    <img src="../generated/compositions/verifier--idle.svg" alt="Verifier, idle">
+    <div class="card-meta"><strong>Verifier</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="verifier" data-state="thinking" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is processing context or reasoning.">
+    <img src="../generated/compositions/verifier--thinking.svg" alt="Verifier, thinking">
+    <div class="card-meta"><strong>Verifier</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="verifier" data-state="planning" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is structuring an intended course of action.">
+    <img src="../generated/compositions/verifier--planning.svg" alt="Verifier, planning">
+    <div class="card-meta"><strong>Verifier</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="verifier" data-state="executing" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is taking an authorized action.">
+    <img src="../generated/compositions/verifier--executing.svg" alt="Verifier, executing">
+    <div class="card-meta"><strong>Verifier</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="verifier" data-state="inspecting" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is examining an artifact, system, or evidence.">
+    <img src="../generated/compositions/verifier--inspecting.svg" alt="Verifier, inspecting">
+    <div class="card-meta"><strong>Verifier</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="verifier" data-state="waiting" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is paused on an external dependency, event, or timer.">
+    <img src="../generated/compositions/verifier--waiting.svg" alt="Verifier, waiting">
+    <div class="card-meta"><strong>Verifier</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="verifier" data-state="blocked" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor cannot continue until a blocker is resolved.">
+    <img src="../generated/compositions/verifier--blocked.svg" alt="Verifier, blocked">
+    <div class="card-meta"><strong>Verifier</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="verifier" data-state="approval-required" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Continuation requires an explicit human authority decision.">
+    <img src="../generated/compositions/verifier--approval-required.svg" alt="Verifier, approval-required">
+    <div class="card-meta"><strong>Verifier</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="verifier" data-state="verifying" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.">
+    <img src="../generated/compositions/verifier--verifying.svg" alt="Verifier, verifying">
+    <div class="card-meta"><strong>Verifier</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="verifier" data-state="completed" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor execution completed; this state does not imply independent verification or acceptance.">
+    <img src="../generated/compositions/verifier--completed.svg" alt="Verifier, completed">
+    <div class="card-meta"><strong>Verifier</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="verifier" data-state="failed" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor execution failed to complete the required operation; this is not an independent verification verdict.">
+    <img src="../generated/compositions/verifier--failed.svg" alt="Verifier, failed">
+    <div class="card-meta"><strong>Verifier</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="observer" data-state="idle" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is available and not actively processing work.">
+    <img src="../generated/compositions/observer--idle.svg" alt="Observer, idle">
+    <div class="card-meta"><strong>Observer</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="observer" data-state="thinking" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is processing context or reasoning.">
+    <img src="../generated/compositions/observer--thinking.svg" alt="Observer, thinking">
+    <div class="card-meta"><strong>Observer</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="observer" data-state="planning" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is structuring an intended course of action.">
+    <img src="../generated/compositions/observer--planning.svg" alt="Observer, planning">
+    <div class="card-meta"><strong>Observer</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="observer" data-state="executing" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is taking an authorized action.">
+    <img src="../generated/compositions/observer--executing.svg" alt="Observer, executing">
+    <div class="card-meta"><strong>Observer</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="observer" data-state="inspecting" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is examining an artifact, system, or evidence.">
+    <img src="../generated/compositions/observer--inspecting.svg" alt="Observer, inspecting">
+    <div class="card-meta"><strong>Observer</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="observer" data-state="waiting" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is paused on an external dependency, event, or timer.">
+    <img src="../generated/compositions/observer--waiting.svg" alt="Observer, waiting">
+    <div class="card-meta"><strong>Observer</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="observer" data-state="blocked" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor cannot continue until a blocker is resolved.">
+    <img src="../generated/compositions/observer--blocked.svg" alt="Observer, blocked">
+    <div class="card-meta"><strong>Observer</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="observer" data-state="approval-required" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Continuation requires an explicit human authority decision.">
+    <img src="../generated/compositions/observer--approval-required.svg" alt="Observer, approval-required">
+    <div class="card-meta"><strong>Observer</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="observer" data-state="verifying" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.">
+    <img src="../generated/compositions/observer--verifying.svg" alt="Observer, verifying">
+    <div class="card-meta"><strong>Observer</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="observer" data-state="completed" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor execution completed; this state does not imply independent verification or acceptance.">
+    <img src="../generated/compositions/observer--completed.svg" alt="Observer, completed">
+    <div class="card-meta"><strong>Observer</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="observer" data-state="failed" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor execution failed to complete the required operation; this is not an independent verification verdict.">
+    <img src="../generated/compositions/observer--failed.svg" alt="Observer, failed">
+    <div class="card-meta"><strong>Observer</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="researcher" data-state="idle" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is available and not actively processing work.">
+    <img src="../generated/compositions/researcher--idle.svg" alt="Researcher, idle">
+    <div class="card-meta"><strong>Researcher</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="researcher" data-state="thinking" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is processing context or reasoning.">
+    <img src="../generated/compositions/researcher--thinking.svg" alt="Researcher, thinking">
+    <div class="card-meta"><strong>Researcher</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="researcher" data-state="planning" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is structuring an intended course of action.">
+    <img src="../generated/compositions/researcher--planning.svg" alt="Researcher, planning">
+    <div class="card-meta"><strong>Researcher</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="researcher" data-state="executing" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is taking an authorized action.">
+    <img src="../generated/compositions/researcher--executing.svg" alt="Researcher, executing">
+    <div class="card-meta"><strong>Researcher</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="researcher" data-state="inspecting" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is examining an artifact, system, or evidence.">
+    <img src="../generated/compositions/researcher--inspecting.svg" alt="Researcher, inspecting">
+    <div class="card-meta"><strong>Researcher</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="researcher" data-state="waiting" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is paused on an external dependency, event, or timer.">
+    <img src="../generated/compositions/researcher--waiting.svg" alt="Researcher, waiting">
+    <div class="card-meta"><strong>Researcher</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="researcher" data-state="blocked" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor cannot continue until a blocker is resolved.">
+    <img src="../generated/compositions/researcher--blocked.svg" alt="Researcher, blocked">
+    <div class="card-meta"><strong>Researcher</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="researcher" data-state="approval-required" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Continuation requires an explicit human authority decision.">
+    <img src="../generated/compositions/researcher--approval-required.svg" alt="Researcher, approval-required">
+    <div class="card-meta"><strong>Researcher</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="researcher" data-state="verifying" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.">
+    <img src="../generated/compositions/researcher--verifying.svg" alt="Researcher, verifying">
+    <div class="card-meta"><strong>Researcher</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="researcher" data-state="completed" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor execution completed; this state does not imply independent verification or acceptance.">
+    <img src="../generated/compositions/researcher--completed.svg" alt="Researcher, completed">
+    <div class="card-meta"><strong>Researcher</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="dark" data-role="researcher" data-state="failed" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor execution failed to complete the required operation; this is not an independent verification verdict.">
+    <img src="../generated/compositions/researcher--failed.svg" alt="Researcher, failed">
+    <div class="card-meta"><strong>Researcher</strong><span>failed</span></div>
+  </article></div></div>
+  </section>
+<section class="theme-section" data-theme="light" id="theme-light">
+    <header class="section-heading"><div><p class="section-index">02</p><h2>Light theme</h2></div><p>Same governed geometry, derived through canonical Brand OS tokens.</p></header>
+    <div class="subsection"><div class="subhead"><h3>Roles</h3><span>6 archetypes</span></div><div class="asset-grid roles"><article class="asset-card" data-theme="light" data-role="entity"><img src="../generated/themes/light/roles/entity.svg" alt="Aftergraph Entity role"><div class="asset-meta"><strong>Aftergraph Entity</strong><span>core</span></div></article>
+<article class="asset-card" data-theme="light" data-role="guide"><img src="../generated/themes/light/roles/guide.svg" alt="Guide role"><div class="asset-meta"><strong>Guide</strong><span>coordinator</span></div></article>
+<article class="asset-card" data-theme="light" data-role="builder"><img src="../generated/themes/light/roles/builder.svg" alt="Builder role"><div class="asset-meta"><strong>Builder</strong><span>builder</span></div></article>
+<article class="asset-card" data-theme="light" data-role="verifier"><img src="../generated/themes/light/roles/verifier.svg" alt="Verifier role"><div class="asset-meta"><strong>Verifier</strong><span>verifier</span></div></article>
+<article class="asset-card" data-theme="light" data-role="observer"><img src="../generated/themes/light/roles/observer.svg" alt="Observer role"><div class="asset-meta"><strong>Observer</strong><span>observer</span></div></article>
+<article class="asset-card" data-theme="light" data-role="researcher"><img src="../generated/themes/light/roles/researcher.svg" alt="Researcher role"><div class="asset-meta"><strong>Researcher</strong><span>researcher</span></div></article></div></div>
+    <div class="subsection"><div class="subhead"><h3>Avatars</h3><span>6 compact derivatives</span></div><div class="asset-grid avatars"><article class="avatar-card" data-theme="light" data-role="entity"><img src="../generated/themes/light/avatars/entity.svg" alt="Aftergraph Entity avatar"><strong>Aftergraph Entity</strong></article>
+<article class="avatar-card" data-theme="light" data-role="guide"><img src="../generated/themes/light/avatars/guide.svg" alt="Guide avatar"><strong>Guide</strong></article>
+<article class="avatar-card" data-theme="light" data-role="builder"><img src="../generated/themes/light/avatars/builder.svg" alt="Builder avatar"><strong>Builder</strong></article>
+<article class="avatar-card" data-theme="light" data-role="verifier"><img src="../generated/themes/light/avatars/verifier.svg" alt="Verifier avatar"><strong>Verifier</strong></article>
+<article class="avatar-card" data-theme="light" data-role="observer"><img src="../generated/themes/light/avatars/observer.svg" alt="Observer avatar"><strong>Observer</strong></article>
+<article class="avatar-card" data-theme="light" data-role="researcher"><img src="../generated/themes/light/avatars/researcher.svg" alt="Researcher avatar"><strong>Researcher</strong></article></div></div>
+    <div class="subsection"><div class="subhead"><h3>States</h3><span>11 runtime states</span></div><div class="asset-grid states"><article class="asset-card" data-theme="light" data-state="idle"><img src="../generated/themes/light/states/idle.svg" alt="idle state"><div class="asset-meta"><strong>idle</strong><span>none</span></div></article>
+<article class="asset-card" data-theme="light" data-state="thinking"><img src="../generated/themes/light/states/thinking.svg" alt="thinking state"><div class="asset-meta"><strong>thinking</strong><span>informational</span></div></article>
+<article class="asset-card" data-theme="light" data-state="planning"><img src="../generated/themes/light/states/planning.svg" alt="planning state"><div class="asset-meta"><strong>planning</strong><span>informational</span></div></article>
+<article class="asset-card" data-theme="light" data-state="executing"><img src="../generated/themes/light/states/executing.svg" alt="executing state"><div class="asset-meta"><strong>executing</strong><span>informational</span></div></article>
+<article class="asset-card" data-theme="light" data-state="inspecting"><img src="../generated/themes/light/states/inspecting.svg" alt="inspecting state"><div class="asset-meta"><strong>inspecting</strong><span>informational</span></div></article>
+<article class="asset-card" data-theme="light" data-state="waiting"><img src="../generated/themes/light/states/waiting.svg" alt="waiting state"><div class="asset-meta"><strong>waiting</strong><span>none</span></div></article>
+<article class="asset-card" data-theme="light" data-state="blocked"><img src="../generated/themes/light/states/blocked.svg" alt="blocked state"><div class="asset-meta"><strong>blocked</strong><span>required</span></div></article>
+<article class="asset-card" data-theme="light" data-state="approval-required"><img src="../generated/themes/light/states/approval-required.svg" alt="approval-required state"><div class="asset-meta"><strong>approval-required</strong><span>required</span></div></article>
+<article class="asset-card" data-theme="light" data-state="verifying"><img src="../generated/themes/light/states/verifying.svg" alt="verifying state"><div class="asset-meta"><strong>verifying</strong><span>informational</span></div></article>
+<article class="asset-card" data-theme="light" data-state="completed"><img src="../generated/themes/light/states/completed.svg" alt="completed state"><div class="asset-meta"><strong>completed</strong><span>none</span></div></article>
+<article class="asset-card" data-theme="light" data-state="failed"><img src="../generated/themes/light/states/failed.svg" alt="failed state"><div class="asset-meta"><strong>failed</strong><span>critical</span></div></article></div></div>
+    <div class="subsection matrix-section"><div class="subhead"><h3>Role × state matrix</h3><span class="matrix-count-label">66 combinations</span></div><div class="matrix"><article class="composition-card" tabindex="0" data-theme="light" data-role="entity" data-state="idle" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is available and not actively processing work.">
+    <img src="../generated/themes/light/compositions/entity--idle.svg" alt="Aftergraph Entity, idle">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="entity" data-state="thinking" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is processing context or reasoning.">
+    <img src="../generated/themes/light/compositions/entity--thinking.svg" alt="Aftergraph Entity, thinking">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="entity" data-state="planning" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is structuring an intended course of action.">
+    <img src="../generated/themes/light/compositions/entity--planning.svg" alt="Aftergraph Entity, planning">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="entity" data-state="executing" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is taking an authorized action.">
+    <img src="../generated/themes/light/compositions/entity--executing.svg" alt="Aftergraph Entity, executing">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="entity" data-state="inspecting" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is examining an artifact, system, or evidence.">
+    <img src="../generated/themes/light/compositions/entity--inspecting.svg" alt="Aftergraph Entity, inspecting">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="entity" data-state="waiting" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is paused on an external dependency, event, or timer.">
+    <img src="../generated/themes/light/compositions/entity--waiting.svg" alt="Aftergraph Entity, waiting">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="entity" data-state="blocked" data-role-verbs="orient, connect, represent" data-state-meaning="Actor cannot continue until a blocker is resolved.">
+    <img src="../generated/themes/light/compositions/entity--blocked.svg" alt="Aftergraph Entity, blocked">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="entity" data-state="approval-required" data-role-verbs="orient, connect, represent" data-state-meaning="Continuation requires an explicit human authority decision.">
+    <img src="../generated/themes/light/compositions/entity--approval-required.svg" alt="Aftergraph Entity, approval-required">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="entity" data-state="verifying" data-role-verbs="orient, connect, represent" data-state-meaning="Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.">
+    <img src="../generated/themes/light/compositions/entity--verifying.svg" alt="Aftergraph Entity, verifying">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="entity" data-state="completed" data-role-verbs="orient, connect, represent" data-state-meaning="Actor execution completed; this state does not imply independent verification or acceptance.">
+    <img src="../generated/themes/light/compositions/entity--completed.svg" alt="Aftergraph Entity, completed">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="entity" data-state="failed" data-role-verbs="orient, connect, represent" data-state-meaning="Actor execution failed to complete the required operation; this is not an independent verification verdict.">
+    <img src="../generated/themes/light/compositions/entity--failed.svg" alt="Aftergraph Entity, failed">
+    <div class="card-meta"><strong>Aftergraph Entity</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="guide" data-state="idle" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is available and not actively processing work.">
+    <img src="../generated/themes/light/compositions/guide--idle.svg" alt="Guide, idle">
+    <div class="card-meta"><strong>Guide</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="guide" data-state="thinking" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is processing context or reasoning.">
+    <img src="../generated/themes/light/compositions/guide--thinking.svg" alt="Guide, thinking">
+    <div class="card-meta"><strong>Guide</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="guide" data-state="planning" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is structuring an intended course of action.">
+    <img src="../generated/themes/light/compositions/guide--planning.svg" alt="Guide, planning">
+    <div class="card-meta"><strong>Guide</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="guide" data-state="executing" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is taking an authorized action.">
+    <img src="../generated/themes/light/compositions/guide--executing.svg" alt="Guide, executing">
+    <div class="card-meta"><strong>Guide</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="guide" data-state="inspecting" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is examining an artifact, system, or evidence.">
+    <img src="../generated/themes/light/compositions/guide--inspecting.svg" alt="Guide, inspecting">
+    <div class="card-meta"><strong>Guide</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="guide" data-state="waiting" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is paused on an external dependency, event, or timer.">
+    <img src="../generated/themes/light/compositions/guide--waiting.svg" alt="Guide, waiting">
+    <div class="card-meta"><strong>Guide</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="guide" data-state="blocked" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor cannot continue until a blocker is resolved.">
+    <img src="../generated/themes/light/compositions/guide--blocked.svg" alt="Guide, blocked">
+    <div class="card-meta"><strong>Guide</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="guide" data-state="approval-required" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Continuation requires an explicit human authority decision.">
+    <img src="../generated/themes/light/compositions/guide--approval-required.svg" alt="Guide, approval-required">
+    <div class="card-meta"><strong>Guide</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="guide" data-state="verifying" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.">
+    <img src="../generated/themes/light/compositions/guide--verifying.svg" alt="Guide, verifying">
+    <div class="card-meta"><strong>Guide</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="guide" data-state="completed" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor execution completed; this state does not imply independent verification or acceptance.">
+    <img src="../generated/themes/light/compositions/guide--completed.svg" alt="Guide, completed">
+    <div class="card-meta"><strong>Guide</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="guide" data-state="failed" data-role-verbs="coordinate, clarify, align, route" data-state-meaning="Actor execution failed to complete the required operation; this is not an independent verification verdict.">
+    <img src="../generated/themes/light/compositions/guide--failed.svg" alt="Guide, failed">
+    <div class="card-meta"><strong>Guide</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="builder" data-state="idle" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is available and not actively processing work.">
+    <img src="../generated/themes/light/compositions/builder--idle.svg" alt="Builder, idle">
+    <div class="card-meta"><strong>Builder</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="builder" data-state="thinking" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is processing context or reasoning.">
+    <img src="../generated/themes/light/compositions/builder--thinking.svg" alt="Builder, thinking">
+    <div class="card-meta"><strong>Builder</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="builder" data-state="planning" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is structuring an intended course of action.">
+    <img src="../generated/themes/light/compositions/builder--planning.svg" alt="Builder, planning">
+    <div class="card-meta"><strong>Builder</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="builder" data-state="executing" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is taking an authorized action.">
+    <img src="../generated/themes/light/compositions/builder--executing.svg" alt="Builder, executing">
+    <div class="card-meta"><strong>Builder</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="builder" data-state="inspecting" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is examining an artifact, system, or evidence.">
+    <img src="../generated/themes/light/compositions/builder--inspecting.svg" alt="Builder, inspecting">
+    <div class="card-meta"><strong>Builder</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="builder" data-state="waiting" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is paused on an external dependency, event, or timer.">
+    <img src="../generated/themes/light/compositions/builder--waiting.svg" alt="Builder, waiting">
+    <div class="card-meta"><strong>Builder</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="builder" data-state="blocked" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor cannot continue until a blocker is resolved.">
+    <img src="../generated/themes/light/compositions/builder--blocked.svg" alt="Builder, blocked">
+    <div class="card-meta"><strong>Builder</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="builder" data-state="approval-required" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Continuation requires an explicit human authority decision.">
+    <img src="../generated/themes/light/compositions/builder--approval-required.svg" alt="Builder, approval-required">
+    <div class="card-meta"><strong>Builder</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="builder" data-state="verifying" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.">
+    <img src="../generated/themes/light/compositions/builder--verifying.svg" alt="Builder, verifying">
+    <div class="card-meta"><strong>Builder</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="builder" data-state="completed" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor execution completed; this state does not imply independent verification or acceptance.">
+    <img src="../generated/themes/light/compositions/builder--completed.svg" alt="Builder, completed">
+    <div class="card-meta"><strong>Builder</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="builder" data-state="failed" data-role-verbs="build, integrate, iterate, deliver" data-state-meaning="Actor execution failed to complete the required operation; this is not an independent verification verdict.">
+    <img src="../generated/themes/light/compositions/builder--failed.svg" alt="Builder, failed">
+    <div class="card-meta"><strong>Builder</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="verifier" data-state="idle" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is available and not actively processing work.">
+    <img src="../generated/themes/light/compositions/verifier--idle.svg" alt="Verifier, idle">
+    <div class="card-meta"><strong>Verifier</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="verifier" data-state="thinking" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is processing context or reasoning.">
+    <img src="../generated/themes/light/compositions/verifier--thinking.svg" alt="Verifier, thinking">
+    <div class="card-meta"><strong>Verifier</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="verifier" data-state="planning" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is structuring an intended course of action.">
+    <img src="../generated/themes/light/compositions/verifier--planning.svg" alt="Verifier, planning">
+    <div class="card-meta"><strong>Verifier</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="verifier" data-state="executing" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is taking an authorized action.">
+    <img src="../generated/themes/light/compositions/verifier--executing.svg" alt="Verifier, executing">
+    <div class="card-meta"><strong>Verifier</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="verifier" data-state="inspecting" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is examining an artifact, system, or evidence.">
+    <img src="../generated/themes/light/compositions/verifier--inspecting.svg" alt="Verifier, inspecting">
+    <div class="card-meta"><strong>Verifier</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="verifier" data-state="waiting" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is paused on an external dependency, event, or timer.">
+    <img src="../generated/themes/light/compositions/verifier--waiting.svg" alt="Verifier, waiting">
+    <div class="card-meta"><strong>Verifier</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="verifier" data-state="blocked" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor cannot continue until a blocker is resolved.">
+    <img src="../generated/themes/light/compositions/verifier--blocked.svg" alt="Verifier, blocked">
+    <div class="card-meta"><strong>Verifier</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="verifier" data-state="approval-required" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Continuation requires an explicit human authority decision.">
+    <img src="../generated/themes/light/compositions/verifier--approval-required.svg" alt="Verifier, approval-required">
+    <div class="card-meta"><strong>Verifier</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="verifier" data-state="verifying" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.">
+    <img src="../generated/themes/light/compositions/verifier--verifying.svg" alt="Verifier, verifying">
+    <div class="card-meta"><strong>Verifier</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="verifier" data-state="completed" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor execution completed; this state does not imply independent verification or acceptance.">
+    <img src="../generated/themes/light/compositions/verifier--completed.svg" alt="Verifier, completed">
+    <div class="card-meta"><strong>Verifier</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="verifier" data-state="failed" data-role-verbs="inspect, verify, protect, flag-risk" data-state-meaning="Actor execution failed to complete the required operation; this is not an independent verification verdict.">
+    <img src="../generated/themes/light/compositions/verifier--failed.svg" alt="Verifier, failed">
+    <div class="card-meta"><strong>Verifier</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="observer" data-state="idle" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is available and not actively processing work.">
+    <img src="../generated/themes/light/compositions/observer--idle.svg" alt="Observer, idle">
+    <div class="card-meta"><strong>Observer</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="observer" data-state="thinking" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is processing context or reasoning.">
+    <img src="../generated/themes/light/compositions/observer--thinking.svg" alt="Observer, thinking">
+    <div class="card-meta"><strong>Observer</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="observer" data-state="planning" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is structuring an intended course of action.">
+    <img src="../generated/themes/light/compositions/observer--planning.svg" alt="Observer, planning">
+    <div class="card-meta"><strong>Observer</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="observer" data-state="executing" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is taking an authorized action.">
+    <img src="../generated/themes/light/compositions/observer--executing.svg" alt="Observer, executing">
+    <div class="card-meta"><strong>Observer</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="observer" data-state="inspecting" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is examining an artifact, system, or evidence.">
+    <img src="../generated/themes/light/compositions/observer--inspecting.svg" alt="Observer, inspecting">
+    <div class="card-meta"><strong>Observer</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="observer" data-state="waiting" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is paused on an external dependency, event, or timer.">
+    <img src="../generated/themes/light/compositions/observer--waiting.svg" alt="Observer, waiting">
+    <div class="card-meta"><strong>Observer</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="observer" data-state="blocked" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor cannot continue until a blocker is resolved.">
+    <img src="../generated/themes/light/compositions/observer--blocked.svg" alt="Observer, blocked">
+    <div class="card-meta"><strong>Observer</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="observer" data-state="approval-required" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Continuation requires an explicit human authority decision.">
+    <img src="../generated/themes/light/compositions/observer--approval-required.svg" alt="Observer, approval-required">
+    <div class="card-meta"><strong>Observer</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="observer" data-state="verifying" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.">
+    <img src="../generated/themes/light/compositions/observer--verifying.svg" alt="Observer, verifying">
+    <div class="card-meta"><strong>Observer</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="observer" data-state="completed" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor execution completed; this state does not imply independent verification or acceptance.">
+    <img src="../generated/themes/light/compositions/observer--completed.svg" alt="Observer, completed">
+    <div class="card-meta"><strong>Observer</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="observer" data-state="failed" data-role-verbs="observe, map, analyze, find-signal" data-state-meaning="Actor execution failed to complete the required operation; this is not an independent verification verdict.">
+    <img src="../generated/themes/light/compositions/observer--failed.svg" alt="Observer, failed">
+    <div class="card-meta"><strong>Observer</strong><span>failed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="researcher" data-state="idle" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is available and not actively processing work.">
+    <img src="../generated/themes/light/compositions/researcher--idle.svg" alt="Researcher, idle">
+    <div class="card-meta"><strong>Researcher</strong><span>idle</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="researcher" data-state="thinking" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is processing context or reasoning.">
+    <img src="../generated/themes/light/compositions/researcher--thinking.svg" alt="Researcher, thinking">
+    <div class="card-meta"><strong>Researcher</strong><span>thinking</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="researcher" data-state="planning" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is structuring an intended course of action.">
+    <img src="../generated/themes/light/compositions/researcher--planning.svg" alt="Researcher, planning">
+    <div class="card-meta"><strong>Researcher</strong><span>planning</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="researcher" data-state="executing" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is taking an authorized action.">
+    <img src="../generated/themes/light/compositions/researcher--executing.svg" alt="Researcher, executing">
+    <div class="card-meta"><strong>Researcher</strong><span>executing</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="researcher" data-state="inspecting" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is examining an artifact, system, or evidence.">
+    <img src="../generated/themes/light/compositions/researcher--inspecting.svg" alt="Researcher, inspecting">
+    <div class="card-meta"><strong>Researcher</strong><span>inspecting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="researcher" data-state="waiting" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is paused on an external dependency, event, or timer.">
+    <img src="../generated/themes/light/compositions/researcher--waiting.svg" alt="Researcher, waiting">
+    <div class="card-meta"><strong>Researcher</strong><span>waiting</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="researcher" data-state="blocked" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor cannot continue until a blocker is resolved.">
+    <img src="../generated/themes/light/compositions/researcher--blocked.svg" alt="Researcher, blocked">
+    <div class="card-meta"><strong>Researcher</strong><span>blocked</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="researcher" data-state="approval-required" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Continuation requires an explicit human authority decision.">
+    <img src="../generated/themes/light/compositions/researcher--approval-required.svg" alt="Researcher, approval-required">
+    <div class="card-meta"><strong>Researcher</strong><span>approval-required</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="researcher" data-state="verifying" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.">
+    <img src="../generated/themes/light/compositions/researcher--verifying.svg" alt="Researcher, verifying">
+    <div class="card-meta"><strong>Researcher</strong><span>verifying</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="researcher" data-state="completed" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor execution completed; this state does not imply independent verification or acceptance.">
+    <img src="../generated/themes/light/compositions/researcher--completed.svg" alt="Researcher, completed">
+    <div class="card-meta"><strong>Researcher</strong><span>completed</span></div>
+  </article>
+<article class="composition-card" tabindex="0" data-theme="light" data-role="researcher" data-state="failed" data-role-verbs="explore, synthesize, cite, discover" data-state-meaning="Actor execution failed to complete the required operation; this is not an independent verification verdict.">
+    <img src="../generated/themes/light/compositions/researcher--failed.svg" alt="Researcher, failed">
+    <div class="card-meta"><strong>Researcher</strong><span>failed</span></div>
+  </article></div></div>
+  </section><section class="icon-section" id="icons"><div class="section-heading"><div><p class="section-index">03</p><h2>Supporting icons</h2></div><p>Only concepts marked <code>new</code> in the Brand OS icon diff. Existing semantic icons remain canonical.</p></div><div class="asset-grid icons"><article class="icon-card" data-icon="analytics"><img src="../generated/icons/analytics.svg" alt="analytics supporting icon"><strong>analytics</strong></article>
+<article class="icon-card" data-icon="deploy"><img src="../generated/icons/deploy.svg" alt="deploy supporting icon"><strong>deploy</strong></article>
+<article class="icon-card" data-icon="docs"><img src="../generated/icons/docs.svg" alt="docs supporting icon"><strong>docs</strong></article>
+<article class="icon-card" data-icon="error"><img src="../generated/icons/error.svg" alt="error supporting icon"><strong>error</strong></article>
+<article class="icon-card" data-icon="inspect"><img src="../generated/icons/inspect.svg" alt="inspect supporting icon"><strong>inspect</strong></article>
+<article class="icon-card" data-icon="node"><img src="../generated/icons/node.svg" alt="node supporting icon"><strong>node</strong></article>
+<article class="icon-card" data-icon="progress"><img src="../generated/icons/progress.svg" alt="progress supporting icon"><strong>progress</strong></article>
+<article class="icon-card" data-icon="success"><img src="../generated/icons/success.svg" alt="success supporting icon"><strong>success</strong></article>
+<article class="icon-card" data-icon="sync"><img src="../generated/icons/sync.svg" alt="sync supporting icon"><strong>sync</strong></article>
+<article class="icon-card" data-icon="task-list"><img src="../generated/icons/task-list.svg" alt="task-list supporting icon"><strong>task-list</strong></article>
+<article class="icon-card" data-icon="warning"><img src="../generated/icons/warning.svg" alt="warning supporting icon"><strong>warning</strong></article></div></section>
+</main>
+<footer class="site-footer"><span><strong>Aftergraph Character System</strong> · Canonical source: <code>characters/source</code></span><span>Human review surface only · no evidence is written here</span></footer>
+</div>
+<script>
+const roleData={"entity":{"displayName":"Aftergraph Entity","verbs":["orient","connect","represent"]},"guide":{"displayName":"Guide","verbs":["coordinate","clarify","align","route"]},"builder":{"displayName":"Builder","verbs":["build","integrate","iterate","deliver"]},"verifier":{"displayName":"Verifier","verbs":["inspect","verify","protect","flag-risk"]},"observer":{"displayName":"Observer","verbs":["observe","map","analyze","find-signal"]},"researcher":{"displayName":"Researcher","verbs":["explore","synthesize","cite","discover"]}};
+const stateData={"idle":{"meaning":"Actor is available and not actively processing work.","attention":"none"},"thinking":{"meaning":"Actor is processing context or reasoning.","attention":"informational"},"planning":{"meaning":"Actor is structuring an intended course of action.","attention":"informational"},"executing":{"meaning":"Actor is taking an authorized action.","attention":"informational"},"inspecting":{"meaning":"Actor is examining an artifact, system, or evidence.","attention":"informational"},"waiting":{"meaning":"Actor is paused on an external dependency, event, or timer.","attention":"none"},"blocked":{"meaning":"Actor cannot continue until a blocker is resolved.","attention":"required"},"approval-required":{"meaning":"Continuation requires an explicit human authority decision.","attention":"required"},"verifying":{"meaning":"Actor is checking claims or outcomes against evidence or policy; this state is not itself a verification verdict.","attention":"informational"},"completed":{"meaning":"Actor execution completed; this state does not imply independent verification or acceptance.","attention":"none"},"failed":{"meaning":"Actor execution failed to complete the required operation; this is not an independent verification verdict.","attention":"critical"}};
+const controls={theme:document.getElementById('theme'),role:document.getElementById('role'),state:document.getElementById('state')};
+const focus={image:document.getElementById('focus-preview'),role:document.getElementById('focus-role'),state:document.getElementById('focus-state'),detail:document.getElementById('focus-detail')};
+const resultCount=document.getElementById('result-count');
+const rootFor=(theme)=>theme==='light'?'../generated/themes/light':'../generated';
+function currentTheme(){return controls.theme.value==='all'?'dark':controls.theme.value;}
+function updateFocus(role,state,theme=currentTheme()){const r=roleData[role]||roleData.entity;const s=stateData[state]||stateData.idle;focus.image.src=rootFor(theme)+'/compositions/'+role+'--'+state+'.svg';focus.image.alt=r.displayName+', '+state;focus.role.textContent=r.displayName;focus.state.textContent=state;focus.detail.textContent=s.meaning;}
+function apply(){
+  const {theme,role,state}=Object.fromEntries(Object.entries(controls).map(([k,v])=>[k,v.value]));
+  let visible=0;
+  document.querySelectorAll('.composition-card').forEach((el)=>{
+    const show=(theme==='all'||el.dataset.theme===theme)&&(role==='all'||el.dataset.role===role)&&(state==='all'||el.dataset.state===state);
+    el.hidden=!show;if(show) visible++;
+  });
+  document.querySelectorAll('.theme-section').forEach((el)=>{el.hidden=theme!=='all'&&el.dataset.theme!==theme;});
+  document.querySelectorAll('.roles .asset-card,.avatars .avatar-card').forEach((el)=>{el.hidden=role!=='all'&&el.dataset.role!==role;});
+  document.querySelectorAll('.states .asset-card').forEach((el)=>{el.hidden=state!=='all'&&el.dataset.state!==state;});
+  resultCount.textContent=visible+' matrix result'+(visible===1?'':'s');
+  const params=new URLSearchParams(location.search);for(const [k,v] of Object.entries({theme,role,state}))v==='all'?params.delete(k):params.set(k,v);history.replaceState(null,'',location.pathname+(params.size?'?'+params:''));
+  const focusRole=role==='all'?'entity':role,focusState=state==='all'?'idle':state;updateFocus(focusRole,focusState,currentTheme());
+}
+function selectCard(el){controls.theme.value=el.dataset.theme;controls.role.value=el.dataset.role;controls.state.value=el.dataset.state;apply();updateFocus(el.dataset.role,el.dataset.state,el.dataset.theme);document.querySelector('.focus-stage').scrollIntoView({behavior:'smooth',block:'center'});}
+Object.values(controls).forEach((el)=>el.addEventListener('change',apply));
+document.getElementById('reset').addEventListener('click',()=>{controls.theme.value='dark';controls.role.value='all';controls.state.value='all';apply();});
+document.querySelectorAll('.composition-card').forEach((el)=>{el.addEventListener('click',()=>selectCard(el));el.addEventListener('keydown',(event)=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();selectCard(el);}});});
+const incoming=new URLSearchParams(location.search);for(const [key,control] of Object.entries(controls)){const value=incoming.get(key);if(value&&[...control.options].some((o)=>o.value===value))control.value=value;}apply();
+</script></body></html>

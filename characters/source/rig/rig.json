@@ -1,0 +1,19 @@
+{
+  "$schema": "aftergraph.character-rig.v1",
+  "version": "1.0.0",
+  "units": "degrees",
+  "poseApplicationOrder": ["root", "hips", "shoulders", "head", "halo"],
+  "joints": [
+    { "id": "root", "anchor": "root", "parent": null, "groups": ["torso"], "rotationDeg": { "min": -8, "max": 8, "rest": 0 } },
+    { "id": "hip-left", "anchor": "hip-left", "parent": "root", "groups": ["leg-left"], "rotationDeg": { "min": -28, "max": 24, "rest": 0 } },
+    { "id": "hip-right", "anchor": "hip-right", "parent": "root", "groups": ["leg-right"], "rotationDeg": { "min": -24, "max": 28, "rest": 0 } },
+    { "id": "shoulder-left", "anchor": "shoulder-left", "parent": "root", "groups": ["arm-left", "hand-left"], "rotationDeg": { "min": -45, "max": 60, "rest": 0 } },
+    { "id": "shoulder-right", "anchor": "shoulder-right", "parent": "root", "groups": ["arm-right", "hand-right"], "rotationDeg": { "min": -60, "max": 45, "rest": 0 } },
+    { "id": "head", "anchor": "head-center", "parent": "root", "groups": ["head", "face"], "rotationDeg": { "min": -20, "max": 20, "rest": 0 } },
+    { "id": "halo", "anchor": "halo-center", "parent": "head", "groups": ["halo"], "rotationDeg": { "min": -18, "max": 18, "rest": 0 } }
+  ],
+  "mirrors": [
+    { "a": "hip-left", "b": "hip-right" },
+    { "a": "shoulder-left", "b": "shoulder-right" }
+  ]
+}
