@@ -1,0 +1,72 @@
+{
+  "schema_version": "steward.persona-role-visual/1.0",
+  "owner": "Aftergraph/brand",
+  "product": "STEWARD",
+  "role_source": "Aftergraph/STEWARD-by-Aftergraph:schemas/actor-persona.schema.json#/properties/role/enum",
+  "identity_rule": "One STEWARD entity across every role. Roles are views, never new identities.",
+  "allowed_variation": [
+    "accent",
+    "emissive_state",
+    "functional_accessory",
+    "pose"
+  ],
+  "forbidden_variation": [
+    "core_silhouette",
+    "visor_identity",
+    "halo_geometry",
+    "custody_ring_geometry",
+    "authority_claim",
+    "verification_claim"
+  ],
+  "roles": [
+    {
+      "id": "reviewer",
+      "accent_token": "control_cyan",
+      "functional_accessory": "review-check",
+      "visual_intent": "bounded contract, schema and code review",
+      "authority_effect": false,
+      "verification_effect": false
+    },
+    {
+      "id": "subscriber",
+      "accent_token": "system_blue",
+      "functional_accessory": "attention-signal",
+      "visual_intent": "routed verification, security and progress attention",
+      "authority_effect": false,
+      "verification_effect": false
+    },
+    {
+      "id": "maintainer",
+      "accent_token": "steward_copper",
+      "functional_accessory": "maintenance-tool",
+      "visual_intent": "maintenance and merge-decision projection",
+      "authority_effect": false,
+      "verification_effect": false
+    },
+    {
+      "id": "observer",
+      "accent_token": "slate",
+      "functional_accessory": "read-only-lens",
+      "visual_intent": "read-only observation",
+      "authority_effect": false,
+      "verification_effect": false
+    },
+    {
+      "id": "auditor",
+      "accent_token": "pine_teal",
+      "functional_accessory": "evidence-lens",
+      "visual_intent": "evidence and trace inspection",
+      "authority_effect": false,
+      "verification_effect": false
+    },
+    {
+      "id": "integrator",
+      "accent_token": "decision_amber",
+      "functional_accessory": "contract-bridge",
+      "visual_intent": "cross-owner contract integration",
+      "authority_effect": false,
+      "verification_effect": false
+    }
+  ],
+  "claim_boundary": "Persona role visuals route attention and review meaning only. They do not mint identity, grant authority, execute work, or create verification truth."
+}

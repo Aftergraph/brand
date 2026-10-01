@@ -35,6 +35,19 @@ Canonical scope for public, product, research, documentation, community, and mot
 - `product/evidence-pattern.svg` — repeatable technical background.
 - `product/empty-state-no-evidence.svg` — evidence unavailable.
 
+## STEWARD product extension
+
+| Asset | Source | Purpose |
+|---|---|---|
+| Bounded Node | `products/steward/identity/bounded-node.svg` | product identity |
+| Scoped tokens | `products/steward/tokens.json` | Custody & Cream palette |
+| Character law | `products/steward/CHARACTER-LAW.md` | role and state invariants |
+| Presence contract | `products/steward/motion/presence-contract.json` | semantic motion and accessibility |
+| Lottie presence | `products/steward/motion/steward-presence.lottie.json` | portable 12-state marker animation |
+| 3D evidence | `products/steward/3d/reference-model.evidence.json` | deterministic reference provenance |
+
+Generated 3D candidates remain non-canonical until visual review. A provider response is not treated as identity approval.
+
 ## Motion
 
 `motion/MOTION-SYSTEM.md` defines a six-second brand ident, 12-second product reveal, transition grammar, accessibility behavior, and Higgsfield production prompts. Motion must communicate state: graph formation, bounded authority, execution, evidence, verification.
